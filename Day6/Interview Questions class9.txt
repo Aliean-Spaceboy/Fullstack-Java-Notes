@@ -1,0 +1,150 @@
+Interview Questions
+===================
+
+Q) How many modules are there in java?
+
+We have three modules in Java.
+
+1) JSE / J2SE  (Java Standard Edition)
+
+2) JEE / J2EE  (Java Enterprise Edition)
+
+3) JME / J2ME  (Java Micro Edition)
+
+
+Q) How many classloaders are there in Java?
+
+We have three predefined classloaders in java.
+
+1) Bootstrap classloader 
+
+2) Extension classloader 
+
+3) Application/System classloader 
+
+Q) How many memories are there in Java?
+
+We have five memories in java.
+
+1) Method Area 
+2) Heap 
+3) Java Stack 
+4) PC Register 
+5) Native Method Stack
+
+
+Q) What is Native Method in java?
+
+A method which is developed by using some other language is called native method.
+
+
+Q) What is JIT compiler?
+
+JIT compiler is a part of a JVM which is used to increase the execution speed of our program.
+
+
+Q) What is JVM?
+
+JVM is used to convert byte code to machine code or native code  and it uses java interpreter 
+to execute our program line by line procedure.
+
+
+Q) What are the features of java?
+
+We have following important features in Java.
+
+1) Simple 
+2) Platform independent
+3) Portable 
+4) Architecture Neutral 
+5) Robust 
+6) Highly secured 
+7) Multithreaded 
+8) Object oriented 
+9) Dynamic 
+10) Distributed 
+and etc.
+
+Q) Who is responsible to destroy the objects in java?
+
+	Garbage collector 
+
+
+Q) What is Garbage collector ?
+
+ Garbage collector is used to destroy unused or useless objects from java.
+
+
+Q) In how many ways we can call garbage collector?
+
+	There are two ways to call garbage collector in java.
+
+	1) System.gc();
+	2) Runtime.getRuntime().gc();
+
+
+Q) What is package?
+
+	Package is a collection of classes and interfaces.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

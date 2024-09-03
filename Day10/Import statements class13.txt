@@ -1,0 +1,228 @@
+System.out.println()
+=====================
+It is a output statement in java.
+
+Whenever we want to display any data or userdefined statements then we need to use output stmt.
+
+syntax:
+------
+	static variable 
+		|
+	System.out.println(); 
+	|		|
+	predefined	predefined method 
+	final
+	class 
+
+	
+Diagram: class13.1
+
+ex:
+---
+class Test 
+{
+	public static void main(String[] args)
+	{
+		System.out.println("stmt1");
+		System.out.print("stmt2");
+		System.out.printf("stmt3");
+	}
+}
+
+various ways to display the data 
+---------------------------------
+1)
+	System.out.println("Hello World");
+
+2)
+	int a=10;
+	System.out.println(a);
+	System.out.println("The value is ="+a);	
+
+3)
+	int a=10,b=20;
+	System.out.println(a+"  "+b);// 10    20
+	System.out.println(a+" and "+b); // 10 and 20
+
+4)
+
+	int i=10,j=20,k=30;
+	System.out.println(i+" "+j+" "+k); // 10  20  30
+
+EditPlus Editor
+===============
+Download link : https://www.editplus.com/download.html
+
+
+
+Fully Qualified Name
+===================
+Fully qualified name means we will declare a class or interface along with package name.
+ex:
+	java.util.Date(C)
+	java.io.Serializable(I)
+
+It is used to improve readability of our code.
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{		
+		java.util.Date d=new java.util.Date();
+		System.out.println(d);
+	}
+}
+
+Import statements
+==================
+Whenever we use import statements then we should not use fully qualified name.
+
+Using short name also we can achieve.
+
+In java, we have three types of import statements.
+
+1) Explicit class import 
+
+2) Implicit class import 
+
+3) Static import 
+
+
+1) Explicit class import 
+--------------------------
+This type of import statement is highly recommanded to use because it will improve readability of our code.
+
+ex:
+---
+import java.time.LocalDate;
+import java.time.LocalTime;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		LocalDate date=LocalDate.now();
+		System.out.println(date);
+
+		LocalTime time=LocalTime.now();
+		System.out.println(time);
+	}
+}
+
+2) Implicit class import 
+-------------------------
+This type of import statement is not recommanded to use because it will reduce readability of our code.
+
+ex:
+---
+import java.time.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		LocalDate date=LocalDate.now();
+		System.out.println(date);
+
+		LocalTime time=LocalTime.now();
+		System.out.println(time);
+	}
+}
+
+3) Static import 
+-----------------
+Using static import we can access static members directly (static variables and static methods).
+
+Often use of static import makes our program complex and unreadable.
+
+ex:
+---
+import static java.lang.System.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		out.println("stmt1");
+		out.println("stmt2");
+		out.println("stmt3");
+	}
+}
+
+
+ex:
+--
+import static java.lang.System.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		out.println("stmt1");
+		exit(0);
+		out.println("stmt3");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,548 @@
+Note:
+=====
+If number of iterations are known by the user then we need to use for loop.
+
+If number of iterations are not known by the user then we need to use while loop.
+
+If number of iterations are not known byt the user but code must execute atleast for one time then we need to use do while loop.
+
+
+LOOP Patterns
+=============
+
+1)
+
+1 1 1 1 
+2 2 2 2
+3 3 3 3
+4 4 4 4 
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows
+		for(int i=1;i<=4;i++)
+		{
+			//cols
+			for(int j=1;j<=4;j++)
+			{
+				System.out.print(i+" ");
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+2) 
+
+1 2 3 4 
+1 2 3 4
+1 2 3 4
+1 2 3 4 
+
+ex:
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows
+		for(int i=1;i<=4;i++)
+		{
+			//cols
+			for(int j=1;j<=4;j++)
+			{
+				System.out.print(j+" ");
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+3)
+* * * * 
+* * * *
+* * * *
+* * * * 
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows
+		for(int i=1;i<=4;i++)
+		{
+			//cols
+			for(int j=1;j<=4;j++)
+			{
+				System.out.print("* ");
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+4) 
+4 4 4 4 
+3 3 3 3 
+2 2 2 2
+1 1 1 1 
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows
+		for(int i=4;i>=1;i--)
+		{
+			//cols
+			for(int j=1;j<=4;j++)
+			{
+				System.out.print(i+" ");
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+
+5) 
+A A A A 
+B B B B
+C C C C 
+D D D D 
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows
+		for(char i='A';i<='D';i++)
+		{
+			//cols
+			for(char j='A';j<='D';j++)
+			{
+				System.out.print(i+" ");
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+6) 
+D D D D 
+C C C C 
+B B B B 
+A A A A 
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows
+		for(char i='D';i>='A';i--)
+		{
+			//cols
+			for(char j='A';j<='D';j++)
+			{
+				System.out.print(i+" ");
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+7)
+
+* * * * 
+*     *
+*     *
+* * * * 
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows
+		for(int i=1;i<=4;i++)
+		{
+			//cols
+			for(int j=1;j<=4;j++)
+			{
+				if(i==1 || i==4 || j==1 || j==4)
+					System.out.print("* ");
+				else
+					System.out.print("  ");
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+8)
+
+* - - - 
+- * - -
+- - * - 
+- - - * 
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows
+		for(int i=1;i<=4;i++)
+		{
+			//cols
+			for(int j=1;j<=4;j++)
+			{
+				if(i==j)
+					System.out.print("* ");
+				else
+					System.out.print("- ");
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+9) 
+
+* - - - *
+- * - * - 
+- - * - - 
+- * - * - 
+* - - - *
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows
+		for(int i=1;i<=5;i++)
+		{
+			//cols
+			for(int j=1;j<=5;j++)
+			{
+				if(i==j || i+j==6)
+					System.out.print("* ");
+				else
+					System.out.print("- ");
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+
+Left Side Loop Patterns
+=======================
+1)
+
+1 
+2 2 
+3 3 3 
+4 4 4 4
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows
+		for(int i=1;i<=4;i++)
+		{
+			//cols
+			for(int j=1;j<=i;j++)
+			{
+				System.out.print(i+" ");
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+
+2)
+
+4 4 4 4
+3 3 3
+2 2 
+1  
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows
+		for(int i=4;i>=1;i--)
+		{
+			//cols
+			for(int j=1;j<=i;j++)
+			{
+				System.out.print(i+" ");
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+
+3)
+* 
+* * 
+* * * 
+* * * * 
+* * * 
+* * 
+* 
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//ascending
+		//rows
+		for(int i=1;i<=4;i++)
+		{
+			//cols
+			for(int j=1;j<=i;j++)
+			{
+				System.out.print("* ");
+			}
+			//new line
+			System.out.println();
+		}
+
+		//descending
+		//rows
+		for(int i=3;i>=1;i--)
+		{
+			//cols
+			for(int j=1;j<=i;j++)
+			{
+				System.out.print("* ");
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+4)
+1
+2 3 
+4 5 6 
+7 8 9 0
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int k=1;
+
+		//rows
+		for(int i=1;i<=4;i++)
+		{
+			//cols
+			for(int j=1;j<=i;j++)
+			{
+				if(k<=9)
+					System.out.print((k++) +" ");
+				else
+					System.out.print("0 ");
+			}
+			//new line
+			System.out.println();
+		}
+
+	
+	}
+}
+
+5)
+
+2
+4  6 
+8  10  12 
+14 16  18  20
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int k=2;
+
+		//rows
+		for(int i=1;i<=4;i++)
+		{
+			//cols
+			for(int j=1;j<=i;j++)
+			{
+				System.out.print(k+" ");
+				k+=2;
+			}
+			//new line
+			System.out.println();
+		}
+
+	
+	}
+}
+
+6)
+1
+3   5 
+7   9   11
+13  15  17  19
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int k=1;
+
+		//rows
+		for(int i=1;i<=4;i++)
+		{
+			//cols
+			for(int j=1;j<=i;j++)
+			{
+				System.out.print(k+" ");
+				k+=2;
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+7)
+
+2
+3  5
+7  11 13
+17 19 23 29
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int num=2;
+
+		//rows
+		for(int i=1;i<=4;i++)
+		{
+			//cols
+			for(int j=1;j<=i;j++)
+			{
+				while(true)
+				{
+					boolean flag=true;
+					for(int k=2;k<=num/2;k++)
+					{
+						if(num%k==0)
+						{
+							flag=false;
+							break;
+						}
+					}
+					if(flag==true)
+					{
+						System.out.print(num+" ");
+						num++;
+						break;
+					}
+					num++;
+				}
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+8)
+
+1
+2 1 
+1 2 3 
+4 3 2 1 
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows
+		for(int i=1;i<=4;i++)
+		{
+			if(i%2!=0)
+			{
+				for(int j=1;j<=i;j++)
+				{
+					System.out.print(j+" ");
+				}
+				//new line
+				System.out.println();
+			}
+			else
+			{
+				for(int j=i;j>=1;j--)
+				{
+					System.out.print(j+" ");
+				}
+				//new line
+				System.out.println();
+			}
+		}
+	}
+}
+
+
+Assignment
+----------
+Q) Write a java program to display below loop pattern?
+
+1 1 1 
+1 0 1 
+1 1 1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

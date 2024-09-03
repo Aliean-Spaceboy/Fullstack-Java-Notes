@@ -1,0 +1,134 @@
+Comments In Java
+=================
+Comments are created for documentation purpose.
+
+Comments are used to improve readability of our code.
+
+It is higly recommanded to use comments in our regular programming.
+
+Diagram: class4.1
+
+Comments will not display in output because they won't compiled by the compiler.
+
+In java, we have two types of comments.
+
+1) Single comment 
+----------------
+	It is used to comment a single line.
+	ex:
+		// comment here 
+
+2) Multiple line comment 
+------------------------
+	It is used to comment multiple lines.
+	ex:
+		/*
+			-
+			- comment here 
+			-
+		*/
+
+ex:
+----
+	//class declaration 
+	class  Test
+	{
+		//main method 
+		public static void main(String[] args)
+		{
+
+			//variable declaration 
+			int x=10;
+
+			//output stmt
+			System.out.println(x);
+		}
+	}
+
+Interview Questions
+===================
+Q) What is the difference between JDK, JRE and JVM ?
+
+
+JDK
+----
+JDK stands for Java Development Kit.
+
+It is a installable software which consist of Java Runtime Environment(JRE), Java Virtual Machine (JVM), compiler (javac), , interpreter , an archiever (.jar) , document generator (javadoc) and other tools needed for java application development.
+
+JRE
+----
+JRE stands for Java Runtime Environment.
+JRE provides very good environment to run java applications only.
+
+JVM
+----
+JVM stands for Java Virtural Machine.
+JVM is an interpreter which is used to execute our program line by line procedure.
+
+Diagram: class4.2
+
+
+Q) Java is a platform dependent or independent?
+
+	It is Independent. 
+
+
+Q) JVM is platform dependent or independent?
+
+	It is dependent.
+
+
+Q) What is package?
+
+	A package is a collection of classes and interfaces.
+
+
+Q) Which package consider as default package in java?
+
+	java.lang package 
+
+
+Q) What is the difference between C++ and Java?
+
+C++						Java
+-----						-----
+It is developed by Bjarne Stroustrup.		It is developed by James Gosling.	
+
+It is a partial object oriented programming 	It is a purely object oriented programming
+language.					language.
+
+It is a platform dependent.			It is a platform independent.
+
+Memory allocation and deallocation will taken	Memory allocation and deallocation will taken
+care by a programmer.				care by a JVM.
+
+It supports pointers.				It does not support pointers.
+
+It supports multiple inheritance.		It does not support multiple inheritance.
+
+It supports preprocessor directory (#).		It does not support preprocessor directory(#).
+
+It supports three access specifiers i.e 	It supports four access modifiers i.e 	
+public, private and protected.			default,public,private and protected.
+
+We have three loops i.e do while loop,		We havea four loops i.e do while loop,
+while loop and for loop.			while loop, for loop and for each loop.
+
+We can save the program by using .cpp extension.We can save the program by using .java
+						extension.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

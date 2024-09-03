@@ -1,0 +1,247 @@
+Q) What is the difference between  default and public class?
+
+default class					public class
+--------------					-------------
+To declare default class we should not specify	To declare public class we should specify 
+any modifier.					public modifier.
+ex:						ex:
+	class A 					public class A
+	{						{
+				
+	}						}
+
+If we declare any class as default then we can	If we declare any class as public then we can 
+access that class within the package.		access that class within the package and outside
+						the package.
+
+
+
+Q) What is the difference between final class and abstract class?
+
+final class					abstract class
+---------------					----------------
+To declare final class we should use final 	To declare abstract class we should use abstract
+modifier.					modifier.
+
+ex:						ex:
+	final class A 					abstract class A 
+	{						{
+	
+	}						}
+
+Child creation is not possible.			Child creation is possible.
+
+Object creation is possible.			Object creation is not possible.
+
+object
+=======
+It is a instance of a class.
+
+Here instance means allocating memory for our data members.
+
+It is a outcome of a blue print.
+
+It is a collection of properties and behaviours.
+
+It is a physical entity.
+
+realtime example
+---------------
+			Dog (object)
+			|
+		-----------------
+		|		|
+	properties		behaviours
+	> Breed 		> Barking	
+	> Name			> Eating 
+	> Color			> Sleeping
+	> Age			and etc.
+	> Height 
+	and etc.
+
+We can declare the object as follow.
+ex:
+		operator
+		|
+	Test t=new Test();
+	|    |       |
+classname reference constructor
+	  variable 
+
+It is possible to create more then one object in a single class.
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Test t1=new Test();
+		Test t2=new Test();
+		Test t3=new Test();
+		
+		System.out.println(t1.hashCode());
+		System.out.println(t2.hashCode());
+		System.out.println(t3.hashCode());
+		
+		System.out.println(t1); //Test@Hexadecimalno 
+		System.out.println(t2.toString());
+		System.out.println(t3.toString());
+	}
+}
+
+
+Q) What is hash code in java?
+
+For every object, JVM will will create a unique identification number i.e hash code.
+
+In order to read the hash code of an object we will use hashCode() method.
+
+A hashCode() method present in Object class.
+
+Diagram: class30.1
+
+
+
+Q) What is toString() method?
+
+It is a method present in Object class.
+
+Whenever we are trying to display any object reference directly or indirectly toString() method will be executed.
+
+
+
+Q) What is the difference between class and object.
+
+class					object
+----------				----------
+To declare a class we will use class	To declare an object we will use new keyword.
+keyword.
+
+It is a blueprint or template of a 	It is a instance of a class.	
+an object.
+
+It is a logical entity.			It is a physical entity.
+
+It can't be modified.			It can be modified.
+
+It is declared once.			It is declared many times.
+
+
+Data Hiding
+============
+It is a process of hiding object data from the outsiders.
+
+The main objective of data hiding is to provide security.
+
+Using private modifier we can implements data hiding concept.
+
+ex:
+
+class Account 
+{
+	private double balance=10000d;
+}
+class Student
+{
+	public static void main(String[] args)
+	{
+		Account account=new Account();
+		System.out.println(account.balance);
+	}
+}
+
+Abstraction
+===========
+Hiding internal implementation and highlighting the set of services is called abstraction.
+
+Using abstract classes and interfaces we can implements abstraction.
+
+The best example of abstraction is GUI ATM machine where banking people will hide internal implementation and highlights the set of services like banking, withdrawl, mini statement and etc.
+
+The main advantages of abstraction are 
+
+1) It gives security because it will hide internal implementation from outsider.
+
+2) Enhancement becomes more easy because without effecting enduser they can perform any 
+   changes in our internal system.
+
+3) It provides flexibility to the enduser to use the system.
+
+4) It improves maintainability of an application.
+
+
+Encapsulation
+=============
+The process of encapsulating or grouping variables and it's associate methods in a single entity is called encapsulation.
+
+Diagram: class30.2
+
+The main objective of encapsulation is to protect the data.
+
+A class is said to be encapsulated class if it supports data hiding and abstraction.
+
+In encapsulation for every variable we need to write setter and getter methods.
+
+Diagram: class30.3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

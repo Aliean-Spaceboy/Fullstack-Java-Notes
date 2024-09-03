@@ -1,0 +1,314 @@
+4) Hierarchical Inheritance
+===========================
+If we derived multiple classes using one base class is called hierarchical inheritance.
+
+Diag:
+			A
+			|
+	|-------------------------------|
+	B				C
+
+ex:
+---
+class A 
+{
+	public void methodOne()
+	{
+		System.out.println("MethodOne");
+	}
+}
+class B extends A 
+{
+	public void methodTwo()
+	{
+		System.out.println("MethodTwo");
+	}
+}
+class C extends A 
+{
+	public void methodThree()
+	{
+		System.out.println("MethodThree");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		A a=new A();
+		a.methodOne();
+		
+		B b=new B();
+		b.methodOne();
+		b.methodTwo();
+		
+		C c=new C();
+		c.methodOne();
+		c.methodThree();
+	}
+}
+
+
+5)Hybrid inheritance
+======================
+It is a combination of more then one inheritance.
+
+Java does not support hybrid inheritance.
+
+Diag:
+
+			A
+			|
+	|-------------------------------|
+	B				C
+	|-------------------------------|
+			|
+			D 
+
+
+
+Has-A Relationship
+==================
+Has-A relationship is also known as composition and aggregation.
+
+There is no specific keyword to implements Has-A relationship but mostly we will use new operator.
+
+The main objective of Has-A relationship is to provide reusability.
+
+ex:
+---
+class Ihub
+{
+	public String courseName()
+	{
+		return "Full Stack Java Development + AWS";
+	}
+	public double courseFee()
+	{
+		return 30000d;
+	}
+	public String trainerName()
+	{
+		return "Niyaz Sir";
+	}
+}
+class Usha								
+{
+	public void getCourseDetails()
+	{
+		Ihub i=new Ihub();
+		System.out.println("Course Name :"+i.courseName());
+		System.out.println("Course Fee :"+i.courseFee());
+		System.out.println("Trainer Name :"+i.trainerName());
+	}
+}
+class Student
+{
+	public static void main(String[] args)
+	{
+		Usha u=new Usha();
+		u.getCourseDetails();
+	}
+}
+
+
+ex:
+----
+import java.util.*;
+class Employee 
+{
+	private int empId;
+	private String empName;
+	private double empSalary;
+	private Address address;
+	
+	//setter methods 
+	public void setEmpId(int empId)
+	{
+		this.empId=empId;
+	}
+	public void setEmpName(String empName)
+	{
+		this.empName=empName;
+	}
+	public void setEmpSalary(double empSalary)
+	{
+		this.empSalary=empSalary;
+	}
+	public void setAddress(Address address)
+	{
+		this.address=address;
+	}
+	//getter methods 
+	public int getEmpId()
+	{
+		return empId;
+	}
+	public String getEmpName()
+	{
+		return empName;
+	}
+	public double getEmpSalary()
+	{
+		return empSalary;
+	}
+	public Address getAddress()
+	{
+		return address;
+	}
+	
+}
+
+class Address
+{
+	private String locality;
+	private String city;
+	private String state;
+	
+	//setter method 
+	public void setLocality(String locality)
+	{
+		this.locality=locality;
+	}
+	public void setCity(String city)
+	{
+		this.city=city;
+	}
+	public void setState(String state)
+	{
+		this.state=state;
+	}
+	//getter methods 
+	public String getLocality()
+	{
+		return locality;
+	}
+	public String getCity()
+	{
+		return city;
+	}
+	public String getState()
+	{
+		return state;
+	}
+	
+	public String toString() {
+       return "["+getLocality()+" , "+getCity()+" , "+getState()+"]";
+    }
+}
+
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Address add=new Address();
+		add.setLocality("Ameerpet");
+		add.setCity("Hyderabad");
+		add.setState("Telangana");
+		
+		Employee emp=new Employee();
+		emp.setEmpId(501);
+		emp.setEmpName("Alan");
+		emp.setEmpSalary(1000d);
+		emp.setAddress(add);
+		
+		//display the data
+		System.out.println(emp.getEmpId());
+		System.out.println(emp.getEmpName());
+		System.out.println(emp.getEmpSalary());
+		System.out.println(emp.getAddress());
+		
+	}
+}
+
+Composition
+============
+Without existing container object there is no chance of having contained object then the relationship between container and contained object is called composition which is strongly association.
+
+Diagram: class32.1
+
+
+Aggregation 
+==========
+Without existing container object there is a chance of having contained object then the relationship between container and contained object is called aggregation which is loosely association.
+
+Diagram: class32.2
+
+
+
+Method overloading
+==================
+Having same method name with different parameters/signatures/arguments in a single class is called method overloading.
+
+Methods which are present in a class are called overloaded methods.
+
+Method overloading will reduce complexity of the programming.
+
+In method overloading , method resolution will taken care by compiler based on reference type.
+
+ex:
+---
+class MeeSeva
+{
+	//overloaded methods 
+	public void search(int voterId)
+	{
+		System.out.println("Details Founds via VoterId");
+	}
+	public void search(String houseNo)
+	{
+		System.out.println("Details Founds via houseNo");
+	}
+	public void search(long aadharNo)
+	{
+		System.out.println("Details Founds via aadharNo");
+	}
+}
+class Customer 
+{
+	public static void main(String[] args)
+	{
+		MeeSeva ms=new MeeSeva();
+		ms.search(1001);
+		ms.search("1-6-76/A/1");
+		ms.search(1234L);
+	}
+}
+
+Q) Can we overlaod main method in java?
+
+Yes, we can overload main method in java.
+
+But JVM always execute String[] argument method only.
+
+ex:
+class Test 
+{
+	
+	public static void main(int[] iargs)
+	{
+		System.out.println("int[] arg method");
+	}
+	
+	public static void main(String[] args)
+	{
+		System.out.println("string[] arg method");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

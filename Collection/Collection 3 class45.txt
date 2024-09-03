@@ -1,0 +1,266 @@
+Q) Write a java program to display distinct element from given array?
+
+input:
+	1 2 2 3 3 3 4 4 4 4
+
+output:
+	1 2 3 4 
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[] arr={1,2,2,3,3,3,4,4,4,4};
+		
+		Set<Integer> set=new LinkedHashSet<Integer>();
+		
+		for(int i:arr)
+		{
+			set.add(i);	
+		}
+		
+		set.forEach(element -> System.out.print(element+" "));
+	}
+}
+
+
+TreeSet
+=========
+The underlying data structure is Balanced Tree.
+
+Duplicate objects are not allowed.
+
+Insertion order is not preserved because it will take sorting order of an object.
+
+Hetrogeneous objects are not allowed.
+
+Null insertion is not possible.
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		TreeSet ts=new TreeSet();
+		ts.add(10);
+		ts.add(1);
+		ts.add(5);
+		ts.add(4);
+		System.out.println(ts);// [1,4,5,10]
+		ts.add(1);
+		System.out.println(ts);// [1,4,5,10]
+		
+		//ts.add(null);
+		//System.out.println(ts);// R.E NullPointerException
+		
+		//ts.add("hi");
+		//System.out.println(ts);// R.E ClassCastException
+	}
+}
+
+Q) What is the difference between Comparable and Comparator interface?
+
+Comparable 
+----------
+Comparable is an interface which is present in java.lang package.
+
+Comparable interface contains only one method i.e compareTo() method.
+ex:
+	obj1.compareTo(obj2)
+
+	It will return -ve if obj1 comes before obj2.
+	It will return +ve if obj1 comes after obj2.
+	It will return 0 if both objects are same.
+
+If we depends upon default natural sorting order then we need to use compareTo() method.
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("A".compareTo("Z")); // -25
+		
+		System.out.println("Z".compareTo("A")); //  25
+		
+		System.out.println("K".compareTo("K")); //  0
+	}
+}
+
+
+Comparator
+------------
+Comparator is an interface which is present in java.util package.
+
+Comparator interface contains following two methods i.e equals() and compare() method.
+
+ex:
+	public int compare(Object obj1,Object obj2)
+
+	It will return +ve if obj1 comes before obj2.
+	It will return -ve if obj1 comes after obj2.
+	It will return 0 if both objects are same. 
+
+Implementation of equals() method is optional because it is present in Object class which is available through inheritance.
+
+If we depend upon customized sorting order then we need to use Comparator interface.
+
+ex:
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		TreeSet<Integer> ts=new TreeSet<Integer>(new MyComparator());
+		ts.add(10);
+		ts.add(1);
+		ts.add(5);
+		ts.add(3);
+		System.out.println(ts); //[10, 5, 3, 1]
+	}
+}
+class MyComparator implements Comparator 
+{
+	public int compare(Object obj1,Object obj2)
+	{
+		Integer i1=(Integer)obj1;
+		Integer i2=(Integer)obj2;
+		if(i1<i2)
+			return 1;
+		else if(i1>i2)
+			return -1;
+		else 
+			return 0;
+	}
+}
+
+
+ex:
+----
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		TreeSet<Integer> ts=new TreeSet<Integer>(new MyComparator());
+		ts.add(10);
+		ts.add(1);
+		ts.add(5);
+		ts.add(3);
+		System.out.println(ts); //[1, 3, 5, 10]
+	}
+}
+class MyComparator implements Comparator 
+{
+	public int compare(Object obj1,Object obj2)
+	{
+		Integer i1=(Integer)obj1;
+		Integer i2=(Integer)obj2;
+		if(i1<i2)
+			return -1;
+		else if(i1>i2)
+			return 1;
+		else 
+			return 0;
+	}
+}
+
+
+Q) Write a java program to compare two dates?
+
+import java.time.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		LocalDate date1=LocalDate.now();
+		
+		LocalDate date2=LocalDate.now();
+		
+		if(date1.compareTo(date2)<0)
+			System.out.println("Date1 is greatest");
+		else if(date1.compareTo(date2)>0)
+			System.out.println("Date2 is greatest");
+		else
+			System.out.println("Both are same");
+		
+	}
+}
+
+or
+--
+import java.time.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		LocalDate date1=LocalDate.of(2025,07,15);
+		
+		LocalDate date2=LocalDate.of(2026,07,15);
+		
+		if(date1.compareTo(date2)>0)
+			System.out.println("Date1 is greatest");
+		else if(date1.compareTo(date2)<0)
+			System.out.println("Date2 is greatest");
+		else
+			System.out.println("Both are same");
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,401 @@
+Marker Interface
+=================
+Interface which does not have any constants and methods is called marker interface.
+
+In general, Empty interface is called marker interface.
+
+Using marker interface we will get some ability to do.
+
+We have following list of marker interface.
+
+ex:
+	Serializable 
+	Cloneable 
+	Remote and etc.
+
+ex:
+---
+class Employee implements java.io.Serializable 
+{
+	private int empId;
+	private String empName;
+	private double empSal;
+	
+	//setter and getter methods 
+}
+
+
+Abstract class
+==============
+Abstract class is a collection of zero or more abstract methods and concrete methods.
+
+A "abstract" keyword is applicable for methods and classes but not for variables.
+
+It is not possible to create object for abstract class.
+
+To write the logic for abstract methods we will use sub classes.
+
+By default every abstract method is a public and abstract.
+
+It contains only instance variables.
+
+If we know partial implementation then we need to use abstract class.
+
+syntax:
+-------
+	abstract class <class_name>
+	{
+		-
+		- // abstract methods 
+		- // concrete methods 
+		- // instance variables
+		-	
+	}
+
+
+
+ex:
+---
+abstract class Plan 
+{
+	//instance variable
+	protected double rate;
+	
+	//abstract method
+	public abstract void getRate();
+	
+	//concrete method 
+	public void calculateBillAmt(int units)
+	{
+		System.out.println("Total Units :"+units);
+		System.out.println("Total Bill :"+(rate*units));
+	}
+}
+class DomesticPlan extends Plan
+{
+	public void getRate()
+	{
+		rate=2.5d;	
+	}
+}
+class CommercialPlan extends Plan 
+{
+	public void getRate()
+	{
+		rate=5.0d;
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		DomesticPlan dp=new DomesticPlan();
+		dp.getRate();
+		dp.calculateBillAmt(250);
+		
+		CommercialPlan cp=new CommercialPlan();
+		cp.getRate();
+		cp.calculateBillAmt(250);
+	}
+}
+
+
+
+Abstraction Example
+===================
+abstract class Shape 
+{
+	//abstract method 
+	public abstract void draw();
+}
+class Rectangle extends Shape 
+{
+	public void draw()
+	{
+		System.out.println("I am drawing rectangle");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Rectangle r=new Rectangle();
+		r.draw();
+	}
+}
+
+
+Q) What is the difference between interface and Abstract class?
+
+interface					abstract class
+-----------					--------------
+To declare interface we will use interface	To declare abstract class we will use abstract 
+keyword.					keyword.
+
+It is a collection of abstract methods, 	It is a collection of abstract methods and concrete
+default methods and static methods.		methods.
+
+We can achieve multiple inheritance.		We can't achieve multiple inheritance.
+
+We can't declare blocks.			We can declare blocks.
+
+We can't declare constructors.			We can declare constructors.
+
+To write the implementation of abstract methods	To write the implementation of abstract methods
+we will use implementation class.		we will use sub class.
+
+If we know only specification then we need to 	If we know partial implementation then we need to
+use interface.					use abstract class.
+
+API 
+====
+API stands for Application Programing Interface.
+
+It is a base for the programmers to develop software applications.
+
+It is a collection of packages.
+
+We have three set of API's.
+
+1) Predefined API 
+--------------
+	Built-In API is called predefined API.
+	ex:
+		https://docs.oracle.com/javase/8/docs/api/	
+
+2) Userdefined API 
+-----------------
+	API which is developed by the user based on the requirement.
+
+
+3) Third Party API 
+-----------------
+	API which is given by third party vendor.
+	ex:
+		JAVAZOOM API 
+		iText API 
+		and etc.
+
+
+package
+========
+A package is a collection of classes, interfaces, enums and annotations.
+
+Here enum is a special class and annotation is a special interface.
+
+In general, a package is a collection of classes and interfaces.
+
+A package is also known as folder or a directory.
+
+In java, packages are divided into two types.
+
+1) Predefined packages 
+
+2) Userdefined packages 
+
+1) Predefined packages 
+----------------------
+Built-In packages are called predefined packages.
+ex:
+	java.lang
+	java.io
+	java.time
+	java.text
+	java.util
+	java.util.stream
+	java.sql
+	javax.servlet 
+	and etc.
+
+
+
+2) Userdefined packages 
+--------------------------
+Packages which are created by the user based on the application requirement are called userdefined packages.
+
+To declare userdefined package we need to use package keyword.
+
+It is highly recommanded to declare a package for every java program.
+
+syntax:
+	package  <package_name>;
+
+It is recommanded to declare a package name in the reverse order of url.
+
+ex:
+	package  com.google.www;
+
+
+ex:
+---
+package com.ihub.www;
+import java.util.Calendar;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Calendar c=Calendar.getInstance();
+		int h=c.get(Calendar.HOUR_OF_DAY);
+		
+		if(h<12)
+			System.out.println("Good Morning");
+		else if(h<=16)
+			System.out.println("Good Afternoon");
+		else if(h<=20)
+			System.out.println("Good Evening");
+		else 
+			System.out.println("Good Night");
+	}
+}
+
+We can compile above program by using below command.
+ex:
+		current directory
+		    |
+	javac  -d   .   Test.java
+		|
+	destination folder 
+
+
+We can execute above program by using below command.
+ex:
+	java   com.ihub.www.Test 
+			|
+		package name 
+
+
+Singleton class
+===============
+It is one of the design pattern that allows us to create only one instance.
+
+A class which also us to create only one object is called singleton class.
+
+If we call any method by using class name and that method returns same class object is called singleton class.
+ex:
+	Calendar c=Calendar.getInstance();
+	LocalDate date=LocalDate.now();
+	LocalTime time=LocalTime.now();
+
+To create a singleton class we required private constructor and static method.
+
+ex:
+---
+class Singleton 
+{
+	static Singleton  singleton=null;
+	
+	//private constructor
+	private Singleton()
+	{
+		
+	}
+	//static method
+	public static Singleton  getInstance()
+	{
+		if(singleton==null)
+		{
+			singleton=new Singleton();
+		}
+		return singleton;
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Singleton s1=Singleton.getInstance();
+		System.out.println(s1.hashCode());
+		
+		Singleton s2=Singleton.getInstance();
+		System.out.println(s2.hashCode());
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

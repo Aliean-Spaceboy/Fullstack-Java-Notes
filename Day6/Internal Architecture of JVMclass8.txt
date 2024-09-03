@@ -1,0 +1,83 @@
+Internal Architecture of JVM
+============================
+
+Diagram: class8.1
+
+Java application contains java code instructions. Once if we compiled java code instructions 
+convert to byte code instructions in .class file.
+
+JVM will invoke one module called classloader/sub system to load all the byte code instructions from .class file. The work of classloader is to check these byte code instructions are proper or not. If they are not proper then it will refuse the execution. If they are proper then it will allocate the memory.
+
+We have five types of memories in java.
+
+1) Method Area 
+----------------
+Method area contains code of a class, code of a variable and code of a method.
+
+2) Heap
+------
+Our object creations will store in heap area.
+
+Note:
+-----
+Whenever JVM loads byte code instructions from .class file , it automatically creates 
+method area and heap.
+
+3) Java Stack 
+------------
+Java methods will store in method area.
+To execute those methods we required some memory.That memory will be allocated in java stack.
+
+4) PC Register 
+------------
+It is a program counter register which is used to track the address of an instructions.
+
+5) Native Method Stack
+-----------------------
+Java methods execute in method area.
+Similary native methods execute in native method stack.
+To execute native methods we required a program called Native method interface.
+
+Execution engine
+-----------------
+Execution engine contains interpreter and JIT compiler.
+
+Whenever JVM loads byte code instructions from .class file , it uses interpreter and JIT compiler simultenously.
+
+Interpreter is used to execute our program line by line procedure.
+
+JIT compiler is used to increse the execution speed of our program.
+
+Finally , JVM converts byte code to machine code or native code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

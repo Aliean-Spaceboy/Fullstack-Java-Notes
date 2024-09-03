@@ -1,0 +1,489 @@
+Vector
+======
+The underlying data structure is resizable array or growable array.
+
+Duplicate objects are allowed.
+
+Insertion order is preserved.
+
+Hetrogeneous objects are allowed.
+
+Null insertion is possible.
+
+All methods present in Vector are synchronized.Hence we can achieve thread safety.
+
+Vector class contains following methods.
+
+ex:
+---
+	addElement()
+	removeElement()
+	firstElement()
+	lastElement()
+	removeAllElement() 
+	and etc.
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Vector<Integer> v=new Vector<Integer>();
+		System.out.println(v.capacity());
+		
+		for(int i=1;i<=10;i++)
+		{
+			v.addElement(i);
+		}
+		System.out.println(v);//[1,2,3,4,5,6,7,8,9,10]
+		
+		System.out.println(v.firstElement()); //1 
+		System.out.println(v.lastElement()); //10
+		
+		v.removeElement(5);
+		System.out.println(v);//[1,2,3,4,6,7,8,9,10]
+		
+		v.removeAllElements();
+		System.out.println(v);//[]
+	}
+}
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Vector<Integer> v=new Vector<Integer>();
+		System.out.println(v.capacity());
+		
+		for(int i=1;i<=10;i++)
+		{
+			v.add(i);
+		}
+		System.out.println(v);//[1,2,3,4,5,6,7,8,9,10]
+		
+		System.out.println(v.get(0)); //1 
+		System.out.println(v.get(v.size()-1)); //10
+		
+		v.remove(4);
+		System.out.println(v);//[1,2,3,4,6,7,8,9,10]
+		
+		v.clear();
+		System.out.println(v);//[]
+	}
+}
+
+
+Q) What is the difference between ArrayList and Vector?
+
+ArrayList					Vector
+-------------					-----------
+No method is synchronized.			Every method is synchronized.
+
+At a time multiple Threads are allow to operate At a time only one Thread is allow to operate 
+on ArrayList object and hence ArrayList object  on Vector object and hence Vector object is
+is not Thread safe.  				Thread safe.
+						
+
+Relatively performance is high because Threads  Relatively performance is low because Threads 
+are not required to wait.			are required to wait.
+						
+It is non legacy and introduced in 1.2v.	It is legacy and introduced in 1.0v.
+
+
+Stack
+=====
+It is a child class of Vector class.
+
+If we depends upon Last In First Out order then we need to use Stack.
+
+constructor
+-----------
+	Stack s =new Stack();
+
+Methods
+--------
+
+1) push(Object  o)
+--------------	
+	It is used to push the element in stack.
+
+2) pop()
+-------
+	It is used to pop the element from stack.
+
+3) peek()
+--------
+	It will return toppest element of stack.
+
+4) isEmpty()
+---------
+	It is used to check stack is empty or not.
+
+5) search(Object o)
+------------------
+	It will return offset value if element is found otherwise it will return -1.
+
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Stack<String> s=new Stack<String>();
+		s.push("A");
+		s.push("B");
+		s.push("C");
+		System.out.println(s); //[A,B,C]
+		
+		s.pop();
+		System.out.println(s); //[A,B]
+		
+		System.out.println(s.peek());//B
+		
+		System.out.println(s.search("Z")); //-1
+		
+		System.out.println(s.search("A")); //2
+		
+	}
+}
+
+Interview Questions
+===================
+Q) Write a java program to check given string is balanced or not?
+
+Input:
+	{[()]}
+
+Output:
+	It is a balanced string 
+
+ex:
+
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="{[()]}";
+		
+		if(isBalanced(str.toCharArray()))
+			System.out.println("It is a balanced string");
+		else
+			System.out.println("It is not a balanced string");
+	}
+	public static boolean isBalanced(char[] carr)
+	{
+		Stack<Character> stack=new Stack<Character>();
+		
+		//for each loop
+		for(char ch:carr)
+		{
+			if(ch=='{' || ch=='[' || ch=='(')
+				stack.push(ch);
+			else if(ch==')' || !stack.isEmpty() || stack.peek()=='(')
+				stack.pop();
+			else if(ch==']' || !stack.isEmpty() || stack.peek()=='[')
+				stack.pop();
+			else if(ch=='}' || !stack.isEmpty() || stack.peek()=='{')
+				stack.pop();
+			else
+				return false;
+		}
+		
+		return stack.isEmpty();
+	}
+}
+
+
+
+Q) Write a java program to display common string?
+
+Input:
+	javascript java  jdbc springboot html css 
+
+	python  javascript  css  pdbc django html 
+  
+Output:
+	javascript   html   css 
+
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str1="javascript java  jdbc springboot html css"; 
+		String str2="python javascript css pdbc django html"; 
+		
+		List<String> javaCourse=new ArrayList<String>();
+		List<String> pythonCourse=new ArrayList<String>();
+		
+		for(String s:str1.split(" "))
+		{
+			javaCourse.add(s);
+		}
+		for(String s:str2.split(" "))
+		{
+			pythonCourse.add(s);
+		}
+		
+		javaCourse.retainAll(pythonCourse);
+		
+		javaCourse.forEach(element -> System.out.print(element+" "));
+	}
+	
+}
+
+
+Q) Write a java program to display the string in sorting order?
+
+Input:
+	This  Apple  Is  Best  For  Eating
+
+output:
+	Apple  Best  Eating  For  Is  This  
+
+
+ex:
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="This Apple Is Best For Eating";
+		
+		List<String> list=new ArrayList<String>();
+		
+		for(String s:str.split(" "))
+		{
+			list.add(s);	
+		}
+		
+		Collections.sort(list);
+		
+		list.forEach(element -> System.out.print(element+" "));
+	}
+	
+}
+
+
+
+Set
+====
+It is a child interface of Collection interface.
+
+If we want to represent group of individual objects in a single entity where duplicate objects are not allowed and order is not preserved then we need to use Set interface.
+
+Diagram: class44.1
+
+
+HashSet
+---------
+The underlying datastructure is Hashtable.
+
+Duplicate objects are not allowed.
+
+Insertion order is not preserved because it will take hash code of an object.
+
+Hetrogeneous objects are allowed.
+
+Null insertion is possible.
+
+ex:
+---
+
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		HashSet hs=new HashSet();
+		hs.add("two");
+		hs.add("nine");
+		hs.add("one");
+		System.out.println(hs);//[nine,one,two]
+		
+		hs.add("one");
+		System.out.println(hs);//[nine,one,two]
+		
+		hs.add(10);
+		System.out.println(hs);//[nine, one, 10, two]
+		
+		hs.add(null);
+		System.out.println(hs);//[null, nine, one, 10, two]
+	}
+	
+}
+
+
+LinkedHashSet
+==============
+It is a child class of HashSet class.
+
+LinkedHashSet is exactly same as HashSet class with following differences.
+
+HashSet						LinkedHashSet
+---------------					---------------
+The underlying data structure is Hashtable.	The underlying data structure is Hashtable and 
+						LinkedList.
+
+Insertion order is not preserved.		Insertion order is preserved.
+
+Introduced in 1.2v.				Introduced in 1.4v.
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		LinkedHashSet lhs=new LinkedHashSet();
+		lhs.add("two");
+		lhs.add("nine");
+		lhs.add("one");
+		System.out.println(lhs);//[two,nine,one]
+		
+		lhs.add("one");
+		System.out.println(lhs);//[two,nine,one]
+		
+		lhs.add(10);
+		System.out.println(lhs);//[two,nine,one,10]
+		
+		lhs.add(null);
+		System.out.println(lhs);//[two,nine,one,10,null]
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,488 @@
+The main advantages of encapsulation are.
+
+1) It gives security.
+
+2) Enhancement becomes more easy.
+
+3) It provides flexibility to the enduser to use the system.
+
+4) It improves maintainability of an application.
+
+The main disadvantage of encapsulation is , it will increase length of our code and slow down the execution process.
+
+ex:
+---
+class Student
+{
+	private int studId;
+	private String studName;
+	private double studFee;
+	
+	//setter methods
+	public void setStudId(int studId)
+	{
+		this.studId=studId;
+	}
+	public void setStudName(String studName)
+	{
+		this.studName=studName;
+	}
+	public void setStudFee(double studFee)
+	{
+		this.studFee=studFee;
+	}
+	
+	//getter methods 
+	public  int  getStudId()
+	{
+		return studId;
+	}
+	public String getStudName()
+	{
+		return studName;
+	}
+	public double getStudFee()
+	{
+		return studFee;
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		Student s=new Student();
+		s.setStudId(101);
+		s.setStudName("Alan");
+		s.setStudFee(1000d);
+		
+		System.out.println("Student Id :"+s.getStudId());
+		System.out.println("Student Name :"+s.getStudName());
+		System.out.println("Student Fee :"+s.getStudFee());
+	}
+}
+
+Interview Questions
+===================
+
+Q) What is tightly encapsulated class?
+
+A class is said to be tightly encapsulated class if all the variables of that class must be private. Here we don't need to check , these variables contain setter and getter methods or not.
+
+ex:
+	class  A 
+	{
+		private int i=10;
+		private int j=20;
+	}
+
+
+ex:
+	class A 
+	{
+		int i=10;
+	}
+	class B extends A 
+	{
+		private int j=20;	
+	}
+
+	Note : If no parent is tightly encapsulated then no child is tightly encapsulated.
+
+
+
+Q) What is the difference between  Abstraction and Encapsulation ?
+
+Abstraction					Encapsulation 
+-------------					--------------
+Hiding internal implementation and highlighting	The process of encapsulating or grouping 
+the set of services is called abstraction.	variables and it's associate methods in a single 
+						entity is called encapsulation.
+
+It is used to hide the data.			It is used to protect the data.
+
+It is a process of gaining the information.	It is a process of containing the information.
+
+It solves the problems at design level.		It solves the problems at implementation level.
+
+
+
+Q) What is the difference between POJO and Java Bean class?
+
+POJO						Java Bean 
+-------------					-------------
+It can't be serialized.				It can be serialized.
+
+Fields can have any visibility.			Fields can have only private visibility.
+
+It may or may not have 0-arg constructor.	It must have 0-arg constructor.
+
+It does not extend any other class.		It can extends.
+
+It does not implement any other interface.	It can implements
+
+It does not use any outside annotations.	It uses outside annotations.
+
+
+
+Is-A relationship
+=================
+Is-A relationship is also known as inheritance.
+
+The main objective of Is-A relationship is to provide reusability.
+
+Using extends keyword we can implements Is-A relationship.
+
+ex:
+---
+class Parent 
+{
+	public void m1()
+	{
+		System.out.println("M1-Method");
+	} 
+}
+class Child  extends Parent 
+{
+	public void m2()
+	{
+		System.out.println("M2-Method");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Parent p=new Parent();
+		p.m1();
+		
+		Child c=new Child();
+		c.m1();
+		c.m2();
+		
+		Parent p1=new Child();
+		p1.m1();
+		
+		//Child c1=new Parent(); // C.T.E 
+		
+		
+	}
+}
+
+conclusion
+----------
+Whatever our parent having properties bydefault it comes to child. But whatever our child having properties they never goes back to parent.
+
+A parent reference can hold child object but a child reference can't hold parent object.
+
+
+Inheritance
+===========
+Inheritance is a mechanism where we will derive a class in the presence of existing class.
+
+Inheritance is a mechanism where one class will inherit the properties of another class.
+
+The main objective of inheritance is to achieve reusability.
+
+Using "extends" keyword we can implements inheritance.
+
+Diagram: class31.1
+
+We have five types of inheritance.
+
+1) Single level inheritance 
+
+2) Multi level inheritance 
+
+3) Multiple inheritance 
+
+4) Hierarchical inheritance 
+
+5) Hybrid inheritance 
+
+1) Single level inheritance 
+----------------------------
+If we derived a class in the presence of one base class is called single level inheritance.
+
+Diagram:
+		A (parent / super / Base classs)
+		|
+		|
+		|
+		B (child / sub  / Derived class)
+
+ex:
+---
+class A 
+{
+	public void methodOne()
+	{
+		System.out.println("MethodOne");
+	}
+}
+class B extends A 
+{
+	public void methodTwo()
+	{
+		System.out.println("MethodTwo");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		A a=new A();
+		a.methodOne();
+		
+		B b=new B();
+		b.methodOne();
+		b.methodTwo();
+		
+	}
+}
+
+ex:
+---
+class A 
+{
+	int i=10;
+}
+class B extends A 
+{
+	int j=20;
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		A a =new A();
+		System.out.println(a.i); // 10
+		
+		B b=new B();
+		System.out.println(b.i+" "+b.j);//10   20
+		
+	}
+}
+
+2) Multilevel inheritance
+---------------------------
+If we derived a class in the presence of one base class and that class is derived from another base class is called multi level inheritance.
+
+ex:
+class A 
+{
+	public void methodOne()
+	{
+		System.out.println("methodone");
+	}
+}
+class B extends A 
+{
+	public void methodTwo()
+	{
+		System.out.println("methodtwo");
+	}
+}
+class C extends B 
+{
+	public void methodThree()
+	{
+		System.out.println("methodthree");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		A a=new A();
+		a.methodOne();
+		
+		B b=new B();
+		b.methodOne();
+		b.methodTwo();
+		
+		C c=new C();
+		c.methodOne();
+		c.methodTwo();
+		c.methodThree();
+		
+	}
+}
+
+3) Multiple inheritance
+-----------------------
+In java, A class can't extends more then one class simultenously because java does not supports multiple inheritance.
+ex:
+	class A 
+	{	
+	}
+	class B 
+	{	
+	}
+	class C extends A,B --> invalid 
+	{
+	}
+		
+In java, an interface can extends more then one interface so we can achieve multiple inheritance 
+concept through interfaces.
+
+ex:
+	interface A 
+	{	
+	}
+	interface B 
+	{	
+	}
+	interface C extends A,B --> valid 
+	{
+	}
+
+If our class does not extends any other class then our class is a direct child class of Object class.
+
+ex:			diag:
+	class A 		Object
+	{			|
+				|
+	}			A 
+
+If our class extends any other class then our class is a indirect child class of Object class.
+
+ex:				diag:
+	class A 			Object 
+	{				|
+	}				|
+	class B extends A 		A   //multi level inheritance 
+	{				|
+	}				|
+					B 
+
+Java does not supports cyclic inheritance.
+ex:
+	class A extends B
+	{
+	}
+	class B extends A 
+	{
+	}
+
+
+Q) Why java does not support multiple inheritance?
+
+There may chance of raising ambiguity problem that's why java does not support multiple inheritance.
+ex:
+		p1.m1()				p2.m1()
+		|------------------------------------|
+				|
+				c.m1()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

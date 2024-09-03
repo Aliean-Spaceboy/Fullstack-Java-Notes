@@ -1,0 +1,147 @@
+Institute Name 	:	IHUB TALENT MANGEMENT / QUALITY THOUGHT 
+
+Websites	:	www.ihubtalent.com / www.qualitythought.in 
+
+Location	:	Ameerpet , Hyderabad. 
+
+Trainer 	:	Niyaz Sir 
+
+Experience 	: 	14 years of experience in development and training.
+
+Course		:	Full Stack Java Development Course + AWS 
+
+Duration	:	4 Months 
+
+Mode		:	Online/Offline 
+
+Project		:	Employee Management System (ReactJs+SpringBoot+MYSQL)
+
+Batch No	:	IH-JAVA-035
+
+Whatsapp Group	:	IH-JAVA-035
+
+Placement	:	Dedicated placement team 
+
+Recorded videos	:	Free 
+
+			Full Stack Java Development Course
+				(Full Stack Developer)
+					|
+	-----------------------------------------------------------------
+	|								|
+Frontend Technologies						BackEnd Technologies 
+(FrontEnd Developer)						(BackEnd Developer)
+
+> HTML5								> Core Java
+> CSS3								> Advanced Java
+> JavaScript								> JDBC
+> Bootstrap5								> Servlets
+> ReactJS 								> JSP 
+								> Oracle DB 
+									> SQL
+									> PL/SQL 
+								> Frameworks
+									> Spring Boot
+									> Microservice	
+	
+
+Programming language
+=====================
+Diagram: class1.1
+
+A language which is used to communicate between user and computer is called programming language.
+
+Programming language acts like a mediator or interface between user and computer.
+
+
+Java
+=====
+Object oriented programming language.
+Platform independent programming language.
+Case sensitive programming language.
+Strongly typed checking language.
+High level language.
+Open Source Programming language.
+
+C
+===
+Procedure oriented programming language.
+Platform dependent programming language.
+Case sensitive programming language.
+Loosely typed checking language.
+Middle level language (LOW + HIGH).
+
+
+Note:
+-----
+Java Software --> JDK software (Java Development Kit)
+
+Sun Micro System --> Oracle Corporation 
+
+James Gosling --> 1995.
+
+
+Interview Question
+===================
+Q) What is Java?
+
+Java is a object oriented, platform independent , case sensitive, strongly typed checking, high level, open source programming language developed by James Gosling in 
+the year of 1995.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

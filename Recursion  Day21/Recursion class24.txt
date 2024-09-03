@@ -1,0 +1,409 @@
+iii) With returntype with No argument method
+============================================
+A returntype is completely depends upon output datatype.
+
+
+Q) Write a java program to perform sum of two numbers with returntype with no argument method?
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//caller method
+		int k=sum();
+		System.out.println("sum of two numbers is ="+k);
+	}
+	//callie method 
+	public static int sum()
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the first number :");
+		int a=sc.nextInt();
+		
+		System.out.println("Enter the second number :");
+		int b=sc.nextInt();
+		
+		//logic
+		int c=a+b;
+
+		return c;
+	}
+}
+
+
+Q) Write a java program to perform area of a circle using with returntype with no argument method?
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//caller method
+		float k=circle();
+		System.out.println("Area of a circle is ="+k);
+	}
+	//callie method
+	public static float circle()
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the radius :");
+		int r=sc.nextInt();
+
+		//logic
+		float area=3.14f*r*r;
+
+		return area;
+	}
+}
+
+4) With returntype with argument method
+=======================================
+
+Q) Write a java program to perform sum of two numbers using with returntype with argument method?
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the first number :");
+		int a=sc.nextInt();
+		System.out.println("Enter the second number :");
+		int b=sc.nextInt();
+
+		//caller method
+		System.out.println("sum of two numbers is ="+sum(a,b));
+	}
+	//callie method
+	public static int sum(int a,int b)
+	{
+		int c=a+b;
+		return c;
+	}
+}
+
+
+Q) Write a java program to check given number is even or odd?
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+
+		//caller method
+		System.out.println(find(n));
+	}
+	//callie method
+	public static String find(int n)
+	{
+		if(n%2==0)
+			return "It is even number";
+		else
+			return "It is odd number";
+	}
+}
+
+
+approach2
+----------
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+
+		//caller method
+		if(find(n))
+			System.out.println("It is even number");
+		else
+			System.out.println("It is odd number");
+	}
+	//callie method
+	public static boolean find(int n)
+	{
+		if(n%2==0)
+			return true;
+		else
+			return false;
+	}
+}
+
+
+Assignment
+==========
+Q) Write a java program to check given number is palindrome or not?
+
+
+
+Recursion
+==========
+A method which call itself for many number of times is called recursion.
+
+Recursion is similar to loopings.
+
+Whenever we use recursion then we should not use loops.
+
+
+Q) Write a java program to display 10 natural numbers without using loops?
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//caller method
+		display(1);
+	}
+	//callie method
+	public static void display(int i)
+	{
+		if(i<=10)
+		{
+			System.out.print(i+" ");
+			display(i+1);
+		}
+	}
+}
+
+
+Q) Write a java program to perform sum of two numbers without using arithmetic operator?
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the first number :");
+		int a=sc.nextInt();
+
+		System.out.println("Enter the second number :");
+		int b=sc.nextInt();
+
+		//caller method 
+		System.out.println("sum of two numbers is ="+sum(a,b));
+	}
+	//callie method
+	public static int sum(int a,int b)
+	{
+		if(a==0)
+			return b;
+
+		return sum(--a,++b);
+	}
+}
+
+
+Q) Write a java program to display Nth-Element of fibonacci series?
+
+Fibonacci series : 0 1 1 2 3 5 8 
+
+Input:
+	5
+
+Output:
+	3
+
+ex:
+---
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+
+		//caller method
+		System.out.println(fib(n));
+	}
+	//callie method
+	public static int fib(int n)
+	{
+		if(n==0 || n==1)
+			return 0;
+		if(n==2)
+			return 1;
+
+		return fib(n-1)+fib(n-2);
+	}
+}
+
+
+Q) Write a java program to find out factorial of a given number using recursion?
+
+input:
+	5
+
+output:
+	120 
+
+ex:
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+
+		//caller method
+		System.out.println(factorial(n));
+	}
+	//callie method
+	public static int factorial(int n)
+	{
+		if(n<0)
+			return -1;
+		if(n==0)
+			return 1;
+
+		return n*factorial(n-1);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,415 @@
+Q) Write a java program to delete a given string?
+
+input:
+	str = This  is  java  class
+	remove = is 
+output:
+	Th java class
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="This is java class";
+		String remove="is";
+		
+		str=str.replaceAll(remove,"");
+		
+		System.out.println(str);
+	}
+}
+
+
+Q) Write a java program to check given string is a Anagram or not?
+
+Input:
+	silent
+	listen 
+
+Output:
+	It is a Anagram string 
+
+
+import java.util.Arrays;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str1="silent";    
+		String str2="listen";   
+		
+		//convert string to char array 
+		char[] carr1=str1.toCharArray();  
+		char[] carr2=str2.toCharArray();
+		
+		Arrays.sort(carr1);// e i l n s t
+		Arrays.sort(carr2);// e i l n s t
+		
+		boolean flag=true;
+		for(int i=0;i<carr1.length && i<carr2.length;i++)
+		{
+			if(carr1[i]!=carr2[i])
+			{
+				flag=false;
+				break;
+			}
+		}
+		if(flag==true)
+			System.out.println("It is a Anagram string");
+		else
+			System.out.println("It is not a Anagram string");
+	}
+}
+
+
+Q) Write a java program to display the string in a given format?
+
+input:
+	A1B2C3D4
+
+output:
+	ABBCCCDDDD
+
+ex:
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="A1B2C3D4";
+		
+		for(int i=0;i<str.length();i++)
+		{
+			if(Character.isAlphabetic(str.charAt(i)))
+			{
+				System.out.print(str.charAt(i));
+			}
+			else
+			{
+				int k=Character.getNumericValue(str.charAt(i));
+				for(int j=1;j<k;j++)
+				{
+					System.out.print(str.charAt(i-1));	
+				}
+			}
+		}
+	}
+}
+
+
+Q) Write a java program to display permutation of given string?
+
+input:
+	ABC 
+
+output:
+	ABC
+	ACB
+	BAC
+	BCA
+	CBA
+	CAB 
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="ABC";
+		
+		//caller method
+		permutation(str.toCharArray(),0);
+	}
+	//callie method 
+	public static  void permutation(char[] arr,int fi)
+	{
+		if(fi==arr.length-1)
+		{
+			System.out.println(arr);
+			return;
+		}
+		
+		for(int i=fi;i<arr.length;i++)
+		{
+			swap(arr,fi,i);
+			permutation(arr,fi+1);
+			swap(arr,fi,i);
+		}
+	}
+	//callie method
+	public static void swap(char[] arr,int fi,int i)
+	{
+		char temp=arr[fi];
+		arr[fi]=arr[i];
+		arr[i]=temp;
+	}
+}
+
+
+Q) Write a java program to display vowels from given string?
+
+input:
+	Umbrella
+
+output:
+	u e a 
+
+ex:
+	
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="Umbrella";
+		str=str.toLowerCase();
+		
+		for(int i=0;i<str.length();i++)
+		{
+			if(str.charAt(i)=='a' || str.charAt(i)=='e' ||str.charAt(i)=='i' || str.charAt(i)=='o' || str.charAt(i)=='u')
+			{
+				System.out.print(str.charAt(i)+" ");
+			}
+		}
+	}
+}
+
+Q) Write a java program to count most repeating character in a given string?
+
+input:
+	ihubtalentinstitute
+
+output:
+	t is repeating for 5 times 
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="ihubtalentinstitute";
+		char alphabet=0;
+		int maxCount=0;
+		
+		for(int i=0;i<str.length();i++)
+		{
+			int cnt=0;
+			
+			for(int j=0;j<str.length();j++)
+			{
+				if(str.charAt(i)==str.charAt(j))
+				{
+					cnt++;
+				}
+			}
+			if(cnt>maxCount)
+			{
+				maxCount=cnt;
+				alphabet=str.charAt(i);
+			}
+		}
+		System.out.println(alphabet+" is repeating for "+maxCount+" times");
+	}
+}
+
+
+Assignment
+=========
+Q) Write a java program to display palindrome strings?
+
+input:
+	This is racar of madam 
+
+output:
+	racar madam 
+
+
+
+StringBuffer
+=============
+If our content change frequently then it is never recommanded to use String object because for every change a new object will be created.
+
+To overcome this limitation Sun Micro System introduced StringBuffer.
+
+In StringBuffer all the required changes will be done in a single object.
+
+constructor
+------------
+1) StringBuffer sb=new StringBuffer()
+-------------------------------------
+It will create empty StringBuffer object with default initial capacity of 16.
+
+If capacity reaches to maximum capacity then new capacity will be created with below formulea.
+
+ex:
+	capacity = current_capacity+1*2;
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb=new StringBuffer();
+		System.out.println(sb.capacity());//16
+		
+		sb.append("abcdefghijklmnop");
+		System.out.println(sb.capacity());//16
+		
+		sb.append("qr");
+		System.out.println(sb.capacity());//34
+	}
+}
+
+2) StringBuffer sb=new StringBuffer(int initialcapacity)
+--------------------------------------------------------
+It will create StringBuffer object with specified initial capacity.
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb=new StringBuffer(19);
+		System.out.println(sb.capacity());//19
+	}
+}
+
+
+
+3) StringBuffer sb=new StringBuffer(String s)
+----------------------------------------------
+It will create StringBuffer object which is equivalent to String.
+
+Here capacity will be created with below formulea.
+
+ex:
+	capacity = s.length()+16;
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb=new StringBuffer("bhaskar");
+		System.out.println(sb.capacity());//7+16=23
+
+	}
+}
+
+
+Q) Write a java program to display reverse of a string?
+
+input:
+	hello
+
+output:
+	olleh 
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="hello";
+		
+		StringBuffer sb=new StringBuffer(str);
+		
+		String rev=sb.reverse().toString();
+		
+		System.out.println(rev);
+	}
+}
+
+
+Q) Write a java program to check string is palindrome or not?
+
+input:
+	racar 
+
+output:
+	It is a palindrome string 
+
+ex:
+--
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="racar";
+		
+		StringBuffer sb=new StringBuffer(str);
+		
+		String rev=sb.reverse().toString();
+		
+		if(str.equals(rev))
+			System.out.println("It is a palindrome string");
+		else
+			System.out.println("It is not a palindrome string");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

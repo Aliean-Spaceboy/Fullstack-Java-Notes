@@ -1,0 +1,339 @@
+Q) Write a java program to insert given element on a given index?
+
+input:
+	arr =  5 8 2 9 4 6 
+
+	element = 10
+
+	index  = 3
+
+Output:
+	5 8 2 10 9 4 6 
+
+ex:
+---
+import java.util.Arrays;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[] arr ={5,8,2,9,4,6}; 
+		int element = 10;
+		int index  = 3;
+		
+		arr=Arrays.copyOf(arr,arr.length+1);
+
+		//reading reverse
+		for(int i=arr.length-1;i>=index;i--)
+		{
+			arr[i]=arr[i-1];
+		}
+		arr[index]=element;
+		
+		//display elements
+		for(int i:arr)
+		{
+			System.out.print(i+" ");
+		}
+	}
+}
+
+Q) Write a java program to find out missing element from given array?
+
+input:
+	6 1 3 5 2 
+
+output:
+	 4 
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[] arr={6,1,3,5,2};
+		
+		int sum=arr.length+1;
+		
+		int sum_of_arr_ele=(sum *(sum + 1)/2;
+		
+		//for each loop
+		for(int i:arr)
+		{
+			sum_of_arr_ele=sum_of_arr_ele-i;
+		}
+		
+		System.out.println(sum_of_arr_ele);
+	}
+}
+
+Q)Write a java program to find out leader elements from given array?
+
+Input:
+	5  8  34  6  28  17  
+
+Output:
+	17  28  34
+
+ex:
+ 
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[] arr={5,8,34,6,28,17};
+		
+		int max=arr[arr.length-1];
+		
+		System.out.print(max+" ");
+		
+		for(int i=arr.length-2;i>=0;i--)
+		{
+			if(arr[i]>max)
+			{
+				max=arr[i];
+				System.out.print(max+" ");
+			}
+		}
+	}
+}
+
+Q) Write a java program to display pair of elements equals to given sum?
+
+input:
+	arr = 3 6 7 5 4 2 1  
+
+	sum = 10
+
+output:
+	3  7 
+	6  4 
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[] arr ={3,6,7,5,4,2,1};  
+		int sum = 10;
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=i+1;j<arr.length;j++)
+			{
+				if(arr[i]+arr[j]==sum)
+				{
+					System.out.println(arr[i]+" "+arr[j]);
+				}
+			}
+			
+		}
+
+	}
+}
+
+
+Q) Write a java program to display triple of elements equals to given sum?
+
+input:
+	arr = 3 6 7 5 4 2 1  
+
+	sum = 10
+
+output:
+	3 6 1
+	3 5 2
+	7 2 1
+	5 4 1
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[] arr ={3,6,7,5,4,2,1};  
+		int sum = 10;
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=i+1;j<arr.length;j++)
+			{
+				for(int k=j+1;k<arr.length;k++)
+				{
+					if(arr[i]+arr[j]+arr[k]==sum)
+					{
+						System.out.println(arr[i]+" "+arr[j]+" "+arr[k]);
+					}
+				}
+			}
+			
+		}
+
+	}
+}
+
+Q) 
+
+Write a java program to identify and print all elements in an array that are greater
+than both their immediate predecessors and successors, considering the first and
+last elements as having only one neighbor?
+
+Input:
+	1 3 20 4 75 0 90
+Output:
+	20 75 90
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[] arr={1,3,20,4,75,0,90};
+		
+		//first element
+		if(arr[0]>arr[1])
+		{
+			System.out.print(arr[0]+" ");
+		}
+		
+		//middle elements
+		for(int i=1;i<=arr.length-2;i++)
+		{
+			if(arr[i]>arr[i-1] && arr[i]>arr[i+1])
+			{
+				System.out.print(arr[i]+" ");
+			}
+		}
+		
+		//last element
+		if(arr[arr.length-1]>arr[arr.length-2])
+		{
+			System.out.print(arr[arr.length-1]+" ");
+		}
+
+	}
+}
+
+
+Q)
+
+Write a java program to determine the smallest number of coins needed to total
+86 rupees. Use the denominations provided in the array {1,2,5,10}?
+
+Output:
+	1 coin(s) of 1 rupee(s)
+	1 coin(s) of 5 rupee(s)
+	8 coin(s) of 10 rupee(s)
+
+ex:
+---
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[] denominations={1,2,5,10};
+		int amount=86;
+		
+		
+		//caller method 
+		int[] result=minimumCoins(denominations,amount);
+		
+		for(int i=0;i<result.length;i++)
+		{
+			if(result[i]>0)
+			{
+			System.out.println(result[i]+" coin(s) of "+ denominations[i]+" rupee(s)");
+			}
+		}
+	}
+	//callie method 
+	public static int[] minimumCoins(int[] denominations,int amount)
+	{
+		int[] coinsCount=new int[denominations.length];
+			
+		//reading reverse
+		for(int i=denominations.length-1;i>=0;i--)
+		{
+			coinsCount[i]=amount/denominations[i];
+			amount=amount%denominations[i];
+		}
+		
+		return coinsCount;
+	}
+}
+
+
+
+
+Q) Write a java program to display high prime element in a given array?
+
+input:
+	6 5 13 29 7 17  2
+
+output:
+	29
+ 
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[] arr={6,5,13,29,7,17,2};
+		
+		int largeElement=Integer.MIN_VALUE;
+		
+		for(int n:arr)
+		{
+			boolean flag=true;
+			for(int i=2;i<=n/2;i++)
+			{
+				if(n%i==0)
+				{
+					flag=false;
+					break;
+				}
+			}
+			if(flag==true)
+			{
+				if(n>largeElement)	
+				{
+					largeElement=n;
+				}
+			}
+		}
+		System.out.println(largeElement);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

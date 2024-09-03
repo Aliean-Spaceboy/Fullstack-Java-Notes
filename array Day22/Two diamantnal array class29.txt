@@ -1,0 +1,507 @@
+Double Dimensional Array
+========================
+Double dimensional array is a combination of rows and columns.
+
+Double dimensional array is implemented based on array or arrays approach but not matrix form.
+
+Double dimensional array is used to develop business oriented application, gaming applicaitons, matrix type of applications and etc.
+
+The main objective of double dimensional array is memory utilization.
+
+We can declare double dimensional array as follow.
+
+syntax:
+	datatype[][] arr_name=new datatype[rows][cols];
+
+ex:
+	int[][] arr=new int[3][3];
+
+	Here we can store 9 elements.
+
+
+
+Q) Write a java program to display array elements in matrix form?
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the rows :");
+		int rows=sc.nextInt();
+		
+		System.out.println("Enter the cols :");
+		int cols=sc.nextInt();
+		
+		int[][] arr=new int[rows][cols];
+		
+		//inserting the elements 
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				System.out.println("Enter the element :");
+				arr[i][j]=sc.nextInt();
+			}
+		}
+		
+		//display elements
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				System.out.print(arr[i][j]+" ");
+			}
+			//new line
+			System.out.println();
+		}
+		
+	}
+}
+
+
+Q) Write a java program to display square of a matrix?
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[][] arr={
+						{1,2,3},
+						{4,5,6},
+						{7,8,9}			
+					};		
+		
+		//display elements
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[0].length;j++)
+			{
+				System.out.print(arr[i][j] * arr[i][j]+" ");
+			}
+			//new line
+			System.out.println();
+		}
+		
+	}
+}
+
+
+Q) Write a java program to find out sum of diagonal elements?
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[][] arr={
+						{1,2,3},
+						{4,5,6},
+						{7,8,9}			
+					};		
+		
+		//display elements
+		int sum=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[0].length;j++)
+			{
+				if(i==j)
+				{
+					sum+=arr[i][j];	
+				}
+			}
+		}
+		System.out.println("sum of diagonal elements is ="+sum);
+	}
+}
+
+
+Q) Write a java program to find out sum of upper triangle elements?
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[][] arr={
+						{1,2,3},
+						{4,5,6},
+						{7,8,9}			
+					};		
+		
+		//display elements
+		int sum=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[0].length;j++)
+			{
+				if(i<j)
+				{
+					sum+=arr[i][j];	
+				}
+			}
+		}
+		System.out.println("sum of upper triangle elements is ="+sum);
+	}
+}
+
+
+Q) Write a java program to find out sum of lower triangle elements?
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[][] arr={
+						{1,2,3},
+						{4,5,6},
+						{7,8,9}			
+					};		
+		
+		//display elements
+		int sum=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[0].length;j++)
+			{
+				if(i>j)
+				{
+					sum+=arr[i][j];	
+				}
+			}
+		}
+		System.out.println("sum of lower triangle elements is ="+sum);
+	}
+}
+
+
+Q) Write  a java program to display array elements in spiral form ?
+
+Input:
+	1 2 3 
+	4 5 6 
+	7 8 9 
+
+Output:
+	1 2 3 6 9 8 7 4 5 
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[][] arr={
+						{1,2,3},
+						{4,5,6},
+						{7,8,9}			
+					};		
+		
+		int rows=arr.length;
+		int cols=arr[0].length;
+		
+		int top=0;
+		int bottom=rows-1;
+		int left=0;
+		int right=cols-1;
+		
+		while(true)
+		{
+			if(left>right)
+			{
+				break;
+			}
+			for(int i=left;i<=right;i++)
+			{
+				System.out.print(arr[top][i]+" ");
+			}
+			top++;
+			
+			if(top>bottom)
+			{
+				break;
+			}
+			for(int i=top;i<=bottom;i++)
+			{
+				System.out.print(arr[i][right]+" ");
+			}
+			right--;
+			
+			if(left>right)
+			{
+				break;
+			}
+			for(int i=right;i>=left;i--)
+			{
+				System.out.print(arr[bottom][i]+" ");
+			}
+			bottom--;
+			
+			if(top>bottom)
+			{
+				break;
+			}
+			for(int i=bottom;i>=top;i--)
+			{
+				System.out.print(arr[i][left]+" ");
+			}
+			left++;
+			
+		}
+		
+	}
+}
+
+
+Q) What is Anonymous array?
+
+Sometimes we will declare an array without name such type of nameless array is called anonymous array.
+
+The main objective of anonymous array is just for instance use.
+
+We can declare anonymous array as follow.
+
+syntax:
+-------
+	new int[]{10,20,30};
+	new int[][]{{1,2,3},{4,5,6}};
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{	
+		//caller method
+		sum(new int[]{10,20,30});
+	}
+	//callie method
+	public static void sum(int[] arr)
+	{
+		int sum=0;
+		
+		for(int i:arr)
+		{
+			sum+=i;	
+		}
+		
+		System.out.println(sum);
+	}
+}
+
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{	
+		//caller method
+		System.out.println(sum(new int[]{10,20,30}));
+	}
+	//callie method
+	public static int sum(int[] arr)
+	{
+		int sum=0;
+		
+		for(int i:arr)
+		{
+			sum+=i;	
+		}
+		
+		return sum;
+	}
+}
+
+
+OOPS
+=====
+OOPS stands for object oriented programming system /structure.
+
+It is used to deal with real world entities with the help of programming language.
+
+A technology which provides very good environment to represent our data in the form of objects is called object oriented technology.
+
+We have following list of object oriented programming features.
+
+> class 
+
+> object 
+
+> Abstraction 
+
+> Encapsulation 
+
+> Inheritance 
+
+> Polymorphism
+
+class 
+======
+It is a blue print of an object.
+
+It is a collection of variables ,methods and objects.
+
+It is a logical entity.
+
+We can declare a class as follow.
+
+syntax:
+-------
+	optional 
+	|
+	Modifier   class    class_name   <extends>  Parent_classname 
+					 <implements>  Interface_name
+	{
+		-
+		-//variables 
+		-//methods
+		-//objects
+		-
+	}
+
+A class will accept following modifiers.
+ex:
+	default
+	public 
+	final
+	abstract 
+
+Realtime example
+------------
+To construct a building we required a design. That design is known as blue print i.e class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

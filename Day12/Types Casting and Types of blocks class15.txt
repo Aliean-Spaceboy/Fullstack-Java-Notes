@@ -1,0 +1,656 @@
+Types Casting
+=============
+The process of converting from one datatype to another datatype is called typecasting.
+
+In java, typecasting can performed in two ways.
+
+1) Implicit typecasting 
+
+2) Explicit typecasting 
+
+1) Implicit typecasting 
+------------------------
+If we want to store small value into a bigger variable then we need to use implicit typecasting.
+
+A compiler is responsible to perform implicit typecasting.
+
+There is no possibility to loss the information.
+
+It is also known as Widening or Upcasting.
+
+We can perform explicit typecasting as follow.
+
+ex:
+	byte 	-->	short
+				-->
+					int	-->	long	-->	float	-->	double
+				-->
+			char 
+
+ex:
+----
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		byte b=10;
+
+		int i=b;
+
+		System.out.println(i); //10
+	}
+}
+
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		char ch='a';
+
+		float f=ch;
+
+		System.out.println(f); // 97.0
+	}
+}
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+
+		double d=i;
+
+		System.out.println(d); // 10.0
+	}
+}
+
+2) Explicit typecasting 
+-----------------------
+If want to store bigger value into a smaller variable then we need to use explicit typecasting.
+
+A programmer is responsible to perform explicit typecasting.
+
+There is a possibility to loss the information.
+
+It is also known as Narrowing or Downcasting.
+
+We can perform explicit typecasting as follow.
+
+ex:
+	byte 	<--	short
+				<--
+					int	<--	long	<--	float	<--	double
+				<--
+			char 
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		float f=10.56f;
+
+		int i=(int)f;
+
+		System.out.println(i); // 10
+	}
+}
+
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int i=65;
+
+		char ch=(char)i;
+
+		System.out.println(ch); //A 
+	}
+}
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int i=130;
+
+		byte b=(byte)i;
+
+		System.out.println(b);// -126
+	}
+}
+
+Types of blocks
+===============
+A block is a set of statements which is enclosed in a curly braces i.e {}.
+
+We have three types of blocks in java.
+
+1) Instance block 
+
+2) Static block 
+
+3) Local block 
+
+1) Instance block 
+-----------------
+Instance block is used to initialize instance variables.
+
+Instance block must and should declare immediately after the class but not inside methods and constructors.
+
+Instance block will execute when we create an object.
+
+We can declare instance block as follow.
+
+syntax:
+	//instance block
+	{
+		-
+		- //set of statements
+		-
+	}
+
+ex:
+---
+class Test  
+{
+	//instance block
+	{
+		System.out.println("instance-block");
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("main-method");
+	}
+}
+o/p:
+	main-method
+
+ex:
+---
+class Test  
+{
+	//instance block
+	{
+		System.out.println("instance-block");
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("main-method");
+		Test t=new Test();
+	}
+}
+o/p:
+	main-method
+	instance-block
+
+ex:
+---
+class Test  
+{
+	//instance block
+	{
+		System.out.println("instance-block");
+	}
+	public static void main(String[] args) 
+	{
+		Test t1=new Test();
+		System.out.println("main-method");
+		Test t2=new Test();
+	}
+}
+
+o/p:
+	instance-block 
+	main-method
+	instance-block
+
+
+ex:
+---
+class Test  
+{
+	//instance variable 
+	int i;
+
+	//instance block 
+	{
+		i=100;
+	}
+
+	public static void main(String[] args) 
+	{
+		Test t=new Test();
+		System.out.println(t.i);//100
+	}
+}
+
+2) Static block
+---------------
+A static block is used to initialize the static variables.
+
+A static block must and should declare immediately after the class but not inside methods and constructors.
+
+A static block will execute at the time of classloading.
+
+We can declare static block as follow.
+
+syntax:
+	//static block
+	static
+	{
+		-
+		- //set of statements 
+		-
+	}
+
+ex:
+---
+class Test  
+{
+	//static block
+	static
+	{
+		System.out.println("static-block");
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main-method");
+	}
+}
+
+o/p:
+	static-block
+	main-method 
+
+
+ex:
+---
+class Test  
+{
+	//instance block 
+	{
+		System.out.println("instance-block");
+	}
+
+	//static block
+	static
+	{
+		System.out.println("static-block");
+	}
+
+	public static void main(String[] args) 
+	{
+		Test t=new Test();
+		System.out.println("main-method");
+	}
+}
+o/p:
+	static-block
+	instance-block
+	main-method 
+
+
+ex:
+---
+class Test  
+{
+	//static variable
+	static int i;
+
+	//static block
+	static
+	{
+		i=200;
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i); //200
+	}
+}
+
+
+3) Local block
+---------------
+A local block is used to initialize the local variables.
+
+A local block must and should declare inside the methods and constructors.
+
+A local block will execute just like normal statement.
+
+We can declare local block as follow.
+
+syntax:
+-----
+	//local block
+	{
+		-
+		- //set of statements 
+		-
+	}
+
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("stmt1");
+		//local block 
+		{
+			System.out.println("local-block");
+		}
+		System.out.println("stmt2");
+	}
+}
+o/p:
+	stmt1
+	local-block
+	stmt2
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//local variable
+		int i;
+
+		//local block
+		{
+			i=300;
+		}
+
+		System.out.println(i); //300
+	}
+}
+
+
+Interview Questions
+===================
+
+Q) Can we execute java program without main method ?
+
+Yes, Till 7 version it is possible to execute java program without main method using static block.
+But from 8 version onwards it is not possible to execute java program without main method.
+
+ex:
+---
+class Test  
+{
+	static
+	{
+		System.out.println("Hello World");
+		System.exit(0);
+	}
+}
+
+
+
+Q) What is Literal?
+
+A value which is assigned to a variable is called literal.
+
+A value which is not change during the program execution is called literal.
+
+ex:
+	int   i = 10;
+	|     |    |____ Value of a variable / Literal 
+	|     |_________ Variable name / Identifier 
+	|_______________ Datatype / Keyword
+
+
+
+
+Q) What is Math class in java?
+
+A Math class present in java.lang package.
+
+A Math class is used to perform mathematical calculations/operations.
+
+We have following methods in Math class.
+
+ex:
+	cmd> javap   java.lang.Math 
+
+	 public static double sqrt(double);
+  	 public static double ceil(double);
+  	 public static double floor(double);
+         public static double pow(double, double);
+         public static long round(double);
+  	 public static double random();
+	 and etc.
+
+
+Q)Write a java program to peform cube of a given number?
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the Number :");
+		int n=sc.nextInt();//5
+
+		int cube=(int)Math.pow(n,3);
+
+		System.out.println("Cube of a given number is ="+cube);
+	}
+}
+
+
+Q) Write a java program to find out greatest of two numbers?
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the First Number :");
+		int a=sc.nextInt();//5
+		
+		System.out.println("Enter the Second Number :");
+		int b=sc.nextInt();//10
+
+		int max=Math.max(a,b);
+		System.out.println("Greatest of two numbers is ="+max);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

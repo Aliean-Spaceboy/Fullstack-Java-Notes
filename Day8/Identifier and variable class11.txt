@@ -1,0 +1,411 @@
+Identifiers
+============
+A name in java is called identifier.
+
+It can be class name, variable name, method name or label name.
+
+ex:
+	class  Test 
+	{
+		public static void main(String[] args)
+		{
+			int x = 10;
+
+			System.out.println(x); 
+		}
+	}
+
+	Here Test,main,String,args,x and System are identifiers.
+
+Rules to declare an identifiers
+--------------------------------
+Rule1:
+------
+	Identifier will accept following characters.
+	ex:
+		A-Z
+		a-z
+		0-9
+		_
+		$
+
+Rule2:
+-----
+	If we take other characters then we will get compile time error.
+	ex:
+		int emp_Id;
+		double emp$al;
+		int emp#id;
+
+Rule3:
+------
+	Identifier must and should starts with alphabet, underscore or dollar symbol but not 
+	with digits.
+	ex:
+		class  Test1
+		int   _abcd;
+		int   $=20;
+		int   1abcd; // invalid 
+	
+Rule4:
+------
+	We can't take reserved words as an identifier.
+	ex:
+		int   if; //invalid 
+		int   else; //invalid 
+		class  public //invalid 
+
+Rule5:
+------
+	Every identifier is a case sensitive.
+	ex:
+		int number;
+		int NUMBER;
+		int NuMbEr;
+
+Rule6:
+-----
+	There is no length limit for an identifier but it is not recommnaded to take more then 
+	15 characters.
+
+Reserved Words 
+===============
+There are some identifiers which are reserved to associate some functionality or meaning 
+such type of identifiers are called reserved words.
+
+In java, reserved words are divided into two types.
+
+Diagram: class11.1
+
+Used keywords with respect to class
+-----------------------------------
+import
+package
+interface
+enum
+class
+extends
+implements 
+
+Used keywords with respect to object
+-------------------------------------
+new 
+instanceof
+this
+super 
+
+Used keywords with respect to datatype
+--------------------------------------
+byte
+short
+int
+long
+float
+double
+boolean
+char 
+
+Used keywords with respect to returntype
+-----------------------------
+void 
+
+Used keywords with respect to control statement
+----------------------------------------------
+if
+else
+do
+while
+break
+continue
+for
+switch
+case 
+
+Used keywords with respect to modifiers
+-------------------------------------
+default
+public
+private
+protected
+final
+abstract
+static
+strictfp
+synchronized
+transient
+volatile 
+native 
+
+Used keywords with respect to exception handling
+----------------------------------------
+try
+catch
+throw
+throws
+finally
+assert 
+
+Types of variables
+==================
+A name which is given to a memory location is called variable.
+
+Purpose of variable is used to store the data.
+
+In java, variables are divided into two types.
+
+1) Primitive variables 
+----------------------
+	Primitive variables are used to represent primitive values.
+
+2) Reference variables 
+----------------------
+	Reference variables are used to represent object reference.
+	ex:
+		Student s=new Student();
+			|
+		reference variable 
+
+Based on the position and execution these variables are divided into three types.
+
+1) Instance variables / Non-Static variables 
+
+2) Static variables / Global variables 
+
+3) Local variables / Temperory variables / Automatic variables 
+
+
+1) Instance variables
+----------------------
+A value of a variable which is varied from object to object is called instance variable.
+
+Instance variable will be created at the time of object creation and it will destroy at the time of object destructions.Hence scope of instance variable is same as scope of an object.
+
+Instance variable will store in heap area as a part of an object.
+
+Instance variable must and should declare immediately after the class but not inside methods, 
+blocks and constructors.
+
+Instance variables can access directly from instance area but we can't access directly from static area.
+
+To access instance variables from static area we need to create object reference.
+
+ex:1
+-----
+class Test
+{
+	//instance variable
+	int i=10;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);	
+	}
+}
+o/p:
+	C.T.E : non-static variable i cannot be referenced from a static context 
+
+ex:2
+-----
+class Test
+{
+	//instance variable
+	int i=10;
+
+	public static void main(String[] args)
+	{
+		Test t=new Test();
+		System.out.println(t.i);	
+	}
+}
+
+Note:
+----
+If we won't initialize any value to instance variable then JVM will initialized default values.
+
+ex:3
+----
+class Test
+{
+	//instance variable
+	boolean b;
+
+	public static void main(String[] args)
+	{
+		Test t=new Test();
+		System.out.println(t.b); //false  	
+	}
+}
+
+ex:4
+-----
+class Test
+{
+	//instance variable 
+	int i=10;
+
+	public static void main(String[] args)
+	{
+		Test t1=new Test();
+		Test t2=new Test(); 
+
+		System.out.println(t1.i); //10
+		System.out.println(t2.i); //10
+		
+		t1.i=100; 
+
+		System.out.println(t1.i); //100
+		System.out.println(t2.i); //10	
+	}
+}
+
+ex:5
+----
+class Test
+{
+	public static void main(String[] args)
+	{
+		Test t=new Test();
+		t.m1();
+	}
+
+	//non-static method 
+	public void m1()
+	{
+		System.out.println("instance-method");
+	}
+		
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
