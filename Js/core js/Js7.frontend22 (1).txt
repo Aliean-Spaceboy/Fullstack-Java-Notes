@@ -1,0 +1,393 @@
+localStorage
+================
+A localStorage properties allows us to save key/value pairs in a browser window.
+
+A localStorage allows us to store the data with no-expiry.It means our data will not be 
+delete even if we close the browser.It will be present for next day.
+
+A localStorage is a read-only.
+
+To add the data in a localStorage we need to use setItem(key,value) function.
+
+To read the data from localStorage we need to use getItem(key) function.
+
+To remove perticular data from localStorage we need to use removeItem(key) function.
+
+To remove all the data from localStorage we need to use clear() function.
+
+ex:
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page title -->
+	<title>IHUB TALENT</title>
+</head>
+<body>
+		<script type="text/javascript">
+			//set the items
+			localStorage.setItem("FirstName","Alan");
+			localStorage.setItem("LastName","Morries");
+
+			//reading the items
+			document.writeln(localStorage.getItem("FirstName")+"<br>");
+			document.writeln(localStorage.getItem("LastName")+"<br>");
+
+			//remove perticular item
+			localStorage.removeItem("LastName");
+
+			//remove all items
+			localStorage.clear();
+
+			//reading the items
+			document.writeln(localStorage.getItem("FirstName")+"<br>");
+			document.writeln(localStorage.getItem("LastName")+"<br>");	
+
+		</script>
+</body>
+</html>
+
+ex:2
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page title -->
+	<title>IHUB TALENT</title>
+</head>
+<body>
+		<script type="text/javascript">
+			//set the items
+			localStorage.setItem("FirstName","Alan");
+			localStorage.setItem("FirstName","Morries");
+
+			//reading the items
+			document.writeln(localStorage.getItem("FirstName")+"<br>"); //Morries
+
+		</script>
+</body>
+</html>
+
+
+sessionStorage
+-------------------
+A sessionStorage properties allows us to save key/value pair in a browser window.
+
+A sessionStorage store the data with respect to one session.It means our data will be deleted
+once if we close the browser window.
+
+To add the data in a sessionStorage we need to use setItem(key,value) function.
+
+To read the data from sessionStorage we need to use getItem(key) function.
+
+To remove perticular data from sessionStorage we need to use removeItem(key) function.
+
+To remove all the data from sessionStorage we need to use clear() function.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page title -->
+	<title>IHUB TALENT</title>
+</head>
+<body>
+		<script type="text/javascript">
+			//set the items
+			sessionStorage.setItem("Name","Alan");
+			sessionStorage.setItem("Age",29);
+
+			//reading the items
+			document.writeln(sessionStorage.getItem("Name")+"<br>");
+			document.writeln(sessionStorage.getItem("Age")+"<br>");
+
+			//remove perticular item
+			sessionStorage.removeItem("Age");
+
+			//remove all items
+			sessionStorage.clear();
+
+			//reading the items
+			document.writeln(sessionStorage.getItem("Name")+"<br>");
+			document.writeln(sessionStorage.getItem("Age")+"<br>");s
+
+		</script>
+</body>
+</html>
+
+
+
+DOM
+===================
+
+The document object represent whole HTML document.
+
+When HTML document is loaded in a browser it represent document object.
+
+Diagram:  frontend22.1
+
+Here HTML document is represented in a tree node hierarcy.
+
+A document object is a root node for entire html document.
+
+DOM always looks for three nodes.
+
+1)Element node
+
+2)Atribute node
+
+3)Text node 
+
+Using document object we can add dynamic content to the web page.
+
+A document object is a property of window.It means we can call document object directory or by using window.
+ex:
+	window.document 
+	or
+	document 
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		window.document.writeln("This is document object"+"<br>");
+		document.writeln("This is document object"+"<br>");
+		</script>		
+	</body>
+</html>
+
+document.write()
+===================
+It is used to display data or custom messages without space.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		document.write("This is First Stmt");
+		document.write("This is Second Stmt");
+		</script>		
+	</body>
+</html>
+
+document.writeln()
+=====================
+It will display the output with space at last.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		document.writeln("This is First Stmt");
+		document.writeln("This is Second Stmt");
+		</script>		
+	</body>
+</html>
+
+
+
+document.getElementById()
+==========================
+It is used to read the elements based on id.
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+	
+		Name : <input type="text" id="t1"/> <br>
+
+		<button onclick="f1()">submit</button>
+
+		<script type="text/javascript">
+			function f1()
+			{
+				var name=document.getElementById('t1').value;
+				document.writeln("Welcome :"+name);
+			}
+		</script>
+		
+</body>
+</html>
+
+ex:2
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+	
+		Name : <input type="text" id="t1"/> <br>
+
+		<button onclick="f1()">submit</button>
+
+		<script type="text/javascript">
+			function f1()
+			{
+				var name=document.getElementById('t1').tagName;
+				document.writeln(name);
+			}
+		</script>
+		
+</body>
+</html>
+
+ex:3
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+	
+		Name : <input type="text" id="t1"/> <br>
+
+		<button onclick="f1()">submit</button>
+		<br><br>
+		<h1 id="result"></h1>
+
+		<script type="text/javascript">
+			function f1()
+			{
+				var name=document.getElementById('t1').value;
+				document.getElementById('result').innerHTML=name;
+			}
+		</script>
+		
+</body>
+</html>
+
+Javascript program to add two text field data 
+================================================
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+	
+		<table align="center">
+			<tr>
+				<td>No1:</td>
+				<td><input type="text" id="t1"/></td>
+			</tr>
+			<tr>
+				<td>No2:</td>
+				<td><input type="text" id="t2"/></td>
+			</tr>
+			<tr>
+				<td><button onclick="f1()">ADD</button></td>
+				<td><span id="result"></span></td>
+			</tr>
+		</table>
+
+		<script type="text/javascript">
+			function f1()
+			{
+				var val1=document.getElementById('t1').value;
+				var val2=document.getElementById('t2').value;
+				var c=parseFloat(val1)+parseFloat(val2);
+				document.getElementById('result').innerHTML=c;	
+			}
+		</script>
+		
+</body>
+</html>
+
+
+Javascript program to hide and show a portion of a form page
+===========================================================
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+	<fieldset id="curr_id">
+		<legend>Current Address</legend>
+		<table align="center">
+			<tr>
+				<td>House No:</td>
+				<td><input type="text" id="t1"/></td>
+			</tr>
+			<tr>
+				<td>Locality:</td>
+				<td><input type="text" id="t2"/></td>
+			</tr>
+			<tr>
+				<td>City:</td>
+				<td><input type="text" id="t3"/></td>
+			</tr>
+			<tr>
+				<td>State:</td>
+				<td><input type="text" id="t4"/></td>
+			</tr>
+		</table>
+	</fieldset>	
+	<br>
+	<input type="checkbox" id="box" onclick="f1()" />Current Address same as permanent address?
+	<br>
+	<br>
+	<fieldset id="per_id">
+		<legend>Permanent Address</legend>
+		<table align="center">
+			<tr>
+				<td>House No:</td>
+				<td><input type="text" id="t1"/></td>
+			</tr>
+			<tr>
+				<td>Locality:</td>
+				<td><input type="text" id="t2"/></td>
+			</tr>
+			<tr>
+				<td>City:</td>
+				<td><input type="text" id="t3"/></td>
+			</tr>
+			<tr>
+				<td>State:</td>
+				<td><input type="text" id="t4"/></td>
+			</tr>
+		</table>
+	</fieldset>	
+
+	<script type="text/javascript">
+		function f1()
+		{
+			if(document.getElementById('box').checked)
+			{
+				document.getElementById('per_id').style.display="none";
+			}		
+			else
+			{
+				document.getElementById('per_id').style.display="block";	
+			}
+		}
+	</script>
+
+</body>
+</html>
+
+

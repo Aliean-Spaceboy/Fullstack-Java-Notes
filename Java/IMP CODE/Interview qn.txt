@@ -1,0 +1,330 @@
+We have following important features in Java 8.
+
+1) Simple 
+2) Platform independent
+3) Portable 
+4) Architecture Neutral 
+5) Robust 
+6) Highly secured 
+7) Multithreaded 
+8) Object oriented 
+9) Dynamic 
+10) Distributed 
+and etc.
+
+ Is java purely object oriented or not?
+
+No, Java will not consider as purely object oriented programming language because it does not support many OOPS concepts like multiple inheritance, operator overloading and more ever we depends upon primitive datatypes which are non-objects.
+
+
+
+Control Statement
+Note:
+=====
+If number of iterations are known by the user then we need to use for loop.
+
+If number of iterations are not known by the user then we need to use while loop.
+
+If number of iterations are not known byt the user but code must execute atleast for one time then we need to use do while loop.
+
+Double Dimensional Array
+========================
+Double dimensional array is a combination of rows and columns.
+
+Double dimensional array is implemented based on array or arrays approach but not matrix form.
+
+Double dimensional array is used to develop business oriented application, gaming applicaitons, matrix type of applications and etc.
+
+The main objective of double dimensional array is memory utilization.
+
+
+Q) What is Anonymous array?
+
+Sometimes we will declare an array without name such type of nameless array is called anonymous array.
+
+The main objective of anonymous array is just for instance use.
+
+Opps
+
+Q) What is the difference between  default and public class?
+
+default class					public class
+--------------					-------------
+To declare default class we should not specify	To declare public class we should specify 
+any modifier.					public modifier.
+ex:						ex:
+	class A 					public class A
+	{						{
+				
+	}						}
+
+If we declare any class as default then we can	If we declare any class as public then we can 
+access that class within the package.		access that class within the package and outside
+						the package.
+
+Q) What is hash code in java?
+
+For every object, JVM will will create a unique identification number i.e hash code.
+
+In order to read the hash code of an object we will use hashCode() method.
+
+A hashCode() method present in Object class.
+
+
+
+
+Q) What is the difference between final class and abstract class?
+
+final class					abstract class
+---------------					----------------
+To declare final class we should use final 	To declare abstract class we should use abstract
+modifier.					modifier.
+
+ex:						ex:
+	final class A 					abstract class A 
+	{						{
+	
+	}						}
+
+Child creation is not possible.			Child creation is possible.
+
+Object creation is possible.			Object creation is not possible.
+
+Q) What is the difference between class and object.
+
+class					object
+----------				----------
+To declare a class we will use class	To declare an object we will use new keyword.
+keyword.
+
+It is a blueprint or template of a 	It is a instance of a class.	
+an object.
+
+It is a logical entity.			It is a physical entity.
+
+It can't be modified.			It can be modified.
+
+It is declared once.			It is declared many times.
+
+
+Q) What is the difference between interface and Abstract class?
+
+interface					abstract class
+-----------					--------------
+To declare interface we will use interface	To declare abstract class we will use abstract 
+keyword.					keyword.
+
+It is a collection of abstract methods, 	It is a collection of abstract methods and concrete
+default methods and static methods.		methods.
+
+We can achieve multiple inheritance.		We can't achieve multiple inheritance.
+
+We can't declare blocks.			We can declare blocks.
+
+We can't declare constructors.			We can declare constructors.
+
+To write the implementation of abstract methods	To write the implementation of abstract methods
+we will use implementation class.		we will use sub class.
+
+If we know only specification then we need to 	If we know partial implementation then we need to
+use interface.					use abstract class.
+
+
+Q) What is the difference between POJO and Java Bean class?
+
+POJO						Java Bean 
+-------------					-------------
+It can't be serialized.				It can be serialized.
+
+Fields can have any visibility.			Fields can have only private visibility.
+
+It may or may not have 0-arg constructor.	It must have 0-arg constructor.
+
+It does not extend any other class.		It can extends.
+
+It does not implement any other interface.	It can implements
+
+It does not use any outside annotations.	It uses outside annotations.
+
+API 
+====
+API stands for Application Programing Interface.
+
+It is a base for the programmers to develop software applications.
+
+It is a collection of packages.
+
+We have three set of API's.
+
+1) Predefined API 
+
+2) Userdefined API 
+
+3) Third Party API 
+
+package
+========
+A package is a collection of classes, interfaces, enums and annotations.
+
+Here enum is a special class and annotation is a special interface.
+
+In general, a package is a collection of classes and interfaces.
+
+A package is also known as folder or a directory.
+
+In java, packages are divided into two types.
+
+1) Predefined packages 
+
+2) Userdefined packages 
+
+1) Predefined packages 
+
+   Built-In packages are called predefined packages.
+
+2) Userdefined packages 
+--------------------------
+Packages which are created by the user based on the application requirement are called userdefined packages.
+
+To declare userdefined package we need to use package keyword.
+
+It is highly recommanded to declare a package for every java program.
+
+Singleton class
+===============
+It is one of the design pattern that allows us to create only one instance.
+
+A class which also us to create only one object is called singleton class.
+
+If we call any method by using class name and that method returns same class object is called singleton class.
+
+
+Enum
+=====
+Enum is a group of named constants.
+
+Enum concept introduced in 1.5 version.
+
+Enum we can create our own datatype called enumerated datatype.
+
+When compare to old language enum, java enum is more powerful.
+
+
+Wrapper classes
+===============
+The main objective of wrapper classes are 
+
+1) To wrap primitive type to wrapper object and vice versa.
+
+2) To define several utility methods.
+
+Utility Methods
+================
+
+1) valueOf() 
+-------------
+It is similar to constructor.
+
+It is used convert primitive type to wrapper object.
+
+2) xxxValue()
+--------------
+It is used to convert wrapper object to primitive type.
+
+3) parseXxx()
+-------------
+It is used to convert string type to primitive type
+
+4) toString() 
+------------
+It is used to convert wrapper object to string type.
+
+
+
+Inner classes
+==============
+Sometimes we will declare a class inside another class such concept is called inner class.
+
+Inner classes are introduced as a part of event handling to remove GUI bugs. 
+
+But due to powerful features and benefits of inner classes , programmers started to use inner classes in our regular programming.
+
+
+Immutable					Mutable
+--------------					-----------
+In immutable, After object creation if we 	In mutable, After object creation if we perform
+perform any changes then for every change 	any changes then all changes will reflect to
+a new object will be created.			same object.
+
+Fields can't change after object creation.	Fields can change after object creation.
+
+It contains only setter methods.		It contains setter and getter methods.
+
+String and Wrapper classes are immutable.	StringBuffer, StringBuilder, Date are mutable.
+
+StringBuffer					StringBuilder
+-----------------				--------------
+Method present in StringBuffer is synchronized.	No method present in StringBuilder is synchronized.
+
+At a time only one thread is allowed to operate	Multiple threads are allowed to operator on 
+on StringBuffer object.Hence StringBuffer is 	StringBuilder object.Hence StringBuilder is 
+thread safe.					not thread safe.
+
+It increases waiting time of a thread hence	There is not waiting threads hence releatively 
+relatively performance is low.			performance is high.
+
+It is introduced in 1.0v.			It is introduced in 1.5v.
+
+
+Exception Hendling
+
+try block
+=========
+It is a block which contains Risky Code.
+
+It is associate with catch block.
+
+If any exception raise in try block then try block won't be executed.
+
+It is used to throw the exception to catch block.
+
+catch block
+===========
+It is a block which contains Error Handling Code.
+
+It is associate with try block.
+
+It is used to catch the exception which is thrown by try block.
+
+If there is no exception in try block then catch block won't be executed.
+
+A catch block will exception name as a parameter and that name must match with exception class name.
+
+Q) What is the difference between final, finally and finalize method ?
+
+final
+-----
+It is a modifier which is applicable for variables, methods and clsses.
+If we declare any variable as final then reassignment of that variable is not possible.
+If we declare any method as final then overriding of that method is not possible.
+If we declare any class as final then creating child class is not possible.
+
+finally
+-------
+It is a block which contains cleanup code and it should execute irrespective of exception raised or not.
+
+finalize method
+--------------
+It is a method called by garbage collector just before destroying an object for cleanup activity.
+
+
+
+
+	
+
+
+
+
+
+
+

@@ -1,0 +1,321 @@
+removeEventListener()
+======================
+It is used to remove the handler from element.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<h1 id="hover"> Mouse Over Here </h1>
+
+		<button onclick="f2()">stop</button>  <br>
+
+		<div id="result"></div>
+
+		<script>
+
+			var x=document.getElementById('hover');
+
+			x.addEventListener('mouseover',f1)
+
+			function f1()
+			{
+
+				document.getElementById('result').innerHTML+="<p>Mouse Over Here</p>";
+			}
+
+			function f2()
+			{
+				x.removeEventListener('mouseover',f1);
+				document.getElementById('result').innerHTML+="<p>Mouse Stop Here</p>";
+			}
+
+		</script>
+</body>
+</html>
+
+JavaScript Date object
+======================
+It is a javascript object which is used to display date and time.
+
+Using javascript Date object we can display timer on the web page.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var d=new Date();
+			var h=d.getHours();
+			var m=d.getMinutes();
+			var s=d.getSeconds();
+			document.writeln(h+":"+m+":"+s);
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var d=new Date();
+			var dd=d.getDate();
+			var mm=d.getMonth()+1;
+			var yy=d.getFullYear();
+			document.writeln(dd+"/"+mm+"/"+yy);
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		body
+		{
+			height:100vh;
+			background: linear-gradient(yellow,red);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		span
+		{
+			color:#FFF;
+			font-size:50px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+		<span id="result"></span>
+
+		<script>
+			
+			window.onload=function(){getTime()}
+
+			function getTime()
+			{
+				var date=new Date();
+				var h=date.getHours();
+				var m=date.getMinutes();
+				var s=date.getSeconds();
+
+				m=check(m);	
+				s=check(s);
+
+				document.getElementById('result').innerHTML=h+":"+m+":"+s;
+			}
+			function check(i)
+			{
+				if(i<10)
+				{
+					i = "0" + i; 
+				}	
+				return i;
+			}
+
+			setInterval(getTime,1000);
+
+		</script>
+</body>
+</html>
+
+
+JavaScript interview Questions
+==============================
+
+Q) What is the difference between innerText and innerHTML ?
+
+innerText: 
+----------
+The innerText property is used to write the simple text using JavaScript dynamically.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<div id="result"></div>
+
+		<script>
+			
+			document.getElementById('result').innerText="<h1>innerText property</h1>";
+
+		</script>
+</body>
+</html>
+
+innerHTML: 
+----------
+The innerText property is used to write the html code using JavaScript dynamically.
+
+ex:
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<div id="result"></div>
+
+		<script>
+			
+			document.getElementById('result').innerHTML="<h1>innerHTML property</h1>";
+
+		</script>
+</body>
+</html>
+
+
+How can we hide and show password in javascript
+===============================================
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- fontawesome icon cdn link -->
+   	 
+
+   	<style>
+   		#myId
+   		{
+   			position: relative;
+   			right:25px;
+   		}
+   		.myClass
+   		{
+   			padding-right:25px;
+   		}
+   	</style>
+
+</head>
+<body>
+		Password: <input type="password" id="pwd" class="myClass"/>
+
+		<span class="fa fa-eye" id="myId" onclick="f1()"></span>
+
+		<script>
+			function f1()
+			{
+				var x=document.getElementById('pwd');
+
+				if(x.type=="password")
+				{
+					x.type="text";
+				}
+				else
+				{
+					x.type="password";
+				}
+				
+			}
+		</script>
+</body>
+</html>
+
+
+Q) What is javascript hoisting ?
+
+Hoisting is a default behavior of JavaScript where all the variable and function 
+declarations are moved on top. 
+
+This means that irrespective of where the variables and functions are declared, they are 
+moved on top of the scope.  
+
+
+ex:
+----
+		<script>				<script>
+			i=10;					var i;
+			document.writeln(i);  ==>		i=10;
+			var i;					document.writeln(i);
+		</script>				</script>
+
+
+ex:
+---
+		<script>				<script>
+		f1();						function f1()
+		function f1()					{
+		{						document.writeln("Hello");
+			document.writeln("Hello");==>		}		
+		}						f1();
+		</script>				</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

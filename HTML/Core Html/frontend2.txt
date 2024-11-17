@@ -1,0 +1,271 @@
+HTML <meta> tag 
+===============
+It is used to declare the metadata of a document.
+
+A metadata means data of a data.
+
+A metadata used by search engine, web browser and other web services.
+
+To declare metadata of a document we need to use <meta> tag.
+
+A <meta> tag must be declare inside <head> tag.
+
+A <meta> tag is used to declare following things.
+
+1) Description 
+
+2) Author 
+
+3) Keywords 
+
+4) View port 
+
+5) copyright 
+
+6) refresh 
+
+and etc.
+
+Note:
+-----
+UTF stands for Unicode Transformation Format.
+It is a encloding method which describes what character set a website written with.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+		<meta charset="utf-8">
+		<meta name="description" content="Niyaz sir classes">
+		<meta name="author" content="Niyaz Sir">
+		<meta name="keywords" content="html css javascript">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="copyright" content="Website content is copyright">
+		<meta http-equiv="refresh" content="05">
+	</head>
+	<body>
+		Welcome to HTML class
+	</body>
+</html>
+
+
+HTML Basic Tags
+================
+
+Heading Tags 
+============
+Heading tags are used to display the text in bold and size of the text is depend upon number of heading tags.
+
+We have six heading tags i.e h1 to h6.
+
+It is used to declare the heading in a web page.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		<h1> Heading 1 Tag </h1>
+		<h2> Heading 2 Tag </h2>
+		<h3> Heading 3 Tag </h3>
+		<h4> Heading 4 Tag </h4>
+		<h5> Heading 5 Tag </h5>
+		<h6> Heading 6 Tag </h6>
+	</body>
+</html>
+
+
+Paragraph tag 
+=============
+A <p> tag is used to display the paragraph in web page.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		    <p>
+			Established in 2000 we have earned a reputation for increasing efficiency, productivity and profitability for our clients through the provision of custom-made software to support, assist with and automate their business activities.
+	            </p>
+	</body>
+</html>
+
+
+Bold tag
+=========
+A <b> tag is used to display the text in bold without importance.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		   <b>This is bold tag</b> 
+	</body>
+</html>
+	
+
+strong tag
+=========
+A <strong> tag is used to display the text in bold with importance.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		   <strong>This is strong tag</strong> 
+	</body>
+</html>
+
+Italic tag
+=========
+A <i> tag is used to display the text in italic without force.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		   <i>This is italic tag</i> 
+	</body>
+</html>
+
+Emphasize tag
+=============
+A <em> tag is used to display the text in italic with force.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		   <em>This is emphasize tag</em> 
+	</body>
+</html>
+
+
+center tag 
+==========
+A <center> tag is used to display the text in center.
+
+HTML5 does not support <center> tag.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		   <center> This is Center Tag </center>
+	</body>
+</html>
+
+
+Marquee tag 
+===========
+It is used to display the text with scroll.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		<marquee>This is HTML class by Niyaz Sir</marquee>   
+	</body>
+</html>
+
+
+font tag
+========
+A <font> tag is used to declare size, color and font family.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		<font color="blue" size="30px" face="arial">
+			Welcome Anji Sir to HTML class
+		</font>   
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,798 @@
+box-sizing  property
+=====================
+The box-sizing property defines how the width and height of an element are calculated: should they include padding and borders, or not.
+
+
+box-sizing:content-box
+----------------------------
+It will take seperate width,border and padding.But it will not take  margin.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			background-color: red;
+			border:2px solid black;
+			padding: 10px;
+			box-sizing: content-box;
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+box-sizing:border-box
+---------------------------
+It includes width,border and padding.But it will not include marging.
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			background-color: red;
+			border:2px solid black;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+
+
+CSS tranform
+==============
+CSS tranform property allows use to move ,rotate  or skew elements.
+
+CSS tranform property contains following transformation methods.
+
+ex:
+	translate()
+	rotate()
+	scaleX()
+	scaleY()
+	skewX()
+	skewY()
+	skew()
+
+
+transform: translate()
+-----------------------
+The translate() method moves  an element from its current position to the parameters given by the X-axis and the Y-axis.
+ex:
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			border:2px solid black;
+			box-sizing: border-box;
+			transform: translate(300px,100px);	
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+transform: scaleX()
+-----------------------
+The scaleX() method increases and decreases the width of the element.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			border:2px solid black;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform: scaleX(2);
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			This is HTML transform property demostrations
+		</div>
+</body>
+</html>
+
+transform: scaleY()
+--------------------
+The scaleY() method increases and decreases the height of the element.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			border:2px solid black;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform: scaleY(2);
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			This is HTML transform property demostrations
+		</div>
+</body>
+</html>
+
+transform: scale()
+--------------------
+The scale() method increase and decrease the size of an element according to the parameters given for the width and height .
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			border:2px solid black;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform: scale(2);
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			This is HTML transform property demostrations
+		</div>
+</body>
+</html>
+
+
+transform: skewX()
+---------------------
+The skewX() method skews an element along the X-axis by the given angle.
+ex
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			border:2px solid black;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform:skewX(10deg);
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			This is HTML transform property demostrations
+		</div>
+</body>
+</html>
+
+
+transform: skewY()
+--------------------
+The skewY() method skews an element along with y-axis by the given angle.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			border:2px solid black;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform:skewY(10deg);
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			This is HTML transform property demostrations
+		</div>
+</body>
+</html>
+
+transform : skew() 
+--------------------
+The skew() method skews an element along the X-axis and Y-axis by the given angle.
+
+ex:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			border:2px solid black;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform:skew(10deg);
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			This is HTML transform property demostrations
+		</div>
+</body>
+</html>
+
+transform: rotate()
+------------------
+The rotate() method rotates an element clockwise or counter-clockwise according to a given degree.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			border:2px solid black;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform:rotate(40deg);
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			This is HTML transform property demostrations
+		</div>
+</body>
+</html>
+
+
+
+CSS transition property
+=======================
+CSS transition property allows us to change property value smoothly , over a given duration.
+
+To see the effects on an element ,we need to use mouse over to the element.
+
+We have following properties in CSS transition.
+ex:
+
+
+	transition-property
+	transition-duration
+	transition-timing-function
+	transition-delay
+
+	or
+
+	transition shorthand 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			box-sizing: border-box;
+			background-color: red;
+			transition-property: width,height;
+		}
+		.box:hover
+		{
+			width:400px;
+			height:400px;
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			box-sizing: border-box;
+			background-color: red;
+			transition-property: all;
+		}
+		.box:hover
+		{
+			width:400px;
+			height:400px;
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			box-sizing: border-box;
+			background-color: red;
+			transition-property: all;
+			transition-duration: 2s;
+		}
+		.box:hover
+		{
+			width:400px;
+			height:400px;
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			box-sizing: border-box;
+			background-color: red;
+			transition-property: all;
+			transition-duration: 2s;
+			transition-timing-function: linear;
+		}
+		.box:hover
+		{
+			width:400px;
+			height:400px;
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			box-sizing: border-box;
+			background-color: red;
+			transition-property: all;
+			transition-duration: 2s;
+			transition-timing-function: ease-in;
+		}
+		.box:hover
+		{
+			width:400px;
+			height:400px;
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			box-sizing: border-box;
+			background-color: red;
+			transition-property: all;
+			transition-duration: 2s;
+			transition-timing-function: ease-out;
+		}
+		.box:hover
+		{
+			width:400px;
+			height:400px;
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			box-sizing: border-box;
+			background-color: red;
+			transition-property: all;
+			transition-duration: 2s;
+			transition-timing-function: ease-in-out;
+		}
+		.box:hover
+		{
+			width:400px;
+			height:400px;
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			box-sizing: border-box;
+			background-color: red;
+			transition-property: all;
+			transition-duration: 2s;
+			transition-timing-function: ease-in-out;
+			transition-delay: 3s;
+		}
+		.box:hover
+		{
+			width:400px;
+			height:400px;
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			box-sizing: border-box;
+			background-color: red;
+			transition: 2s all linear 3s;
+		}
+		.box:hover
+		{
+			width:400px;
+			height:400px;
+		}
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+
+CSS opacity property 
+====================
+
+The opacity property specifies the opacity/transparency of an element. 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			box-sizing: border-box;
+			background-color: red;
+			opacity: 1;
+		}
+		
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			box-sizing: border-box;
+			background-color: red;
+			opacity: 0.3;
+		}
+		
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box
+		{
+			width:200px;
+			height:200px;
+			box-sizing: border-box;
+			background-color: red;
+			opacity: 0.1;
+		}
+		
+	</style>
+</head>
+<body>
+		<div class="box">
+			
+		</div>
+</body>
+</html>
+
+CSS Design 1 
+=============
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		img
+		{
+			width:200px;
+			height:200px;
+			box-sizing: border-box;
+			box-shadow: 2px 2px 12px 4px #c3c3c3;
+			display: block;
+			margin:100px auto;
+			transition:2s all linear;
+		}
+		img:hover
+		{
+			transform: rotate(360deg);
+		}
+	</style>
+</head>
+<body>
+		<img src="images/micky.png"/>		
+</body>
+</html>
+
+
+CSS Design 2
+=============
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		img
+		{
+			width:200px;
+			height:200px;
+			margin:100px 35px;
+			filter: grayscale(100%);
+			transition: 1s all linear;
+		}
+		img:hover
+		{
+			transform: scale(1.2);
+			filter: grayscale(0%);
+		}
+		
+	</style>
+</head>
+<body>
+		<center>
+		<img src="images/girl1.jpg"/>	
+		<img src="images/girl2.jpg"/>	
+		<img src="images/girl3.jpg"/>
+		</center>		
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

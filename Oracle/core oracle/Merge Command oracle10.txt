@@ -1,0 +1,221 @@
+Merge Command
+==============
+Merge command is a combination of insert and upate command.
+
+student10 table
+---------------
+create table student10(sno number(3),sname varchar2(10), sadd varchar2(12));
+insert into student10 values(101,'raja','hyd');
+insert into student10 values(102,'ravi','delhi');
+insert into student10 values(103,'ramana','vizag');
+commit;
+
+student20 table
+---------------
+create table student20(sno number(3),sname varchar2(10), sadd varchar2(12));
+insert into student20 values(103,'Alan','Texas');
+insert into student20 values(104,'Jose','Florida');
+commit;
+
+ex:
+	merge into student10 s1
+	using student20 s2
+	ON(s1.sno=s2.sno)
+	when matched then 
+	update set sname=s2.sname,sadd=s2.sadd
+	when not matched then 
+	insert values(s2.sno,s2.sname,s2.sadd);
+	
+
+	select * from student10; // 2 records merge 
+
+	select * from student20; 
+	
+
+Q) What is the difference between Normalization and Denormalization?
+
+Normalization					Denormalization
+----------------------				-----------------
+It is a process of dividing big table 		It is a process of creating big table from 
+into small tables.				small tables.
+
+It is increases the complexity because of 	It will reduce complexity because of single table.
+multiple tales.
+
+No redundent data.				Redundent data.
+
+Need of joins.					No need of joins.
+
+Slower reads.					Slower writes.
+
+No waste of memory.				Waste of memory.
+
+
+PL/SQL
+=======
+PL/SQL stands for Procedural Language extensions to Structured Query Language.
+
+PL/SQL is a extension of SQL and contains following features.
+
+1) We can achieve programming features like control statements, loops and etc.
+
+2) It reduces network traffic.
+
+3) We can display custom error messages by using the concept of exception handling.
+
+4) We can perform related operations by using concept of triggers.
+
+
+PL/SQL Block
+=============
+PL/SQL block is also known as PL/SQL program.
+
+ex:
+
+	DECLARE
+	-
+	-	// Declaration Section 
+	-
+	BEGIN
+	-
+	-	// Executale Section 
+	-
+	EXCEPTION
+	-
+	-	// Exception Section 	
+	-
+	END;
+	/
+
+Declaration Section 
+--------------------
+It is used to declare variables, exceptions,  cursors and etc.
+It is a optional section.
+
+Executable Section 
+----------------
+It is used to declare actual code of a PL/SQL block.
+It is a mandatory section.
+
+Exception Section
+----------------
+It contains lines of code which is executed when exception is raised.
+It is a optional section.
+
+To see the output in PL/SQL we need to set serveroutput on?
+
+ex:
+	SQL>  set    serveroutput  on 
+
+
+
+Q) Write a PL/SQL program to display Hello World?
+
+	BEGIN
+	DBMS_OUTPUT.PUT_LINE('Hello World');
+	END;
+	/
+	
+	Here DBMS_OUTPUT is a package name.
+	Here PUT_LINE is a procedure name.
+	'/' is used to submit the PL/SQL program into database.
+
+
+Q) Write a PL/SQL program to perform sum of two numbers?
+
+	DECLARE
+	A number;
+	B number;
+	C number;
+	BEGIN
+	A:=10;
+	B:=20;
+	C:=A+B;
+	DBMS_OUTPUT.PUT_LINE(C);
+	END;
+	/
+	
+Declaration and initialization using single line.
+ex:
+	DECLARE
+	A number:=10;
+	B number:=20;
+	C number:=A+B;
+	BEGIN
+	DBMS_OUTPUT.PUT_LINE('sum of two numbers is '||C);
+	END;
+	/
+	
+Using '&' symbol we can take dynamic values.
+
+ex:
+---
+	DECLARE 
+	A number(3);
+	B number(3);
+	C number(6);
+	BEGIN
+	A:=&a;
+	B:=&b;
+	C:=A+B;
+	DBMS_OUTPUT.PUT_LINE('sum of two numbers is ='||C);
+	END;
+	/
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,174 @@
+4 Questions 
+===========
+
+1) 
+      * 
+    * * *
+  * * * * * 
+* * * * * * * 
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows 
+		for(int i=1;i<=4;i++)
+		{
+			//space
+			for(int j=4;j>i;j--)
+			{
+				System.out.print("  ");
+			}
+			//left side 
+			for(int j=1;j<=i;j++)
+			{
+				System.out.print("* ");
+			}
+			
+			//right side 
+			for(int j=i-1;j>=1;j--)
+			{
+				System.out.print("* ");
+			}
+			//new line 
+			System.out.println("");
+		}
+	}
+}
+
+
+2) 
+
+      * 
+    * * 
+  * * * 
+* * * * 
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows 
+		for(int i=1;i<=4;i++)
+		{
+			//space
+			for(int j=4;j>i;j--)
+			{
+				System.out.print("  ");
+			}
+			//left side 
+			for(int j=1;j<=i;j++)
+			{
+				System.out.print("* ");
+			}
+			
+			
+			//new line 
+			System.out.println("");
+		}
+	}
+}
+
+
+3) 
+
+* 
+* * 
+* * * 
+* * * * 
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows 
+		for(int i=1;i<=4;i++)
+		{
+			
+			//left side 
+			for(int j=1;j<=i;j++)
+			{
+				System.out.print("* ");
+			}
+			
+			
+			//new line 
+			System.out.println("");
+		}
+	}
+}
+
+4)
+* * * * 
+* * * * 
+* * * * 
+* * * * 
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//rows 
+		for(int i=1;i<=4;i++)
+		{
+			
+			//left side 
+			for(int j=1;j<=4;j++)
+			{
+				System.out.print("* ");
+			}
+			
+			
+			//new line 
+			System.out.println("");
+		}
+	}
+}
+
+
+5) What is the difference between Method overloading and Method overriding?
+
+Method overloading				Method overriding
+-------------------				--------------------
+Having same method names with difference 
+signatures in a single class is called method 
+overloading.					Having same method name with same signatures in 
+						two different classes is called method overriding.
+
+
+It is a compile time polymorphism.		It is runtime polymorphism.
+
+Method resolution taken care by compiler 
+based on reference type.			Method resolution taken care by JVM based on
+						runtime object.
+
+Private and final methods can be overloaded.	Private and final methods can’t be overridden.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

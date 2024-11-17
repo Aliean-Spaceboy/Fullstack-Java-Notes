@@ -1,0 +1,111 @@
+Advantages of React
+====================
+> It is easy to learn and easy to use.
+
+> It is used to create reusable components.
+
+> It supports one way data binding.
+
+> It supports virtual DOM.
+
+> Good documentation and community supports.
+
+> It supported by all major browsers.
+
+
+
+
+Q) What is the difference between Angular and React?
+
+Angular						React
+--------------					------------
+It is a product of Google.			It is a product of Facebook.
+
+It was developed in the month of October, 2010. It was developed in the month of May,2013.
+
+It is a javascript framework used to develop 	It is a javscript frontend library responsible only
+web and mobile development.			for view layer of the application.
+
+It supports real DOM.				It supports virtual DOM.
+
+If we want to develop rich featured 		It is used to develop single page web application.
+applications then we need use angular.
+
+Typescript language is used.			JSX language is used.
+
+Jasmine and Karma is used as a testing 		Jest and Enzyme is used as a testing frameworks.
+frameworks.
+
+It uses 4200 port number.			It uses 3000 port number.
+
+It supports two way data binding.		It supports one data binding.
+
+Angular used by Google, Mc'Donalds,		React used by  Netflix, whatsapp, airbnb and etc.
+Paypal, Gmail and etc.
+
+
+Pre-Requisition
+================
+> Basics of HTML,CSS, JavaScript and Bootstrap.
+
+> Knowledge on JSX.
+
+> Hands on npm commands.
+
+> Basic idea of ES6 standards.
+
+
+How ReactJS Works Internally
+============================
+Diagram: react2.1
+
+React uses a virtual DOM that is basically a DOM tree representation in JavaScript. 
+
+So when it needs to read or write to the DOM, it will use the virtual representation of it.Then the virtual DOM will try to find the most efficient way to update the browser's DOM.
+
+Assume we have created multiple components and consistently we are performing some changes in our application.Now we need to see ,how virtual DOM react on each change.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

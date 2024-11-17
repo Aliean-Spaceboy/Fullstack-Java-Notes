@@ -1,0 +1,936 @@
+CSS clear property
+===================
+The clear property specifies on which side of an element floating elements are not allowed to float.
+
+value		Description
+-------		----------------
+none		Default allows floating elements to both the side.
+
+left		No floating elements allowed on the left side.
+
+right 		No floating elements allowed on the right side.
+
+both		No floating elements allowed on the both side.
+
+
+
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box1
+		{
+			width:200px;
+			height:200px;
+			background-color: red;
+			float:left;
+		}
+		.box2
+		{
+			width:200px;
+			height:200px;
+			background-color: blue;
+			float:right;
+		}
+		.box3
+		{
+			width:100%;
+			height:200px;
+			background-color: green;
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+		<div class="box1">
+			
+		</div>
+
+		<div class="box2">
+			
+		</div>
+
+		<div class="box3">
+
+		</div>
+</body>
+</html>
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box1
+		{
+			width:200px;
+			height:300px;
+			background-color: red;
+			float:left;
+		}
+		.box2
+		{
+			width:200px;
+			height:200px;
+			background-color: blue;
+			float:right;
+		}
+		.box3
+		{
+			width:100%;
+			height:200px;
+			background-color: green;
+			clear:left;
+		}
+	</style>
+</head>
+<body>
+		<div class="box1">
+			
+		</div>
+
+		<div class="box2">
+			
+		</div>
+
+		<div class="box3">
+
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box1
+		{
+			width:200px;
+			height:300px;
+			background-color: red;
+			float:left;
+		}
+		.box2
+		{
+			width:200px;
+			height:200px;
+			background-color: blue;
+			float:right;
+		}
+		.box3
+		{
+			width:100%;
+			height:200px;
+			background-color: green;
+			clear:right;
+		}
+	</style>
+</head>
+<body>
+		<div class="box1">
+			
+		</div>
+
+		<div class="box2">
+			
+		</div>
+
+		<div class="box3">
+
+		</div>
+</body>
+</html>
+
+
+CSS List properties
+==================
+In HTML, there are two types of lists.
+
+1)Order list (<ol>)
+------------------------
+	The list items are marked with numbers and letters.
+
+
+2)Unorder list (<ul>)
+------------------------------
+	The list items are marked with bullets.
+
+
+The "list-style-type" property specifies the types of lits item marker.
+
+
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		ul
+		{
+			list-style-type: disc;	
+		}
+	</style>
+</head>
+<body>
+		Courses:
+		<ul>
+			<li> Java </li>
+			<li> Oracle </li>
+			<li> SpringBoot </li>
+			<li> Microservices </li>
+		</ul>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		ul
+		{
+			list-style-type: square;	
+		}
+	</style>
+</head>
+<body>
+		Courses:
+		<ul>
+			<li> Java </li>
+			<li> Oracle </li>
+			<li> SpringBoot </li>
+			<li> Microservices </li>
+		</ul>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		ul
+		{
+			list-style-type: circle;	
+		}
+	</style>
+</head>
+<body>
+		Courses:
+		<ul>
+			<li> Java </li>
+			<li> Oracle </li>
+			<li> SpringBoot </li>
+			<li> Microservices </li>
+		</ul>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		ol
+		{
+			list-style-type: upper-alpha;	
+		}
+	</style>
+</head>
+<body>
+		Courses:
+		<ol>
+			<li> Java </li>
+			<li> Oracle </li>
+			<li> SpringBoot </li>
+			<li> Microservices </li>
+		</ol>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		ol
+		{
+			list-style-type: lower-alpha;	
+		}
+	</style>
+</head>
+<body>
+		Courses:
+		<ol>
+			<li> Java </li>
+			<li> Oracle </li>
+			<li> SpringBoot </li>
+			<li> Microservices </li>
+		</ol>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		ol
+		{
+			list-style-type: lower-roman;	
+		}
+	</style>
+</head>
+<body>
+		Courses:
+		<ol>
+			<li> Java </li>
+			<li> Oracle </li>
+			<li> SpringBoot </li>
+			<li> Microservices </li>
+		</ol>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		ol
+		{
+			list-style-type: upper-roman;	
+		}
+	</style>
+</head>
+<body>
+		Courses:
+		<ol>
+			<li> Java </li>
+			<li> Oracle </li>
+			<li> SpringBoot </li>
+			<li> Microservices </li>
+		</ol>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		ul
+		{
+			border:2px solid red;	
+			list-style-position: inside;
+		}
+		ul li
+		{
+			border:2px solid blue;
+		}
+	</style>
+</head>
+<body>
+		Courses:
+		<ul>
+			<li> Java </li>
+			<li> Oracle </li>
+			<li> SpringBoot </li>
+			<li> Microservices </li>
+		</ul>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		ul
+		{
+
+			list-style-type:none;
+		}
+	
+	</style>
+</head>
+<body>
+		Courses:
+		<ul>
+			<li> Java </li>
+			<li> Oracle </li>
+			<li> SpringBoot </li>
+			<li> Microservices </li>
+		</ul>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		ul
+		{
+
+			list-style-image: url("images/star.png");
+		}
+	
+	</style>
+</head>
+<body>
+		Courses:
+		<ul>
+			<li> Java </li>
+			<li> Oracle </li>
+			<li> SpringBoot </li>
+			<li> Microservices </li>
+		</ul>
+</body>
+</html>
+
+
+CSS tables
+===========
+To specify table borders in CSS , use the border property.
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		table,tr,th,td
+		{
+			border:2px solid black;	
+		}
+	</style>
+</head>
+<body>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>EMAIL</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>alan@gmail.com</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>jose@zoho.com</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Mark</td>
+				<td>mark@outlook.com</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Lara</td>
+				<td>lara@yahoo.com</td>
+			</tr>
+		</table>
+
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		table
+		{
+			border-collapse: collapse;	
+			width:100%;
+		}
+		tr,th,td
+		{
+			border:2px solid black;
+		}
+	</style>
+</head>
+<body>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>EMAIL</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>alan@gmail.com</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>jose@zoho.com</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Mark</td>
+				<td>mark@outlook.com</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Lara</td>
+				<td>lara@yahoo.com</td>
+			</tr>
+		</table>
+
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		table
+		{
+			border-collapse: collapse;	
+			width:100%;
+		}
+		tr,th,td
+		{
+			border-bottom: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>EMAIL</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>alan@gmail.com</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>jose@zoho.com</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Mark</td>
+				<td>mark@outlook.com</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Lara</td>
+				<td>lara@yahoo.com</td>
+			</tr>
+		</table>
+
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		table
+		{
+			border-collapse: collapse;	
+			width:100%;
+		}
+		tr
+		{
+			border-bottom: 2px solid black;
+		}
+		tr:hover
+		{
+			background-color: #C3C3C3;
+		}
+	</style>
+</head>
+<body>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>EMAIL</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>alan@gmail.com</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>jose@zoho.com</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Mark</td>
+				<td>mark@outlook.com</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Lara</td>
+				<td>lara@yahoo.com</td>
+			</tr>
+		</table>
+
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		table
+		{
+			border-collapse: collapse;	
+			width:100%;
+		}
+		tr,th,td
+		{
+			border:1px solid black;
+		}
+		tr:nth-child(even)
+		{
+			background-color: #C3C3C3;
+		}
+	</style>
+</head>
+<body>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>EMAIL</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>alan@gmail.com</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>jose@zoho.com</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Mark</td>
+				<td>mark@outlook.com</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Lara</td>
+				<td>lara@yahoo.com</td>
+			</tr>
+		</table>
+
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		table
+		{
+			border-collapse: collapse;	
+			width:100%;
+		}
+		tr,th,td
+		{
+			border:1px solid black;
+		}
+		tr:nth-child(even)
+		{
+			background-color: #C3C3C3;
+		}
+		p
+		{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>EMAIL</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>alan@gmail.com</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>jose@zoho.com</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Mark</td>
+				<td>mark@outlook.com</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Lara</td>
+				<td>lara@yahoo.com</td>
+			</tr>
+			<tr>
+				<td colspan="3"><p>Thank you</p></td>
+			</tr>
+		</table>
+
+</body>
+</html>
+
+
+CSS display property
+====================
+The display property spcifies the display behaviour of an element.
+
+syntax
+--------
+	display: value;
+
+value		description
+---------	-------------------
+none		The element is completely removed.
+
+inline 		displays an element as on inline element.
+		Any height and width properties will not effect.
+
+block		Displays an element as block element.
+		IT starts on a new line and takes up the whole width.
+
+inline-block	displays an element as an inline-level container.
+		The element itself is formatting  as an inline element.
+		but we can apply height and width values.
+
+inherit		Inherits this property from its parent element.
+
+
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		h1
+		{
+			display:none;
+		}
+		p{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+		<h1> This is Heading Tag </h1>
+		<p> This is paragraph Tag </p>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		span
+		{
+			display: block;
+			background-color: cyan;
+		}
+	</style>
+</head>
+<body>
+		<span> This is span tag 1 </span>
+		<span> This is span tag 2 </span>
+		<span> This is span tag 3 </span>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		div{
+			display: inline;
+		}
+	</style>
+</head>
+<body>
+		<div> This is division tag 1 </div>
+		<div> This is division tag 2 </div>
+		<div> This is division tag 3 </div>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		div
+		{
+			display: inline-block;
+			border:2px solid black;
+			width:200px;
+		}
+	</style>
+</head>
+<body>
+		<div> This is div tag 1 </div>
+		<div> This is div tag 2 </div>
+		<div> This is div tag 3 </div>
+</body>
+</html>
+
+
+CSS Design 
+==========
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		*
+		{
+			padding:0;
+			margin:0;
+		}
+		header
+		{
+			width: 100%;
+			height:30px;
+			background: cyan;
+		}
+		h3
+		{
+			float:left;
+			padding:10px;
+		}
+		ul
+		{
+			float:right;
+			list-style-type: none;
+		}
+		ul li
+		{
+			display:inline-block;
+			width:100px;
+			line-height: 40px;
+		}
+		ul li  a 
+		{
+			text-decoration: none;
+			color:#000;
+		}
+		ul  li  a:hover
+		{
+			color:blue;
+		}
+	</style>
+</head>
+<body>
+		<header>
+				<h3>IHUBTALENT</h3>
+				<ul>
+					<li><a href="">Home</a></li>
+					<li><a href="">About</a></li>
+					<li><a href="">Service</a></li>
+					<li><a href="">Portfolio</a></li>
+					<li><a href="">Contact</a></li>
+				</ul>
+		</header>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

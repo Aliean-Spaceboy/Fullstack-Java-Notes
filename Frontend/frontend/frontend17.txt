@@ -1,0 +1,466 @@
+JavaScript Datatypes
+====================
+JavaScript is a dynamically typed language so we don't use any datatype at the time of variable declaration.
+
+To declare a variable in javascript we will use "var" keyword.
+
+syntax:
+
+	var  variable_name=value;
+
+ex:
+	var   i = 10;
+
+Internally , JavaScript engine determines type of datatype based on the value.
+
+In javascript, we have two types of datatypes.
+
+1) Primitive datatypes 
+
+2) Non-Primitive datatypes
+
+1) Primitive datatypes 
+------------------------
+We have following list of primitive datatypes.
+ex:
+	Datatype		Description
+	----------		-----------
+	number			It is used to represent numbers 
+	String 			It is used to represent strings
+	boolean 		It is used to represent boolean
+	null			It is used to represent null
+	undefined 		It is used to represent undefined
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i=10;
+				document.writeln(i+"<br>");//10
+
+				var j=20.65;
+				document.writeln(j+"<br>");//20.65
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i="Hi";
+				document.writeln(i+"<br>");//Hi
+
+				var j='Hello';
+				document.writeln(j+"<br>");//Hello
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i=true;
+				document.writeln(i+"<br>");//true
+
+				var j=false;
+				document.writeln(j+"<br>");//false
+		</script>
+</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i=null;
+				document.writeln(i+"<br>");// null
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i;
+				document.writeln(i+"<br>");// undefined
+		</script>
+</body>
+</html>
+
+2) Non-Primitive datatypes
+--------------------
+We have following list of non-primitive datatypes.
+
+ex:
+	datatype 	description
+	--------	------------
+	Object		It is used to represent instance through which we can access the members. 
+
+	Arrays		It is used to represent similar elements.
+
+	RegEx 		It is used to represent regular expression 
+
+
+Q) Difference between null and undefined?
+
+undefined 
+----------
+	In JavaScript, undefined is a type.
+	It means a variable declared, but no value has been assigned. 
+	Ex: 
+		<script> 
+			var x; 
+			document.writeln(x); //undefined 
+		</script>
+ 
+null  
+-----
+	In JavaScript, null is an object.
+	A null in JavaScript is an assignment value. 
+	Ex: 
+		<script> 
+			var x=null; 
+			document.writeln(x); //null 
+		</script>
+
+
+
+Q) Types of JavaScript?
+
+We have two types of javascript.
+
+1) Internal JavaScript / Embedded JavaScript
+
+2) External JavaScript / Seperate JavaScript  
+
+
+1) Internal JavaScript
+-----------------------
+In internal javascript, we will declare html code and javascript code in a .html file.
+
+Advantages:
+
+> There is no confusion of multiple files.
+
+> We can maintain HTML code and JavaScript code seperately.
+
+Disadvantages:
+
+> If code increases then it will increase complexity of a programmer.
+
+
+2) External JavaScript
+-----------------------
+In external javascript, we will write html code in .html file and javascript code .js file.
+
+We can't execute javascript file directly on a browser.
+
+Advantages:
+
+> If code increases then it won't increase the complexity of a programmer.
+
+Disadvantages:
+
+> There is a confusion of multiple files.	
+
+
+JavaScript operators
+======================
+Operator is a symbol which is used to perform some operations on operands.
+ex:
+	c = a + b; 
+
+	Here = and + are operators.
+	Here a,b and c are operands.
+
+We have following list of operators in javascript.
+
+1) Arithmetic operators 
+
+2) Conditional operators 
+
+3) Bitwise operators 
+
+4) Logical operators 
+
+5) Assignment operators 
+
+6) Special operators 
+
+1) Arithmetic operators 
+-------------------------
+We have following list of arithmetic operators.
+ex:
+	operator 		Description
+	---------		-------------
+	%			modules 	
+	/			division 
+	*			multiplication 
+	+			addition 
+	-			subtraction 
+	++			incrementation 
+	--			decrementation 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln((10%2)+"<br>");
+				document.writeln((10/2)+"<br>");
+				document.writeln((10*2)+"<br>");
+				document.writeln((10-2)+"<br>");
+				document.writeln((10/20)+"<br>");
+				document.writeln((10%20)+"<br>");
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i=10;
+
+				var j = i++ + i++;
+
+				document.writeln(i+" "+j);
+		</script>
+</body>
+</html>
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i=10;
+
+				var j = i-- + i--;
+
+				document.writeln(i+" "+j);// 8  19
+		</script>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i=10;
+
+				var j = ++i + ++i;
+
+				document.writeln(i+" "+j);// 12   23
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i=10;
+
+				var j = --i + --i;
+
+				document.writeln(i+" "+j);// 8 17
+		</script>
+</body>
+</html>
+
+2) Conditional operators 
+------------------------
+We have following list of conditional operators.
+
+ex:
+	operator	description
+	--------	-------------
+	>		greater than 
+	<		less than 
+	>=		greatera than equals to 
+	<=		less than equals to 
+	==		equals to 
+	!= 		not equals to 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln((10>20)+"<br>");//false
+				document.writeln((10>=20)+"<br>");//false 
+				document.writeln((10<20)+"<br>");//true
+				document.writeln((10<=20)+"<br>");//true
+
+				document.writeln((10==20)+"<br>");//false
+				document.writeln((10==10)+"<br>");//true
+
+				document.writeln((10!=20)+"<br>");//true
+				document.writeln((10!=10)+"<br>");//false
+		</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,296 @@
+ Q) How many drivers are there  in JDBC?
+
+We have four types of JDBC drivers.
+
+1) Type1 JDBC Driver / JDBC-ODBC Bridge Driver
+
+2) Type2 JDBC Driver / Native API  
+
+3) Type3 JDBC Driver / Net Protocol 
+
+4) Type4 JDBC Driver / Native Protocol 
+
+
+To use any JDBC driver we need to register with DriverManager service.
+
+Every jdbc application contains one built in service called DriverManager service.
+
+
+Class.forName()
+================
+It is always recommanded to use Class.forName() to register JDBC driver with DriverManager service.
+
+It is used to load the driver class name but it won't create an object.
+
+ex:
+
+	Class.forName("driver-class-name");
+
+
+Connection object
+==================
+Connection is a interface which is present in java.sql package.
+
+It is an object of underlying supplied java class which implements java.sql.Connection interface.
+
+It is used to establish the connection with database software.
+
+Once work with database is completed then it is recommanded to close the Connection object.
+
+ex:
+	Connection con;
+
+
+DriverManager.getConnection()
+=============================
+A DriverManager is a class which is present in java.sql package.
+
+A getConnection() method is used to interact with database and returns a JDBC Connection object representing connectivity between java application and database software.
+
+ex:
+	Connection con=DriverManager.getConnection("url");
+
+
+Statement object
+=================
+A Statement is an interface which is present in java.sql package.
+
+It is an object of underlying supplied java class which implements java.sql.Statement interface.
+
+It acts like a vehicle between java application and database software.
+
+It is used to sends and executes SQL query in database software.
+
+We can create Statement object as follow.
+
+ex:
+	Statement st=con.createStatement();
+
+ResultSet object
+================
+Every ResultSet object contains two positions.
+
+1) BFR (Before First Record/Row)
+
+2) ALR (After Last Record/Row)
+
+By default record pointer points to BFR position.
+
+Every record ResultSet having 1 as base index and every column of record ResultSet having 1 as base index.
+
+rs.next()
+---------
+It moves to the next position from current position. 
+
+If next position is a record then it will return true.
+
+If next position is ALR then it will return false.'
+
+To read the data from record ResultSet we need to use getXxx() methods with index numbers or column names.
+
+Here getXxx() method means getInt(), getString(), getFloat(), getDouble() and etc.
+
+
+Diagram: jdbc2.1
+
+
+
+Types of Queries in JDBC
+=========================
+According JDBC point of view we have two types of queries.
+
+1) Select Query 
+
+2) Non-Select Query
+
+
+1) Select Query 
+--------------
+It will return bunch of records from database software.
+
+ex:
+	select * from student;
+
+A JDBC Statement object gave executeQuery() method to execute select query.
+
+ex:
+	ResultSet rs=st.executeQuery("select * from student");
+
+
+
+2) Non-Select Query
+-------------------
+It will return numeric value representing number of records effecting in a database table.
+ex:
+	delete from student;
+
+A JDBC Statement object gave executeUpdate() method to execute non-select query.
+
+ex:
+	int result=st.executeUpdate("delete from student");
+
+Steps to develop JDBC Application
+==================================
+There are six steps to develop JDBC Application.
+
+1) Register JDBC Driver with DriverManager service.
+
+2) Establish the connection with Database software.
+
+3) Create a Statement object.
+
+4) Sends and Executes SQL Query in database software.
+
+5) Gather the result from database software to process the result.
+
+6) Close all jdbc connection objects.
+
+
+
+Type4 JDBC Driver / Type4 JDBC Driver Database properties
+==========================================================
+
+1) driver name 		:	oracle.jdbc.driver.OracleDriver
+
+2) driver url 		:	jdbc:oracle:thin:@localhost:1521:XE
+
+3) database username 	:	system
+
+4) database password 	:	admin 
+
+
+JDBC API
+========
+API is a collection of packages.
+ex:
+	java.sql 
+	javax.sql
+	java.sql.rowset
+	and etc.
+
+
+
+Eclipse
+===========
+IDE			:	JEE 
+
+Environment		:	Java 
+
+Vendor			:	Eclipse Foundation 
+
+Website			:	www.eclipse.org
+
+Download link		:
+
+https://drive.google.com/file/d/1c8TAX048EjAubIFByqZ0DzWZI3oKuauR/view?usp=drive_link
+
+
+jar file		:	(Oracle 10g --> ojdbc14.jar)
+				(Oracle 11g --> ojdbc6.jar)
+				(Oracle 21c --> ojdbc11.jar)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

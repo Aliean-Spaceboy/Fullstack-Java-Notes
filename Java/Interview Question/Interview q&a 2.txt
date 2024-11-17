@@ -1,0 +1,331 @@
+Java Interview Question
+---
+
+### 1. What is Java?
+Java is an object-oriented, platform-independent, case-sensitive, strongly-typed, high-level, open-source programming language developed by James Gosling in 1995.
+
+### 2. Features of Java 8:
+1. Simple  
+2. Object-oriented  
+3. Platform independent  
+4. Portable  
+5. Architecture neutral  
+6. Highly secured  
+7. Robust  
+8. Multithreaded  
+9. Distributed  
+10. Dynamic  
+
+### 3. JDK vs JRE vs JVM:
+**JDK (Java Development Kit)**  
+- Installable software that contains:  
+  - Compiler (javac)  
+  - Interpreter (java)  
+  - Java Virtual Machine (JVM)  
+  - Archiver (.jar)  
+  - Document generator (javadoc)  
+  - Other tools needed for Java application development  
+
+**JRE (Java Runtime Environment)**  
+- Provides an environment to run Java applications only.  
+
+**JVM (Java Virtual Machine)**  
+- An interpreter that executes a Java program line by line.
+
+### 4. Types of Memories in Java:
+1. Method Area  
+2. Heap  
+3. Java Stack  
+4. PC Register  
+5. Native Method Stack  
+
+### 5. What is a JIT Compiler?
+- JIT (Just-In-Time) Compiler is part of the JVM, used to increase the execution speed of a program.
+
+6. What is Garbage Collector and how many ways we can call garbage collector?
+   - Garbage collector is responsible for destroying unused or useless objects in Java.
+   - There are two ways to call the garbage collector in Java:
+     1) System.gc()
+     2) Runtime.getRuntime().gc()
+
+7. Types of class loaders in Java:
+   We have three types of predefined class loaders:
+   1) Bootstrap ClassLoader (loads rt.jar file)
+   2) Extension ClassLoader (loads all the jar files from ext folder)
+   3) System/Application ClassLoader (loads .class files from classpath)
+
+8. Explain main method in Java:
+   - public: JVM wants to call this method from anywhere; that’s why the main method is public.
+   - static: JVM wants to call this method without using an object reference.
+   - void: Main method does not return anything to the JVM.
+   - main: It is an identifier given to the main method.
+   - String[] args: It is a command line argument.
+
+9. Is Java purely object-oriented or not?
+   - No, Java is not considered purely object-oriented because:
+     - It does not support some OOP concepts like multiple inheritance, operator overloading, etc.
+     - It also depends on primitive data types which are non-objects.
+
+10. What is Object class?
+   - Object class is present in the java.lang package.
+   - Object class is considered the parent class for every Java program.
+   - Object class contains the following methods:
+     • toString()
+     • equals(Object obj)
+     • hashCode()
+     • clone()
+     • finalize()
+     • wait()
+     • notify()
+     • notifyAll()
+ 
+11. What is hash code in Java?
+   - For every object, JVM will create a unique identifier number, i.e., hash code.
+   - To read the hash code, we need to use the `hashCode()` method of the `Object` class.
+
+12. What is class? Give one real-time example.
+   - A class is a blueprint of an object.
+   - A class is a collection of variables and methods.
+   - A class is a reusable component.
+   - A class can accept the modifiers: default, public, final, abstract.
+
+13. What is an object? Give one real-time example.
+   - An object is the outcome of a blueprint.
+   - It is an instance of a class.
+   - An instance means allocating memory for our data member.
+
+14. What is abstraction? Give one real-time example.
+   - Hiding the internal implementation and highlighting the set of services is called abstraction.
+   - Example: ATM machine, coffee machine, calculator, phone, etc.
+
+   **Advantages of Abstraction:**
+   1. Security: It hides internal implementation from outsiders.
+   2. Enhancement: Changes can be made internally without affecting the end user.
+   3. Flexibility: Provides flexibility to the end user.
+   4. Maintainability: Improves the maintainability of an application.
+
+15. What is encapsulation? Give one example.
+   - Encapsulation is the process of grouping variables and their associated methods in a single entity.
+   - For every variable, we need to declare setter and getter methods.
+   - A class is said to be encapsulated if it supports both data hiding and abstraction.
+
+   **Advantages of Encapsulation:**
+   1. Security.
+   2. Easier enhancement.
+   3. Flexibility for the end user.
+   4. Improved maintainability of an application.
+
+   **Disadvantage of Encapsulation:**
+   - Increases the length of code and may slow down the execution process.
+
+**16. Method Overloading vs Method Overriding**
+
+**Method Overloading:**
+- Involves having the same method names with different signatures within the same class.
+- It is a compile-time polymorphism.
+- Method resolution is handled by the compiler based on the reference type.
+- Private and final methods can be overloaded.
+
+**Method Overriding:**
+- Involves having the same method name with the same signature in two different classes (a superclass and a subclass).
+- It is runtime polymorphism.
+- Method resolution is handled by the JVM based on the runtime object.
+- Private and final methods cannot be overridden.
+
+**17. What is Polymorphism and Types of Polymorphism?**
+
+Polymorphism is derived from the Greek word:
+- **Poly** means many.
+- **Morphism** means forms.
+- The ability to represent in different forms is called polymorphism.
+
+**Types of Polymorphism in Java:**
+
+1. **Compile-time polymorphism / Static polymorphism / Early binding:**
+   - Exhibited at compile-time.
+   - Examples: 
+     - Method Overloading
+     - Method Hiding
+
+2. **Runtime polymorphism / Dynamic polymorphism / Late binding:**
+   - Exhibited at runtime.
+   - Example:
+     - Method Overriding
+
+---
+
+**18. What is an API?**
+
+- **API** stands for Application Programming Interface.
+- It serves as a foundation for programmers to develop software applications.
+- API is a collection of packages.
+
+**Types of APIs:**
+1. **Predefined API:**
+   - Built-in APIs.
+   - Example: `java.lang`, `java.util`.
+   
+2. **User-defined API:**
+   - APIs created by the user based on specific requirements.
+   
+3. **Third-party API:**
+   - APIs provided by third-party vendors.
+   - Examples: `JAVAZOOM API`, `Text API`.
+
+---
+
+**19. What is a Package?**
+
+- A **package** is a collection of classes, interfaces, enums, annotations, exceptions, and errors.
+- **Enum**, **Exception**, and **Error** are special classes, while **Annotation** is a special interface.
+
+Packages can be of two types:
+1. **Predefined Packages:**
+   - Built-in packages provided by Java.
+   - Examples: `java.lang`, `java.io`, `java.util`.
+   
+2. **User-defined Packages:**
+   - Packages created by the user.
+   - It's recommended to use package names in reverse order of URLs.
+   - Example: `com.ihubtalent.www`.
+
+**20. What is a Singleton Class?**
+
+  - A **Singleton Class** allows only one instance (object) to be created.
+  - To declare a singleton class:
+  - Use a **private constructor**.
+  - Use a **static method** to return the single instance.
+
+21. What is a constructor?
+   - A constructor is a special method used to initialize an object.
+   - The constructor has the same name as the class.
+   - It executes when an object is created.
+   - A constructor does not allow any return type.
+   - It can accept the following access modifiers: default, public, private, protected.
+
+22. What is a default constructor in Java, and how to see the default constructor in Java?
+   - A default constructor is a compiler-generated constructor for every Java program that does not define a constructor.
+   - It is an empty implementation.
+   - To see the default constructor, use the following command:
+     ```
+     javap -c Test
+     ```
+
+23. Interface vs Abstract class:
+
+   | Interface                                                           | Abstract Class                            -|
+   |---------------------------------------------------------------------|--------------------------------------------|
+   | Declared using the `interface` keyword.                             | Declared using the `abstract` keyword.     |
+   | It contains abstract methods, default methods, and static methods.  | It contains abstract and concrete methods. |
+   | Contains constants only.                                            | Contains instance variables.               |
+   | Supports multiple inheritance.                                      | Does not support multiple inheritance.     |
+   | Does not support constructors.                                      | Supports constructors.                     |
+   | Does not support blocks.                                            | Supports blocks.                           |
+   | Implemented by implementation classes.                              | Implemented by subclasses.                 |
+   | Use when you know only the specification.                           | Use when you know partial implementation.  |
+
+24. `this` keyword vs `super` keyword:
+
+   | this keyword                                | super keyword                            |
+   |---------------------------------------------|------------------------------------------|
+   | Refers to the current class object reference| Refers to the superclass object reference|
+   | Refers to current class variables.          | Refers to superclass variables.          |
+   | Refers to current class methods.            | Refers to superclass methods.            |
+   | Refers to current class constructors.       | Refers to superclass constructors.       |
+
+25. What is a native method in Java?
+   - A native method is a method that is developed using another programming language.
+
+Here’s a neatly organized format for your notes on Strings, String handling, and exceptions in Java. You can copy and paste this into your Notepad:
+
+---
+
+### 26. What is a String?
+- A String is a collection/set of characters.
+- A String is an immutable object.
+  
+**Case 1:**  
+Once a String object is created, we can't perform any changes. If we perform any changes, a new object will be created for every change. This behavior is called the immutability of an object.
+
+### 27. Length vs. length() Method
+- **length**: 
+  - It is a final variable applicable only for arrays. 
+  - It returns the size of an array.
+  
+- **length()**: 
+  - It is a final method applicable only for String objects. 
+  - It returns the number of characters present in the String.
+
+### 28. StringBuffer vs. StringBuilder
+| **StringBuffer** | **StringBuilder** |
+|------------------|-------------------|
+| 1. All the methods present in StringBuffer are synchronized. | 1. All the methods present in StringBuilder are not synchronized. |
+| 2. At a time, only one thread is allowed to access the StringBuffer object. Hence, we can achieve thread safety. | 2. Multiple threads are allowed to access the StringBuilder object. Hence, we cannot achieve thread safety. |
+| 3. Waiting time of a thread will increase; effectively, performance is low. | 3. There is no waiting thread; effectively, performance is high. |
+
+### 29. Difference between == and .equals() Method
+- **==**: 
+  - It is an equality operator or comparison operator.
+  - It is used for reference comparison or address comparison.
+  
+- **.equals()**: 
+  - It is a method present in the String class.
+  - It is used for content comparison.
+  - It is case sensitive.
+
+### 30. Exception vs. Error
+- **Exception**: 
+  - An exception is a problem for which we can provide a solution programmatically.
+  - Exceptions can arise due to syntax errors.
+  - Examples: 
+    - `ArithmeticException`
+    - `FileNotFoundException`
+    - `IllegalArgumentException`
+  
+- **Error**: 
+  - An error is a problem for which we can't provide a solution programmatically.
+  - Errors arise due to a lack of system resources.
+  - Examples:
+    - `OutOfMemoryError`
+    - `StackOverflowError`
+    - `LinkageError` 
+
+--- 
+
+Feel free to adjust any part of this formatting to suit your preferences!31. What is Exception and types of exceptions?
+Exception is a problem for which we can provide solution programmatically.
+Exception will raise due to syntax errors.
+ex:
+ArithmeticException
+FileNotFoundException
+IllegalArgumentException 
+32. Difference between final, finally and finalize in java?
+33. Arrays vs Collection?
+34. What is Anonymous array?
+35. What is Collection interface?
+36. What is inheritance and types?
+37. Why java does not support multiple inheritance?
+38. List vs Set interface?
+39. ArrayList vs Vector?
+40. HashSet vs LinkedHasSet?
+41. HashSet vs TreeSet?
+42. What is Map interface?
+43. HashMap vs LinkedHashMap?
+44. HashMap vs TreeMap?
+45. HashMap vs Hashtable?
+46. Types of cursors in java?
+47. Comparable vs Comparator interface?
+48. What is multithreading?
+49. Thread vs Process?
+50. In how many ways we can create a thread in java?
+51. What is thread scheduler?
+52. Life cycle of a thread?
+53. What is Daemon thread in java?
+54. What is Deadlock in java?
+55. What is inter-thread communication?
+56. What is synchronization?
+57. What is Functional interface?
+58. What is marker interface?
+59. What is lamda expression?
+60. What is Stream API?
+61. How to achieve multiple inheritances in java?

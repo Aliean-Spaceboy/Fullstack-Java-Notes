@@ -1,0 +1,423 @@
+React Router           
+================
+Routing is a process in which a user is directed to different pages based on their 
+action or request.
+
+ReactJS Router is mainly used for developing Single Page Web Applications. 
+
+React Router is used to define multiple routes in the application. 
+
+When a user types a specific URL into the browser, and if this URL path matches any 
+'route' inside the router file, the user will be redirected to that particular route.
+
+React Router is a standard library system built on top of the React and used to 
+create routing in the React application using React Router Package.
+
+React contains three different packages for routing.
+
+1)react-router: 
+----------------
+It provides the core routing components and functions for the React Router applications.
+
+2)react-router-native: 
+--------------------
+It is used for mobile applications.
+
+3)react-router-dom: 
+-------------------
+It is used for web applications design.
+
+Note:
+-------
+It is not possible to install react-router directly in your application. 
+To use react routing, first, you need to install react-router-dom modules in your application. 
+
+
+We have two types of router components.
+
+1)<BrowserRouter>: 
+-------------------
+		It is used for handling the dynamic URL.
+2)<HashRouter>: 
+--------------
+		It is used for handling the static request.
+
+
+Project  structure
+--------------------
+myapp12
+|
+|------node-modules
+|
+|------public
+|	|
+|	|------favicon.ico
+|	|------index.html 
+|	|------manifest.json
+|
+|------src
+	|
+	|------index.js
+	|------App.js  (Routing File)   
+	|------Home.js
+	|------About.js
+	|------Contact.js
+	|------Error.js
+|
+|------package.json
+|------README.md
+
+step1:
+------
+	create react "myapp12" project in VSC.
+	ex:
+	projects>create-react-app myapp12
+
+step2:
+--------
+	Move to myapp12 project.
+	ex:
+	project> cd   myapp12
+
+
+step3:
+------
+	install react router dom.
+	ex:
+	project/myapp12>npm install --save react-router-dom	
+
+
+step4:
+-------
+	Restart the application .
+	ex:
+	myapp14> npm start
+
+
+step5:
+--------
+	create App.js,Home.js,About.js ,Contact.js and Error.js component inside "src" folder.
+
+App.js
+-------
+
+
+import Home from './Home';
+import Contact from './Contact';
+import About from './About';
+import Error from './Error'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+function App() {
+  return (
+    <div>
+       <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home />}/>
+        <Route path="/about" element={<About />}/>
+        <Route path="/contact" element={<Contact />}/>
+        <Route path="*" element={<Error />}/>
+      </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+export default App;
+
+Home.js
+----------
+function Home()
+{
+    return (
+        <div>
+          <h1>Home</h1>
+       </div>
+    )
+}
+export default Home;
+
+
+About.js
+---------
+function About()
+{
+    return (
+        <div>
+          <h1>About</h1>
+       </div>
+    )
+}
+export default About;
+
+Contact.js
+----------
+function Contact()
+{
+    return (
+        <div>
+          <h1>Contact</h1>
+       </div>
+    )
+}
+export default Contact;
+
+
+Error.js
+----------
+function Error()
+{
+    return(
+        <div>
+            <h1>OOPS! 404 Error </h1>
+        </div>
+    )
+}
+export default Error;
+
+
+step6:
+------
+	create index.js component to render the output inside "src" folder.
+
+index.js
+---------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';  
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+
+    <App/>
+    
+  </React.StrictMode>
+);
+
+step7:
+-------
+	Test the application by using below url's.
+	ex:
+	http://localhost:3000/
+	http://localhost:3000/home
+	http://localhost:3000/about
+	http://localhost:3000/contact
+	http://localhost:3000/gallery
+	http://localhost:3000/services
+	
+
+
+Adding Navigation using Link component
+==========================================
+A Link component is used to create links which allow to navigate on different URLs and render its content without reloading the webpage.
+
+ex:2
+-------
+
+App.js
+---------
+
+import Home from './Home';
+import Contact from './Contact';
+import About from './About';
+import Error from './Error'
+
+import {Link, Routes,Route,BrowserRouter } from 'react-router-dom'  
+function App() {
+  return (
+    <div>
+      <BrowserRouter>
+   
+      <nav >
+        <Link style={{display:"block"}} to="/">Home</Link>
+        <Link style={{display:"block"}} to="/about">About Us</Link>
+        <Link style={{display:"block"}} to="/contact">Contact US</Link>
+      </nav>
+      <Routes>
+        <Route exact path="/" element={<Home />}/>
+        <Route path="/about" element={<About />}/>
+        <Route path="/contact" element={<Contact />}/>
+        <Route path="*" element={<Error />}/>
+      </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+export default App;
+
+Home.js
+-----------
+function Home()
+{
+    return (
+        <div>
+          <h1>Home</h1>
+       </div>
+    )
+}
+export default Home;
+
+About.js
+------------
+function About()
+{
+    return (
+        <div>
+          <h1>About</h1>
+       </div>
+    )
+}
+export default About;
+
+Contact.js
+--------------
+function Contact()
+{
+    return (
+        <div>
+          <h1>Contact</h1>
+       </div>
+    )
+}
+export default Contact;
+
+
+Error.js
+----------
+function Error()
+{
+    return(
+        <div>
+            <h1>OOPS! 404 Error </h1>
+        </div>
+    )
+}
+export default Error;
+
+
+index.js
+-----------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';  
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+
+    <App/>
+    
+  </React.StrictMode>
+);
+
+
+
+
+Bootstrap in React
+=================
+A Single-page applications gaining popularity over the last few years, so many front-end frameworks have introduced such as Angular, Vue, Ember, etc. As a result, jQuery is not a necessary requirement for building web apps. 
+
+Currently, React is mostly used JavaScript library for building web applications, and Bootstrap become the most popular CSS framework. 
+
+Let see how to use bootstrap in react applications.
+
+
+Project structure
+-------------------
+myapp13
+|
+|----node_modules
+|
+|----public
+	|
+	|---favicon.ico
+	|---index.html
+	|---manifest.json
+|
+|------src
+|	|
+	|---index.js
+	|	
+|	|---App.js
+|
+|------package.json
+|
+|------README.md
+
+step1:
+-----
+	create  a react project i.e myapp13.
+	ex:
+		Reactprojects> npx create-react-app myapp13	
+
+step2:
+------
+	Open the VSC code editor.
+	ex:
+		Reactprojects> code . 
+
+step3:
+-----
+	Move/Switch to myapp13 project.
+	ex:
+		Reactprojects> cd myapp13
+
+step4:
+-------
+	Install Bootstrap package.
+	ex:
+		Reactprojects/myapp13> npm install bootstrap
+
+
+step5:
+-------
+	Run the react application.
+	ex:
+		Reactprojecs/myapp13> npm start 		
+
+
+step6:
+-----
+	Create a App.js file inside "src" folder.
+
+App.js
+-------
+function App()
+{
+  return(
+      <div className="container mt-5">
+          <button className="btn btn-outline-primary">clickMe</button>
+      </div>
+  )
+}
+export default App;
+
+step7:
+------
+	Import bootstrap package inside "index.js" file.
+
+index.js
+---------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+reportWebVitals();
+
+step8:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000

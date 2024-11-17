@@ -1,0 +1,230 @@
+Eureka Server
+===============
+This server holds information about the client service applications. 
+
+Each microservice registers into Eureka server and eureka server knows all client applications running on each port and IP address. 
+
+This server is also known as discovery server.
+
+Diagram: sb7.1
+
+step1:
+------
+	Add Eureka Client dependency in "customer-service" project.
+	ex:
+		starter 
+			 Eureka Discovery client.
+
+
+
+step2:
+-----
+Create a "service-registry" project to register all microservices.
+
+Here "service-registry" is a Eureka Server and microservices are Eureka Clients.
+	
+	> service-registry
+		starter
+			> Spring Web 
+			> Eureka Server.
+
+
+step3:
+---------
+Add "@EnableEurekaServer" annotation in main spring boot application.
+
+ServiceRegisterApplication.java
+--------------------------------
+package com.ihub;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+@SpringBootApplication
+@EnableEurekaServer
+public class ServiceRegisterApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ServiceRegisterApplication.class, args);
+	}
+
+}
+
+step4:
+--------
+	Add port number and set register for Eureka service as false.
+
+application.yml
+----------------
+server:
+  port: 8761
+  
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+
+
+
+step5:
+--------
+	Open the "customer-service" application.yml and add 
+	register with eureka as true.
+
+application.yml
+---------------
+server:
+  port: 9090
+  
+
+spring:
+  application:
+    name: CUSTOMER-SERVICE
+    
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo
+    username: root
+    password: root
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+   
+    
+step6:
+---------
+	Now run all two projects.
+	First run service-registry then customer-service.
+	First run eureka server then eureka client.
+	
+	
+step7:
+------
+	Check the output in below url's.
+	ex:
+	http://localhost:8761/
+	
+
+
+
+Spring Cloud API Gateway
+==========================
+Spring Cloud Gateway aims to provide a simple, effective way to 
+route to API's and provide cross cutting concerns to them such as 
+security,monitoring/metrics , authentication, autherization ,adaptor and etc.
+
+
+Diagram: sb7.2
+
+step1:
+-------
+	Create a "cloud-apigateway" project in STS.
+	starters:
+		eureka Discovery client
+		Spring boot actuators
+		spring reactive web
+
+step2:
+--------
+	Add spring cloud dependency in pom.xml file.
+	ex:
+		
+	<dependency>
+    		<groupId>org.springframework.cloud</groupId>
+    		<artifactId>spring-cloud-starter-gateway</artifactId>
+    		<version>3.1.1</version>
+	</dependency>
+
+
+step3:
+-------
+	Add "@EnableEurekaClient" annotation on main spring boot application.
+
+CloudApigatewayApplication.java
+--------------------------------
+package com.ge;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+@SpringBootApplication
+@EnableEurekaClient
+public class CloudApigatewayApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CloudApigatewayApplication.class, args);
+	}
+
+}
+
+
+step4:
+--------
+	Register port number, set application name,and configure 
+	all microservices for routing in application.yml file.
+
+application.yml
+-------------------
+server:
+  port: 7171
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+  
+spring:
+  application:
+    name: API-GATEWAY   
+  cloud:
+    gateway:
+      routes:
+        - id: CUSTOMER-SERVICE
+          uri: lb://CUSTOMER-SERVICE
+          predicates: 
+            - Path=/customer/**
+
+
+step5:
+--------
+	Now Run the following applications sequentially.
+	"service-registry"
+	"customer-service"
+	"cloud-apigateway".
+
+
+step6:
+-------
+	Test the applications by using below urls.
+	ex:
+		http://localhost:9090/customer/fetch --> Request to customer 
+		http://localhost:7171/customer/fetch --> Request to API gateway
+		
+
+ 
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,513 @@
+
+Notepad++ Editor
+=================
+Download link : https://notepad-plus-plus.org/downloads/
+
+
+
+datalist tag
+==============
+A <datalist> tag/element is used to specify list of predefine options for an <input> tag/element.
+
+A <datalist> tag/element provides autocomplete features for an <input> element/tag.
+
+User will see a drop-down list of predefine options for an <input> tag/element.
+
+A <datalist> tag/element  "id" attribute must be same as <input> tag/element
+"list" attribute.
+
+
+ex:
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUBTALENT</title>
+	</head>
+	<body>
+		Country : <input type="text"  list="countries"/>
+
+		<datalist id="countries">
+			<option value="India">	
+			<option value="Indoniasia">
+			<option value="Ireland">
+			<option value="Iraq">
+			<option value="Iran">
+			<option value="America">	
+			<option value="Australia">
+			<option value="Argentina">						
+		</datalist>	
+		
+	</body>
+</html>
+	
+
+Details tag
+================
+A <details> tag/element is used display special content where a user can open and close on demand. 
+
+A <details> tag is used to design interactive widgets where user can
+open and close.
+
+A <details> tag contains <summary> tag.
+
+We can keep any sort of tags inside <details> tags.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUBTALENT</title>
+	</head>
+	<body>
+		<details>
+			<summary>HTML</summary>
+			<p>HTML is a widely used language on web</p>
+			<div>HTML is a case insensitive language</div>
+			<h1>HTML is a tag based language</h1>
+		</details>
+		
+	</body>
+</html>
+	
+HTML <del> and <ins> tag
+===========================
+The <del> HTML element represents a range of text that has been deleted from a document. 
+
+The <ins> element can be used for the opposite purpose: to indicate text that has been added to the document.
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUBTALENT</title>
+	</head>
+	<body>
+		My Hero is <del>Mahesh Babu</del> <ins>Allu Arjun</ins>
+	</body>
+</html>
+
+HTML <sub> tag
+================
+The <sub> tag defines subscript text. 
+
+Subscript text appears half a character below the normal line, and is sometimes rendered in a smaller font.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUBTALENT</title>
+	</head>
+	<body>
+		<h1>H<sub>2</sub>O</h1>
+	</body>
+</html>
+		
+HTML <sup> tag
+================
+The <sup> tag defines superscript text. 
+
+Superscript text appears half a character above the normal line, and is sometimes 
+rendered in a smaller font.
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUBTALENT</title>
+	</head>
+	<body>
+		<h1>
+			a<sup>2</sup>+b<sup>2</sup>
+		</h1>
+	</body>
+</html>
+	
+HTML <bdo> tag
+===============
+BDO stands for Bi-Directional Override. 
+
+The <bdo> tag is used to override the current text direction.
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUBTALENT</title>
+	</head>
+	<body>
+		<h1>Hello</h1>
+
+		<h1>
+			<bdo dir="rtl">Hello</bdo>
+		</h1>
+
+		<h1>
+			<bdo dir="ltr">Hello</bdo>
+		</h1>
+	</body>
+</html>
+	
+
+
+HTML <header> and <nav> tag
+===========================
+The <header> element represents a container for introductory content or a set of navigational links.
+
+The <nav> tag defines a set of navigation links. 
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<header>
+			<center>
+			<nav>
+				<a href="">HOME</a> &nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="">ABOUT</a> &nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="">SERVICE</a> &nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="">PORTFOLIO</a> &nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="">CONTACT</a> &nbsp;&nbsp;&nbsp;&nbsp;
+			</nav>	
+			</center>
+		</header>
+	</body>
+</html>
+
+HTML <section> tag, <article> tag and <figure> tag
+=====================================================
+The <section> tag defines a section in a document.
+
+The <article> tag specifies independent, self-contained content. 
+
+The <figure> tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<section>
+			<center>
+				<article>
+					<h1>Our Story</h1>
+					<p>Our Awesome Features Make Your Learning Hassle-Free</p>
+					
+					<figure>
+							<img src="images/rock.jpg" 
+								width="400px" height="200px"/>
+							 <figcaption>Dwayne Johnson</figcaption>
+					</figure>
+					<p>
+						iHub is the only institute that makes sure you get your penny’s worth in the form of vast knowledge. We strongly believe that iHub is the gateway to your bright future in IT. You may not want to regret missing out on a great opportunity as you are bound to realize the importance of iHub, once you join the course. iHub takes pride in being the only institute where our hard-working and dedicated faculty is keen to deliver as much information and knowledge as possible to the students. We continue to thrive and maintain our ascendance by being the first ones to introduce brand-new products and services in the industry on a consistent basis. We specialize in career training in software quality assurance. We at iHub believe and strive in turning a trainee’s dream into a successful reality.
+					</p>					
+				</article>
+			</center>
+		</section>
+	</body>
+</html>
+
+
+HTML <footer> tag
+=====================
+The <footer> tag defines a footer for a document or section. 
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<footer>
+			<center>
+				<p> HOME | ABOUT | SERVICE | PORTFOLIO | CONTACT</p>
+				<p> &copy;All Right Reserved-2023</p>	
+			</center>
+		</footer>
+	</body>
+</html>
+
+HTML <small> tag
+=================
+The <small> HTML element represents  small print like copyright and legal text.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<footer>
+			<center>
+				<small> &copy;All Right Reserved-2023</small>	
+			</center>
+		</footer>
+	</body>
+</html>
+
+
+HTML <big> tag
+================
+The <big> tag is used to make the text one size bigger i.e from small to medium, 
+medium to large, large to x-large.
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<p>This is <big>html</big> class for html students</p>
+	</body>
+</html>
+
+HTML <cite> tag
+==============
+The <cite> tag defines the title of a creative work i.e movie , songs, Poems and etc.
+
+The text in the <cite> element usually renders in italic.
+
+ex:
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			Movie Name : <cite>Dhamaka</cite>
+			
+	</body>
+</html>
+
+HTML <mark> tag
+=================
+The HTML <mark> tag is used to mark or highlight text that has special interest.
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			Sir , from today onwards <mark> i will practice java</mark>
+			
+	</body>
+</html>
+
+
+HTML frames
+============
+
+To use frames on a web page we need to use <frameset> tag instead of <body> tag.
+
+The <frameset> tag defines how to divide the window into frames.
+
+The "rows" attribute of <frameset> tag defines horizontal frames.
+
+The "cols" attribute of <frameset> tag defines vertical frames.
+
+Each frame is indicated by <frame> tag and it defines which document should 
+be open into that place.
+
+Note:
+----
+The <frame> tag is deprecated in HTML5 so that don't use this tag.
+
+
+index.html
+-----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<frameset cols="33%,*,33%">
+		<frame src="a.html">
+		<frame src="b.html">
+		<frame src="c.html">
+	</frameset>
+</html>
+
+a.html
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A.html</title>
+	</head>
+	<body bgcolor="blue">
+			
+			
+	</body>
+</html>
+
+b.html
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>B.html</title>
+	</head>
+	<body bgcolor="pink">
+			
+			
+	</body>
+</html>
+
+c.html
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>C.html</title>
+	</head>
+	<body bgcolor="red">
+			
+			
+	</body>
+</html>
+
+ex:2
+-----------
+
+index.html
+----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<frameset rows="33%,*,33%">
+		<frame src="a.html">
+		<frame src="b.html">
+		<frame src="c.html">
+	</frameset>
+</html>
+
+a.html
+-------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A.html</title>
+	</head>
+	<body bgcolor="#EE5A24">
+			
+			
+	</body>
+</html>
+
+b.html
+-------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>B.html</title>
+	</head>
+	<body bgcolor="#FFFFFF">
+			
+			<center>
+				<img src="images/chakra.png" width="80px" height="80px"/>
+			</center>
+	</body>
+</html>
+
+c.html
+-------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>C.html</title>
+	</head>
+	<body bgcolor="#009432">
+			
+			
+	</body>
+</html>
+
+
+HTML <iframe> tag
+====================
+It is used to specify inline frame.
+
+A <iframe> tag/element is used to embed a document into current HTML document.
+
+
+
+ex:1
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<iframe src="http://www.ihubtalent.com" width="300px" height="300px">
+		</iframe>	
+	</body>
+</html>
+
+ex:2
+-----
+
+index.html
+---------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<iframe src="a.html" width="300px" height="300px">
+		</iframe>	
+	</body>
+</html>
+
+a.html
+-------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A.html</title>
+	</head>
+	<body bgcolor="#EE5A24">
+		
+		<center>
+			<h1>A.HTML file</h1>
+		</center>		
+			
+	</body>
+</html>
+
+ex:3
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<a href="a.html" target="myFrame">clickMe</a>
+		
+		
+		<br><br>
+		
+		<iframe src="" name="myFrame"  width="300px" height="300px"></iframe>
+		
+	</body>
+</html>

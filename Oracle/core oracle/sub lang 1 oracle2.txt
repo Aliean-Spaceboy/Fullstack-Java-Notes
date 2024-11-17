@@ -1,0 +1,291 @@
+Establish the connection with database software
+================================================
+
+To perform any operation in a database we need to establish the connection.
+
+Once work with database is completed we need to close the connection.
+
+
+1)
+SQL> connect
+      	username : system 
+      	password : admin 
+
+SQL> disconnect  
+
+
+2)
+SQL> conn 
+	username : system 
+      	password : admin 
+SQL> disc 
+
+
+3) 
+SQL> conn system/admin 
+SQL> disc 
+
+create command
+===============
+It is used to create table in a database.
+
+syntax:
+-----
+	create table <table_name>(col1 datatype(size1),col2 datatype(size),......,
+							colN datatype(size));
+
+ex:
+	create table student(sno number(3),sname varchar2(10),sadd varchar2(12));
+
+	create table dept(deptno number(3),dname varchar2(10),dloc varchar2(12));
+
+	create table emp(eid number(3),ename varchar2(10),esal number(10,2),
+				deptno number(3),job varchar2(14),comm number(6));
+
+describe command
+=================
+It wil display the structure of the table.
+
+syntax:
+	desc <table_name>;
+ex:
+	desc student;
+	desc emp;
+	desc dept; 
+
+
+
+insert command
+==============
+It is used to insert the row/record in a database table.
+
+syntax:
+-----
+	insert into <table_name> values(val1,val2,....,valN);
+
+ex:
+	insert into student values(101,'raja','hyd');
+
+	insert into student values('ravi',102,'delhi'); // invalid 
+
+	insert into student values(102,'ravi'); //invalid 
+
+	A null is a operator which represent undefined or unavailable.
+	
+	insert into student values(102,'ravi',null);
+	
+approach2
+---------
+	insert into student(sno,sname,sadd) values(103,'ramana','vizag');
+
+	insert into student(sno,sname) values(104,'ramulu');
+
+approach3
+---------
+	Using '&' symbol we can read dynamic values.
+	
+	insert into student values(&sno,'&sname','&sadd');
+
+commit command
+==============
+It is used to make the changes permanent to database.
+
+syntax:
+	commit;
+
+
+dept table
+=========
+create table dept(deptno number(3),dname varchar2(10),dloc varchar2(12));
+insert into dept values(10,'ECE','HYD');
+insert into dept values(20,'EEE','DELHI');
+insert into dept values(30,'CSE','PUNE');
+insert into dept values(40,'MEC','VIZAG');
+commit;
+
+
+emp table
+==========
+
+create table emp(eid number(3),ename varchar2(10),esal number(10,2),
+				deptno number(3),job varchar2(14),comm number(6));
+
+insert into emp values(201,'Alan',9000,10,'Clerk',null);
+insert into emp values(202,'Jose',19000,10,'Clerk',500);
+
+insert into emp values(203,'Kelvin',49000,20,'HR',500);
+insert into emp values(204,'Linda',23000,20,'HR',900);
+
+insert into emp values(205,'Nancy',31000,30,'Manager',400);
+insert into emp values(206,'Erick',29000,30,'Manager',900);
+
+commit;
+
+select command
+===============
+It is used to select the records/rows from database table.
+
+syntax:
+-------
+	select * from <table_name>
+
+	Here '*' means all rows and columns.
+
+ex:
+	select * from emp;
+	select * from dept;
+	select * from student;
+Projection
+----------
+Selecting specific columns from database table is called projection.
+ex:
+	select sno,sname,sadd from student;
+
+	select sno,sname from student;
+
+	select dloc from dept;
+
+
+In select command we can perform arithmetic operations also.
+ex:
+	select sno+100,sname,sadd from student;
+	select sno-100,sname,sadd from student;
+
+
+
+Column Alias
+------------
+A userdefined heading given to a column is called column alias.
+
+Column alias can be applied to any column.
+
+Column alias is temperory.Once the query is executed we will loss the column alias.
+
+ex:
+	select sno as ROLL_NO,
+		sname as NAME,
+			sadd as CITY
+				 from student;
+
+
+	select sno+100 as SNO,sname,sadd from student;
+	select sno-100 as SNO,sname,sadd from student;
+
+Interview Queries
+=================
+
+Q) Write a query to display employee details from employee table?
+	
+	select * from emp;
+
+
+
+Q) Write a query to display employee id , employee name and employee salary from employee table?
+
+	select eid,ename,esal from emp;
+
+
+Q) Write a query to display list of tables present in database?
+
+	select * from tab;
+
+
+
+Q) Write a query to display list of users present in database?
+
+	   select username from all_users;
+
+
+Q) Write  a query to see display logical database name?
+
+	select * from global_name;   //XE 
+
+
+Q) Write a query to display employee id ,employee name, employee salary and 
+	annual salary  as ANNUAL_SAL from employee table?
+
+	select eid,ename,esal,esal*12 from emp;		
+
+
+
+Q) Write a query to display employee id ,employee name, employee salary and annual salary 
+   from employee table?
+
+	select eid,ename,esal,esal*12 as ANNUAL_SAL from emp;	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

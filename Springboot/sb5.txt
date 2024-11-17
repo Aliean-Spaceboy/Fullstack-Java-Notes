@@ -1,0 +1,269 @@
+Microservice
+============
+To create microservice we need to use flow layered architecture.
+
+Diagram: sb5.1
+
+customer-service
+|
+|---src/main/java
+|	|
+	|---com.ihub.www
+		|
+		|---CustomerServiceApplication.java
+	|
+	|---com.ihub.www.controller
+		|
+		|---CustomerController.java
+	|
+	|---com.ihub.www.service
+		|
+		|---CustomerService.java	
+	|
+	|---com.ihub.www.repo
+		|
+		|---CustomerRepository.java (interface)
+	|
+	|---com.ihub.www.model
+		|
+		|---Customer.java
+|
+|
+|---src/main/resources
+|	|
+	|---application.yml 
+|
+|---src/test/java
+|
+|---pom.xml 
+
+step1:
+------
+	Download and Install project lombok.
+	ex:
+		https://projectlombok.org/download
+
+
+step2:
+-----
+	Launch STS IDE by choosing workspace location.
+
+step3:
+------
+	Create a spring boot starter project i.e customer-service.
+	ex:
+		starters:	
+				Spring Web
+				Spring Data JPA
+				Lombok
+				Mysql Driver
+
+step4:
+------
+	Create a Customer model class inside "com.ihub.www.model" package.
+
+Customer.java
+---------------
+package com.ihub.www.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Customer 
+{
+	@Id
+	private int custId;
+	
+	@Column
+	private String custName;
+	
+	@Column
+	private String custAdd;
+}
+
+step5:
+-----
+	Create CustomerRepository interface inside "com.ihub.www.repo" package.
+
+CustomerRepository.java
+-----------------------
+package com.ihub.www.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.ihub.www.model.Customer;
+
+@Repository
+public interface CustomerRepository extends JpaRepository<Customer, Integer>
+{
+
+}
+
+step6:
+-----
+	Create and use "demo" schema in mysql database.
+	ex:
+		show databases;
+		create schema demo;
+		use demo;
+ 
+step7:
+-------
+	Create a CustomerController class inside "com.ihub.www.controller" package.
+
+CustomerController.java
+-----------------------
+package com.ihub.www.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ihub.www.model.Customer;
+import com.ihub.www.service.CustomerService;
+
+@RestController
+public class CustomerController 
+{
+	@Autowired
+	CustomerService customerService;
+	
+	@PostMapping("/add")
+	public Customer addCustomer(@RequestBody Customer customer)
+	{
+		return customerService.addCustomer(customer);
+	}
+}
+
+
+
+step8:
+-----
+	Create a CustomerService class inside "com.ihub.www.service" package.
+
+
+CustomerService.java
+------------------------
+package com.ihub.www.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ihub.www.model.Customer;
+import com.ihub.www.repo.CustomerRepository;
+
+@Service
+public class CustomerService 
+{
+	@Autowired
+	CustomerRepository customerRepository;
+	
+
+	public Customer addCustomer(Customer customer)
+	{
+		return customerRepository.save(customer);
+	}
+}
+
+
+
+step9:
+-----
+	Convert application.properties file to application.yml file.
+
+application.yml
+---------------
+server:
+  port: 9090
+  
+
+spring:
+  application:
+    name: CUSTOMER-SERVICE
+    
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo
+    username: root
+    password: root
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+
+step10:
+-----
+	Download and Install POSTMAN tool.
+	ex:
+		https://www.postman.com/downloads/
+
+
+step11:
+-------
+	Test the REST API.
+	ex:
+
+		HTTP method 			URL
+		-----------			-----
+		POST				http://localhost:9090/add
+
+						Body
+							raw  		json
+
+						{
+							"custId":101,
+    							"custName":"Alan",
+   							"custAdd":"Texas"
+						}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

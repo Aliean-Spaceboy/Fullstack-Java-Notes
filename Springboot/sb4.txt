@@ -1,0 +1,224 @@
+RestController
+==============
+RestController is used to develop restful web services with help of @RestController annotation.
+
+It is a class level annotation and allows a class to handle all the request made by the client.
+
+@RestController annotation is a combination of two annotation i.e @Controller and @ResponseBody annotation.
+
+We have following list of HTTP methods along with REST Annotations.
+
+ex:
+	HTTP Method			Annotation
+	----------			----------
+	GET				@GetMapping
+	POST				@PostMapping
+	PUT				@PutMapping
+	DELETE				@DeleteMapping
+	and etc.
+
+
+ex:							ex:
+	@Controller						@RestController
+	class  HomeController					class  HomeController
+	{							{
+		@RequestMapping("/msg")					@GetMapping("/msg")
+		@ResponseBody						public String home()
+		public String home()					{
+		{								return "Hello";
+			return "Hello";					}
+		}						}
+	}
+
+Project structure
+------------------
+FourthSB
+|
+|---src/main/java
+	|
+	|---com.ihub.www
+		|
+		|---FourthSBApplication.java
+		|---HomeController.java
+c
+|---src/main/resources
+	|
+	|---application.properties 
+
+|---src/test/java
+|
+|---pom.xml
+
+step1:
+-------
+	Launch STS IDE by choosing workspace location.
+
+
+step2:
+------
+	Create a spring starter project i.e FourthSB.
+	ex:
+		starter :  spring web 
+
+step3:
+----
+	Create a HomeController.java file inside "com.ihub.www" base package.
+	
+HomeController.java
+------------------
+package com.ihub.www;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HomeController 
+{
+	@GetMapping("/msg")
+	public String home()
+	{
+		return "I love spring boot";
+	}
+}
+
+step4:
+------
+	Configure server port in application.properties file.
+
+application.properties
+-----------------------
+server.port=9191
+
+
+step5:
+------
+	Run spring boot starter project.
+
+
+step6:
+-----
+	Test the application by using below request url.
+	ex:
+		http://localhost:9191/msg
+
+
+Q) What is the difference between @Controller and @RestController? 
+ 
+@Controller 					@RestController 
+--------------					---------------
+It is used to develop spring MVC based 		It is used to develop RESTful Web Services.
+applications. 
+  
+It is a specialized version of @Component 	It is a specialized version of @Controller 
+annotation. 					annotation. 
+
+
+We need to use @ResponseBody in every 		It is a combination of @Controller and 
+handler method. 				@ResponseBody annotation.
+
+It returns view in spring MVC. 			It does not return view. 
+
+It is added to Spring 2.5 version. 		It is added to Spring 4.0 version.
+
+
+Monolithic Architecture vs Microservice Architecture
+=====================================================
+
+Monolithic Architecture 
+========================
+Monolith means composed all in one piece.
+
+In monolithic architecture, we will develop individual services and at the end of the development we are packaging all the services in a single war file and that war file we will deploy in a server.
+
+Diagram: sb4.1
+
+Advantages :
+
+1) Simple to Develop
+
+2) Simple to Deploy
+
+3) Simple to Test 
+
+4) Simple to Scale 
+
+Disadvantages:
+
+1) Large and Complex application 
+
+2) Slow Development 
+
+3) Blocks Contineous Development 
+
+4) Inflexible 
+
+5) Inreliable 
+
+
+Microservice Architecture
+==========================
+The microservice defines an approach to the architecture that divides an application into 
+a pool of loosely coupled services that implements business requirements. 
+
+In Microservice architecture,Each service is self contained and implements a single bussiness 
+capability.
+
+The microservice architectural style is an approach to develop a single application
+as a suite of small services. 
+
+Diagram: sb4.2
+
+Advantages:
+-----------
+
+
+1)Independent Development
+------------------------
+	Each microservice can be developed independently.
+	A single development team can build test and deploy the service.
+	
+2)Independent Deployment
+------------------------
+	we can update the service without redeploying the entire application.
+	Bug release is more managable and less risky.
+
+3)Fault Tolerance
+------------------
+	If service goes down ,It won't take entire application down with it.
+
+4)Mixed Technology Stack
+---------------------
+	It is used to pick best technology which best suitable for our application.	
+
+5)Granular Scaling
+-----------------
+	In Granular scaling ,services can scaled independently.Instead of entire application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

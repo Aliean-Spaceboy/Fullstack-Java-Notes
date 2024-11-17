@@ -1,0 +1,514 @@
+HTML images
+==========
+A <img> tag is used to display the images in a web page.
+
+It is a opening tag . It contains attributes and does not have any closing tag.
+
+A <img> tag contains following attributes.
+
+ex:
+	Name		Description
+	-----		------------
+	src		It is used to locate the file
+	
+	width		It is used to set the width of the image
+	
+	height		It is used to set the height of the image 
+
+	alt		It is used to display alternate message if image is not found.
+
+We have following list of images.
+
+ex:
+	Format		Abbreviation
+	-------		-------------
+	JPEG		Joint Photographic Expert Group 
+
+	PNG		Portable Network Graphics 
+
+	SVG		Scalable Vector Graphics 
+
+	GIF		Graphic Interchange Format
+
+	and etc.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<img src="images/rock.jpg" width="300px" height="300px" />
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<img src="images/rocky.jpg" width="300px" height="300px" 
+				alt="Image Not Found"/>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5TvdGrRtXaxoJJ3m7qCBzienIkXgGZsJnFA&s" 
+				width="300px" height="300px" 
+				alt="Image Not Found"/>
+	</body>
+</html>
+
+
+HTML Hyperlink
+================
+A anchor tag <a> is used to display hyperlink in HTML.
+
+A anchor tag contains "href" attribute and it is used to navigate from one page to another page.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<center>
+			<h1>
+				<a href="http://www.facebook.com/login"> Facebook </a>
+			</h1>
+		</center>
+	</body>
+</html>
+
+A linked document will open in a current window.
+
+In order to change the behaviour we need to use another attribute called "target".
+
+A target attribute contains following two values.
+
+ex:
+	value		Description 
+	------		------------
+	_self 		It open the linked document in a current window.
+
+	_blank 		It open the linked document in a new window.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<center>
+			<h1>
+				<a href="http://www.facebook.com/login"
+					target="_self"> Facebook </a>
+			</h1>
+		</center>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<center>
+			<h1>
+				<a href="http://www.facebook.com/login"
+					target="_blank"> Facebook </a>
+			</h1>
+		</center>
+	</body>
+</html>
+
+
+Hyperlink with Image
+=====================
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<center>
+			<a href="https://en.wikipedia.org/wiki/Dwayne_Johnson" target="_blank">
+
+				<img src="images/rock.jpg" width="200px" height="200px"/>
+			</a>
+		</center>
+	</body>
+</html>
+
+Interview Questions
+===================
+
+Q) What is HTML Entity?
+
+HTML entity starts with '&' symbol and ends with semicolon(;).
+
+It is widely used to display reserved/special characters or hidden characters.
+
+We have following HTML entities.
+
+ex:
+	Entity 		Symbol
+	-------		--------
+	&gt;		>
+	&lt;		<
+	&laquo;		<<
+	&raquo;		>>
+	and etc.
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<center>
+			<h1> &gt;</h1>
+			<h1> &lt;</h1>
+			<h1> &raquo;</h1>
+			<h1> &laquo;</h1>
+			<h1> &copy;</h1>
+			<h1> &nbsp;</h1>
+		</center>
+	</body>
+</html>
+
+
+
+Q) What is the difference between HTML Tag and HTML Element?
+
+
+HTML tag
+---------
+HTML tag contains '<' and '>' symbol.
+ex:
+	<h1>, <b>, <p>, <body> and etc.
+
+HTML element
+------------
+HTML element contains opening tag , some content and closing tag.
+
+ex:
+	<h1> Heading Tag </h1>
+	<p> Paragraph Tag </p>
+	<b> Bold tag </b>
+	<body> welcome </body> and etc.
+
+
+
+Q) Types of elements in HTML?
+
+We have two types of elements.
+
+1) Inline elements 
+
+2) Block elements 
+
+1) Inline elements 
+----------------------
+Inline elements start with same line and they will occupy the width as much as required.
+
+We have following list of inline elements.
+
+ex:
+	<b>, <i>, <u>, <span> and etc.
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<b> bold tag </b>
+		<i> italic tag </i>
+		<span> span Tag </span>
+	</body>
+</html>
+
+
+2) Block elements
+-----------------
+Block elements start with new line and they will occupy 100% of width.
+
+We have following list of block elements.
+
+ex:
+	<p>, <div>, <h1> and etc.
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<p> Paragraph tag </p>
+		<div> Division Tag </div>
+		<h1> Heading tag </h1>
+	</body>
+</html>
+
+
+Q) Types of list in HTML?
+
+We have three types of list in HTML.
+
+1) Ordered list 
+
+2) Unordered list 
+
+3) Description list
+
+1) Ordered list 
+---------------
+Ordered list starts with numerics and alphabets.
+
+Ordered list contains list of items.
+
+Each list of item we need to represent by using <li> tag.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		Course Name:
+			<ol>
+				<li>ReactJS</li>
+				<li>NodeJS</li>
+				<li>ExpressJS</li>
+				<li>VueJS</li>
+			</ol>
+	</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		Course Name:
+			<ol start="101">
+				<li>ReactJS</li>
+				<li>NodeJS</li>
+				<li>ExpressJS</li>
+				<li>VueJS</li>
+			</ol>
+	</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		Course Name:
+			<ol type="i">
+				<li>ReactJS</li>
+				<li>NodeJS</li>
+				<li>ExpressJS</li>
+				<li>VueJS</li>
+			</ol>
+	</body>
+</html>
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		Course Name:
+			<ol type="I">
+				<li>ReactJS</li>
+				<li>NodeJS</li>
+				<li>ExpressJS</li>
+				<li>VueJS</li>
+			</ol>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		Course Name:
+			<ol type="a">
+				<li>ReactJS</li>
+				<li>NodeJS</li>
+				<li>ExpressJS</li>
+				<li>VueJS</li>
+			</ol>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		Course Name:
+			<ol type="A">
+				<li>ReactJS</li>
+				<li>NodeJS</li>
+				<li>ExpressJS</li>
+				<li>VueJS</li>
+			</ol>
+	</body>
+</html>
+
+
+2) Unordered list 
+------------------
+Unordered list starts with bullets.
+
+Unordered list contains list of items.
+
+Each list of item we need to represent by using <li> tag.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		Course Name:
+			<ul type="disc">
+				<li>ReactJS</li>
+				<li>NodeJS</li>
+				<li>ExpressJS</li>
+				<li>VueJS</li>
+			</ul>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		Course Name:
+			<ul type="circle">
+				<li>ReactJS</li>
+				<li>NodeJS</li>
+				<li>ExpressJS</li>
+				<li>VueJS</li>
+			</ul>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		Course Name:
+			<ul type="square">
+				<li>ReactJS</li>
+				<li>NodeJS</li>
+				<li>ExpressJS</li>
+				<li>VueJS</li>
+			</ul>
+	</body>
+</html>
+
+
+3) Description list 
+---------------------
+To represent description list we need to use <dl> tag.
+
+A description list contains description term and description definition.
+
+A <dt> tag is used to represent description term.
+
+A <dd> tag is used to represent description definition.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<dl>
+			<dt> Gandhi G </dt>
+			<dd>
+				Mohandas Karamchand Gandhi was an Indian lawyer, anti-colonial nationalist, and political ethicist who employed nonviolent resistance to lead the successful campaign for India's independence from British rule. He inspired movements for civil rights and freedom across the world.
+			</dd>	
+		</dl>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

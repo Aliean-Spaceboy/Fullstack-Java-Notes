@@ -1,0 +1,395 @@
+Working with LOB values
+=======================
+Files are known as LOB's.
+
+We have two types of LOB's.
+
+1) BLOB (Binary Large Object)
+	ex:
+		images, audio, video, avi file and etc.
+
+2) CLOB (Character Large Object)
+	ex:
+		text file, advanced text file and etc.
+
+While dealing with matrimonial applications, profile management applications, job portal applications and etc. We need to insert and retrieve LOB values.
+
+Simple Statement is not suitable to insert LOB values to query parameter.
+
+We need to use PreparedStatement object.
+
+We can set LOB values directly to query parameter by using below methods.
+ex:
+	ps.setBinaryStream(-,-,-)/ps.setBLOB(-,-,-)
+	ps.setCharacterStream(-,-,-)/ps.setCLOB(-,-,-)
+
+
+emp2 table
+----------
+drop table emp2;
+
+create table emp2(eid number(3),ename varchar2(10),ephoto BLOB);
+
+
+program
+--------
+package com.ihub.www;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+public class PhotoInsertApp 
+{
+	public static void main(String[] args)throws Exception 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the employee id :");
+		int id=sc.nextInt();
+		
+		System.out.println("Enter the employee name :");
+		String name=sc.next();
+		
+		//locate a photo 
+		File f=new File("src/com/ihub/www/salman.jpg");
+		FileInputStream fis=new FileInputStream(f);
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		
+		String qry="insert into emp2 values(?,?,?)";
+		
+		PreparedStatement ps=con.prepareStatement(qry);
+		
+		//set the values
+		ps.setInt(1, id);
+		ps.setString(2, name);
+		ps.setBinaryStream(3, fis, (int)f.length());
+		
+		//execute 
+		int result=ps.executeUpdate();
+		
+		if(result==0)
+			System.out.println("No Record Inserted");
+		else
+			System.out.println("Record Inserted");
+		
+		ps.close();
+		con.close();
+	}
+}
+
+PhotoRetrieveApp.java
+-----------------------
+package com.ihub.www;
+
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class PhotoRetrieveApp 
+{
+	public static void main(String[] args)throws Exception  
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		Statement st=con.createStatement();
+		
+		String qry="select * from emp2";
+		
+		ResultSet rs=st.executeQuery(qry);
+		while(rs.next())
+		{
+			InputStream is=rs.getBinaryStream(3);
+			
+			FileOutputStream fos=new FileOutputStream("D:\\anil.png");
+			
+			int byteReads=0;
+			
+			byte[] buff=new byte[255];
+			
+			while((byteReads=is.read(buff))!=-1)
+			{
+				fos.write(buff, 0, byteReads);
+			}
+			
+			fos.close();	
+		}
+		System.out.println("Please check the location....");
+		rs.close();
+		st.close();
+		con.close();
+		
+		
+	}
+}
+
+Working with properties file
+=============================
+In regular intervals our DBA will change username and password for security reason.
+
+It is never recommand to keep database properties directly to the application.
+
+It is always recommanded to read database properties from properties file.
+
+Properties file contains key and value pair.
+
+dbdetails.properties
+-------------------
+driver = oracle.jdbc.driver.OracleDriver
+url = jdbc:oracle:thin:@localhost:1521:XE
+username = system
+password = admin 
+ 
+
+PropertiesFileApp.java
+---------------------
+package com.ihub.www;
+
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Properties;
+
+public class PropertiesFileApp 
+{
+	public static void main(String[] args)throws Exception  
+	{
+		//locate a properties file
+		FileInputStream fis=new FileInputStream("src/com/ihub/www/dbdetails.properties");
+		
+		//create Properties class object
+		Properties p=new Properties();
+		
+		//load the data from file to class
+		p.load(fis);
+		
+		String driver=p.getProperty("driver");
+		String url=p.getProperty("url");
+		String username=p.getProperty("username");
+		String password=p.getProperty("password");
+		
+		Class.forName(driver);
+		Connection con=DriverManager.getConnection(url,username,password);
+		Statement st=con.createStatement();
+		String qry="select * from student";
+		ResultSet rs=st.executeQuery(qry);
+		while(rs.next())
+		{
+			System.out.println(rs.getRow()+" "+rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+		}
+		
+		rs.close();
+		st.close();
+		con.close();
+		
+		
+		
+	}
+}
+
+
+
+JDBC Flexible Application
+=========================
+In JDBC, Connection object consider as heavy weight object.
+
+It is never recommanded to create Connection object in every JDBC Application.
+
+We need to create a seperate class which returns JDBC Connection object.
+
+ex:
+--
+
+DBConnection.java
+------------------
+package com.ihub.www;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DBConnection 
+{
+	static Connection con=null;
+	
+	public static Connection getConnection()
+	{
+		try
+		{
+			if(con==null)
+			{
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return con;
+	}
+}
+
+
+
+
+FlexibleApp.java
+----------------
+package com.ihub.www;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class FlexibleApp 
+{
+	public static void main(String[] args)throws Exception  
+	{
+		Connection con=DBConnection.getConnection();
+		Statement st=con.createStatement();
+		String qry="select * from student";
+		ResultSet rs=st.executeQuery(qry);
+		while(rs.next())
+		{
+			System.out.println(rs.getRow()+" "+rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+		}
+		
+		rs.close();
+		st.close();
+		con.close();
+	}
+}
+
+Thin-Client/Fat-Server application
+===================================
+Every JDBC application is a thin-client/fat-server application.
+
+To make a thin-client/fat-server application we need to save business logic and persistence logic in database software in the form of PL/SQL procedures and functions.
+
+To deal with PL/SQL procedures and functions we need to use CallableStatement object.
+
+Diagram: jdbc6.1
+
+PL/SQL procedure
+-----------------
+create or replace procedure first_proc(A IN number,B IN number, C OUT number)
+is
+begin
+C:=A+B;
+END;
+/
+
+ex:
+---
+package com.ihub.www;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Types;
+
+public class CallableStmtApp 
+{
+	public static void main(String[] args)throws Exception  
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		
+		//create a Callable Stmt object
+		CallableStatement cst=con.prepareCall("{CALL first_proc(?,?,?)}");
+		
+		//register OUT parameter value
+		cst.registerOutParameter(3, Types.INTEGER);
+		
+		//set the IN parameter value
+		cst.setInt(1, 10);
+		cst.setInt(2, 20);
+		
+		//execute 
+		cst.execute();
+		
+		//gather the result
+		
+		int result=cst.getInt(3);
+		System.out.println("Sum of two numbers is ="+result);
+		
+		cst.close();
+		con.close();
+	}
+}
+
+
+Batch processing
+================
+Batch processing is used to declare multiple queries to batch and makes a single call to the database.
+
+In Batch processing we need to add each query to batch by using addBatch() method of Statement object.
+
+To execute the batch we need to use executeBatch() method of Statement object.
+
+ex:
+---
+package com.ihub.www;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class BatchProcessing 
+{
+	public static void main(String[] args)throws Exception  
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		Statement st=con.createStatement();
+		
+		
+		String qry1="insert into student values(104,'ramulu','pune')";
+		String qry2="update student set sname='rani' where sname='raja'";
+		String qry3="delete from student where sno=103";
+		
+		//add queries to batch
+		st.addBatch(qry1);
+		st.addBatch(qry2);
+		st.addBatch(qry3);
+		
+		//execute the batch
+		int[] result=st.executeBatch();
+		
+		int sum=0;
+		for(int i:result)
+		{
+			sum+=i;
+		}
+		
+		System.out.println("No of Records effected are ="+sum);
+		
+		st.close();
+		con.close();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

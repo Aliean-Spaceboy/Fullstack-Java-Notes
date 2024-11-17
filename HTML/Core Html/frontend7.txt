@@ -1,0 +1,390 @@
+Steps to display Google Map on a web page
+===========================================
+
+step1:
+-----
+	Goto Google Maps.
+	ex:
+		https://www.google.com/maps
+
+step2:
+-----
+	Type Ihub Talent in Google Map Search Box.
+
+
+step3:
+-------
+	Click on "menu" button.
+
+step4:
+------
+	Click on "share and embed Map"
+
+step5:
+-----
+	Click on "embeded a map" link.
+
+step6:
+-----
+	Click to "Copy Html".
+
+step7:
+-------
+	Paste the code inside <body> tag of index.html file.
+
+step8:
+------
+	Check the output on browser window.
+
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>INDEX</title>
+	</head>
+	<body>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4876564064143!2d78.44241401427325!3d17.436358405981736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb919633f78bef%3A0xbb63515db9bc2eba!2siHub%20Talent%20(Innovative%20Placement%20Solutions)!5e0!3m2!1sen!2sin!4v1665222276198!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		
+	</body>
+</html>
+
+
+
+HTML Audio
+===========
+The HTML <audio> tag/element is used to play an audio file on a web page.
+
+<audio> tag contains "controls" attribute adds audio control like play,pause ,volume and etc.
+
+The <source > tag/element allows us to specify alternate audio file which the
+browser my choose.
+
+HTML audio formats can be MP3,WAV,OGG and etc.
+
+HTML Audio Media types are 
+
+File Formats		Media Type
+------------		----------
+MP3			audio/mpeg
+
+OGG			audio/ogg
+
+WAV			audio/wav
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage</title>
+	</head>
+	<body>	
+		<audio controls>
+			<source src="song.mp3" type="audio/mpeg">
+		</audio>
+	</body>
+</html>
+
+
+
+HTML video Tag/Element
+=======================
+The <video> tag or element is used to embed video content in a document such as
+movie clip,other video streams.
+
+The <video> tag contains one or more <source> tag with different video source.
+
+There are three supported video fromats in html are MP4,webM and OGG.
+
+HTML video media types are 
+
+File format		Media Type
+-----------		-----------
+MP4			video/mp4
+
+OGG			video/ogg
+
+and etc.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage</title>
+	</head>
+	<body>	
+		<video controls >
+			<source src="video.mp4" type="video/mp4">
+		</video>
+	</body>
+</html>
+
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage</title>
+	</head>
+	<body>	
+		<video controls width="400" height="400">
+			<source src="video.mp4" type="video/mp4">
+		</video>
+	</body>
+</html>
+
+Graphics in HTML5
+=================
+There are two ways to draw the graphics in  HTML5.
+
+1)SVG 
+
+2)CANVAS 
+
+1)SVG 
+-------
+HTML5 uses SVG technology to derived graphics in HTML. 
+
+SVG stands for Scalable Vector Graphics.
+
+SVG is used to draw two-dimensional vector based graphics in HTML.
+
+World Wide Web Consortium (W3C) prefers SVG technology to draw the graphics in HTML.
+
+A <svg> tag/element is a container tag for vector graphics.
+
+A <svg> tag/element contains various methods to display circle, rectangle, polygon ,
+graphic images and etc.
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>INDEX</title>
+	</head>
+	<body>
+		<!-- container -->
+		<svg style="border:2px solid black" width="300px" height="300px">
+			
+		</svg>
+	</body>
+</html>
+
+
+ex:2
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>INDEX</title>
+	</head>
+	<body>
+		<!-- container -->
+		<svg style="border:2px solid black" width="300px" height="300px">
+			<!-- circle -->
+			<circle cx="150px" cy="150px" r="50px"/>
+		</svg>
+	</body>
+</html>
+
+ex:3
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>INDEX</title>
+	</head>
+	<body>
+		<!-- container -->
+		<svg style="border:2px solid black" width="300px" height="300px">
+			<!-- circle -->
+			<circle cx="150px" cy="150px" r="50px"
+			fill="#FFFF00"  stroke="#FF0000" stroke-width="5px"/>
+		</svg>
+	</body>
+</html>
+
+ex:4
+-------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>INDEX</title>
+	</head>
+	<body>
+		<!-- container -->
+		<svg style="border:2px solid black" width="300px" height="300px">
+			<!-- reactangle -->
+			<rect x="50px"   y="20px"  width="200px" height="200px"
+			fill="green" stroke="blue" stroke-width="5px"/>
+		</svg>
+	</body>
+</html>
+
+ex:5
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>INDEX</title>
+	</head>
+	<body>
+		<!-- container -->
+		<svg style="border:2px solid black" width="300px" height="300px">
+			<!--  polygon -->
+			<polygon points="10,78 100,10 250,190 160,210"
+			fill="yellow" stroke="red" stroke-width="5px"/>
+			
+		</svg>
+	</body>
+</html>
+
+2)CANVAS 
+-------------
+A <canvas> tag is used to draw vector graphics via javascript.
+
+A <canvas> tag/element is a container tag.
+
+A <canvas> tag/element contains various methods to display lines,circle,rectangle,polygon,
+graphic images and etc.
+
+ex:1
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>INDEX</title>
+	</head>
+	<body>
+		<!-- container -->
+		<canvas  style="border:2px solid black;" width="300px" height="300px">
+		
+		</canvas>
+	</body>
+</html>
+
+ex:2
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>INDEX</title>
+	</head>
+	<body>
+		<!-- container -->
+		<canvas id="myId" style="border:2px solid black;" 
+					width="300px" 
+					    height="300px">
+		
+		</canvas>
+		
+		<script>
+			var context=document.getElementById("myId");
+			var c=context.getContext("2d");
+			c.moveTo(0,0);
+			c.lineTo(400,400);
+			c.stroke();
+		</script>
+		
+	</body>
+</html>
+
+
+ex:2
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>INDEX</title>
+	</head>
+	<body>
+		<!-- container -->
+		<canvas id="myId" style="border:2px solid black;" 
+					width="300px" 
+					    height="300px">
+		
+		</canvas>
+		
+		<script>
+			var context=document.getElementById("myId");
+			var c=context.getContext("2d");
+			c.beginPath();
+			c.arc(100,100,50,0,2*Math.PI);
+			c.stroke();
+		</script>
+		
+	</body>
+</html>
+
+
+ex:3
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>INDEX</title>
+	</head>
+	<body>
+		<!-- container -->
+		<canvas id="myId" style="border:2px solid black;" 
+					width="300px" 
+					    height="300px">
+		
+		</canvas>
+		
+		<script>
+			var context=document.getElementById("myId");
+			var c=context.getContext("2d");
+			c.font = "30px Arial";
+			c.fillText("Hello World", 20, 50);
+		</script>
+		
+	</body>
+</html>
+
+
+Interview Questions
+====================
+Q)Differences between HTML and HTML5 ?
+
+HTML						HTML5
+------						-----
+1)To represent HTML document we need to use     To represent HTML5 document we need to use 
+  <!DOCTYPE>.					<!DOCTYPE html>.
+
+2)HTML is bit slow.				HTML5 is more faster because it is leight weight.
+
+3)HTML is not efficient.			HTML5 is more efficient.
+
+4)HTML is inflexible for the developer.		HTML5 is flexible for the developer.
+
+5)HTML is Less mobile friendly.			HTML5 is mobile friendly.
+
+6)Does not support drag and drop effects.	It supports Drag and Drop effects.
+
+7)Not supported Audio and video without using	Supports audio and video with the help of 
+  flash player.					<audio> and <video> tag without using flash player.
+
+8)IT does not support javascript to run	        It supports javascript to run in background with 
+  on browser.					the help of JS Web Worker API.
+
+
+9)Vector graphics supported with the help of    Vector graphics is supported with the help of 
+  technologies such as VML,Silver light,adobe   internal technologies such as SVG and CANVAS.
+  flash and etc.
+
+10)Can't handle inaccurate syntax.		IT can handle Inaccurate syntax.
+
+
+11)shapes like circle,rectangle,triangle	Shapes like circle ,triangle,rectangle are easy to draw.
+   are not possible to draw.
+
+
+
+
+
+
+
+
+ 	

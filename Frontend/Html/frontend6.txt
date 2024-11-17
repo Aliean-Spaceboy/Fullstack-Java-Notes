@@ -1,0 +1,337 @@
+HTML frames
+============
+
+To use frames on a web page we need to use <frameset> tag instead of <body> tag.
+
+The <frameset> tag defines how to divide the window into frames.
+
+The "rows" attribute of <frameset> tag defines horizontal frames.
+
+The "cols" attribute of <frameset> tag defines vertical frames.
+
+Each frame is indicated by <frame> tag and it defines which document should 
+be open into that place.
+
+Note:
+----
+The <frame> tag is deprecated in HTML5 so that don't use this tag.
+
+
+index.html
+-----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<frameset cols="33%,*,33%">
+		<frame src="a.html">
+		<frame src="b.html">
+		<frame src="c.html">
+	</frameset>
+</html>
+
+a.html
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A.html</title>
+	</head>
+	<body bgcolor="blue">
+			
+			
+	</body>
+</html>
+
+b.html
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>B.html</title>
+	</head>
+	<body bgcolor="pink">
+			
+			
+	</body>
+</html>
+
+c.html
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>C.html</title>
+	</head>
+	<body bgcolor="red">
+			
+			
+	</body>
+</html>
+
+ex:2
+-----------
+
+index.html
+----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<frameset rows="33%,*,33%">
+		<frame src="a.html">
+		<frame src="b.html">
+		<frame src="c.html">
+	</frameset>
+</html>
+
+a.html
+-------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A.html</title>
+	</head>
+	<body bgcolor="#EE5A24">
+			
+			
+	</body>
+</html>
+
+b.html
+-------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>B.html</title>
+	</head>
+	<body bgcolor="#FFFFFF">
+			
+			<center>
+				<img src="images/chakra.png" width="80px" height="80px"/>
+			</center>
+	</body>
+</html>
+
+c.html
+-------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>C.html</title>
+	</head>
+	<body bgcolor="#009432">
+			
+			
+	</body>
+</html>
+
+
+HTML <iframe> tag
+====================
+It is used to specify inline frame.
+
+A <iframe> tag/element is used to embed a document into current HTML document.
+
+
+
+ex:1
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<iframe src="http://www.ihubtalent.com" width="300px" height="300px">
+		</iframe>	
+	</body>
+</html>
+
+ex:2
+-----
+
+index.html
+---------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<iframe src="a.html" width="300px" height="300px">
+		</iframe>	
+	</body>
+</html>
+
+a.html
+-------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A.html</title>
+	</head>
+	<body bgcolor="#EE5A24">
+		
+		<center>
+			<h1>A.HTML file</h1>
+		</center>		
+			
+	</body>
+</html>
+
+ex:3
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<a href="a.html" target="myFrame">clickMe</a>
+		
+		
+		<br><br>
+		
+		<iframe src="" name="myFrame"  width="300px" height="300px"></iframe>
+		
+	</body>
+</html>
+
+
+Steps to display Google Map on a web page
+===========================================
+
+step1:
+-----
+	Goto Google Maps.
+	ex:
+		https://www.google.com/maps
+
+step2:
+-----
+	Type Ihub Talent in Google Map Search Box.
+
+
+step3:
+-------
+	Click on "menu" button.
+
+step4:
+------
+	Click on "share and embed Map"
+
+step5:
+-----
+	Click on "embeded a map" link.
+
+step6:
+-----
+	Click to "Copy Html".
+
+step7:
+-------
+	Paste the code inside <body> tag of index.html file.
+
+step8:
+------
+	Check the output on browser window.
+
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>INDEX</title>
+	</head>
+	<body>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4876564064143!2d78.44241401427325!3d17.436358405981736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb919633f78bef%3A0xbb63515db9bc2eba!2siHub%20Talent%20(Innovative%20Placement%20Solutions)!5e0!3m2!1sen!2sin!4v1665222276198!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		
+	</body>
+</html>
+
+
+
+HTML Audio
+===========
+The HTML <audio> tag/element is used to play an audio file on a web page.
+
+<audio> tag contains "controls" attribute adds audio control like play,pause ,volume and etc.
+
+The <source > tag/element allows us to specify alternate audio file which the
+browser my choose.
+
+HTML audio formats can be MP3,WAV,OGG and etc.
+
+HTML Audio Media types are 
+
+File Formats		Media Type
+------------		----------
+MP3			audio/mpeg
+
+OGG			audio/ogg
+
+WAV			audio/wav
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage</title>
+	</head>
+	<body>	
+		<audio controls>
+			<source src="song.mp3" type="audio/mpeg">
+		</audio>
+	</body>
+</html>
+
+
+
+HTML video Tag/Element
+=======================
+The <video> tag or element is used to embed video content in a document such as
+movie clip,other video streams.
+
+The <video> tag contains one or more <source> tag with different video source.
+
+There are three supported video fromats in html are MP4,webM and OGG.
+
+HTML video media types are 
+
+File format		Media Type
+-----------		-----------
+MP4			video/mp4
+
+OGG			video/ogg
+
+and etc.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage</title>
+	</head>
+	<body>	
+		<video controls >
+			<source src="video.mp4" type="video/mp4">
+		</video>
+	</body>
+</html>
+
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage</title>
+	</head>
+	<body>	
+		<video controls width="400" height="400">
+			<source src="video.mp4" type="video/mp4">
+		</video>
+	</body>
+</html>

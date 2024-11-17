@@ -1,0 +1,581 @@
+break line tag
+===============
+A <br> tag is used to break the line in a web page.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>
+			<h1>
+				Welcome to Niyaz Sir classes
+				<br>
+				This is HTML class 
+				
+			</h1>
+		</center> 
+	</body>
+</html>
+
+
+Horizontal line
+================
+A <hr> tag is used to declare horizontal line.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>
+			<h1>
+				Welcome to Niyaz Sir classes
+				<hr>
+				This is HTML class 
+				
+			</h1>
+		</center> 
+	</body>
+</html>
+
+
+
+
+
+
+HTML Hyperlink
+==============
+A <a> anchor tag is used to declare hyperlink in a web page.
+
+A <a> tag contains only one attribute i.e href.
+
+A "href" attribute is used to navigate to other resources.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>
+				<a href="http://www.google.com"> click Here </a>
+		</center> 
+	</body>
+</html> 
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>
+			<a href="https://en.wikipedia.org/wiki/Dwayne_Johnson">
+				<img src="images/rock.png" width="300px" height="300px"/>
+			</a>
+		</center> 
+	</body>
+</html>
+
+If we click on hyperlink then our document will open in a same window.
+
+In order to change the default behaviour we need to use target attribute.
+
+A target attribute specifies where a document must be open.
+
+A target attribute contains following values.
+
+ex:
+	value		description
+	-----		------------
+	_self		It will open the document in a current window.		
+
+	_blank		It will open the document in a new window.
+
+	_parent		It will open the document in a parent window.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>
+			<a href="https://en.wikipedia.org/wiki/Dwayne_Johnson" target="_self">
+				<img src="images/rock.png" width="300px" height="300px"/>
+			</a>
+		</center> 
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>
+			<a href="https://en.wikipedia.org/wiki/Dwayne_Johnson" target="_blank">
+				<img src="images/rock.png" width="300px" height="300px"/>
+			</a>
+		</center> 
+	</body>
+</html>
+
+
+Interview Questions
+===================
+Q) Types of Tags in HTML?
+
+We have two types of  tags in HTML.
+
+1) Paired Tags 
+------------------
+	Paired tag contains opening tag and closing tag.
+	ex:
+		<h1>, <p>, <head> , <body> , <title> and etc.
+
+	Paired tag is also known as container tag.
+
+
+2) Unpaired Tags 
+---------------
+	Unpaired tag contains opening tag and does not have any closing tag.
+	ex:
+		<link>, <meta>, <br>, <hr>,  <img> and etc.
+
+	Unpaired tag is also known as empty tag.
+
+
+
+Q) Types of elements?
+
+We have two types of elements.
+
+1) Block Elements 
+-----------------
+	Block elements always start with new line and they will occupy 100% of width.
+	ex:
+		<h1>, <p>, <div> and etc.	
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<!-- block elements -->
+		<h1> This is Heading Tag </h1>
+		<p> This is Paragragh Tag </p>
+		<div> This is Division Tag </div>
+	</body>
+</html>
+
+
+		
+2) Inline Elements  
+-------------------
+	Inline elements start with same line and they will take the width as much as required.
+	ex:
+		<b>, <i>, <span> and etc.
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<!-- inline elements -->
+		<b> This is bold tag </b>
+		<i> This is italic tag </i>
+		<span>This is span tag </span>
+	</body>
+</html>
+
+
+Q) What is the difference between HTML tag and HTML element?
+
+Tag						
+-----
+HTML tag contains '<' symbol and '>' symbol.
+
+ex:
+	<h1>, <p>, <i> , <div>, <span> and etc.
+
+
+Element
+---------
+HTML element contains opening tag , some content and closing tag.
+
+ex:
+	<h1> This is Heading tag </h1>
+	<p> This is Paragraph tag </p>
+	<i> This is italic tag </i>
+
+
+Q) Types of List in HTML ?
+
+We have three types of list in HTML.
+
+1) Ordered List 
+
+2) Unordered List 
+
+3) Description List 
+
+1) Ordered List 
+--------------
+Order list contains list of items in alphabets and numerics.
+
+A <ol> tag represent ordered list.
+
+A <li> tag represent list of item.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Course:
+			<ol>
+				<li>MongoDB</li>
+				<li>ExpressJS</li>
+				<li>ReactJS</li>
+				<li>NodeJS</li>				
+			</ol>		
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Course:
+			<ol start="101">
+				<li>MongoDB</li>
+				<li>ExpressJS</li>
+				<li>ReactJS</li>
+				<li>NodeJS</li>				
+			</ol>		
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Course:
+			<ol type="a">
+				<li>MongoDB</li>
+				<li>ExpressJS</li>
+				<li>ReactJS</li>
+				<li>NodeJS</li>				
+			</ol>		
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Course:
+			<ol type="I">
+				<li>MongoDB</li>
+				<li>ExpressJS</li>
+				<li>ReactJS</li>
+				<li>NodeJS</li>				
+			</ol>		
+	</body>
+</html>
+
+1) Unordered List 
+--------------
+Unorder list contains list of items in bullets
+
+A <ul> tag represent unordered list.
+
+A <li> tag represent list of item.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Course:
+			<ul type="desc">
+				<li>MongoDB</li>
+				<li>ExpressJS</li>
+				<li>ReactJS</li>
+				<li>NodeJS</li>				
+			</ul>		
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Course:
+			<ul type="circle">
+				<li>MongoDB</li>
+				<li>ExpressJS</li>
+				<li>ReactJS</li>
+				<li>NodeJS</li>				
+			</ul>		
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Course:
+			<ul type="square">
+				<li>MongoDB</li>
+				<li>ExpressJS</li>
+				<li>ReactJS</li>
+				<li>NodeJS</li>				
+			</ul>		
+	</body>
+</html>
+
+
+
+3) Description List 
+----------------------
+Description list contains description term and description definition.
+
+A <dl> tag is used to represent description list.
+
+A <dt> tag is used to represent description term.
+
+A <dd> tag is used to represent description definition.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<dl>
+			<dt>HTML</dt>
+			<dd>It is widely used language on web</dd>
+		</dl>	
+		<dl>
+			<dt>CSS</dt>
+			<dd>It is Cascading Styles Sheet</dd>
+		</dl>	
+	</body>
+</html>
+
+Q) What is HTML entity?
+
+HTML entity is used to display hidden and reserved characters in html.
+
+HTML entity starts with '&' symbol and ends with semicolon.
+
+We have following list of HTML entities.
+
+ex:
+		HTML entity		Symbol
+		----------		------
+		&gt;			>	
+		&lt;			<
+		&laquo;			<<
+		&raquo;			>>
+		&nbsp;			(space)
+		&copy;			
+
+ex:
+-
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>
+			&gt;	
+			&lt;			
+			&laquo;		
+			&raquo;			
+			&nbsp;			
+			&copy;
+		</center>	
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

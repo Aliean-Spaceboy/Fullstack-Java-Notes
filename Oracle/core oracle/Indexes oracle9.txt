@@ -1,0 +1,301 @@
+Indexes
+==========
+Index is an object which is used to improve the performance of select stmt.
+
+Index in a database is same as index in a book.
+
+We need to create index only to those columns which are widely used in a where clause.
+
+Whenever we create index , two columns will be generated.One contains ROWID and another contains indexed column. All the records will store in ascending order in indexed column.
+
+			index table
+	--------------------------------------------
+	ROWID			|	INDEX-COLUMN
+	---------------------------------------------
+				|	9000
+				|	17000
+				|	18000
+				|	19000	
+				|	29000
+				|	34000
+	---------------------------------------------	
+
+We have two types of indexes.
+
+1)simple index
+
+2)complex index 
+
+
+1)simple index
+----------------
+When index is created only for one column is called simple index.
+
+syntax:
+	create index <index_name> on <table_name>(column_name);
+ex:
+
+	create index  idx1 on emp(eid);
+
+	select * from emp where eid=205;
+
+	Here index is used when we call "eid" in where condition.
+
+2)complex index 
+---------------
+When index is created  for multiple columns is called complex index.
+
+syntax:
+	create index <index_name> on <table_name>(column1,column2,..,columnN);
+ex:
+	create index  idx2 on  emp(job,comm);
+
+	select * from emp where job='Clerk' and comm=100;
+
+	Here index is used when we call job and comm in where condition.
+
+
+
+Views
+=====
+View is a virtual representation of a data from one or more then one table.
+
+A table which is used to create a view is called base table or above table.
+
+ex:
+	create view v1 as select * from emp;
+
+View does not consumes the memory.
+
+View does not have any data.
+
+View will get the data from based table when we execute select command.
+
+We have different types of views.
+
+1) Simple view 
+
+2) Complex view 
+
+3) with read only view 
+
+4) with check option view 
+
+5) Materialized view 
+
+1) Simple view 
+----------------
+If a view is created by using one base table is called simple view.
+
+In simple view DML operations are allowed.
+
+
+ex:
+	create view v1 as select * from emp;
+
+	select * from v1;
+
+	delete from v1;
+
+	select * from v1;
+
+	select * from emp;
+
+	rollback;
+
+2) Complex view 
+---------------
+If a view is created using more then one base table is called complex view.
+
+In complex view DML operations are not allowed.
+
+ex:
+		create view v2 as select e.eid,e.ename,e.esal,d.dname,d.dloc from emp e,dept d
+				  where(e.deptno=d.deptno);
+
+
+		select * from v2; 
+
+		delete from v2; // delete not possible 
+
+
+3) with read only view
+-----------------------
+If a view is created by using one base table and DML operation is not required then we need to use with read only view.
+
+ex:
+	create view v3 as select * from emp with read only;
+
+	select * from v3;
+
+	delete from v3;// cannot perform DML operation 
+
+
+4) with check option view 
+-----------------------
+If a view is created by using one base table and DML operation is allowed only when condition is true.
+
+ex:
+	create view v4 as select * from emp where deptno=30 with check option;
+
+	select * from v4;
+
+	insert into v4 values(207,'Lara',40000,50,'Salesman',500); //invalid 
+
+	insert into v4 values(207,'Lara',40000,30,'Salesman',500);
+
+	select * from v4;
+	select * from emp;
+
+
+5) Materialized view 
+--------------------
+Materialized view is also known as SNAPSHOT.
+
+To create a materialized view a table must have primary key.
+
+ex:
+	alter table emp add primary key(eid);
+
+	create materialized view v5 as select * from emp;
+
+	select * from v5; // 7 records 
+
+	delete from emp where eid=207;
+	commit;
+
+	select * from emp; // 6 records
+
+	select * from v5; // 7 records 
+
+	EXEC DBMS_SNAPSHOT.REFRESH('v5');
+
+	select * from emp; // 6 records
+
+	select * from v5; // 6 records 
+
+
+Q) Write a query to display list of views present in database?
+
+	select view_name from user_views;
+
+
+Q) Write a quety to drop the view?
+
+	drop view v1;
+	drop view v2;
+	drop view v3;
+	drop view v4;
+	drop materialized view v5;
+
+Sub Queries
+==========
+If we declare a query inside another query such concept is called sub query.
+
+In subquery , first inner query will execute then outer query.
+
+We have list of sub queries.
+
+1) Single row subquery
+
+2) Multiple row subquery
+
+3) Multiple column subquery 
+
+
+1) Single row subquery
+----------------------
+If a sub query returns only one row is called single row subquery.
+
+Sub queries can be nested upto 32 levels.
+
+ex:
+	SQL
+	-----
+		select * from emp where ename='Alan';
+
+	Sub Query 
+	--------
+		select * from emp where ename=(select ename from emp where eid=201);
+
+ex:
+---
+	SQL
+	----	
+		select * from emp where eid=201 AND ename='Alan';		
+
+	Sub Query
+	-------
+		select * from emp where 
+		eid=(select eid from emp where ename='Alan') 
+		AND 
+		ename=(select ename from emp where esal=9000);
+
+
+Q) Write a query to display employee information whose salary is greater then Nelson?
+
+
+	select * from emp where esal > (select esal from emp where ename='Nelson');
+
+
+
+
+Q) Write a query to display second highest salary from employee table?
+
+	select max(esal) from emp where esal<(select max(esal) from emp);
+
+
+2) Multiple row subquery
+----------------------
+If a sub query returns more then one row is called multiple row sub query.
+
+To perform multiple row sub query we need to use multiple row operators.
+
+1) ANY
+
+2) ALL 
+
+3) IN 
+
+ex:
+	select * from emp where esal > ANY (select esal from emp where deptno=10);
+	select * from emp where esal < ANY (select esal from emp where deptno=10);
+
+ex:
+	select * from emp where esal > ALL (select esal from emp where deptno=10);
+	select * from emp where esal < ALL (select esal from emp where deptno=10);
+
+ex:
+	select * from emp where esal IN (select esal from emp where deptno=10);
+
+
+3) Multiple column subquery 
+---------------------------
+When subquery returns more then one column is called multiple column sub query.
+
+In multiple column subquery we need to use IN operator.
+
+ex:
+	select * from emp where(eid,ename,esal) IN (select eid,ename,esal from emp);
+
+	select eid,ename,esal from emp where(eid,ename,esal) IN (select eid,ename,esal from emp);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

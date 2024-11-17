@@ -1,0 +1,91 @@
+Core Java
+
+-------------------------
+1. OOPs concept -> POC -> Prof of Concept -> BANK 
+2. Multithreading 
+3. Exception handling (Custom Exception) -> CheckedException - UnCheckedException
+4. String Handling
+5. Collection
+6. Logical programming
+7. SOLID Principle
+8. Java 8 Features
+9. Minimum Design Patterns (Singleton)
+10. Variable memory allocation and declaration know properly (static & instance, local)
+
+Advance Java
+-------------------------------
+JDBC
+----------------
+1. Driver
+2. Different statement objects and their uses
+3. ResultSet object
+4. Connection object
+5. Standard steps to create JDBC app
+
+Servlet
+---------------------
+1. Servlet 
+2. Different Servers
+3. Different way of servlet communication
+4. GET vs POST
+5. Servlet Life cycle
+4. ReqestDispatcher object and its use
+5. Send redirection concept
+6. Session Management different approach
+7. Servlet filter, listener, wrapper
+
+JSP
+---------------
+1. JSP
+2. Different score object
+3. Different tags
+4. JSTL tags
+5. EL expression
+
+SQL
+---------------------
+1. Joins
+2. Procedure & Functions
+3. Aggregates
+4. Subquerries
+
+SQL Software
+-------------------------
+1. Oracle
+2. MySQL
+
+UI 
+----------------------
+1. HTML5
+2. CSS3
+3. JavaScript + jQuery + Ajax (minimum API call)
+4. Bootstrap
+
+Tools
+-------------------
+1. Lombok API
+2. Maven & Gradle (At least one have to idea)
+3. Logger (Log4J & SLF4J)
+4. POSTMAN 
+5. UML Diagrams
+6. SVN or GIT (Start with SVN)
+7. SCRUM
+
+Assessment
+----------------------
+1. A fully Project have to build with all the above concept.
+
+Spring
+-------------------------
+1. Use of Dependency injection
+2. IoC container
+3. Exception Handling
+4. Annotation
+5. Tx management
+
+Spring Boot
+----------------------------
+1. Staters
+2. Data JPA
+3. MVC & REST API
+4. Mailing & Logger (SLF4J)

@@ -1,0 +1,127 @@
+How to create a linux server in AWS using username with password
+============================================================
+step1:
+-------
+	Download and Install xShell software for windows OS.
+	ex:
+		https://www.netsarang.com/en/free-for-home-school/
+step2:
+------
+	Login in AWS account to create a linux server.
+
+step3:
+-----
+	Select "US EAST (North Virginia)" as a region.
+
+step4:
+-----
+	Now Launch EC2 Instance "Linux-Server-02" using CentOS 7 .
+	ex:
+		Region : N Virginia
+		AMI : DevOps-LabImage-Centos7
+		username : centos
+		password : DevOps321
+
+step5:
+------
+	Copy the Public IPv4 address from EC2 Instance.
+
+step6:
+------
+	Open the xShell from your computer.
+
+step7:
+-------
+	Type below command in xShell terminal.
+	ex:
+		$ ssh centos@54.147.252.74
+
+step8:
+-------
+	Enter the password.
+	ex:	
+		password: DevOps321
+step9:
+------
+	Once the practice is completed terminate the server.
+
+Note:
+-----
+	If we want to connect with putty we can do it.
+	Open the putty and type the IPv4 address.
+
+
+Diagram:  aws4.2 to aws4.34
+
+
+Types of instances in AWS
+========================
+We have three types of instances.
+
+1) On-demand instance
+2) Reserved instance
+3) spot instance
+
+
+1) On-demand Instance:
+----------------------
+In this case  we are not ensure when we are going create server and terminate server.
+On adopt basis , we are creating servers and terminating servers. 
+Here billing is very high (> high) 
+
+
+2) Reserved Instance : 
+-----------------------
+Whenever we have a vision to stay for a long term then we need to use reserved instance.
+
+Typically when we joined a company, our company product manager or company representative talk to AWS TAM (Techical Account Manager).
+
+ex:
+	we will use 1000 cpu and 2TB memory for 3 years
+
+	
+	
+3) Spot Instance  : 
+-------------
+	Here we will get 95% to 98% discount. 
+	spot instance is gold in company.
+
+
+
+
+AWS Tenancy 
+===============
+1) Shared instances : 
+---------------------
+Here amazon is not having any visibility on flipkart and vice versa.
+
+	
+> Dedicated instances :
+------------------------
+In dedicated instance , banks and insaurance companies don't want other 
+servers should run in the harware where they are running.
+It is costly to the company.
+
+	
+> Dedicated Hosts : 
+---------------------
+Applications which are developed on-premises need dedicated server like physical server of a data center.
+
+It describes how much cpu and storage required . It specially designed for you.
+
+It is also known as Bare Metal / Physical server.
+
+Diagram: aws4.1
+
+
+
+
+
+
+
+
+
+
+
+
+

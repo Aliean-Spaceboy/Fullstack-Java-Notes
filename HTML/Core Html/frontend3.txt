@@ -1,0 +1,378 @@
+Underline tag
+===============
+A <u> tag is used to display text in underline.
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		<u>This is HTML class</u>
+	</body>
+</html>
+
+
+
+Nested Tags in HTML
+====================
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		<center>
+			<h1>
+				<font color="blue" face="monospace">
+					This is HTML class
+				</font>
+			</h1>
+		</center>
+	</body>
+</html>
+
+Phrase Tags
+============
+Phrase Tags are special purpose tags because they defined structural meaning to the block of text or content.
+
+We have following list of phrase tags.
+
+1) Abbreviation - <abbr>
+
+2) short quote	- <q>
+
+3) keyboard     - <kbd>
+
+4) code		- <code>
+
+5) address	- <address>
+
+6) strike 	- <s> or <strike>
+
+and etc.
+
+1) Abbreviation - <abbr>
+--------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		<abbreviation title="Hypertext Markup Language">
+			HTML 
+		</abbreviation> is a widely used language on web develop web pages and web applications.
+	</body>
+</html>
+
+2) short quote	- <q>
+-----------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		<q>HTML is a Hyptext Markup Language</q>
+	</body>
+</html>
+
+3) keyboard     - <kbd>
+----------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		<h1> To copy press CTRL+C </h1>
+
+		<h1> To copy press <kbd>CTRL+C</kbd> </h1>
+	</body>
+</html>
+
+4) code		- <code>
+-------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		<code>
+			void main()
+			{	
+				clrscr();
+				printf("Hello World");
+				getch();
+			}
+		</code>
+	</body>
+</html>
+
+5) address	- <address>
+--------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		<address>
+			1-6-43/4/1, Ameerpet, Nilgiri Block , Hyderabad.
+		</address>
+	</body>
+</html>
+
+6) strike 	- <s> or <strike>
+---------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body>
+		<strike>This is Java Class</strike>
+	</body>
+</html>
+
+HTML Colors
+============
+There are four ways to declare the colors in HTML.
+
+1) Valid color name 
+
+2) Hexa value 
+
+3) RGB value 
+
+4) HSL value 
+
+1) Valid color name 
+--------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body bgcolor="tomato">
+		This is HTML color
+	</body>
+</html>
+
+ex
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body >
+		
+		<font color="lavendar">
+			This is HTML color
+		</font>
+	</body>
+</html>
+
+
+2) Hexa value 
+-------------
+Hexa value starts with '#' symbol followed by 6 characters.
+
+ex:
+--
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body bgcolor="#ffff00">
+		
+		<font color="#FF0000">
+			This is HTML color
+		</font>
+	</body>
+</html>
+
+3) RGB value 
+-----------
+RGB stands for Red Green Blue.
+
+In RGB, 0 is a least value and 255 is a highest value.
+
+HTML5 does not support RGB.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body bgcolor="rgb(0,0,255)">
+		
+		<font color="rgb(255,0,0)">
+			This is HTML color
+		</font>
+	</body>
+</html>
+
+
+4) HSL value
+------------
+HSL stands for Hue saturation and lightness.
+
+HTML5 does not support HSL value.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body bgcolor="hsl(0, 100%, 50%)">
+		
+		<font color="hsl(240, 100%, 60%)">
+			This is HTML color
+		</font>
+	</body>
+</html>
+
+HTML image tag
+==============
+A <img> tag is used to display the images in a web page.
+
+It is a opening tag and contains only attributes and does not have any closing tag.
+
+We have following list of attributes in <img> tag.
+
+ex:
+	attribute			description
+	------------			-----------
+	src				It is used locate an image 
+	width				It is used to set width an image 
+	height				It is used to set the height of an image
+	alt				It is used to display alternate message if image
+					is not found.
+
+We have following list of images.
+
+ex:
+	Format			Abbreviation
+	------			--------------
+	.jpeg			Joint Photographic Expert Group 
+	.png			Portable Network Graphics
+	.gif			Graphical Interchange Format
+	.svg			Scalable Vector Graphics 
+	and etc. 
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body >
+		
+		<center>
+			<img src="images/rock.jpg" />
+		</center>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body >
+		
+		<center>
+			<img src="images/rock.jpg"  width="200px" height="200px"/>
+		</center>
+	</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body >
+		
+		<center>
+			<img src="images/rock.png"  width="400px" height="400px"
+				alt="No Image Found"/>
+		</center>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page!</title>
+	</head>
+	<body >
+		
+		<center>
+			<img src="https://hips.hearstapps.com/hmg-prod/images/dwayne-johnson-attends-the-jumanji-the-next-level-uk-film-news-photo-1575726701.jpg?crop=0.728xw
+:1.00xh;0.137xw,0&resize=1200:*"  width="400px" height="400px"
+				alt="No Image Found"/>
+		</center>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

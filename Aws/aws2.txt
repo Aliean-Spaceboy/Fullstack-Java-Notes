@@ -1,0 +1,125 @@
+Types of Cloud Business/Service Models
+=====================================
+We have three types of cloud business/service models.
+
+1) IaS (Infrastructure as a Service)
+
+2) PaS (Platform as a Service)
+
+3) SaS (Software as a Service)
+
+All the cloud provides deals with above business/service models.
+
+They comes up and ends up with shared responsibility model.
+
+Some group of expertise engineers will decide which model they need to use for organization.
+
+Diagram: aws2.1
+
+
+How to create account in AWS
+============================
+To create account in AWS we required followings.
+
+1) Debit/Credit card 
+
+2) Email Id 
+
+3) Maintain minimum 2 rupees in account
+
+Note:
+-----
+If we use debit card to create an account then it will take less 24 hours.
+If we use credit card to create an account then it will take less then 2 to 3 hours.
+
+Diagram: aws2.2 to 
+
+
+Types of Operating System
+==========================
+Operating system is a mediator or interface between a user and hardware component.
+
+We have two types of operating system.
+
+1) GUI (Graphical User Interface)
+--------------------------------
+	ex:
+		windows 
+
+	
+2) CLI (Command Line Interface)
+------------------------------
+	ex:
+		linux 
+
+Note:
+-----
+	In the space of operating , linux is widely used.
+	99% of enterprise infrastructure is CLI and that to linux.
+
+
+Importance of linux
+===================
+Q) Who is the richest person for a longer time?
+
+Ans) Bill Gates (It's because of licencing model of windows).
+
+
+Linus Torwalds is a man behind the linux OS.
+
+He thought, to run operating system why should I buy hardware from you and why have to pay for licencing to it.By keeping these aspects in mind he created an Operating system which is free for every one and everyone should have capability to access code of it. 
+
+He started an open source project called linux (linux kernel).
+
+kernel is a first layer of the OS.
+
+Every OS is having it's own kernel.
+ex:
+	Linux kernel : it is a piece of software which interacts with hardware.
+		> He wants to make a free CLI OS
+		> Should run on any hardware
+		> OS should be open source
+		> GNUX (Generally Not Unix)
+	
+There are 300+ flavours / Distributions in linux(vendors).
+
+All the 300+ operating system are clone either from "RedHat OS" or "Debian".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

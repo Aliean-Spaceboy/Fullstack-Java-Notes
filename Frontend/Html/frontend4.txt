@@ -1,0 +1,416 @@
+HTML colors
+===========
+HTML support only two values for color.
+
+1) valid color name 
+
+2) Hexa value 
+
+
+1) valid color name 
+-------------------
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body bgcolor="blue">
+		<center>
+			<h1> Background color</h1>
+		</center>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<center>
+			<h1> 
+				<font color="violet">
+					Background color
+				</font>
+			</h1>
+		</center>
+	</body>
+</html>
+
+2) Hexa value
+--------------
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<center>
+			<h1> 
+				<font color="#FFFF00">
+					Background color
+				</font>
+			</h1>
+		</center>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body  bgcolor="#C3C3C3">
+		<center>
+			<h1> 
+					Background color
+			</h1>
+		</center>
+	</body>
+</html>
+
+
+
+
+
+
+HTML tables
+===========
+A table is a collection of rows and columns.
+
+A <table> tag is used to represent table.
+
+A <tr> tag is used to represent table row.
+
+A <th> tag is used to represent table heading.
+
+A <td> tag is used to represent table data.
+
+Table heading will display at center and bold.
+
+Table data will display at left align with normal text.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>No</th>
+				<th>Name</th>
+				<th>Address</th>
+			</tr>	
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>Texas</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>Florida</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nancy</td>
+				<td>Chicago</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<table border="1"  width="50%" align="center">
+			<tr>
+				<th>No</th>
+				<th>Name</th>
+				<th>Address</th>
+			</tr>	
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>Texas</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>Florida</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nancy</td>
+				<td>Chicago</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<table border="1"  width="50%" align="center">
+		<caption>Employees Information</caption>
+			<tr bgcolor="#00ff00">
+				<th>No</th>
+				<th>Name</th>
+				<th>Address</th>
+			</tr>	
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>Texas</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>Florida</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nancy</td>
+				<td>Chicago</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<table border="1" cellspacing="10px" cellpadding="10px">
+		<caption>Employees Information</caption>
+			<tr bgcolor="#00ff00">
+				<th>No</th>
+				<th>Name</th>
+				<th>Address</th>
+			</tr>	
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>Texas</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>Florida</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nancy</td>
+				<td>Chicago</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<table border="1" cellspacing="10px" cellpadding="10px">
+		<caption>Employees Information</caption>
+			<tr bgcolor="#00ff00">
+				<th>No</th>
+				<th>Name</th>
+				<th>Address</th>
+			</tr>	
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>Texas</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>Florida</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nancy</td>
+				<td>Chicago</td>
+			</tr>
+			<tr>
+				<td colspan="3"><center>Thank you</center></td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+HTML forms
+==========
+HTML forms are used to take the inputs from the enduser.
+
+It pass that data to database or server for processing.
+
+A <form> tag is used to display the form in web page.
+
+A <form> tag contains following components.
+ex:
+	label
+	textfield
+	radio button
+	checkbox 
+	select box
+	buttons 
+	and etc.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<form>
+			Name: <input type="text" name="t1"/> <br>
+			Password: <input type="password" name="t2"/> <br>
+			Age: <input type="number" name="t3"/> <br> 
+			Gender: 
+			<input type="radio" value="male" name="t4"/> MALE
+			<input type="radio" value="female" name="t4"/> FEMALE <br>
+			Maritial Status:
+			<input type="checkbox" value="married" name="t5"/> MARRIED
+			<input type="checkbox" value="single" name="t5"/> SINGLE <br>
+			Hobby:
+			<select>
+				<option value="">none</option>
+				<option value="">Eating</option>
+				<option value="">Sleeping</option>
+				<option value="">Dancing</option>
+			</select>
+			<br>
+			Address:
+			<textarea rows="5" cols="10"></textarea>
+			<br>
+			<input type="submit" value="submit"/>	
+			<input type="reset" value="reset"/>		
+		</form>
+	</body>
+</html>
+
+A action attribute describes what action has to be performed when user clicked on submit
+button.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<form action="#" name="myform">
+			Name: <input type="text" name="t1"/> <br>
+			Password: <input type="password" name="t2"/> <br>
+			Age: <input type="number" name="t3"/> <br> 
+			Gender: 
+			<input type="radio" value="male" name="t4"/> MALE
+			<input type="radio" value="female" name="t4"/> FEMALE <br>
+			Maritial Status:
+			<input type="checkbox" value="married" name="t5"/> MARRIED
+			<input type="checkbox" value="single" name="t5"/> SINGLE <br>
+			Hobby:
+			<select>
+				<option value="">none</option>
+				<option value="">Eating</option>
+				<option value="">Sleeping</option>
+				<option value="">Dancing</option>
+			</select>
+			<br>
+			Address:
+			<textarea rows="5" cols="10"></textarea>
+			<br>
+			<input type="submit" value="submit"/>	
+			<input type="reset" value="reset"/>		
+		</form>
+	</body>
+</html>
+
+
+A target attribute describes that submitted must open in a current window or new window.
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QualityThought</title>
+	</head>
+	<body>
+		<form action="#" name="myform" target="_blank">
+			Name: <input type="text" name="t1"/> <br>
+			Password: <input type="password" name="t2"/> <br>
+			Age: <input type="number" name="t3"/> <br> 
+			Gender: 
+			<input type="radio" value="male" name="t4"/> MALE
+			<input type="radio" value="female" name="t4"/> FEMALE <br>
+			Maritial Status:
+			<input type="checkbox" value="married" name="t5"/> MARRIED
+			<input type="checkbox" value="single" name="t5"/> SINGLE <br>
+			Hobby:
+			<select>
+				<option value="">none</option>
+				<option value="">Eating</option>
+				<option value="">Sleeping</option>
+				<option value="">Dancing</option>
+			</select>
+			<br>
+			Address:
+			<textarea rows="5" cols="10"></textarea>
+			<br>
+			<input type="submit" value="submit"/>	
+			<input type="reset" value="reset"/>		
+		</form>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

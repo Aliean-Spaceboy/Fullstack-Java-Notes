@@ -1,0 +1,187 @@
+Types of applications
+======================
+We have two types of applications.
+
+1) Client base applications 
+
+2) Web base applications 
+
+
+1) Client base applications 
+---------------------------
+Applications which are running a user's computer/machine is called client based applications.
+
+In general, applications which need to installed in a user's computer is called client based applications.
+
+Client based application can be used by perticular user.
+
+All client based applications are ruled out.
+
+ex:
+	VLC Media player 
+
+
+2) Web base applications 
+------------------------
+Applications which can be accessible from anywhere over the network are called web base applications.
+
+ex:
+	Amazon 
+	flipkart 
+	Facebook 
+	and etc.
+
+Q) How can we make an application accessible by thousands of users?
+
+Initially , developer has to develop the application.
+
+Later the application need to be hosted on a server.
+
+Diagram: aws1.1
+
+
+Q) What is the difference between PC and Server?
+
+PC						Server
+-----------					-------------
+PC is designed for perticular user.		Server is designed to operate multiple users.
+
+It contains simple structure.			It contains complex structure.
+
+Low network capability.				High network capability.
+
+It contains less storage from gigabytes to 	It contains more storage from terabytes to 
+terabytes.					petabytes.
+
+It contains single processor.			It contains multiple processors.
+
+
+
+Q) Company will use one server or multiple servers?
+
+It depends upon scale of a company.
+
+Companies revenue is relay on these servers and company people ensure that these servers operator all the times.
+
+
+To build an application on the top of the servers we need organize the infrastructure.
+
+Each and every IT company will have their own data center.
+
+A data center is a place where we host our servers.
+
+Diagram: aws1.2
+
+Maintaining a data center is a very big deal.
+
+1. Required private and secure place
+2. Server maintainence team (database admin,network admin,monitoring team and etc). 
+3. 24/7 we need to maintain temperature 16 to 19 degree celsius. 
+4. 24/7 Dual power supply  (government and private power supplier)
+5. 24/7 Dual Network (ISP)
+6. Need to follow geographical orders/standards to protect customer data which 
+   contains physical security and network security.
+7. Hardware Refresh 
+ 
+
+Q)Do you think is it easy to organize data center?
+
+No, it is not easy to organize the data center.
+
+Specially startup's can't be proceeded because data center is a capital intensive.
+
+If we see, From 2009 to 2022 number of IT companies are drastically increases 
+due to cloud.
+
+
+
+Q)What is Cloud computing ?
+
+Cloud computing is the on-demand delivery of IT resources over the Internet with pay-as-you-go model. 
+
+Example:
+	Assume that my business is a e-commerce.
+	During christmas or festival time I need thousands of servers and 
+	those servers i am using only for limited days.
+
+
+	Q)Do you think it is wise to buy thousands of servers only for limited days 
+	and keeping them ideal for rest of the days? 
+
+	OR 
+
+	Q)I can lease them for few days and return them once it is done?
+
+	answer : lease . 
+
+	That's where cloud providers came into the picture.
+	ex:
+		Amazon
+		Microsoft
+		IBM
+		Google
+		Alibaba
+		and etc.
+
+In 2002,2003 , Amazon they starting their e-commerce , keeping the future demands in mind they got extends amount of hardware and their calculation absolute went wrong.
+
+Whatever the forecasting they have done with respective to utilization it really went bad and they felt that only 20% to 30% of servers they are using.Almost 70% of their prediction went wrong and they left with no choice.
+
+One of the intern of amazon got an idea , why don't we give our excess amount of server on lease for the people who want.In that way idea of cloud came to a picture.
+ex:
+	AWS
+	Azure
+	GCP
+	alibaba cloud
+	IBM cloud
+
+Diagram: aws1.3
+
+In 2004 the concept of cloud started.
+
+
+Q)What is AWS?
+
+AWS stands for Amazon Web Services.
+
+It offers infrastructure as a service.
+
+From 2004 to 2014 they are monopoly in industry.
+
+AWS was a leader for almost 10 years.
+
+Almost 75% to 80% of market occupied by AWS i.e Out of 100 , 75 to 80 customers are aws customers. 
+
+It is one of the leading cloud service provider accross the world.
+
+In 2014 , microsoft Azure came in to a picture.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

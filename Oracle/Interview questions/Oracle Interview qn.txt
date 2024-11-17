@@ -1,0 +1,1075 @@
+Types of Data
+==============
+We have two types of data.
+
+1) Unstructured Data 
+
+2) Structured Data 
+
+1) Unstructured Data 
+---------------------
+A data which is not in readable format such type of data is called unstructured.
+
+In general, meaningless data is called unstructured data.
+
+
+2) Structured Data 
+------------------
+A data which is in readable format such type of data is called structured data.
+
+In general, meaning full data is called structured data.
+
+Oracle 
+========
+Oracle is one of the database which is used to store structured data.
+
+Oracle is a product of Oracle Corporation.
+
+Oracle is classified into two types.
+
+		SQL						PL/SQL
+(Structured Query Language)				(Procedural / Structured Query Language)
+
+Frontend
+--------
+The one which is visible to the enduser to perform some operations is called frontend.
+
+
+Communication Channel
+----------------------
+Communication channel acts like a bridge between frontend and backend.
+
+BackEnd
+-------
+The one which is not visible to the enduser but it performs operations based on the instructions given by frontend is called backend.
+
+Management System
+=================
+It is a software which is used to manage the database.
+
+Using management system we can perform following acitivities very easily.
+
+1) Adding the new data 
+
+2) Modifying the existing data 
+
+3) Deleting the unnecessary data 
+
+4) Selecting the required data.
+
+
+DBMS
+=====
+A database along with software which is used to manage the database is called database management system.
+
+RDBMS
+=====
+If database is created based on relational theories is called relational database management system.
+
+Q)What is the difference between DBMS and RDBMS database?
+
+DBMS 						RDBMS
+-------						-------
+DBMS stands Database Management			RDBMS stands for Relational Database
+System						Management System.
+					
+It stores the data in the form of files.	It stores the data in the form of tables.
+
+It is designed to handle small amount of data.	It is designed to handle large amount of data.
+
+It provides support for a single user 		It provides support for multiple users at a time.
+at a time.			
+
+Normalization is not possible for DBMS.		Normalization is possible for RDBMS.
+
+No security of data. 				High security of data.
+
+SQL
+=====
+SQL stands for Structured Query Language which is pronounce as SEQUEL.
+
+This language is used to interact with oracle database.
+
+It is a case insensitive language.
+
+It is a command based language.
+
+Every command must starts with verbs.
+ex:
+	select, update, delete, merge and etc.
+
+Every command must ends with semicolon.
+
+It is developed by Mr.Codd in 1972 (By IBM).
+
+
+Sub languages of SQL
+====================
+We have five types of sub languages of SQL.
+
+1) DDL (Data Definition Language)
+
+2) DML (Data Manipulation Language)
+
+3) DRL/DQL (Data Retrive/Query Language)
+
+4) DCL (Data Control Language)
+
+5) TCL (Transaction Control Language)
+
+1) DDL (Data Definition Language)
+---------------------------------
+It is used to maintain the objects in database.
+
+It is a collection of five commands.
+
+ex:
+	create, alter, drop , truncate and rename 
+
+
+2) DML (Data Manipulation Language)
+------------------------------------
+It is used to mainpulate the data present in database.
+
+It is a collection of four commands.
+
+ex:
+	insert, update, delete and merge 
+3) DRL/DQL (Data Retrive/Query Language)
+---------------------------------
+It is used to retrieve the data present in database.
+
+It is a collection of one command.
+
+ex:
+	select 
+
+4) DCL (Data Control Language)
+-----------------------------
+This language which is used to control the access of data.
+
+It is a collection of two commands.
+
+ex:
+	grant and revoke 
+
+
+
+5) TCL (Transaction Control Language)
+---------------------------------
+This language is used to maintain the transaction of database.
+
+It is a collection of three commands.
+
+ex:
+	commit, rollback and savepoint 
+
+Table
+=====
+A table is an object that is used to represent the data.
+
+A table is used to store the data in the form of rows and columns.
+
+A data which is stored inside the table is a case sensitive.
+
+DDL COMMANDS
+=============
+
+Establish the connection with database software
+================================================
+
+To perform any operation in a database we need to establish the connection.
+
+Once work with database is completed we need to close the connection.
+ 
+create command
+===============
+It is used to create table in a database.
+
+describe command
+=================
+It wil display the structure of the table.
+
+
+insert command
+==============
+It is used to insert the row/record in a database table.
+
+commit command
+==============
+It is used to make the changes permanent to database.
+
+select command
+===============
+It is used to select the records/rows from database table.
+
+
+Column Alias
+------------
+A userdefined heading given to a column is called column alias.
+
+
+DML COMMANDS
+==============
+
+where clause
+============
+It is used to select specific records from database table.
+
+update command
+==============
+It is used to update the records which are present in database table.
+
+Delete command
+============
+It is used to delete records from database table.
+
+Logical Operators
+==================
+We have three types of logical operators.
+
+1) AND 
+
+2) OR 
+
+3) NOT 
+
+1) AND
+---------
+It will return the records if all conditions are true.
+
+In logical AND operator, all conditions must be from same row.
+
+2) OR
+-----
+It will return the records if condition is true.
+
+In logical OR operator , condition can be from any row.
+
+3) NOT 
+-------
+It will return the records except the condition.
+
+A <> symbol denoted as not operator.
+
+Between operator
+=================
+Between operator will return the records those who are in the range of values.
+
+In between operator , first we need to write lower limit then higher limit.
+
+Between operator takes the support of AND operator.
+
+IN operator
+===========
+IN operator is a replacement of OR operator.
+
+It will return the records those who are matching in the list of values.
+
+
+Pattern Matching operators
+============================
+Pattern matching operatores are used to select the letters from database table.
+
+Pattern matching operators take the support of like keyword.
+
+We have two types of pattern matching operators.
+
+1) Percentage(%)
+
+2) Underscore(_)
+
+
+2) alter command
+=================
+Using alter command we can perform following activities very easily.
+
+i) Add the new columns 
+
+ii) Modifying the existing columns
+
+iii) drop the columns
+
+iv) Renaming the columns 
+
+3) drop command
+=================
+A drop command is used to drop the table from database.
+
+
+4) truncate command
+====================
+A truncate command is used to delete the rows permanently.
+
+
+Q) What is the difference between delete and truncate command?
+
+delete						truncate
+----------					------------
+It is a DML command.				It is a DDL command.
+
+It deletes the records temperory.		It deletes the records permanently.
+
+We can rollback the data.			We can't rollback the data.
+
+Where clause can be used.			Where clause can't be use.
+
+
+
+5) rename command
+=================
+It is used to rename the table name.
+
+
+Duplicate table or Copy of a table
+====================================
+Using create and select command we can create duplicate or copy of a table.
+
+
+cl scr
+======
+It is used to clear the output screen of SQL command prompt.
+
+
+What is dual table
+==================
+A dual table is a dummy table which contains one row and one column.
+
+It is used to perform arithmetic operations and to see the current system date.
+
+
+Functions
+=========
+Functions are used to manipulate the data items and gives the result.
+
+We have two types of functions.
+
+1) Group functions / Multiple row functions
+ 
+2) Scalar functions / Single Row functions 
+
+
+1) Group functions
+--------------------
+Group functions are applicable for multiple rows.
+
+We have following list of group functions.
+
+ex:
+	sum(), avg(), max(), min(),count(*) and count(expression).
+
+
+count(*) 
+--------
+It will return number of records present in database table.
+
+It will include null records.
+
+
+count(expression)
+-----------------
+It will return number of values present in database table column.
+
+
+class:5
+
+2) Scalar Functions / Single Row Functions
+==========================================
+
+We have following list of scalar functions.
+
+i) Character functions 
+
+ii) Number functions 
+
+iii) Date functions 
+
+iv) Conversion functions 
+
+
+iv) Conversion functions
+----------------------
+A process of converting from one type to another type is called conversion function.
+
+Group by clause
+================
+It is used to divide the rows into groups so that we can apply group functions.
+
+Order by clause
+================
+It is used to arrange the rows in a table.
+
+Having clause
+==============
+It is used to filter the rows from group by clause.
+
+
+
+
+Integrity Constraints
+======================
+Constraints are the rules which are applied on the tables.
+
+Using constraints we can achieve accuracy and quality of data.
+
+We have five types of constraints.
+
+1) NOT NULL 
+
+2) UNIQUE
+
+3) PRIMARY KEY 
+
+4) FOREIGN KEY  
+
+5) CHECK 
+
+Constraints are created at two levels.
+
+i) Table level
+
+ii) Column level 
+
+
+1) NOT NULL
+-----------
+NOT NULL constraint does not accept null values.
+
+NOT NULL will accept duplicate values.
+
+NOT NULL constraint can be created only at column level.
+
+
+2) UNIQUE
+----------
+UNIQUE constraint does not accept duplicate values.
+
+UNIQUE constraint can accept null values.
+
+UNIQUE constraint can be created at column level and table level.
+
+
+3) Primary Key
+===============
+Primary key is a combination of NOT NULL and UNIQUE constraint.
+
+Primary key does not accept null values and duplicate values.
+
+A table can have only one primary key.
+
+Primary key can be created at column level and table level.
+
+
+4) Foreign key or Referential Integrity constraint
+--------------------------------------------------
+Foreign key is used to establish the relationship between two tables.
+
+This relationship is called parent and child relationship or master and detailed relationship.
+
+To establish the relationship , a parent table must have primary key or unique key and child table must have foreign key.
+
+Foreign key will accept only those values which are present in primary key.
+
+Foreign key can have duplicates and null values.
+
+A primary key column name and foreign key column name may or may not match but datatype must match.
+
+
+5) CHECK
+-------------
+It is used to describe domain of a column.
+
+A domain means what type of values a column must accept.
+
+It can be created at column level and table level.
+
+
+
+TCL commands
+=============
+We have three TCL commands.
+
+1) commit 
+
+2) rollback 
+
+3) savepoint 
+
+1) commit 
+----------
+It is used to make the changes permanent to database.
+
+2) rollback 
+-----------
+It is used to undo the changes which are not permanent.
+
+3) savepoint 
+-----------
+It is used mark logical transaction in a database.
+
+Instead of complete rollback we can rollback upto savepoint.
+
+PSEUDO columns
+===============
+PSEUDO means a column which is not real.
+
+We have two pseudo columns.
+
+1) ROWNUM 
+
+2) ROWID 
+
+1) ROWNUM
+--------
+ROWNUM always start with 1 and increment by 1.
+
+ROWNUM values are temperory.
+
+Once the query is executed we will loss the rownum values.
+
+2) ROWID 
+---------
+ROWID is a hexadecimal number.
+
+ROWID is permanent.
+
+ROWID is a memory location where our records will store in a table.
+
+
+Schema : 
+-------
+	Schema is a memory location which is used to run SQL commands.
+
+Privileges
+---------
+	Permission given to a user is called privileges.
+
+	Rights given to a user is called privileges.
+
+	We have two types of privileges.
+
+	1) System privilege
+	-------------------
+		Permission given by DBA to user.
+ 
+	2) Object privilege 
+	------------------
+		Permission given by one user to user.
+
+
+DCL commands
+============
+We have two DCL commands.
+
+1) grant 
+
+2) revoke 
+
+
+grant 
+------
+Grant command is used to grant the permissions.
+
+revoke
+-------
+Revoke command is used to revoke the permissions.
+
+
+Sequences
+===========
+Sequence is an object which is used to generate the numbers.
+
+Sequence starts with 1 and increment by 1.
+
+We have two pseudo in sequence.
+
+1) NEXTVAL
+---------
+	It will return next number in a sequence.
+
+2) CURRVAL 
+---------
+	It will return the last number generated by the sequence.
+
+Synonym
+===========
+Alternate name given to a table is called synonym.
+
+Using snonym length of the table will reduce.
+
+We can use synonym instead of table name for all the commands.
+
+Table alias
+-----------
+A userdefined name given to a table is called table alias.
+
+Definition of joins
+------------------
+Joins is used to retrieve the data from one or more then one table.
+
+We have following list of joins.
+
+1) Equi join
+
+2) Non-Equi join 
+
+3) Self join 
+
+4) Cartisian product 
+
+5) Inner join 
+
+6) Outer join
+
+
+1) Equi join
+-------------
+When two tables are joined based on common column then we need to use equi join.
+
+2) Non-Equi join 
+---------------
+When tables are not joined based on equi join operator is called non-equi join.
+
+
+3) Self join 
+-----------
+When table joined to itself is called self join.
+
+4) Cartisian product 
+------------------
+When two tables are joined without any condition is called cartisian product.
+
+5) Inner join 
+-----------
+It is similar to equi join.
+
+Inner join given by ANSI people.
+
+ANSI stands for American National Standards Insitute.
+
+6) Outer join
+-------------
+It is a extension of equi join.
+
+It will return matching as well as not matching records.
+
+A '+' symbol denoted as outer join operator.
+
+We have three types of outer join.
+
+1) Left Outer join
+
+2) Right Outer join 
+
+3) Full Outer join 
+
+What is the difference between RDBMS and MongoDB database? 
+ 
+RDBMS 						MongoDB 
+-------------					---------
+It is a relational database. 			It is a non-relational or document based  database.
+ 
+It can’t stores the data in key and value pair. It stores the data in key and value pair. 
+
+Not suitable for hierarchical data storage. 	Suitable for hierarchical data storage. 
+
+It has a predefined(static) schema. 		It has a dynamic schema. 
+
+It contains tables. 				It contains Collections. 
+
+It is a row based. 				It is a document based. 
+
+It is a column based. 				It is a field based. 
+
+It is slower. 					It is faster. 
+
+It supports SQL query language. 		It supports JSON query language.
+
+
+Indexes
+==========
+Index is an object which is used to improve the performance of select stmt.
+
+Index in a database is same as index in a book.
+
+We need to create index only to those columns which are widely used in a where clause.
+
+Whenever we create index , two columns will be generated.One contains ROWID and another contains indexed column. All the records will store in ascending order in indexed column.
+
+We have two types of indexes.
+
+1)simple index
+
+2)complex index
+
+1)simple index
+----------------
+When index is created only for one column is called simple index.
+
+2)complex index 
+---------------
+When index is created  for multiple columns is called complex index.
+
+Views
+=====
+View is a virtual representation of a data from one or more then one table.
+
+A table which is used to create a view is called base table or above table.
+
+View does not consumes the memory.
+
+View does not have any data.
+
+View will get the data from based table when we execute select command.
+
+We have different types of views.
+
+1) Simple view 
+
+2) Complex view 
+
+3) with read only view 
+
+4) with check option view 
+
+5) Materialized view 
+
+1) Simple view 
+----------------
+If a view is created by using one base table is called simple view.
+
+In simple view DML operations are allowed.
+
+2) Complex view 
+---------------
+If a view is created using more then one base table is called complex view.
+
+In complex view DML operations are not allowed.
+
+3) with read only view
+-----------------------
+If a view is created by using one base table and DML operation is not required then we need to use with read only view.
+
+4) with check option view 
+-----------------------
+If a view is created by using one base table and DML operation is allowed only when condition is true.
+
+5) Materialized view 
+--------------------
+Materialized view is also known as SNAPSHOT.
+
+To create a materialized view a table must have primary key.
+
+Sub Queries
+==========
+If we declare a query inside another query such concept is called sub query.
+
+In subquery , first inner query will execute then outer query.
+
+We have list of sub queries.
+
+1) Single row subquery
+
+2) Multiple row subquery
+
+3) Multiple column subquery 
+
+
+1) Single row subquery
+----------------------
+If a sub query returns only one row is called single row subquery.
+
+Sub queries can be nested upto 32 levels.
+
+2) Multiple row subquery
+----------------------
+If a sub query returns more then one row is called multiple row sub query.
+
+To perform multiple row sub query we need to use multiple row operators.
+
+1) ANY
+
+2) ALL 
+
+3) IN 
+
+3) Multiple column subquery 
+---------------------------
+When subquery returns more then one column is called multiple column sub query.
+
+In multiple column subquery we need to use IN operator.
+
+Q) What is the difference between Normalization and Denormalization?
+
+Normalization					Denormalization
+----------------------				-----------------
+It is a process of dividing big table 		It is a process of creating big table from 
+into small tables.				small tables.
+
+It is increases the complexity because of 	It will reduce complexity because of single table.
+multiple tables.
+
+No redundent data.				Redundent data.
+
+Need of joins.					No need of joins.
+
+Slower reads.					Slower writes.
+
+No waste of memory.				Waste of memory.
+
+
+imp questions
+=============
+different types of commands of sql 
+diff where/having
+joins and types of joins
+what is left/full/right outer joins
+Normalization/Denormalization
+What is subqueries
+What is constatants and types of 
+
+
+
+
+
+
+
+
+
+
+                                    PL/SQL
+                                   ========
+PL/SQL stands for Procedural Language extensions to Structured Query Language.
+
+PL/SQL is a extension of SQL and contains following features.
+
+1) We can achieve programming features like control statements, loops and etc.
+
+2) It reduces network traffic.
+
+3) We can display custom error messages by using the concept of exception handling.
+
+4) We can perform related operations by using concept of triggers.
+
+Declaration Section 
+--------------------
+It is used to declare variables, exceptions,  cursors and etc.
+It is a optional section.
+
+Executable Section 
+----------------
+It is used to declare actual code of a PL/SQL block.
+It is a mandatory section.
+
+Exception Section
+----------------
+It contains lines of code which is executed when exception is raised.
+It is a optional section.
+
+Control Statements
+===================
+We have three control statements.
+
+1) IF THEN 
+
+2) IF THEN ELSE 
+
+3) IF THEN ELSIF THEN ELSE 
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Here's the organized content for your notes:
+
+---
+
+## 1. What is SQL?
+
+**SQL** stands for **Structured Query Language** (pronounced "SEQUEL"). It is used to interact with an Oracle database. SQL is case-insensitive, command-based, and each command must start with a verb (e.g., `SELECT`, `UPDATE`, `DELETE`, `MERGE`, etc.) and end with a semicolon (`;`). SQL was developed by **Mr. Codd** in 1972 (IBM).
+
+---
+
+## 2. Sub-languages of SQL
+
+SQL has five types of sub-languages:
+
+1. **DDL** (Data Definition Language)
+2. **DML** (Data Manipulation Language)
+3. **DRL/DQL** (Data Retrieve/Query Language)
+4. **DCL** (Data Control Language)
+5. **TCL** (Transaction Control Language)
+
+---
+
+## 3. What is a Table?
+
+A table is an object used to represent and store data in the form of rows and columns. Data stored in the table is case-sensitive.
+---
+
+## 4. DELETE vs TRUNCATE Command
+
+| **DELETE**                      | **TRUNCATE**                        |
+|---------------------------------|-------------------------------------|
+| It is a DML command.            | It is a DDL command.                |
+| Deletes records temporarily.    | Deletes records permanently.        |
+| Can rollback the data.          | Cannot rollback the data.           |
+| `WHERE` clause can be used.     | `WHERE` clause cannot be used.      |
+
+---
+
+## 5. What is a Constraint?
+
+**Constraints** are rules applied to tables to ensure the accuracy and integrity of data. There are five types of constraints:
+
+1. **NOT NULL**  
+   - Ensures no `NULL` values are entered.
+   - Can only be applied at the column level.
+  
+2. **UNIQUE**  
+   - Ensures no duplicate values.
+   - Allows null values.
+   - Can be applied at both the column and table level.
+
+3. **PRIMARY KEY**  
+   - Combines `NOT NULL` and `UNIQUE`.
+   - A table can have only one primary key.
+   - Applied at the column and table level.
+
+4. **FOREIGN KEY**  
+   - Establishes a relationship between two tables.
+   - A parent table must have a primary key, and a child table must have a foreign key.
+
+5. **CHECK**  
+   - Defines a domain for a column, limiting the data it can accept.
+   - Can be applied at the column and table level.
+
+---
+
+## 6. What is a Sequence?
+
+A **sequence** is a database object used to generate unique numbers, often used for generating primary key values.
+
+---
+
+## 7. What is a View?
+
+A **view** is a virtual representation of data from one or more tables. It does not consume memory or store data, and retrieves data from the base table when queried. Types of views:
+
+1. **Simple View** – Created using one base table; allows DML operations.
+2. **Complex View** – Created using multiple base tables; DML operations not allowed.
+3. **Read-Only View** – DML operations are not required.
+4. **Check Option View** – Allows DML operations only if conditions are met.
+5. **Materialized View** – Stores data and is refreshed periodically, also known as a snapshot.
+
+---
+
+## 8. What is an Index?
+
+An **index** improves the performance of `SELECT` statements. Similar to a book index, it allows quicker access to rows in a table. Types of indexes:
+
+1. **Simple Index** – Created for a single column.
+2. **Complex Index** – Created for multiple columns.
+
+---
+
+## 9. What is a Synonym?
+
+A **synonym** is an alternate name for a table. It reduces the length of table names and can be used in place of the table name in commands.
+
+---
+
+## 10. What is a Join?
+
+**Joins** are used to retrieve data from one or more tables. Types of joins:
+
+1. **Equi Join** – Joins based on a common column.
+2. **Non-Equi Join** – Joins not based on equality.
+3. **Self Join** – A table joins itself.
+4. **Cartesian Product** – Joins without a condition.
+5. **Inner Join** – Similar to equi join, retrieves only matching records.
+6. **Outer Join** – Retrieves matching and non-matching records. Types:
+   - **Left Outer Join**
+   - **Right Outer Join**
+   - **Full Outer Join**
+
+---
+
+## 11. ROWID vs ROWNUM
+
+1) ROWNUM
+--------
+ROWNUM always start with 1 and increment by 1.
+
+ROWNUM values are temperory.
+
+Once the query is executed we will loss the rownum values.
+
+2) ROWID 
+---------
+ROWID is a hexadecimal number.
+
+ROWID is permanent.
+
+ROWID is a memory location where our records will store in a table.
+
+
+
+## 12. Group By, Having, and Order By Clauses
+
+- **Group By Clause**: Groups rows to apply aggregate functions.
+- **Order By Clause**: Arranges the rows in ascending or descending order.
+- **Having Clause**: Filters the rows after the `GROUP BY` operation.
+
+---
+
+## 13. What is PL/SQL?
+
+**PL/SQL** (Procedural Language/SQL) is an extension of SQL that allows for programming features like control statements, loops, custom error messages, triggers, and reduces network traffic.
+
+---
+
+## 14. PL/SQL Procedure vs Function
+
+- **Procedure**: Performs an action; doesn't return a value.
+- **Function**: Returns a single value and is usually used in expressions.
+
+---
+
+## 15. What is a Cursor in PL/SQL?
+
+A **cursor** is a pointer that allows row-by-row processing of query results. There are two types:
+1. **Implicit Cursor**: Automatically created by PL/SQL for `SELECT` statements.
+2. **Explicit Cursor**: Defined by the user for queries that return multiple rows.
+
+---
+
+## 16. What is a Package in PL/SQL?
+
+A **package** is a collection of related procedures, functions, variables, and other elements. It helps in organizing code and improving performance by minimizing recompilation.
+
+---
+
+## 17. What is a Trigger in PL/SQL?
+
+A **trigger** is a stored procedure that automatically executes in response to certain events (such as `INSERT`, `UPDATE`, or `DELETE`) on a table.
+
+---
+
+
+
+
+
+
+
+
+
+
+

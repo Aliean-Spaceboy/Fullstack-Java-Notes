@@ -1,0 +1,616 @@
+JavaScript program to select multiple checkbox
+===============================================
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		Course Completed :   <br>
+
+		<button onclick="f1()">select all </button>
+
+		<br>
+
+		<input type="checkbox" name="c1" value="html"/> HTML <br>
+		<input type="checkbox" name="c1" value="css"/> CSS   <br>
+		<input type="checkbox" name="c1" value="js"/> JavaScript
+
+		<script>
+			function f1()
+			{
+				var x=document.getElementsByName('c1');
+
+				for(var i=0;i<x.length;i++)
+				{
+					if(x[i].type=="checkbox")
+					{
+						x[i].checked="true";
+					}
+				}
+			}
+		</script>
+</body>
+</html>
+
+document.getElementsByTagName()
+================================
+The getElementsByTagName() method returns a collection of all elements with a specified tag name.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		Name: <input type="text" />
+
+		<button onclick="f1()">click Here </button>
+
+		<script>
+			function f1()
+			{
+				var val=document.getElementsByTagName('input').length;
+				document.writeln(val);
+			}
+		</script>
+</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		Name: <input type="text" />
+
+		<button onclick="f1()">click Here </button>
+
+		<script>
+			function f1()
+			{
+				var val=document.getElementsByTagName('input')[0].value;
+				document.writeln(val);
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		Name: <input type="text" />
+
+		<button onclick="f1()">click Here </button>
+
+		<script>
+			function f1()
+			{
+				var val=document.getElementsByTagName('input')[0].tagName;
+				document.writeln(val);
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<div>Division Tag 1</div>
+		<div>Division Tag 2</div>
+		<div>Division Tag 3</div>
+
+		<button onclick="f1()"> Swap </button>
+
+		<script>
+			function f1()
+			{
+				var x=document.getElementsByTagName('div');
+				x[0].innerHTML="First Change";
+				x[1].innerHTML="Second Change";
+				x[2].innerHTML="Third Change";
+			}
+		</script>
+</body>
+</html>
+
+ex;
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<div>Division Tag 1</div>
+		<div>Division Tag 2</div>
+		<div>Division Tag 3</div>
+
+		<button onclick="f1()"> Swap </button>
+
+		<script>
+			function f1()
+			{
+				var x=document.getElementsByTagName('div');
+				x[0].innerHTML="First Change";
+				x[1].innerHTML="Second Change";
+				x[2].innerHTML="Third Change";
+
+				x[0].style.color="blue";
+				x[0].style.backgroundColor="cyan";
+				x[1].style.color="red";
+				x[2].style.color="green";
+			}
+		</script>
+</body>
+</html>
+
+
+
+document.getElementsByClassName()
+================================
+The getElementsByClassName() method returns a collection of all elements with a specified class name.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.myStyle
+		{
+			color:violet;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+		<div class="myStyle">Division Tag</div>
+
+		<button onclick="f1()"> click Here </button>
+
+		<script>
+			
+			function f1()
+			{
+				var name=document.getElementsByClassName('myStyle')[0].tagName;
+				document.writeln(name);
+			}
+
+		</script>	
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.myStyle
+		{
+			color:violet;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+		<div class="myStyle">Division Tag</div>
+
+		<button onclick="f1()"> click Here </button>
+
+		<script>
+			
+			function f1()
+			{
+				var name=document.getElementsByClassName('myStyle').length;
+				document.writeln(name);
+			}
+
+		</script>	
+</body>
+</html>
+
+document.addEventListener()
+===========================
+It is used to attach the handler to the HTML elements.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<h1> Please Click Anywhere</h1>
+
+		<script>
+			
+			document.addEventListener("click",function(){
+				alert("You have clicked");
+			});
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<h1> Please Click Anywhere</h1>
+
+		<script>
+			
+			document.addEventListener("click",f1);
+
+			function f1()
+			{
+				alert("You have clicked once again");
+			}
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<h1 id="hover"> Mouse Over Here </h1>
+
+		<br>
+
+		<div id="result"></div>
+
+		<script>
+			
+			var x=document.getElementById('hover');
+
+			x.addEventListener('mouseover',f1);
+
+			function f1()
+			{
+				document.getElementById('result').innerHTML="Mouse Over";
+			}
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<h1 id="hover"> Mouse Out Here </h1>
+
+		<br>
+
+		<div id="result"></div>
+
+		<script>
+			
+			var x=document.getElementById('hover');
+
+			x.addEventListener('mouseout',f1);
+
+			function f1()
+			{
+				document.getElementById('result').innerHTML="Mouse Out";
+			}
+
+		</script>
+</body>
+</html>
+
+JavaScript program to convert Feet to Inches
+=============================================
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+	<center>
+	
+		<h3>Conversion Application</h3>
+
+		<table>
+			<tr>
+				<td>Feet</td>
+				<td>&nbsp;</td>
+				<td>Inches</td>
+			</tr>
+			<tr>
+				<td><input type="text" id="feet"/></td>
+				<td><big>=</big></td>
+				<td><input type="text" id="inches"/></td>
+			</tr>
+		</table>
+
+	</center>
+
+	<script>
+		var feet=document.getElementById("feet");
+		var inches=document.getElementById("inches");
+
+		feet.addEventListener('input',function(){
+			var f=this.value;	
+			var i=f*12;
+			inches.value=i;
+		})
+
+		inches.addEventListener('input',function(){
+			var i=this.value;
+			var f=i/12;
+			if(!Number.isInteger(f))
+			{
+				f=f.toFixed(2);
+			}
+			feet.value=f;
+		})
+	</script>
+
+
+</body>
+</html>
+
+document.removeEventListener()
+------------------------------
+It is used to remove the handler from the HTML elements.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<h1 id="hover">Mouse Over here</h1>
+		<br>
+		<button onclick="f2()">stop</button>
+		<br>
+
+		<div id="result"></div>
+
+		<script>
+			var x=document.getElementById('hover');
+
+			x.addEventListener('mouseover',f1);
+
+			function f1()
+			{
+				document.getElementById('result').innerHTML+="<p>Mouse Over</p>";
+			}
+			function f2()
+			{
+				x.removeEventListener('mouseover',f1);
+				document.getElementById('result').innerHTML+="<p>Event Stop!!!</p>";	
+			}
+		</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

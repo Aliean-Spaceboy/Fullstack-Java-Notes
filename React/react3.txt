@@ -1,0 +1,251 @@
+JSX
+====
+JSX stands for JavaScript XML.
+
+JSX allows us to write HTML in javascript.
+
+JSX elements having tag name, attributes and children.
+
+JSX is not neccessity to develop react applications instead we can use Babel.
+
+JSX makes our code simpler and elegant.
+
+Ultimately JSX transpile to pure javascript which is understandable by the browser.
+
+
+JSX elements
+=============
+JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.
+
+ex:
+---
+	JSX
+	----
+		<h1> Heading Tag </h1>
+
+	Babel
+	-----
+		React.createElement("h1",null,"Heading Tag");
+
+		Here h1 is a tag name
+		Here null is a optional attribute 
+		Here Heading Tag is a children
+
+ex:
+----
+	JSX
+	---
+		<div>
+			<h1> Heading Tag </h1>
+		</div>
+
+	Babel
+	-----
+		React.createElement("div",null,
+					React.createElement("h1",null,"Heading Tag"));
+
+
+ex:
+----
+	JSX
+	----
+		<h1 id="myId"> Heading Tag </h1>
+
+	Babel
+	-----
+		React.createElement("h1",{id:"myId"},"Heading Tag");
+
+ex:
+----
+	JSX
+	----
+		<h1 className="myClass"> Heading Tag </h1>
+
+	Babel
+	-----
+		React.createElement("h1",{className:"myClass"},"Heading Tag");
+
+JSX Expression
+==============
+JSX allows us to write expressions inside curly braces { }.
+
+The expression can be a React variable, or property, or any other valid JavaScript expression.
+
+JSX will execute the expression and return the result.
+
+ex:
+	
+1)
+	let name="Ihub Talent";
+	<h1>{name}</h1>	
+
+
+2)
+	<h1>{10*20}</h1>
+
+
+3) 
+	<h1>{Math.random()}</h1>
+
+
+
+NPM
+=====
+NPM stands for Node Package Manager.
+
+It is a integrated tool for nodejs.
+
+It is used to download node depedencies or packages.
+
+To downoad node packages and dependencies we need to use below command.
+ex:
+	npm install -g  <node_package_name>;
+
+All node packages will installed in a "node_modules" folder.
+
+
+
+Steps to setup npm for react applications
+=========================================
+step1:
+------
+	Download and install nodejs.
+	ex:
+		https://nodejs.org/en/blog/release/v16.16.0
+
+step2:
+-----
+	Copy nodejs directory from C drive.
+	ex:	
+		C:\Program Files\nodejs
+
+step3:
+------
+	Paste nodejs directory in environmental variables.
+	ex:
+		Right click to this pc --> properties --> Advanced system settings -->
+		environment variables --> user variables --> click to new button 
+		variable name : path 
+		variable value :  C:\Users\DELL\AppData\Roaming\npm;C:\Program Files\nodejs;  
+		--> ok --> ok --> ok.
+step4:
+-----
+	Check the version of nodejs and npm.
+	ex:
+		npm -version
+		node --version 
+
+
+First React application Development
+=====================================
+
+step1:
+------
+	Make sure nodejs and npm setup done perfectly.
+
+step2:
+------
+	Download and Install VSC code editor.
+	ex:
+		https://code.visualstudio.com/download
+
+step3:
+-------
+	Create a "Reactprojects" folder inside 'E' drive.
+
+step4:
+-----
+	Open the VSC editor from "Reactprojects" folder.
+	ex:
+		Reactprojects> code . 
+
+step5:
+-----
+	Install node module to create react applications.
+	ex:
+		Reactprojects> npm install -g  create-react-app 
+
+step6:
+-----
+	Create a react project i.e myapp1.
+	ex:
+		Reactprojects> npx  create-react-app  myapp1
+
+step7:
+-----
+	Switch to project i.e myapp1.
+	ex:
+		Reactprojects> cd   myapp1;
+
+
+step8:
+-----
+	Run the react application.
+	ex:	
+		Reactprojects/myapp1> npm start 
+
+step9:
+-----
+	Test the react application.
+	ex:
+		http://localhost:3000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

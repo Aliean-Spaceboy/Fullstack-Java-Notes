@@ -1,0 +1,332 @@
+Q) What is recursion in javascript?
+
+A function which call itself for many number of times is called recursion.
+
+ex:
+	
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+			function f1(i)
+			{
+				if(i<=10)
+				{
+					document.writeln(i);
+					f1(i+1);
+				}
+			}
+
+			//calling 
+			f1(1);
+		</script>
+
+</body>
+</html>
+
+
+Q) What is callback function in javascript? 
+
+A callback function is a function passed into another function as an argument.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+			function display()
+			{
+				document.writeln("Display Function <br>");
+			}
+			function show()
+			{
+				document.writeln("Show Function <br>");
+			}
+
+			function f1(arg1,arg2,callback)
+			{
+				callback();
+				document.writeln((arg1+arg2)+"<br>");	
+			}
+
+			//calling 
+			f1(10,20,display);
+			f1(30,20,show)
+		</script>
+
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+			function display()
+			{
+				document.writeln("Display Function <br>");
+			}
+			function show()
+			{
+				document.writeln("Show Function <br>");
+			}
+
+			function f1(arg1,arg2,callback)
+			{
+				callback();
+				document.writeln((arg1+arg2)+"<br>");	
+			}
+
+			//calling 
+			f1(10,20,display);
+			f1(30,20,show)
+			f1(100,200, function(){
+				document.writeln("Anonymous Function <br>")
+			})
+		</script>
+
+</body>
+</html>
+
+
+Q)Differences between  var , let and const?
+
+var				let			const
+-----				-----			--------
+It is a functional scope.	It is a block scope.	It is a block scope.
+
+It can be declare without	It can be declare	It can't be declare 
+initialization.			without initialization. without initialization.
+
+It can be updated.		It can be updated.	It can't be updated.
+
+It can be redeclared.		It can't be redeclared.	It can't be redeclared.
+
+It can be access without	It can be access without It can’t be access without	
+initialization as it default	initialization as it 	 initialization.
+value is undefined.		default value is 
+				undefined.
+
+
+
+
+
+
+Q) Explain High order functions in JavaScript? 
+
+Functions that operate on other functions, either by taking them as arguments or by 
+returning them, are called higher-order functions.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+			
+			function f1(fn)
+			{
+				fn();	
+			}	
+
+			f1(function(){ document.writeln("Higher Order Function");});
+
+		</script>
+
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+			
+			function f1()
+			{
+				return function(){
+					document.write("HigherOrder Function");
+				}
+			}	
+
+			var x=f1();
+			x();
+
+		</script>
+
+</body>
+</html>
+
+
+
+Q) Write a java program to remove duplicates from the list using Stream API?
+
+
+import java.util.*;
+import java.util.stream.*;
+class Test
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list=Arrays.asList(1,2,2,3,3,3,4,4,4,4);
+
+		List<Integer> newList=list.stream().distinct().collect(Collectors.toList());
+
+		newList.forEach(element -> System.out.print(element+" "));
+	}
+}
+
+
+
+Javascript promises
+=======================
+Promises are used to handle asynchronous operations in JavaScript. 
+
+They can handle multiple asynchronous operations easily and provide better 
+error handling than callbacks and events. 
+
+
+A Promise has four states: 
+
+1)fulfilled: Action related to the promise succeeded
+2)rejected: Action related to the promise failed
+3)pending: Promise is still pending i.e. not fulfilled or rejected yet
+4)settled: Promise has fulfilled or rejected
+
+A promise can be created using Promise constructor.
+
+Syntax:
+
+	var promise = new Promise(function(resolve, reject){
+     		//do something
+	});
+
+ex:1
+--------
+<script>
+var promise = new Promise(function(resolve, reject) {
+	resolve('IHub Talent');
+})
+
+promise
+	.then(function(successMessage) {
+	//success handler function is invoked
+		console.log(successMessage);
+	}, function(errorMessage) {
+		console.log(errorMessage);
+	})
+
+
+</script>
+
+ex:2
+--------
+<script>
+var promise = new Promise(function(resolve, reject) {
+	reject('Error occured');
+})
+
+promise
+	.then(function(successMessage) {
+	//success handler function is invoked
+		console.log(successMessage);
+	}, function(errorMessage) {
+		console.log(errorMessage);
+	})
+
+
+</script>
+
+Q) What is spread operator in JavaScript? 
+
+The spread operator is used to spreading an array. 
+
+Ex: 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+			
+			function f1(i,j,k,l)
+			{
+				document.writeln(i+j+k+l);
+			}
+			
+			var arr=[10,20,30,40];
+
+			f1(...arr);
+
+		</script>
+
+</body>
+</html>
+
+Q) What is rest parameter in JavaScript? 
+
+It provides an improved way of handling the parameters of a function. 
+
+Any number of arguments will be converted into an array using the rest parameter. 
+
+Rest parameters can be used by applying three dots (...) before the parameters. 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+			
+			function f1(...i)
+			{
+				document.writeln("Hi");
+			}
+
+			f1(10);
+			f1(10,20);
+			f1(10,20,30)
+		</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

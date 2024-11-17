@@ -1,0 +1,296 @@
+Spring Cloud Hystrix
+=====================
+Hystrix is a fault tolerance library provided by Netflix.
+
+Using Hystrix we can prevent Deligation of failure from one service to another service.
+
+Hystrix internally follows Circuit Breaker Design pattern.
+
+In short circuit breaker is used to check availability of external services like web service call,database connection and etc.
+
+Diagram: sb8.1
+
+
+notification-service
+========================
+
+step1:
+------
+	create a "notification-service" project in STS.
+	Starter:
+			Spring Web.
+
+step2:
+------
+	Add the following code in main sprping boot application.
+
+
+NotificationServiceApplication.java
+--------------------------------------	
+package com.ihub.www;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+@RestController
+@RequestMapping("/notification")
+public class NotificationServiceApplication {
+
+	@GetMapping("/send")
+	public String sendEmail()
+	{
+		return "Email sending method is called from notification-service";
+	}
+	public static void main(String[] args) {
+		SpringApplication.run(NotificationServiceApplication.class, args);
+	}
+
+}
+
+step3:
+------
+	convert application.properties file to application.yml file.
+
+
+step4:
+------
+	configure server port number in application.yml file.
+
+application.yml
+------------------
+server:
+  port: 7171
+
+
+step5:
+-------
+	Run "notification-service" project as spring boot application.
+
+
+step6:
+-----
+	Test the application with below request url.
+	ex:
+		http://localhost:7171/notification/send
+
+
+
+paytm-service
+========================
+
+step1:
+------
+	create a "paytm-service" project in STS.
+	Starter:
+			Spring Web.
+
+step2:
+------
+	Add the following code in main sprping boot application.
+
+
+PaytmServiceApplication.java
+--------------------------------------	
+package com.ihub.www;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+@RestController
+@RequestMapping("/paytm")
+public class PaytmServiceApplication {
+
+	@GetMapping("/pay")
+	public String paymentProcess()
+	{
+		return "Payment Pocess method called in paytm-service";
+	}
+	
+	
+	public static void main(String[] args) {
+		SpringApplication.run(PaytmServiceApplication.class, args);
+	}
+
+}
+
+
+step3:
+------
+	convert application.properties file to application.yml file.
+
+
+step4:
+------
+	configure server port number in application.yml file.
+
+application.yml
+------------------
+server:
+  port: 8181
+
+
+step5:
+-------
+	Run "paytm-service" project as spring boot application.
+
+
+step6:
+-----
+	Test the application with below request url.
+	ex:
+		http://localhost:8181/paytm/pay
+
+
+bookmyshow-service
+=====================
+
+step1:
+-----
+	create a "bookmyshow-service" project in STS.
+	Starter:	
+			Spring Web
+
+step2:
+-----
+	Add Spring Cloud Hystrix dependency in pom.xml file.
+
+	ex:
+	<dependency>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+	<version>2.2.10.RELEASE</version>
+	</dependency>
+
+
+step3:
+------
+	Change <parent> tag inside pom.xml file for hystrix compatability.
+	ex:
+	<parent>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-parent</artifactId>
+    		<version>2.3.3.RELEASE</version>
+    		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+step4:
+-----
+	Add the following code in main spring boot application.
+
+
+BookmyshowServiceApplication
+-----------------------------
+
+package com.ihub.www;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
+@SpringBootApplication
+@RestController
+@EnableHystrix
+public class BookmyshowServiceApplication {
+
+	@Autowired
+	RestTemplate restTemplate;
+	
+	@HystrixCommand(groupKey = "ihub" , commandKey = "ihub" ,fallbackMethod = "bookMyShowFallBack")
+	@GetMapping("/book")
+	public String bookShow()
+	{
+		String paytmServiceResponse=restTemplate.getForObject("http://localhost:8181/paytm/pay", String.class);
+		String notificationServiceResponse=restTemplate.getForObject("http://localhost:7171/notification/send",String.class);
+	
+		return paytmServiceResponse+"\n"+notificationServiceResponse;
+	}
+	
+	
+	public static void main(String[] args) {
+		SpringApplication.run(BookmyshowServiceApplication.class, args);
+		
+	}
+	
+	public String  bookMyShowFallBack()
+	{
+		return "service gateway failed";
+	}
+	
+	@Bean
+	public  RestTemplate    getRestTemplate() {
+	
+		return new RestTemplate();	
+		
+	}
+
+}
+
+
+step5:
+--------
+	convert application.properties file to application.yml file.
+
+
+step6:
+------
+	configure server port number inside application.yml file.
+
+application.yml
+---------------
+server:
+  port: 9191
+	
+
+step7:
+--------
+	Add spring core dependency inside pom.xml file.
+
+	ex:
+		<dependency>
+    			<groupId>org.springframework</groupId>
+    			<artifactId>spring-core</artifactId>
+    			<version>5.3.17</version>
+		</dependency>
+
+step8:
+-------
+	Run the "bookmyshow-service" application as spring boot application.	
+
+
+step9:
+-------
+	Test the application by using below request url.
+	ex:
+		http://localhost:9191/book
+
+
+step10:
+------
+	Now stop any micro service i.e notification-service or paytm-service.
+
+step11:
+--------
+	Test the "bookmyshow-service" application by using below url.
+	ex:
+		http://localhost:9191/book
+
+Note:
+----
+	Here fallback method will execute with the help of Hystrix.
+
+

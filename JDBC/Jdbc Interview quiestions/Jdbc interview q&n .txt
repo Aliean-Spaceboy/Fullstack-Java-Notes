@@ -1,0 +1,407 @@
+JDBC
+=====
+As if know it is known as trademark.
+
+But earlier it is also known a Java Database Connectivity.
+
+RAM is a temperory storage device or medium.
+
+During the program execution our data will store in a RAM.
+
+Once the program execution is completed we will loss the data.
+
+To overcome this limitation we ar making our applications writing the data into a file or database softawre.
+
+File and Database software acts like a permanent storage device or medium.
+
+
+Persistence
+============
+The process of storing and managing the data for a long period of time is called persistence.
+
+what is JDBC?
+
+JDBC is a persistence technology which is used to develop persistence logics having the capability to perform persistence operations on persistence data of a persistence store.
+
+
+Limitations with File as a persistence store 
+----------------------------------------------
+
+> We can store limited amount of data.
+
+> There is no security.
+
+> Fetching the data with multiple conditions is not possible.
+
+> It stores unstructured data.
+
+> It does not allows us to apply constraints.
+
+> It does not show an application with relationships.
+
+> Updation and deletion of data can't be done directly.
+
+> Merging and comparision of data can't be done easily.
+
+
+Advantages with Database as a persistence store 
+-----------------------------------------------
+> We can store unlimited amount of data.
+
+> There is a security.
+
+> Fetching the data with multiple condition is possible.
+
+> It stores structured data.
+
+> It allows us to apply constraints.
+
+> It allows us to show an application with relationships.
+
+> Updation and deletion of data can be done directly.
+
+> Merging and comparision of data can be done easily.
+
+
+
+Serialization
+==============
+	The process of taking object data and storing in a file is called serialization.
+		
+	Serialization means converting object state to file state.
+
+
+
+Deserialization
+==============
+	The process of taking the data from file and representing an object is called deserialization.
+		
+	Deserialization means converting file state to object state.
+
+
+JDBC Driver
+============
+JDBC driver acts like a bridge between java application and database software.
+
+It is used to convert java calls to database calls and vice versa.
+
+Here calls means instructions.
+
+
+What is ODBC?
+
+ODBC is a open technology given by Xopen company having set of rules and guidelines to develop ODBC drivers to interact with multiple database softwares.
+
+
+ODBC Driver 
+===========
+VBScript , Perl, D2K and etc uses ODBC Drivers to locate and interact with database software.
+
+ODBC driver developed in C language by taking the support of pointers. Java does not support pointers.To overcome this limitation Sun Micro System introduced JDBC Driver exclusively.
+
+
+We will get JDBC Softwares from three parties.
+
+1) Sun Micro System (creator of jdbc driver)
+
+2) Database vendor 
+
+3) Third party vendor 
+
+
+We will get ODBC Softwares from three parties.
+
+1) Xopen company (creator of odbc driver)
+
+2) Database vendor 
+
+3) third party vendor 
+
+
+
+Type1 JDBC Driver Architecture / JDBC-ODBC Bridge Drive (Partly Java Driver)
+============================================================================
+Type1 JDBC Driver is not designed to interact with database software directly.
+
+It is designed to take the support of ODBC Driver and Vendor DB library to locate and interact with database software.
+
+Diagram: jdbc3.1
+
+Advantages:
+
+> We can use Type1 JDBC driver to interact with any database software.
+
+> It is a built-in driver of JDK.
+
+Disadvantages:
+
+> This driver performance is low.It is not suitable for medium or large scale projects.Hence it is 
+  not a industry standard driver.
+
+> Since ODBC driver and Vendor DB libraries are present at client side so it is not suitable to 
+  perform untrusted applets to database communication.
+
+> To work with Type1 JDBC driver we need to arrange ODBC Driver and Vendor DB library.
+
+
+Type2 JDBC Driver Architecture / Native API Driver (Partly java driver)
+=======================================================================
+Type2 JDBC driver is not designed to interact with database software directly.
+
+It will take the support of Vendor DB library to locate and interact with database software.
+
+Diagram: jdbc4.1
+
+Advantages:
+
+> Type2 JDBC driver will not take the support of ODBC Driver.
+
+> This driver will give better performance when compare to Type1 JDBC driver.
+
+Disadvantages:
+
+> This driver performance is quit slow. It is not suitable for medium and large scale projects.
+   Hence it is not a industry standard driver.
+
+> Since vendor db library present at client side so it is not suitable for untruted applets to 
+  database communication.
+
+> To work with Type2 JDBC driver we need to arrange vendor db library.
+
+
+Type4 JDBC Driver Architecture / Native Protocol (Java driver) (thin driver)
+============================================================================
+Type4 JDBC driver is not designed to take the support of ODBC driver and vendor db library.
+
+It is designed to interact with database software directly.
+
+Diagram: jdbc4.2
+
+Advantages:
+
+> This driver will give better performance when compare to Type1 and Type2 driver.
+
+> It is suitable for medium and large scale projects.Hence it is a industry standard driver.
+
+> It is completely developed in java so it will give platform independency.
+
+> Since ODBC driver and Vendor DB library not present at client side so it is suitable to perform 
+  untrusted applets to database communication.
+
+Disadvantages:
+
+> It is a not built in driver of JDK.
+
+> For every database software we need to arrange Type2 JDBC driver seperately.
+
+
+JDBC Connection pooling
+=======================
+It is a factory containing a set of readily available JDBC Connection objects before actual begin used.
+
+JDBC Connection pool represent connectivity with same database software.
+
+Diagram: jdbc4.3
+
+
+Advantages:
+
+> It gives reusable JDBC Connection object.
+
+> With minimum number of JDBC Connection objects we can interact with multiple clients.
+
+> A user is not responsible to create, maintain and destroy JDBC Connection objects. A JDBC Connection
+  pool is responsible.
+
+
+
+Type3 JDBC Driver Architecture / Net API  (java driver)
+=======================================================
+A webserver or proxy server or IDE's server containing set of JDBC Connection objects in 
+JDBC Connection pool.
+
+Type3 JDBC driver is not designed to interact with database software directly.
+
+IT is designed to interact with web server or proxy server or IDE's server to get one reusable 
+JDBC Connection object from JDBC Connection pool.
+
+Diagram: jdbc4.4
+
+With respect to the diagram:
+
+
+1) Web server or proxy server intracts with database software and gets some reusable JDBC Connection
+   objects in JDBC Connection pool.
+
+2) Our application interacts with Webserver or proxy server using Type3 driver and gets one 
+   reusable JDBC Connection object.
+
+3) Our application uses JDBC Connection object to create other JDBC Connection objects.
+
+4) Once if we call con.close(), a  JDBC Connection goes back to JDBC Connection pool.
+
+Q) Types of Connection objects in JDBC?
+
+We have two types of JDBC Connection objects.
+
+1) Direct JDBC Connection object 
+------------------------------
+	A JDBC Connection object which is created by the user.
+	ex:
+		Class.forName("driver-class");
+		Connection con=DriverManager.getConnection("driver-url","username","password");
+
+2) Pooled JDBC Connection object 
+---------------------------
+	A JDBC Connection object which is gathered from JDBC Connection pool.
+
+
+
+Types of Statement objects in JDBC
+===================================
+We have three Statement objects in JDBC.
+
+1) Simple Statement 
+--------------------
+It is an object of underlying supplied java class which implements java.sql.Statement interface.
+
+2) PreparedStatement 
+-------------------
+It is an object of underlying supplied java class which implements java.sql.PreparedStatement interface.
+
+3) CallableStatement 
+---------------------
+It is an object of underlying supplied java class which implements java.sql.CallableStatement interface.
+
+Limitations with Simple Statement object
+=========================================
+1) It is not suitable to execute same query for multiple times with same or different values.
+
+2) It raises SQL Injection problem.
+
+3) We can't use string values directly to query parameter without any conversion.
+
+4) Framing query with variables is quit complex.
+
+5) It does not allow us to insert date values to database table column.
+
+6) It does not allow us to insert LOB values to database table column.
+
+To overcome these limitations we need to use PreparedStatement object.
+
+
+DatabaseMetaData
+=================
+DatabaseMetaData is an interface which is present in java.sql package.
+
+DatabaseMetaData provides metadata(data of a data) of a database.
+
+DatabaseMetaData gives information about database product name, database product version, 
+database driver name, database driver version, database username and etc.
+
+We can create DatabaseMetaData object by using getMetaData() method of a Connection object.
+
+
+
+Working with Date values
+=========================
+While dealing with DOB,DOA,DOR,DOD we need to insert and retrieve date values.
+
+It is never recommanded to store date values in the form of Strings because it won't give proper comparision between two dates.
+
+Every database softwares support different date patterns.
+ex:
+	Oracle 	-----	dd-MMM-yy
+	MySQL	-----	yyyy-MM-dd
+
+We can't place date value directly to query parameter using simple Statement object.
+
+To overcome this limitation we need to use PreparedStatement object.
+
+A java.util.Date class object is not suitable to perform database operation.
+
+A java.sql.Date class object is suitable to perform database operation.
+
+Batch processing
+================
+Batch processing is used to declare multiple queries to batch and makes a single call to the database.
+
+In Batch processing we need to add each query to batch by using addBatch() method of Statement object.
+
+To execute the batch we need to use executeBatch() method of Statement object.
+
+
+Transaction Management
+=======================
+Transaction means it is a single unit of work.
+
+If transaction done successfully we need to commit.
+
+If transaction is failed we need to rollback.
+
+
+Types of ResultSet object
+=========================
+We have two types of ResultSet object.
+
+1) Non-Scrollable ResultSet object 
+
+2) Scrollable ResultSet object 
+
+
+
+1) Non-Scrollable ResultSet object 
+------------------------------------
+By default every ResultSet object is a non-scrollable  ResultSet object.
+
+If a ResultSet object allows us to read the records sequentially, uni-directionally 
+is called Scrollable ResultSet object.
+
+If a JDBC Statement object is created without type,mode value then that ResultSet object is called 
+non-scrollable ResultSet object.
+
+
+2) Scrollable ResultSet object 
+------------------------------
+If a ResultSet object allows us to read the records non-sequentially, bi-directionally, randomly 
+is called scrollable ResultSet object.
+
+If a JDBC Statement object is created with type,mode value then that ResultSet object is called
+Scrollable ResultSet object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

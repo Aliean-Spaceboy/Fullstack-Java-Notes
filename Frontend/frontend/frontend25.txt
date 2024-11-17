@@ -1,0 +1,316 @@
+JavaScript Date 
+===============
+JavaScript Date is used to display date and time.
+
+Using JavaScript Date we can display timer on a web page.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var date=new Date();
+			var d = date.getDate();
+			var m = date.getMonth()+1;
+			var y = date.getFullYear();
+
+			document.writeln(d+"/"+m+"/"+y);
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var date=new Date();
+			
+			var h = date.getHours();
+			var m = date.getMinutes();
+			var s = date.getSeconds();
+			
+			document.writeln(h+":"+m+":"+s);
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	
+	<!-- add external css -->
+	<link rel="stylesheet" type="text/css" href="css/mystyles.css">
+
+</head>
+<body>
+
+	<span id="result"> </span>
+
+	<script>
+		
+		window.onload=function(){getTime();}
+
+		function getTime()
+		{
+			var date=new Date();
+			var h = date.getHours();
+			var m = date.getMinutes();
+			var s = date.getSeconds();
+			m=check(m);
+			s=check(s);
+				
+			document.getElementById('result').innerHTML=h+":"+m+":"+s;
+		}	
+
+		function check(i)
+		{
+			if(i<10)
+			{
+				i = "0"+i;
+			}
+
+			return i;
+		}	
+
+		setInterval(getTime,1000);
+	</script>
+
+</body>
+</html>
+
+
+mystyles.css
+-----------
+*
+{
+	margin:0;
+	padding:0;
+}
+body
+{
+	height: 100vh;
+	background: linear-gradient(yellow,red);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+span
+{
+	font-size:40px;
+	font-weight:bold;
+	color:#FFF;
+	font-style: italic;
+}
+
+
+Q) What is the difference between innerText and innerHTML ? 
+
+innerText
+==========
+A innerText property is used to display simple text in javascript dynamically.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+</head>
+<body>
+
+	<div id="result"> </div>
+
+	<script>
+		document.getElementById('result').innerText="<p style='color:blue'> Inner Text Property</p>"
+	</script>
+
+</body>
+</html>
+
+
+innerHTML
+---------
+A innerHTML property is used to display HTML code in javascript dynamically.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+</head>
+<body>
+
+	<div id="result"> </div>
+
+	<script>
+		document.getElementById('result').innerHTML="<p style='color:blue'> Inner Text Property</p>"
+	</script>
+
+</body>
+</html>
+
+
+Hide and show password in a form page
+======================================
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- fontawesome icon cdn link -->
+   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+   	<style>
+   		#icon
+   		{
+   			position:relative;
+   			right:25px;
+   		}
+   		.mystyle
+   		{
+   			padding-right:25px;
+   		}
+   	</style>
+
+</head>
+<body>
+
+	Password: <input type="password" id="t1" class="mystyle"/>
+
+	<span class="fa fa-eye" id="icon" onclick="f1()"></span>
+
+	<script>
+		
+		function f1()
+		{
+			var x = document.getElementById('t1');
+
+			if(x.type=="password")
+			{
+				x.type="text";
+			}
+			else
+			{
+				x.type="password";
+			}
+		}
+
+	</script>
+</body>
+</html>
+
+
+Q) Explain High order functions in JavaScript?
+
+Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions.
+
+Ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+		function f1(f2)
+		{
+			f2();	
+		}
+
+		f1(function(){document.writeln("F2-Function")});
+		</script>
+</body>
+</html>
+
+Ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			function f1()
+			{
+				return function(){
+					return "Another Function";
+				}
+			}
+			var f2=f1();
+			document.writeln(f2());
+		</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

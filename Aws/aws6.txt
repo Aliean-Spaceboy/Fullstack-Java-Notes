@@ -1,0 +1,82 @@
+Elastic BeanStalk
+==================
+AWS Elastic Beanstalk is an AWS-managed service for web applications.
+
+Elastic Beanstalk is a Platform As A Service (PAAS) as it allows users to directly use a pre-configured server for their application.
+
+First, create an application and select an environment, configure the environment, and deploy the application.
+
+
+
+Steps to deploy war file in Tomcat server using Elastic BeanStalk
+==================================================================
+
+Step1:
+--------
+	Create a Dynamic web application i.e LoginApp. 
+
+
+
+
+Deployment Directory Structure 
+------------------------------
+AWSApp
+|
+|---Java Resources
+|
+|
+|---WebContent
+	|	
+	|----index.jsp
+	|
+	|----WEB-INF
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+index.jsp
+---------
+<center>
+	
+	<h1 style="color:blue">
+	
+			Current Date and Time : <br>
+			
+			<%
+			
+					java.util.Date d=new java.util.Date();
+					out.println(d);
+				
+			%>
+	
+	</h1>
+	
+</center>
+
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+
+step2:
+------
+	Convert dynamic web project to war file.
+
+
+step3:
+-----
+	Create a role for Identity and Access Management (IAM).
+
+step4:
+------
+	Create a a application and deploy the war file using elastic beanstalk.

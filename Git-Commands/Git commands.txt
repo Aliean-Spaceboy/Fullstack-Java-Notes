@@ -1,0 +1,12 @@
+Change the URL of the Existing Remote:
+=====================================
+git remote set-url origin 
+			Copy New url link
+				<https://github.com/user/new-repo.git>
+
+
+Remove the Existing Remote:
+==========================
+git remote remove origin
+
+git remote add origin <new-url>

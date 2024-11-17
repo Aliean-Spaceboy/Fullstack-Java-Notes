@@ -1,0 +1,472 @@
+How many selectors are there in CSS
+====================================
+We have five selectors in CSS.
+
+1) element selector
+
+2) id selector
+
+3) class selector 
+
+4) group selector 
+
+5) universal selector 
+
+
+1)element selector:
+-------------------
+The element selector selects HTML elements based on element name.
+Ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		p
+		{
+			text-align: center;
+			color:red;
+		}
+	</style>
+</head>
+<body>
+		<p>This is paragraph tag</p>
+</body>
+</html>
+
+
+2)id selector:
+-----------
+The id selector uses the id attribute of an HTML element to select a specific element.
+
+The id of an element is unique within a page, so the id selector is used to select one unique element.
+
+To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		#myId
+		{
+			text-align: center;
+			color:red;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+		<p id="myId">This is paragraph tag</p>
+		<p>This is paragraph tag</p>
+		<p>This is paragraph tag</p>
+</body>
+</html>
+
+
+
+3)class selector:
+-----------------
+The class selector selects HTML elements with a specific class attribute.
+
+To select elements with a specific class, write a period (.) character,
+followed by the class name.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.myClass
+		{
+			text-align: center;
+			color:red;
+			font-size: 30px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+		<p class="myClass">This is paragraph tag</p>
+		<p>This is paragraph tag</p>
+		<p>This is paragraph tag</p>
+</body>
+</html>
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.myClass
+		{
+			text-align: center;
+			color:red;
+			font-size: 30px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+		<p class="myClass">This is paragraph tag</p>
+		<p class="myClass">This is paragraph tag</p>
+		<p>This is paragraph tag</p>
+</body>
+</html>
+
+ex:3
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.myClass1
+		{
+			text-align: center;
+			color:red;
+			font-size: 30px;
+			
+		}
+		.myClass2
+		{
+			background-color: yellow;
+		}
+
+	</style>
+</head>
+<body>
+		<p class="myClass1">This is paragraph tag</p>
+		<p class="myClass2">This is paragraph tag</p>
+		<p class="myClass1  myClass2">This is paragraph tag</p>
+</body>
+</html>
+
+
+4)grouping selector:
+------------------
+The grouping selector selects all the HTML elements with the same style
+definitions.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		p,h1,div
+		{
+			color:blue;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+	</style>
+</head>
+<body>
+		<p>This is paragraph tag</p>
+		<h1>This is heading tag</h1>
+		<div>This is division tag</div>
+</body>
+</html>
+
+
+5) universal selector:
+-------------------------
+The universal selector (*) selects all HTML elements on the page.
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		*
+		{
+			color:blue;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+	</style>
+</head>
+<body>
+		<p>This is paragraph tag</p>
+		<h1>This is heading tag</h1>
+		<div>This is division tag</div>
+</body>
+</html>
+
+
+CSS Design 
+===========
+
+Task1
+  |
+  |----css
+	|
+	|---mystyles.css
+
+  |----images
+	|
+	|---micky.png
+  |
+  |----index.html 
+
+index.html
+---------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QualityThought</title>
+	<!-- add external css -->
+	<link rel="stylesheet" type="text/css" href="css/mystyles.css">
+</head>
+<body>
+		<div class="container">
+			
+			<div class="box1">
+				<p>
+					
+					Mickey was created as a replacement for a prior Disney character, Oswald the Lucky Rabbit. The character was originally to be named "Mortimer Mouse", until Walt Disney's wife, Lillian, suggested "Mickey". Mickey first appeared in two 1928 shorts Plane Crazy and The Gallopin' Gaucho (which were not picked up for distribution) before his public debut in Steamboat Willie (1928). The character went on to appear in over 130 films, mostly shorts as well as features such as Fantasia (1940). Since 1930, Mickey has been featured extensively in comic strips (including the Mickey Mouse comic strip, which ran for 45 years) and comic books (such as Mickey Mouse). The character has also been featured in television series such as The Mickey Mouse Club (1955–1996).
+
+				</p>
+			</div>
+
+			<div class="box2">
+				
+				<img src="images/micky.png"/>
+
+			</div>
+		</div>
+</body>
+</html>
+
+mystyles.css
+------------
+*
+{
+	margin:0;
+	padding:0;
+}
+.container
+{
+	width:800px;
+	height:400px;
+	background-color:#f7b731;
+	margin:100px auto;
+}
+.box1
+{
+	width:400px;
+	height:400px;
+	background-color:#2bcbba;
+	float:left;
+}
+.box1 p
+{
+	padding:20px;
+	font-size:18px;
+	text-align: justify;
+}
+.box2
+{
+	width:400px;
+	height:400px;
+	background-color:#d1d8e0;
+	float:right;
+}
+.box2 img
+{
+	width:100%;
+	height:100%;
+}
+
+
+CSS clear property
+===================
+The clear property specifies on which side of an element floating elements are not allowed to float.
+
+value		Description
+-------		----------------
+none		Default allows floating elements to both the side.
+
+left		No floating elements allowed on the left side.
+
+right 		No floating elements allowed on the right side.
+
+both		No floating elements allowed on the both side.
+
+
+
+ex:1
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IHUB TALENT</title>
+	<style type="text/css">
+		#box1
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			float:left;
+		}
+		#box2
+		{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			float:right;
+		}
+		#box3
+		{
+			width: 100%;
+			height: 200px;
+			background-color: yellow;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+</body>
+</html>
+
+clear: both
+-------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IHUB TALENT</title>
+	<style type="text/css">
+		#box1
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			float:left;
+		}
+		#box2
+		{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			float:right;
+		}
+		#box3
+		{
+			width: 100%;
+			height: 200px;
+			background-color: yellow;
+			clear: both;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+</body>
+</html>
+
+
+clear:left
+----------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IHUB TALENT</title>
+	<style type="text/css">
+		#box1
+		{
+			width: 200px;
+			height: 300px;
+			background-color: red;
+			float:left;
+		}
+		#box2
+		{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			float:right;
+		}
+		#box3
+		{
+			width: 100%;
+			height: 200px;
+			background-color: yellow;
+			clear: left;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+</body>
+</html>
+
+
+clear:right
+------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IHUB TALENT</title>
+	<style type="text/css">
+		#box1
+		{
+			width: 200px;
+			height: 300px;
+			background-color: red;
+			float:left;
+		}
+		#box2
+		{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			float:right;
+		}
+		#box3
+		{
+			width: 100%;
+			height: 200px;
+			background-color: yellow;
+			clear: right;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

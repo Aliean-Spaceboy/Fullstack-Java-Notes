@@ -1,0 +1,626 @@
+Sublime Text Editor
+==================
+Download link : https://www.sublimetext.com/download
+
+
+
+CSS overflow property
+========================
+The overflow property specifies what should happen if content overflow.
+
+This property spcifies weither to clip content or to add scrollbars  when an element content is too big to fit in a specified area.
+
+Note:
+---------
+The overflow property works for block elements with  a specified height.
+
+value		Description
+---------	-----------------
+visible		The overflow is not clipped.It rendered outside the element 's box and 
+		it is default value.
+
+hidden		the overflow is clipped  and rest of the content will be invisible.
+
+scroll		The overflow is clipped,but a scroll-bar is added to see the rest of the 
+		content .
+
+auto		The overflow is clipped,a scroll-bar should be added to the rest of the 
+		content.
+
+
+
+overflow:visible
+----------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		div
+		{
+			width:200px;
+			height:200px;
+			border:2px solid black;
+			overflow: visible;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		
+		Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+		Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+
+	</div>
+</body>
+</html>
+
+
+overflow: hidden
+-----------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		div
+		{
+			width:200px;
+			height:200px;
+			border:2px solid black;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		
+		Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+		Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+
+	</div>
+</body>
+</html>
+
+overflow: auto
+--------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		div
+		{
+			width:200px;
+			height:200px;
+			border:2px solid black;
+			overflow: scroll;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		
+		Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. 
+
+	</div>
+</body>
+</html>
+
+overflow: auto
+-----------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		div
+		{
+			width:200px;
+			height:200px;
+			border:2px solid black;
+			overflow: auto;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		
+		Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. It gives us a way to interact with hosted information, like websites. It gives us a way to interact with hosted information, like websites. 
+
+	</div>
+</body>
+</html>
+
+
+
+CSS box-shadow property
+=======================
+The box-shadow property attaches one or more shadows to an element.
+
+syntax
+--------
+	box-shadow: none |h-offset  v-offset  blur spread  color
+ex:
+	box-shadow: 2px 2px 3px 10px blue;
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		div
+		{
+			width:200px;
+			height:200px;
+			margin: 100px auto;
+			box-shadow: 3px 3px 22px 6px #C3C3C3;
+		}
+	</style>
+</head>
+<body>
+	<div>
+	
+	</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		div
+		{
+			width:200px;
+			height:200px;
+			margin: 100px auto;
+			box-shadow: 3px 3px 22px 6px #C3C3C3 inset;
+		}
+	</style>
+</head>
+<body>
+	<div>
+	
+	</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		div
+		{
+			width:200px;
+			height:200px;
+			margin: 100px auto;
+			box-shadow: 3px 3px 12px 6px #C3C3C3, 6px 6px 24px 12px #FFFF00;
+		}
+	</style>
+</head>
+<body>
+	<div>
+	
+	</div>
+</body>
+</html>
+
+
+Types of selectors 
+===================
+We have five selectors in CSS.
+
+1) Element selector 
+
+2) Id  selector 
+
+3) class selector 
+
+4) group selector 
+
+5) universal selector  
+
+
+1) Element selector 
+-------------------
+The element selector selects HTML elements based on element name.
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		h1
+		{
+			text-align: center;
+			color:blue;
+			font-size:40px;	
+		}
+	</style>
+</head>
+<body>
+		<h1> This is Heading Tag 1</h1>
+		<h1> This is Heading Tag 2</h1>
+		<h1> This is Heading Tag 3</h1>
+</body>
+</html>
+
+2) Id  selector 
+----------------
+The id selector uses the id attribute of an HTML element to select a specific element.
+
+The id of an element is unique within a page, so the id selector is used to select one unique element.
+
+To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		#myId
+		{
+				background-color: cyan;
+				color:blue;
+				text-align: center;
+		}
+	</style>
+</head>
+<body>
+		<h1 id="myId"> This is Heading Tag 1</h1>
+		<h1> This is Heading Tag 2</h1>
+		<h1> This is Heading Tag 3</h1>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		#myId1
+		{
+				background-color: cyan;
+				color:blue;
+				text-align: center;
+		}
+		#myId2
+		{
+				font-style:italic;
+				font-size:40px;
+		}
+	</style>
+</head>
+<body>
+		<h1 id="myId1"> This is Heading Tag 1</h1>
+		<h1 id="myId2"> This is Heading Tag 2</h1>
+		<h1 id="myId1 myId2"> This is Heading Tag 3</h1>
+</body>
+</html>
+
+
+3) class selector 
+-------------------
+The class selector selects HTML elements with a specific class attribute.
+
+To select elements with a specific class, write a period (.) character,
+followed by the class name.
+
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.myClass1
+		{
+				background-color: cyan;
+				color:blue;
+				text-align: center;
+		}
+	</style>
+</head>
+<body>
+		<h1 class="myClass1"> This is Heading Tag 1</h1>
+		<h1 class="myClass1"> This is Heading Tag 2</h1>
+		<h1 > This is Heading Tag 3</h1>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.myClass1
+		{
+				background-color: cyan;
+				color:blue;
+				text-align: center;
+		}
+		.myClass2
+		{
+				font-style:italic;
+				font-family:cursive;
+				font-weight:40px;
+		}
+	</style>
+</head>
+<body>
+		<h1 class="myClass1"> This is Heading Tag 1</h1>
+		<h1 class="myClass2"> This is Heading Tag 2</h1>
+		<h1 class="myClass1 myClass2"> This is Heading Tag 3</h1>
+</body>
+</html>
+
+4) group selector
+-----------------
+The grouping selector selects all the HTML elements with the same style
+definitions.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		h1,p,div
+		{
+			text-align: center;
+			background-color: cyan;
+			color:blue;
+		}
+	</style>
+</head>
+<body>
+		<h1> This is Heading Tag </h1>
+
+		<p> This is paragraph tag </p>
+
+		<div> This is div tag </div>
+</body>
+</html>
+
+5) Universal selector 
+--------------------
+The universal selector (*) selects all HTML elements on the page.
+ex:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		*
+		{
+			background-color: yellow;
+			font-size:50px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+		<h1> This is Heading Tag </h1>
+
+		<p> This is paragraph tag </p>
+
+		<div> This is div tag </div>
+</body>
+</html>
+
+
+CSS float property
+==================
+It is widely used property on a web page.
+
+The float property specifies how an element should float.
+
+value		Description
+-----------		-----------------
+none		The element does not float.
+
+left		the element floats to the left of its container.
+
+right		The element floats to the right of its container.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box1
+		{
+			width:200px;
+			height:200px;
+			background-color: #82ccdd;
+			float:none;
+		}
+		.box2
+		{
+			width:200px;
+			height:200px;
+			background-color: #78e08f;
+			float:none;
+		}
+	</style>
+</head>
+<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box1
+		{
+			width:200px;
+			height:200px;
+			background-color: #82ccdd;
+			float:left;
+		}
+		.box2
+		{
+			width:200px;
+			height:200px;
+			background-color: #78e08f;
+			float:left;
+		}
+	</style>
+</head>
+<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.box1
+		{
+			width:200px;
+			height:200px;
+			background-color: #82ccdd;
+			float:left;
+		}
+		.box2
+		{
+			width:200px;
+			height:200px;
+			background-color: #78e08f;
+			float:right;
+		}
+	</style>
+</head>
+<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+</body>
+</html>
+
+
+CSS Design 
+===========
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.container
+		{
+			width:800px;
+			height:400px;
+			margin: 100px auto;
+		}
+		.container .box1
+		{
+			width:400px;
+			height:400px;
+			float:left;
+			box-shadow: 3px 3px 12px 6px #C3C3C3;
+		}
+		.container .box1 h2
+		{
+			text-align: center;
+		}
+		.container .box1 p
+		{
+			padding:10px;
+			text-align: justify;
+			font-size:20px;
+		}
+		.container .box2
+		{
+			width:400px;
+			height:400px;
+			float: left;
+			box-shadow: 3px 3px 12px 6px #C3C3C3;
+		}
+		.container .box2 img
+		{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+		<div class="container">
+			<div class="box1">
+				<h2>Micky Mouse </h2>
+				<p>
+					Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+				</p>
+			</div>
+			<div class="box2">
+				<img src="images/micky.png"/>
+			</div>
+		</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

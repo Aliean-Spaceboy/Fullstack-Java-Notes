@@ -1,0 +1,14 @@
+Interview Questions For Face to Face Round.
+
+1. Difference between class and object
+2. Difference between method-overloading and method-overriding
+3. Difference between Abstraction and Encapsulation
+4. What is data hiding
+5. What is inheritance and its types
+6. Difference between JDK, JRE, JVM
+7. Explain main method
+8. Can we execute java program without main method
+9. What is java 
+10. What are the features of java
+11. What is constructors and its types 
+12. What is hash code in java  

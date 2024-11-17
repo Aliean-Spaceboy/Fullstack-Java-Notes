@@ -1,0 +1,9 @@
+4. Follow Practice Projects
+Build small projects like:
+Personal Portfolio Website
+Landing Page for a Product
+Resume/CV
+Blog Layout
+
+Challenge Yourself
+Try completing HTML challenges on sites like Frontend Mentor or freeCodeCamp to hone your skills

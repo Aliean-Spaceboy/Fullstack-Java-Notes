@@ -1,0 +1,152 @@
+4 programs
+==========
+1) write a java program to find out given number is prime or not?
+
+2) Write a java program to display prime numbers from 1 to 100?
+
+3) Write a java program to display prime elements from given array?
+
+4) Write a java prgoram to display highest prime element from given array?
+
+
+1) write a java program to find out given number is prime or not?
+-----------------------------------------------------------------
+
+import java.util.Scanner;
+public class Example1 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+		
+		boolean flag=true;
+		for(int i=2;i<=n/2;i++)
+		{
+			if(n%i==0)
+			{
+				flag=false;
+				break;
+			}
+		}
+		if(flag==true)
+			System.out.println("It is prime number");
+		else
+			System.out.println("It is not prime number");
+	}
+}
+
+2) Write a java program to display prime numbers from 1 to 100?
+----------------------------------------------------------------
+public class Example1 
+{
+	public static void main(String[] args) 
+	{
+		for(int n=2;n<=100;n++)
+		{
+		boolean flag=true;
+		for(int i=2;i<=n/2;i++)
+		{
+			if(n%i==0)
+			{
+				flag=false;
+				break;
+			}
+		}
+		if(flag==true)
+			System.out.print(n+" ");
+		}
+	}
+}
+
+
+
+3) Write a java program to display prime elements from given array?
+input:
+	4 6 2 9 7 13 15
+
+output:
+	2  7  13
+
+--------------------------------------------------------------
+package com.ihub.www;
+
+//import java.util.Scanner;
+public class Example1 
+{
+	public static void main(String[] args) 
+	{
+		int[] arr= {4,6,2,9,7,13,15};
+		
+		for(int n:arr)
+		{
+		boolean flag=true;
+		for(int i=2;i<=n/2;i++)
+		{
+			if(n%i==0)
+			{
+				flag=false;
+				break;
+			}
+		}
+		if(flag==true)
+			System.out.print(n+" ");
+		}
+	}
+}
+
+4) Write a java prgoram to display highest prime element from given array?
+input:
+	4 6 2 9 7 13 15 5
+
+output:
+	13
+---------------------------------------------------------------------------
+package com.ihub.www;
+
+import java.util.Scanner;
+public class Example1 
+{
+	public static void main(String[] args) 
+	{
+		int[] arr= {4,6,2,9,7,13,15,5};
+		
+		int largeElement=Integer.MIN_VALUE;
+		
+		for(int n:arr)
+		{
+		boolean flag=true;
+		for(int i=2;i<=n/2;i++)
+		{
+			if(n%i==0)
+			{
+				flag=false;
+				break;
+			}
+		}
+		if(flag==true)
+		{
+			if(n>largeElement)
+			{
+				largeElement=n;
+			}
+		}
+		}
+		System.out.println(largeElement);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

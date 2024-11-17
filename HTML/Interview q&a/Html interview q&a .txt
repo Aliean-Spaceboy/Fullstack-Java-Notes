@@ -1,0 +1,252 @@
+HTML5
+=====
+HTML is a HyperText Markup Language.
+
+It is widely used language on web to develop web pages and web applications.
+
+It is developed by Burner's Lee  in late 1991.
+
+It is a tag based language.
+
+It is a case insensitive language.
+
+
+
+A simple HTML document is known as component.
+
+HTML is used to develop client side components.
+
+HTML2.0 specification was released in the year of 1995.
+
+HTML4.0 specification was released in the year of 1999.
+
+HTML5 which is a extension of HTML4 was released in the year of 2005. 
+
+The main objective of HTML5 is to develop leight weight components.
+
+HTML5 is also known as advanced hypertext markup language.
+
+
+<html>
+------
+It is a root tag for entire HTML document.
+
+It contains two child tags.
+
+ex:
+	1) <head> tag 
+	2) <body> tag 
+
+
+HTML <meta> tag 
+===============
+It is used to declare the metadata of a document.
+
+A metadata means data of a data.
+
+A metadata used by search engine, web browser and other web services.
+
+To declare metadata of a document we need to use <meta> tag.
+
+A <meta> tag must be declare inside <head> tag.
+
+A <meta> tag is used to declare following things.
+
+1) Description 
+
+2) Author 
+
+3) Keywords 
+
+4) View port 
+
+5) copyright 
+
+6) refresh 
+
+
+Heading Tags 
+============
+Heading tags are used to display the text in bold and size of the text is depend upon number of heading tags.
+
+We have six heading tags i.e h1 to h6.
+
+It is used to declare the heading in a web page.
+
+
+
+Paragraph tag 
+=============
+A <p> tag is used to display the paragraph in web page.
+
+
+Bold tag
+=========
+A <b> tag is used to display the text in bold without importance.
+
+
+
+strong tag
+=========
+A <strong> tag is used to display the text in bold with importance.
+
+
+
+Italic tag
+=========
+A <i> tag is used to display the text in italic without force.
+
+
+
+Emphasize tag
+=============
+A <em> tag is used to display the text in italic with force.
+
+
+center tag 
+==========
+A <center> tag is used to display the text in center.
+
+
+Marquee tag 
+===========
+It is used to display the text with scroll.
+
+
+font tag
+========
+A <font> tag is used to declare size, color and font family.
+
+
+Underline tag
+===============
+A <u> tag is used to display text in underline.
+
+
+
+Phrase Tags
+============
+Phrase Tags are special purpose tags because they defined structural meaning to the block of text or content.
+
+We have following list of phrase tags.
+
+1) Abbreviation - <abbr>
+
+2) short quote	- <q>
+
+3) keyboard     - <kbd>
+
+4) code		- <code>
+
+5) address	- <address>
+
+6) strike 	- <s> or <strike>
+
+
+
+
+HTML Colors
+============
+There are four ways to declare the colors in HTML.
+
+1) Valid color name 
+
+2) Hexa value 
+
+3) RGB value 
+
+4) HSL value 
+
+
+
+HTML image tag
+==============
+A <img> tag is used to display the images in a web page.
+
+It is a opening tag and contains only attributes and does not have any closing tag.
+
+We have following list of attributes in <img> tag.
+
+ex:
+	attribute			description
+	------------			-----------
+	src				It is used locate an image 
+	width				It is used to set width an image 
+	height				It is used to set the height of an image
+	alt				It is used to display alternate message if image
+					is not found.
+
+Q) What is the difference between div and span tag?
+
+div						span
+---------					---------
+It is a block element.				It is a inline element.
+
+It is used to wrap the sections.		It is used to wrap small portion of a text.
+
+It is used to create CSS based layouts.		It is used to stylize the text.
+
+
+
+Q)  List out some tags removed from HTML5?
+
+    <center>, <u>, <font>, <frameset> , <frame> , <s>, <strike> and etc.
+
+
+
+Q) List out some tags introduced in HTML5?
+
+    <canvas>, <header>, <footer>, <article>, <nav> , <section>, <video> , <audio> and etc.
+
+How HTML document executed in a browser window
+===============================================
+Diagram: frontend8.1
+
+First, HTML parser parsed the data from HTML document and later it will handover to DOM.
+
+DOM stands for Document Object Model.
+
+DOM represent our parse data into tree node structure.
+
+Finally that tree node structure executes in a browser window.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

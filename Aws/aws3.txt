@@ -1,0 +1,96 @@
+How can we learn linux 
+=======================
+1) You can have linux laptop.
+2) You can have a VM on your computers on top of Oracle Box.
+3) Katakoda Sandbox (Test Environment)
+4) Create a server on AWS cloud and start learning linux.
+
+
+Linux Server in AWS
+====================
+Linux provide two ways authentication.
+
+1) Username and password  : Recommanded
+
+2) Username with keys : Not recommanded (only for learning purpose)
+
+Assume if your manager say to upgrade,install,uninstall or to do some task in a server then how we will connect to the server.
+
+Key based Authentication or SSH key pair
+-----------------------------------------
+SSH key pair contains two files.
+
+1) public key 
+		
+2) private key 
+
+Diagram: aws3.1
+
+In order to use SSH mechanism we need to install putty in our computer(For windows user).
+
+
+How to create a linux server in AWS using username with key
+============================================================
+
+step1:
+-------
+	Download and Install Putty software for windows OS.
+	ex:
+		https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+		
+		Diagram: aws3.2 to aws3.6
+step2:
+------
+	Login in AWS account to create a linux server.
+
+step3:
+-----
+	Select "US EAST (North Virginia)" as a region.
+
+step4:
+-----
+	Now Launch EC2 Instance using CentOS 7 and SSH key.
+
+step5:
+------
+	Copy the Public IPv4 address from AWS account.
+
+step6:
+------
+	Open the putty from your computer.
+
+step7:
+-------
+	Paste the Public IPv4 address in putty and select SSH private key then open.
+
+step8:
+-------
+	Login to putty terminal as centos after clicking accept button.
+
+step9:
+------
+	Once the practice is completed terminate the server.
+
+
+Diagrams: aws3.7 to aws3.32
+
+
+AWS Security group 
+===================
+To connect any EC2 instance we need create a security group otherwise instance created will failed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

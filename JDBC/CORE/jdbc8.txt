@@ -1,0 +1,210 @@
+MySQL Jar file link : 
+---------------------
+https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/8.0.31/
+
+
+
+JDBC Application to interact  with MongoDB Database
+====================================================
+
+step1:
+-----
+	Download and install MongoDB Community Server.
+	ex:
+		https://www.mongodb.com/try/download/community
+
+step2:
+-----
+	Downoad and install MongoDB Shell.
+	ex:
+		https://www.mongodb.com/try/download/shell
+
+step3:
+------
+	Extract Mongodb shell inside "MongoDB" folder.
+	ex:
+		C:\Program Files\MongoDB
+
+step4:
+------
+	Copy "bin" directory of mongoshell.
+	ex:
+		C:\Program Files\MongoDB\mongosh-2.3.0-win32-x64\bin
+
+step5:
+-----
+	Paste "bin" directory in environmental variables.
+	ex:
+		right click to This PC --> properties --> Advanced System Settings -->
+		Environmental variables -->  System variables --> click to path --> click to edit 
+		button --> New --> paste (C:\Program Files\MongoDB\mongosh-2.3.0-win32-x64\bin) -->ok
+		--->ok  --->ok.
+
+step6:
+-----
+	Launch Eclipse IDE by choosing workspace location.
+
+step7:
+-----
+	Create MongoDBProj inside eclipse IDE.
+
+	ex:
+		File --> New --> Java project --> Name : MongoDBProj --> Next --> Finish.
+
+step8:
+-----
+	Download and add mongodb jar file in project build path.
+	ex:
+		jar file link : https://repo1.maven.org/maven2/org/mongodb/mongo-java-driver/3.11.2/
+
+
+	right click to MongoDBProj --> Buildpath --> configure build path --> libraries -->
+	click to classpath --> add external jars --> select mongo-java-driver.jar file --> 
+	Open --> Apply and close.
+
+step9:
+------
+	Create a "com.ihub.www" package inside "src" folder.
+
+step10:
+------
+	Create a InsertApp.java file inside "com.ihub.www" package.
+
+SelectApp.java
+--------------
+package com.ihub.www;
+
+import org.bson.Document;
+
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+
+public class InsertApp 
+{
+	public static void main(String[] args) 
+	{
+		try(MongoClient mongoClient=MongoClients.create("mongodb://localhost:27017");)
+		{
+			MongoDatabase mongoDatabase=mongoClient.getDatabase("myDatabase");
+			
+			MongoCollection<Document> mongoCollection=mongoDatabase.getCollection("myCollection");
+			
+			Document doc=new Document("id", 101)
+							.append("name","Alan")
+							.append("add","Hyd");
+			
+			mongoCollection.insertOne(doc);
+			
+			System.out.println("Record Inserted in MongoDB");
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+step11:
+-------
+	Run the jdbc application.
+
+
+
+
+Interview Question
+-------------------
+
+
+
+Q) What is the difference between RDBMS and MongoDB database? 
+ 
+RDBMS 						MongoDB 
+---------					----------
+It is a relational database. 			It is a non-relational or document based database.
+ 
+It can’t stores the data in key and value pair. It stores the data in key and value pair.
+ 
+Not suitable for hierarchical data storage. 	Suitable for hierarchical data storage. 
+
+It has a predefined(static) schema. 		It has a dynamic schema. 
+
+It contains tables. 				It contains Collections. 
+
+It is a row based. 				It is a document based.
+ 
+It is a column based. 				It is a field based. 
+
+It is slower. 					It is faster. 
+
+It supports SQL query language. 		It supports JSON query language. 
+
+Q) Write a jdbc application to read the record from mongodb?
+
+package com.ihub.www;
+
+import org.bson.Document;
+
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+
+public class SelectApp 
+{
+	public static void main(String[] args) 
+	{
+		try(MongoClient mongoClient=MongoClients.create("mongodb://localhost:27017");)
+		{
+			MongoDatabase mongoDatabase=mongoClient.getDatabase("myDatabase");
+			
+			MongoCollection<Document> mongoCollection=mongoDatabase.getCollection("myCollection");
+			
+			Document findDocument=mongoCollection.find(new Document("id",101)).first();
+			
+			System.out.println(findDocument.toJson());
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

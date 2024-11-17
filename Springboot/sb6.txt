@@ -1,0 +1,420 @@
+EmployeeController.java
+-----------------------
+package com.ihub.www.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ihub.www.model.Customer;
+import com.ihub.www.service.CustomerService;
+
+@RestController
+public class CustomerController 
+{
+	@Autowired
+	CustomerService customerService;
+	
+	@PostMapping("/add")
+	public Customer addCustomer(@RequestBody Customer customer)
+	{
+		return customerService.addCustomer(customer);
+	}
+	
+	@GetMapping("/fetch")
+	public List<Customer> getAllCustomers()
+	{
+		return customerService.getAllCustomers();
+	}
+	
+	@GetMapping("/fetch/{custId}")
+	public Customer getCustomerById(@PathVariable int custId)
+	{
+		return customerService.getCustomerById(custId);
+	}
+	
+	@PutMapping("/update")
+	public Customer updateCustomer(@RequestBody Customer customer)
+	{
+		return customerService.updateCustomer(customer);
+	}
+	
+	@DeleteMapping("/delete/{custId}")
+	public String deleteCustomer(@PathVariable int custId)
+	{
+		return customerService.deleteCustomer(custId);
+	}
+	
+	
+}
+
+
+EmployeeService.java
+---------------------
+package com.ihub.www.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.ihub.www.model.Customer;
+import com.ihub.www.repo.CustomerRepository;
+
+@Service
+public class CustomerService 
+{
+	@Autowired
+	CustomerRepository customerRepository;
+	
+
+	public Customer addCustomer(Customer customer)
+	{
+		return customerRepository.save(customer);
+	}
+
+	public List<Customer> getAllCustomers()
+	{
+		return customerRepository.findAll();
+	}
+	
+
+	public Customer getCustomerById(int custId)
+	{
+		return customerRepository.findById(custId).get();
+	}
+	
+	public Customer updateCustomer(Customer customer)
+	{
+		Customer cust=customerRepository.findById(customer.getCustId()).get();
+		cust.setCustName(customer.getCustName());
+		cust.setCustAdd(customer.getCustAdd());
+		return customerRepository.save(cust);
+	}
+	
+
+	public String deleteCustomer( int custId)
+	{
+		Customer cust=customerRepository.findById(custId).get();
+		customerRepository.delete(cust);
+		return "record is deleted";
+	}
+}
+
+Request url's
+--------------
+
+	HTTP method				Request url
+	-----------				-----------
+	POST					http://localhost:9090/add
+	GET					http://localhost:9090/fetch
+	GET					http://localhost:9090/fetch/102	
+	PUT					http://localhost:9090/update
+						{
+							"custId":102,
+    							"custName":"Jessica",
+    							"custAdd":"Miami"
+						}
+	Delete					http://localhost:9090/delete/102
+
+Exception Handling in Spring Boot
+==================================
+If we give/pass wrong request to our application then we will get exception.
+ex:
+	http://localhost:9090/customer/fetch/102
+
+Here 102 record is not available so immediately our controller will throw below exception.
+ex:
+	{
+   		"timestamp": "2024-06-28T02:40:52.640+00:00",
+    		"status": 500,
+    		"error": "Internal Server Error",
+    		"path": "/customer/fetch/102"
+	}
+
+Handling exceptions and errors in API's and sending the proper response to the client is good for enterprise applications.
+
+In Spring Boot exception handling can be performed by using following annotations.
+
+@ControllerAdvice
+-----------------
+The @ControllerAdvice is an annotation is used to handle the exceptions globally.
+
+@ExceptionHandler
+----------------- 
+The @ExceptionHandler is an annotation is used to handle specific exceptions and sending custom response to the client.
+
+
+Project Structure 
+-----------------
+customer-service
+|
+|---src/main/java
+	|
+	|---com.ihub.www
+		|
+		|---CustomerServiceApplication.java
+	|
+	|---com.ihub.www.controller
+		|
+		|---CustomerController.java
+	|
+	|---com.ihub.www.service	
+		|
+		|---CustomerService.java
+
+	|---com.ihub.www.repo
+		|
+		|---CustomerRepository.java
+
+	|---com.ihub.www.model 
+		|
+		|---Customer.java
+	|
+	|---com.ihub.www.exception
+		|
+		|---ErrorDetails.java	
+		|---ResourceNotFoundException.java
+		|---GlobalExceptionHandler.java
+
+|
+|---src/main/resources
+	|
+	|---application.yml 
+|
+|---pom.xml 
+
+step1:
+-----
+	Make sure customer-service project is ready.
+
+step2:
+-----
+	Create a "com.kits.www.exception" package inside "src/main/java".
+
+step3:
+-----
+	Create a ErrorDetails class inside "com.ihub.www.exception" package.
+
+
+ErrorDetail.java
+----------------
+package com.ihub.www.exception;
+
+import java.util.Date;
+
+public class ErrorDetails 
+{
+	private Date timestamp;
+	private String message;
+	private String details;
+	
+	public Date getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public String getDetails() {
+		return details;
+	}
+	public void setDetails(String details) {
+		this.details = details;
+	}
+}
+
+step4:
+-----
+	Create ResourceNotFoundException class inside "com.kits.www.exception" package.
+
+ResourceNotFoundException.java
+-------------------------------
+package com.ihub.www.exception;
+
+public class ResourceNotFoundException extends RuntimeException 
+{
+	public ResourceNotFoundException(String msg)
+	{
+		super(msg);
+	}
+}
+
+
+step5:
+------
+	Create a GlobalExceptionHandler class inside "com.kits.www.exception" package.
+
+GlobalExceptionHandler.java
+---------------------------
+package com.ihub.www.exception;
+
+import java.util.Date;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.WebRequest;
+
+@ControllerAdvice
+public class GlobalExceptionHandler 
+{
+
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<?> handleResourceNotFoundException(ResourceNotFoundException exception,WebRequest request)
+	{
+		ErrorDetails errorDetails=new ErrorDetails(new Date(),exception.getMessage(),request.getDescription(false));
+		
+		return new ResponseEntity<>(errorDetails,HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<?> handleException(Exception exception,WebRequest request)
+	{
+		ErrorDetails errorDetails=new ErrorDetails(new Date(),exception.getMessage(),request.getDescription(false));
+		
+		return new ResponseEntity<>(errorDetails,HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+}
+
+step6:
+-----
+	Now add ResourceNotFoundException to CustomerService.java file.
+
+CustomerService.java
+---------------------
+package com.ihub.www.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.ihub.www.exception.ResourceNotFoundException;
+import com.ihub.www.model.Customer;
+import com.ihub.www.repo.CustomerRepository;
+
+@Service
+public class CustomerService 
+{
+	@Autowired
+	CustomerRepository customerRepository;
+	
+
+	public Customer addCustomer(Customer customer)
+	{
+		return customerRepository.save(customer);
+	}
+
+	public List<Customer> getAllCustomers()
+	{
+		return customerRepository.findAll();
+	}
+	
+
+	public Customer getCustomerById(int custId)
+	{
+		return customerRepository.findById(custId).orElseThrow(()-> new ResourceNotFoundException("Id Not Found"));
+	}
+	
+	public Customer updateCustomer(Customer customer)
+	{
+		Customer cust=customerRepository.findById(customer.getCustId()).orElseThrow(()-> new ResourceNotFoundException("Id Not Found"));
+		cust.setCustName(customer.getCustName());
+		cust.setCustAdd(customer.getCustAdd());
+		return customerRepository.save(cust);
+	}
+	
+
+	public String deleteCustomer( int custId)
+	{
+		Customer cust=customerRepository.findById(custId).orElseThrow(()->new ResourceNotFoundException("Id Not Found"));
+		customerRepository.delete(cust);
+		return "record is deleted";
+	}
+}
+
+
+
+
+step7:
+-----
+	Relaunch the spring boot application 
+
+step8:
+----
+	Test the spring boot application by using below request url.
+	ex:
+		http://localhost:9090/customer/fetch/102
+
+Note:
+-----
+	Here exception will display in below format.
+	ex:
+		{
+    			"timestamp": "2024-06-28T03:08:34.856+00:00",
+    			"message": "Id Not Found",
+    			"details": "uri=/customer/fetch/102"
+		}
+
+
+
+What is API 
+===========
+API stands for Application Programming Interface.
+
+API is a mechanism that enables two software components to communicate with each other using set of rules and protocols.
+
+It acts like a interface between two software applications to exchange the data.
+
+Diagram: sb6.1
+
+We have four types of API's.
+
+1) public API 
+--------------
+	It is open and available for use by any outside developers.
+
+2) private API 
+-------------
+	It is also known as internal API.
+	It is available for use within the enterprise to connect the systems.	
+
+3) partner API 
+-------------
+	It is available to specficially selected and authorized outside developers.
+
+4) composite API 
+---------------
+	It is generally combination of two or more API's.
+
+
+
+
+
+
+
+

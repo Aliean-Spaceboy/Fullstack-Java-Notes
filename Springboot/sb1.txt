@@ -1,0 +1,227 @@
+Steps to deploy war file in a Tomcat Server
+==========================================
+step1:
+-----
+	Launch eclipse IDE by choosing workspace location.
+
+step2:
+------
+	Create a  Maven project for web application i.e DemoApp.
+
+step3:
+-----
+	Add "servlet-api" maven dependency in pom.xml 
+
+step4:
+-----
+	Add below code inside index.jsp.
+
+index.jsp
+---------
+<center>
+	<h1>
+		Welcome to Java Project Development
+	</h1>
+</center>
+
+step5:
+------
+	Set welcome file list inside web.xml file.
+
+web.xml
+-------
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  
+  	<welcome-file-list>
+  		<welcome-file>index.jsp</welcome-file>
+  	</welcome-file-list>
+  
+</web-app>
+
+step6:
+------
+	Run the maven project.
+
+step7:
+------
+	Convert dynamic web project(DemoApp) to war file.
+	ex:
+		right click to DemoApp project --> export --> war file -->
+		select destination : desktop --> finish.
+
+step8:
+------
+	Now start Tomcat 9 server manually.
+
+
+step9:
+-----
+	Type below request url in broser window.
+	ex:
+		http://localhost:8080/
+
+
+step10:
+------
+	Deploy the war file.
+
+
+
+
+Limitations with Spring Framework
+==================================
+In spring framework a programmer is responsible for following things.
+
+1) Adding the dependencies/jar files.
+
+2) Performing the configurations (applicationContext.xml).
+
+3) Arranging the physical servers i.e Tomcat.
+
+4) Managing the database software i.e oracle or mysql.
+
+To overcome this limitations we need to use Spring Boot.
+
+ex:
+	Developer ----------------> Spring Boot -----------------> Spring Framework
+
+
+Spring Boot
+============
+It is a java based application framework developed by Pivotal Team.
+
+It provides RAD (Rapid Application Development) features to spring based applications.
+
+It is standalone , production ready grade spring based applications with minimum configurations.
+
+In short Spring Boot is a combination of 
+
+ex:
+	Spring Framework  +  Embedded Server + Embedded Database
+
+Spring Boot does not support xml configurations instead we will use annotations.
+
+
+Advantages of Spring Boot
+=========================
+1) It is used to create standalone application which can run by using java -jar.
+
+2) It provides production ready grade features like metrix, health check and externalized
+   configurations.
+
+3) It provides optionate starters to simplify the maven development process.
+
+4) It allows us to test the web application by using HTTP servers like Tomcat, Jetty, Undertow.
+
+5) It supports in-memory databases like H2, HSQL, Derby.
+
+6) It does not support xml configuration.
+
+7) It supports CLI (Command Line Interface) tool to develop and test spring boot applications.
+
+
+Interview Questions
+====================
+
+Q) How many components are there in spring boot?
+
+We have four important components in spring boot.
+
+1) AutoConfiguration 
+
+2) Staters
+
+3) Actuator 
+
+4) CLI Tool 
+
+
+
+
+Q) What is dependency injection ?
+
+Dependency injection is a programming technique where one object will give dependencies of other.
+
+Dependency injection is a programming technique which makes our class independent to it's dependency.
+
+To perform dependency injection in spring boot we need to use @Autowired annotation.
+
+ex:
+	class Recordings
+	{
+	
+	}
+	class  Student
+	{
+		@Autowired
+		Recordings record;
+	}
+
+
+
+Q) What is the difference between Spring Framework and Spring Boot?
+
+
+Spring Framework				Spring Boot 
+-----------------				------------
+It is a light weight open source framework	Spring boot is build on top of spring framework
+widely used to develop enterprise applications. widely used to develop REST API's.
+
+The most important feature of the Spring 	The most important feature of the Spring Boot	
+Framework is dependency injection. 		is AutoConfiguration
+
+It helps to create a loosely coupled 		IT helps to create standalone applications.
+application. 
+
+To run the Spring application we need to 	Spring Boot provides embedded servers
+set the server explicitly. 			like Tomcat, Jetty, Undertow.
+
+It doesn’t provide support for the in		It provides support for in-memory database 
+memory database. 				like H2, HSQL, Derby.
+
+Dependencies will be added by the programmer.	Dependencies will be added by the spring boot 
+						component called starter.
+
+
+
+Q) Where we will perform configurations in spring boot?
+
+We we have two files in spring boot to perform configurations.
+
+1) application.properties 
+
+	or 
+
+2) application.yml 
+
+
+Q) In how many we can develop spring boot project?
+
+There are two ways to develop spring boot project.
+
+1) Using Spring Intializr
+
+2) Using IDE's	(STS , Intellij)
+
+
+STS IDE
+========
+Download link : https://spring.io/tools
+
+ex:
+E://>  java  -jar   spring-tool-suite-4-4.24.0.RELEASE-e4.32.0-win32.win32.x86_64.self-extracting.jar
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,314 @@
+HTML5
+=====
+HTML is a HyperText Markup Language.
+
+It is widely used language on web to develop web pages and web applications.
+
+It is developed by Burner's Lee  in late 1991.
+
+It is a tag based language.
+
+It is a case insensitive language.
+
+ex:
+	<html>
+	<HTML>
+
+In html, every tag having opening tag and closing tag.
+
+ex:
+	<html>  --> opening tag 
+
+	</html> --> closing tag 
+
+
+In HTML we can't create custom tags.
+
+HTML tag contains attributes and each attribute contains attribute name and attribute value.
+
+ex:
+	<body bgcolor="yellow"> 
+
+HTML Tag may contains multiple attributes then each attribute must be seperated with space.
+ex:
+	<body  bgcolor="yellow"  background="background-img">
+
+We need to save HTML documents by using .html or .htm extension.
+
+To develop HTML documents we will use following editors.
+ex:
+	Notepad
+	Notepad++
+	Sublime
+	Atom
+	VSC
+	Dream Viewer 
+	and etc.
+
+All HTML documents execute in browser window.
+
+ex:
+	Chrome
+	Mozilla
+	Microsoft Edge
+	Opera 
+	and etc.
+
+A simple HTML document is known as component.
+
+HTML is used to develop client side components.
+
+HTML2.0 specification was released in the year of 1995.
+
+HTML4.0 specification was released in the year of 1999.
+
+HTML5 which is a extension of HTML4 was released in the year of 2005. 
+
+The main objective of HTML5 is to develop leight weight components.
+
+HTML5 is also known as advanced hypertext markup language.
+
+
+HTML skeleton
+==============
+<!DOCTYPE html>
+<html>
+	<head>
+		- // head related tags 	
+	</head>
+	<body>
+		- //body related tags
+	</body>
+</html>
+
+A <!DOCTYPE html> is used to represent HTML5 document.
+
+<html>
+------
+It is a root tag for entire HTML document.
+
+It contains two child tags.
+
+ex:
+	1) <head> tag 
+	2) <body> tag 
+
+
+<head> tag 
+-----------
+A <head> tag is used to declare following things.
+ex:
+	Title of web page
+	favicon 
+	styles
+	scripts 
+
+<body> tag 
+----------
+A <body> tag cotains actual content of a web page.
+
+
+example1
+---------
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		Welcome to HTML class
+	</body>
+</html>
+
+
+example2:
+--------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Welcome to HTML class
+	</body>
+</html>
+
+example3:
+---------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<link rel="icon"  href="logo.png">
+	</head>
+	<body>
+		Welcome to HTML class
+	</body>
+</html>
+
+
+example4:
+---------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<link rel="icon"  href="logo.png">
+	</head>
+	<body bgcolor="yellow">
+		Welcome to HTML class
+	</body>
+</html>
+
+
+example5:
+---------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<link rel="icon"  href="logo.png">
+	</head>
+	<body background="horse.jpg">
+		Welcome to HTML class
+	</body>
+</html>
+
+
+example6:
+---------
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- title -->
+		<title>MyPage!</title>
+
+		<!-- favicon -->
+		<link rel="icon"  href="logo.png">
+	</head>
+	<body bgcolor="cyan">
+
+		<!-- simple text -->
+		Welcome to HTML class
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

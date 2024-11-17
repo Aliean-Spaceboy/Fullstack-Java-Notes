@@ -1,0 +1,495 @@
+JSP to Database Communication
+==============================
+Diagram: jsp3.1
+
+Deployment Directory Structure
+------------------------------
+JspApp6
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|---form.html	
+	|---process.jsp
+	|
+	|---WEB-INF
+		|
+		|------web.xml 
+		|------lib
+			|
+			|---ojdbc14.jar
+
+Note:
+----
+In above application we need to add "servlet-api.jar" and "ojdbc14.jar" file in project build path.
+
+Copy and paste "ojdbc14.jar" innside "WEB-INF/lib" folder seperately..
+
+
+student table
+-------------
+drop table student;
+
+create table student(sno number(3),sname varchar2(10),sadd varchar2(12));
+
+
+form.html
+---------
+
+<form action="process.jsp" method="GET">
+	
+	<table align="center">
+		<tr>
+			<td>No:</td>
+			<td><input type="text" name="t1"/></td>
+		</tr>
+		<tr>
+			<td>Name: </td>
+			<td><input type="text" name="t2"/> </td>
+		</tr>
+		<tr>
+			<td>Address:</td>
+			<td><input type="text" name="t3"/></td>
+		</tr>
+		<tr>
+			<td><input type="reset" value="reset"/></td>
+			<td><input type="submit" value="submit"/></td>
+		</tr>
+	</table>
+
+</form>
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+process.jsp
+------------
+<%@page import="java.sql.*" buffer="8kb" language="java" %>
+
+<%
+	//reading form data 
+	String sno=request.getParameter("t1");
+	int no=Integer.parseInt(sno);
+	String name=request.getParameter("t2");
+	String add=request.getParameter("t3");
+	
+	//insert data into database
+	Connection con=null;
+	PreparedStatement ps=null;
+	String qry=null;
+	int result=0;
+	try
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		qry="insert into student values(?,?,?)";
+		ps=con.prepareStatement(qry);
+		//set the values
+		ps.setInt(1,no);
+		ps.setString(2,name);
+		ps.setString(3,add);
+		
+		//execute 
+		result=ps.executeUpdate();
+		
+		if(result==0)
+			out.println("<center><h1>No Record Inserted</h1></center>");
+		else
+			out.println("<center><h1>Record inserted</h1></center>");
+		
+		ps.close();
+		con.close();
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	
+%>
+
+Request url
+----------
+	http://localhost:2525/JspApp6/
+
+
+
+Action tags
+===========
+Action tags are used to perform perticular task.
+
+Action tags are used to control the flow between the pages and uses java bean.
+
+Action tags internally provides feature of Servlet API functionality.
+
+In JSP , action tags are divided into two types.
+
+1) Standard Action tags 
+
+2) Custom Action tags  
+
+
+1) Standard Action tags
+-----------------------
+Built-in tags are called standard action tags.
+
+ex:
+	<jsp:include>
+	<jsp:forward>
+	<jsp:useBean>
+	<jsp:setProperty>
+	<jsp:getProperty>
+	and etc.
+
+
+Action include 
+===============
+In action include, the output of source jsp program and output of destination jsp program combinely goes to browser window as dynamic response.
+
+Action include uses servlet API functionality called rd.include(req,res).'
+
+syntax:
+-------
+	<jsp:include  page="page_name"/>
+
+Deployment Directory Structure
+----------------------------
+JspApp7
+|
+|----Java Resources
+|
+|----WebContent
+	|
+	|---A.jsp
+	|---B.jsp
+	|	
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+A.jsp
+------
+<b><i> Begining of A.jsp </i></b>
+<br>
+<jsp:include page="B.jsp"/>
+<br>
+<b><i> Ending of A.jsp </i></b>
+
+B.jsp
+-------
+<b><i> This is B.jsp file </i></b>
+
+web.xml
+---------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <welcome-file-list>
+  	<welcome-file>A.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+-----------
+	http://localhost:2525/JspApp7/
+
+
+Action forward
+================
+In action forward, the output of source jsp program will be discarded and output of destination jsp program goes to browser window as dynamic response.
+
+It uses servlet API functionality called rd.forward(req,res).
+
+syntax:
+------
+	<jsp:forward   page="value" />
+
+
+Deployment Directory Structure
+----------------------------
+JspApp7
+|
+|----Java Resources
+|
+|----WebContent
+	|
+	|---A.jsp
+	|---B.jsp
+	|	
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+A.jsp
+------
+<b><i> Begining of A.jsp </i></b>
+<br>
+<jsp:forward page="B.jsp"/>
+<br>
+<b><i> Ending of A.jsp </i></b>
+
+B.jsp
+-------
+<b><i> This is B.jsp file </i></b>
+
+web.xml
+---------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <welcome-file-list>
+  	<welcome-file>A.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+-----------
+	http://localhost:2525/JspApp7/
+
+
+JSP to Java Bean communication
+==============================
+JSP to java bean communication is possible by using below tags.
+
+1) <jsp:useBean> tag 
+-------------------
+	It is used to locate and create bean class object.
+
+2) <jsp:setProperty> tag 
+-----------------------
+	It is used to set the values to bean object and calls getter method.
+
+3) <jsp:getProperty> tag 
+-----------------------
+	It is used to get the values from bean object and call getter method.
+
+Note:
+---
+	All the above tags are independent tags.
+
+Example1:
+---------
+
+Deployment Directory Structure 
+------------------------------
+JspApp8
+|
+|----Java Resources
+	|
+	|------src
+		|
+		|---com.ihub.www
+			|
+			|---CubeNumber.java
+|
+|----WebContent
+	|
+	|---process.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+		
+CubeNumber.java
+-----------------
+package com.ihub.www;
+
+public class CubeNumber 
+{
+	public int cube(int n)
+	{
+		return n*n*n;
+	}
+}
+	
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <welcome-file-list>
+  	<welcome-file>process.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+
+process.jsp
+-----------
+<jsp:useBean  id="cn"  class="com.ihub.www.CubeNumber"/>
+
+<%= "Cube of a given number is ="+cn.cube(5) %>
+
+
+Request url
+----------
+	http://localhost:2525/JspApp8/
+
+Example2
+---------
+
+Deployment Directory Structure
+-------------------------------
+JspApp9
+|
+|---Java Resources
+	|
+	|-------src
+		|
+		|---com.ihub.www
+			|
+			|---UserBean.java
+|---WebContent 
+	|
+	|----form.html
+	|----process.jsp
+	|
+	|----WEB-INF
+		|
+		|---web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+form.html
+----------
+<form action="process.jsp">
+	
+	UserName : <input type="text" name="username"/> <br>
+	
+	Password : <input type="password" name="password"/> <br>
+	
+	Email : <input type="text" name="email"/> <br>
+	
+	<input type="submit" value="submit"/>
+	
+</form>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+
+UserBean.java
+------------
+package com.ihub.www;
+
+public class UserBean 
+{
+	private String username;
+	private String password;
+	private String email;
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+}
+
+process.jsp
+-----------
+
+<jsp:useBean id="u" class="com.ihub.www.UserBean"></jsp:useBean>
+
+<jsp:setProperty property="*" name="u"/>
+
+Records are : <br>
+
+<jsp:getProperty property="username" name="u"/> <br>
+<jsp:getProperty property="password" name="u"/> <br>
+<jsp:getProperty property="email" name="u"/> <br>
+
+Request url
+--------
+	http://localhost:2525/JspApp9/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

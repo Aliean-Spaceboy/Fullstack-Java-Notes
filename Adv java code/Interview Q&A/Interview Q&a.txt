@@ -1,0 +1,385 @@
+1. What is JDBC?
+
+JDBC is a persistence technology which is used to develop persistence logic having the capability
+to perform persistence operations on persistence data of a persistence store.
+
+2. Steps to develop JDBC application?
+
+There are six steps are there to develop jdbc application.
+1)Register JDBC driver with DriverManager service.
+2)Establish the connection with database software.
+3)Create statement object
+4)Sends and executes SQL query in database software.
+5)Gather the result from database software to result.
+6)Close all jdbc connection objects.
+
+3. Types of drivers in JDBC?
+
+We have four types of drivers in jdbc?
+1) Type1 JDBC driver (JDBC-ODBC bridge driver)
+2) Type2 JDBC driver (Native API)
+3) Type3 JDBC driver (Net Protocol)
+4) Type4 JDBC driver (Native Protocol)
+
+4. Types of Connection objects?
+
+We have two types of Connection objects.
+1)Direct Connection object:
+A connection object which is created by the user is called direct direct connection object.
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection
+con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+2) Pooled JDBC Connection object:
+A connection object which is gathered from JDBC Connection pool is called pooled jdbc
+connectionobject.
+
+5. Types of Statement objects?
+
+Types of statements objects in jdbc:
+Simple Statement Object:
+It is an object of underlying supplied java class which implements java.sql.Statement(I).
+PreparedStatement Object:
+It is an object of underlying supplied java class which implements java.sql.PreparedStatement(I).
+Prepared Statment obj gives pre-compiled sql query.
+Using this obj we can perform.
+ We can set values to pre-compiled sql query for multiple times.
+ We can execute pre compiled sql query for multiple times.
+ We can gather the result from pre compiled sql query for multiple times.
+CallableStatement Object:
+It is an object of underlying supplied java class which implements
+java.sql.CallableStatement(I).
+
+---
+
+**6. Simple Statement vs PreparedStatement Object**
+
+- **Simple Statement**: 
+  - It is used to execute simple SQL queries without any parameters. 
+  - Every time a Statement object is executed, the database compiles the SQL query, making it less efficient for repeated executions.
+  - Susceptible to SQL injection if user inputs are directly concatenated into the query.
+
+- **PreparedStatement**:
+  - It is used to execute parameterized SQL queries. The query is precompiled and stored, making execution faster for repeated queries.
+  - Helps in preventing SQL injection as it uses parameterized queries instead of concatenating strings.
+  - It allows dynamic setting of input parameters using `setInt()`, `setString()`, etc.
+
+---
+
+**7. What is DatabaseMetaData?**
+
+- **DatabaseMetaData** is an interface present in the `java.sql` package.
+- It provides metadata (information) about a database.
+- Information it gives includes:
+  - Database product name
+  - Database product version
+  - Database driver name
+  - Database driver version
+  - Username used to connect to the database, etc.
+- We can create a `DatabaseMetaData` object by using the `getMetaData()` method of the `Connection` object.
+- **Example:**
+  ```java
+  DatabaseMetaData dbmd = con.getMetaData();
+  ```
+
+---
+
+**8. What is ResultSetMetaData?**
+
+- **ResultSetMetaData** is an interface present in the `java.sql` package.
+- It provides metadata about a table, such as:
+  - The number of columns in a `ResultSet`
+  - Data types of the columns
+  - Size of each column, etc.
+- We can create a `ResultSetMetaData` object by using the `getMetaData()` method of the `ResultSet` object.
+- **Example:**
+  ```java
+  ResultSetMetaData rsmd = rs.getMetaData();
+  ```
+
+---
+
+**9. Types of ResultSet Object**
+
+- There are two types of `ResultSet` objects in JDBC:
+  1. **Non-Scrollable ResultSet Object**
+     - By default, every `ResultSet` object is non-scrollable.
+     - It allows records to be read sequentially or unidirectionally (from the first row to the last row).
+  
+  2. **Scrollable ResultSet Object**
+     - Allows reading records non-sequentially, bidirectionally, or randomly.
+     - Can move forwards, backwards, or to a specific row in the result set.
+
+---
+
+**10. What is Batch Processing?**
+
+- **Batch Processing** refers to executing a group of SQL statements as a batch.
+- It helps in improving performance by reducing the number of database calls.
+- In JDBC, batch processing can be done using `Statement`, `PreparedStatement`, or `CallableStatement` objects.
+- Methods used for batch processing:
+  - `addBatch()`: Adds an SQL command to the batch.
+  - `executeBatch()`: Executes all the commands in the batch.
+  - `clearBatch()`: Clears all commands from the batch.
+
+---
+
+---------------------------------------------x---------------------------------------------
+
+1. What is Servlet?
+
+Servlet is a dynamic web resource program which enhanced the functionality of web server , 
+proxy server ,HTTP server and etc.
+
+2. What is web application?
+
+Web application is a collection of web resource programs having the capability to 
+generate web pages.
+We have two types of web pages.
+1)Static web page
+2)Dynamic web page
+
+3. What is web resource program?
+
+We have two types of web resource programs.
+1)Static web resource progra
+It is responsible to generate static web pages.
+ex:
+HTML program
+CSS program
+Bootstrap program
+Angular program
+and etc.
+2)Dynamic web resource program
+It is responsible to generate dynamic web pages.
+ex:
+Servlet program
+JSP program 
+and etc.
+
+4. Types of url patterns?
+
+URL Pattern will hide technology name or class name from the outsider forsecurity reason.
+Our web container, web resource program and client will recognize each servlet by using url
+patternonly.
+Every server is designed to support three types of url
+patterns.
+We have three types of URL patterns.
+1)Exact match url pattern
+2)Directory match url pattern
+3)Extension match url pattern
+
+5. In how many formats we can display the data?
+
+6. What is web container?
+
+ It is a software application or program which is used to manage whole life cycle of web 
+resource program i.e from birth to death.
+ Servlet container manages whole life cycle of servlet program.
+ Similarly , JSP container manages whole life cycle of jsp program.
+ Some part of industry considers servlet container and jsp container are web containers.
+
+7. What is servlet Filter?
+
+Filter is an object which is executed at the time of preprocessing and 
+postprocessing of the request.
+The main advantages of using filter is to perform filter task such as
+1) Counting number of request
+2) To perform validation
+3) Encyrption and Decryption 
+and etc.
+Like Servlet, Filter is having it's own Filter API.
+The javax.servlet package contains thre interfaces of Filter API.
+1)Filter 
+2)FilterChain
+3)FilterConfig
+
+8. Explain servlet life cycle methods?
+
+We have three life cycle methods in Servlets
+1)public void init(ServletConfig config)throws ServletException
+It is used for instantiation event.
+This method will execute just before Servlet object creation.
+2)public void service(ServletRequest req,ServletResponse res)throws
+ServletException,IOException
+It is used for request processing event.
+This method will execute when request goes to servlet program.
+3)public void destroy
+It is used for destruction event.
+This method will execute just before Servlet object destruction.
+
+9. What is ServletConfig object?
+
+ ServletConfig is an interface which is present in javax.servlet package.
+ ServletConfig object will be created by the web container for every servlet.
+ ServletConfig object is used to read configuration information from web.xml file
+ We can create ServletConfig object by using getServletConfig() method.
+ex:
+ServletConfig config=getServletConfig();
+
+10. What is ServletContext object?
+
+ ServletContext is an interface which is present in javax.servlet package.
+ ServletContext object is created by the web container for every web application i.e it is 
+one per web application.
+ ServletContext object is used to read configuration information from web.xml file and it is 
+for all servlets.
+ We can create ServletContext object by using getServletContext() method.
+ex:
+ServletContext context=getServletContext();
+Or ServletConfig config=getServletConfig();
+ServletContext context=config.getServletContext();
+
+11. What is RequestDispatcher object?
+12. Scopes of Servlets?
+13. What is stateless web application?
+14. What is state full web application?
+15. What is session tracking and its techniques?
+
+-----------------------------------------------x-------------------------------------------
+1. What is JSP?
+
+JavaServer Pages (JSP) is a technology for developing Webpages that supports dynamic content. 
+This helps developers insert java code in HTML pages by making use of special JSP tags, 
+most of which start with <% and end with %>.
+
+2. Servlet vs JSP?
+
+Servlets JSP
+To work with servlets strong java 
+knowledge is required.
+To work with JSP strong java knowledge is 
+not required.
+It is not suitable for non-java programmers. It is suitable for non-java programmers.
+It does not support tags. It supports tags.
+It does not give any implicit object. It gives 9 implicit objects.
+Configuration of servlet program in 
+web.xml file is mandatory.
+Configuration of jsp program in web.xml 
+file is optional.
+Handling exceptions are mandatory. Handing exceptions is optional.
+We can’t maintain HTML code and Java 
+code separately.
+We can maintain HTML code and Java code 
+separately.
+It runs faster than JSP. It runs slower than servlet because it takes 
+time to compile the program and convert 
+into Servlets.
+
+3. JES class?
+4. Types of tags in JSP?
+
+Scripting tags
+		i)Scriptlet tag
+			It is used to declare java code.
+		ii)Expression tag
+		iii)Declaration tag 
+2)Directive Tags
+		i)Page directive tag
+		ii)include directive tag
+3)Standard Tags
+4)JSP comment
+5. Phases in JSP?
+
+In JSP , we have two phases.
+1)Translation phase
+In this phase, our JSP program converts to JES class
+(ABC_jsp.class and ABC_jsp.java) object.
+2)Request processing phase
+In this phase, our JES class will be execute and result will send
+to browser window as dynamic response.
+
+6. Implicit objects in JSP?
+
+There are 9 implicit objects present in jsp.
+Implicit objects are created by the web container that is available for every jsp program.
+Object which can be used directly without any configuration is called implicit object.
+The list of implicit objects are.
+Object Type
+out JspWriter
+request HttpServletRequest
+response HttpServletRespons
+config ServletConfig
+application ServletContext
+session HttpSession
+pageContext pageContext
+page Object
+exception Throwable
+
+7. What is MVC in jsp?
+
+MVC stands for Model View Controller.
+It is a design partern which seperates business logic , persistence logic and data.
+Controller acts like an interface between Model and View.
+Controller is used to intercept with all the incoming requests.
+Model contains data.
+View represent User interface i.e UI.
+9)What is JES class?
+
+------------------------------------------------------------------------------------------x-------------------------------------------------------------------------------------------------
+
+											TOOLS
+											------
+
+---
+
+**1. Maven**  
+Maven is a build automation and dependency management tool primarily used in Java projects. It helps in managing project libraries, building code, and creating project documentation.
+
+**2. Git**  
+Git is a version control system used to track changes in code and collaborate with other developers. It allows for the management of project versions and helps in maintaining code history.
+
+**3. GitHub**  
+GitHub is a cloud-based platform that uses Git for version control. It allows developers to host repositories, collaborate on projects, and share code with others.
+
+**4. JUnit**  
+JUnit is a popular testing framework for Java that allows developers to write and run repeatable tests on their code. It's used for unit testing individual components of the application.
+
+**5. SDLC (Software Development Life Cycle)**  
+SDLC is a process used by software developers to design, develop, and test high-quality software. It outlines steps to follow from the project’s start to the end.
+
+**6. Phases of SDLC**  
+   - **Planning**: Identifying requirements and project feasibility.
+   - **Analysis**: Defining the project goals and functions.
+   - **Design**: Creating a blueprint of the system (architecture, UI).
+   - **Implementation**: Writing the code and developing the product.
+   - **Testing**: Ensuring the software works as expected.
+   - **Deployment**: Releasing the software to users.
+   - **Maintenance**: Updating and fixing issues post-release.
+
+**7. Docker**  
+Docker is a platform that allows developers to package applications into containers—standardized units of software that have everything needed to run an application, making deployment easier.
+
+**8. Agile**  
+Agile is a project management methodology that emphasizes flexibility, collaboration, and iterative progress. It breaks down a project into small, manageable parts, with frequent reassessments and adaptations.
+
+**9. Postman**  
+Postman is a tool used for API testing. It helps developers test and automate HTTP requests to ensure their APIs are functioning correctly.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

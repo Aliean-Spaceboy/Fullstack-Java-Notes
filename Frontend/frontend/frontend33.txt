@@ -1,0 +1,536 @@
+Bootstrap responsive navbar
+================================
+Navbars require a wrapping .navbar with .navbar-expand{-sm|-md|-lg|-xl|-xxl} for responsive collapsing and color scheme classes.
+
+Navbars and their contents are fluid by default.
+Change the container to limit their horizontal width in different ways.
+
+Use our spacing and flex utility classes for controlling spacing and alignment within navbars.
+
+Navbars are responsive by default, but you can easily modify them to change that. 
+
+Responsive behavior depends on our Collapse JavaScript plugin.
+
+.navbar-brand for your company, product, or project name.
+
+.navbar-nav for a full-height and lightweight navigation (including support for dropdowns).
+
+.navbar-toggler for use with our collapse plugin and other navigation toggling behaviors.
+
+Flex and spacing utilities for any form controls and actions.
+
+.navbar-text for adding vertically centered strings of text.
+
+.collapse.navbar-collapse for grouping and hiding navbar contents by a parent breakpoint.
+
+Add an optional .navbar-scroll to set a max-height and scroll expanded navbar content.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	
+	<!-- add bootstrap plugins -->
+	<meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" ></script>
+
+     <!-- Bootstrap Font Icon CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</head>
+<body>
+	
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container">
+			<!-- navbar brand -->
+			<a href="" class="navbar-brand"> IHUBTALENT </a>
+
+			<!-- navbar button -->
+			<button type="button" data-bs-toggle="collapse" 
+				class="navbar-toggler" data-bs-target="#navbarId">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+
+		<div class="container"
+		<!-- navbar list -->
+			<div class=" collapse navbar-collapse" id="navbarId">
+				<ul class="navbar-nav text-center">
+					<li class="nav-item">
+						<a href="" class="nav-link">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">About</a>
+					</li>
+					<li class="nav-item ">
+						<a href="" class="nav-link">Service</a>
+					</li>
+					<li class="nav-item ">
+						<a href="" class="nav-link">Portfolio</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Contact</a>
+					</li>
+				</ul>	
+			</div>
+		</div>
+	</nav>	
+	
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	
+	<!-- add bootstrap plugins -->
+	<meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" ></script>
+
+     <!-- Bootstrap Font Icon CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</head>
+<body>
+	
+	<nav class="navbar navbar-expand-lg  navbar-dark bg-dark" >
+		<div class="container">
+			<!-- navbar brand -->
+			<a href="" class="navbar-brand"> IHUBTALENT </a>
+
+			<!-- navbar button -->
+			<button type="button" data-bs-toggle="collapse" 
+				class="navbar-toggler" data-bs-target="#navbarId">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+
+		<div class="container"
+		<!-- navbar list -->
+			<div class=" collapse navbar-collapse" id="navbarId">
+				<ul class="navbar-nav text-center">
+					<li class="nav-item">
+						<a href="" class="nav-link active">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">About</a>
+					</li>
+					<li class="nav-item ">
+						<a href="" class="nav-link">Service</a>
+					</li>
+					<li class="nav-item ">
+						<a href="" class="nav-link">Portfolio</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Contact</a>
+					</li>
+				</ul>	
+			</div>
+		</div>
+	</nav>	
+	
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	
+	<!-- add bootstrap plugins -->
+	<meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" ></script>
+
+     <!-- Bootstrap Font Icon CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</head>
+<body>
+	
+	<nav class="navbar navbar-expand-lg  navbar-dark bg-dark fixed-top" >
+		<div class="container">
+			<!-- navbar brand -->
+			<a href="" class="navbar-brand"> IHUBTALENT </a>
+
+			<!-- navbar button -->
+			<button type="button" data-bs-toggle="collapse" 
+				class="navbar-toggler" data-bs-target="#navbarId">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+
+		<div class="container"
+		<!-- navbar list -->
+			<div class=" collapse navbar-collapse" id="navbarId">
+				<ul class="navbar-nav text-center">
+					<li class="nav-item">
+						<a href="" class="nav-link active">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">About</a>
+					</li>
+					<li class="nav-item ">
+						<a href="" class="nav-link">Service</a>
+					</li>
+					<li class="nav-item ">
+						<a href="" class="nav-link">Portfolio</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Contact</a>
+					</li>
+				</ul>	
+			</div>
+		</div>
+	</nav>	
+	
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	
+	<!-- add bootstrap plugins -->
+	<meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" ></script>
+
+     <!-- Bootstrap Font Icon CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</head>
+<body>
+	
+	<nav class="navbar navbar-expand-lg  navbar-dark bg-dark fixed-bottom" >
+		<div class="container">
+			<!-- navbar brand -->
+			<a href="" class="navbar-brand"> IHUBTALENT </a>
+
+			<!-- navbar button -->
+			<button type="button" data-bs-toggle="collapse" 
+				class="navbar-toggler" data-bs-target="#navbarId">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+
+		<div class="container"
+		<!-- navbar list -->
+			<div class=" collapse navbar-collapse" id="navbarId">
+				<ul class="navbar-nav text-center">
+					<li class="nav-item">
+						<a href="" class="nav-link active">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">About</a>
+					</li>
+					<li class="nav-item ">
+						<a href="" class="nav-link">Service</a>
+					</li>
+					<li class="nav-item ">
+						<a href="" class="nav-link">Portfolio</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Contact</a>
+					</li>
+				</ul>	
+			</div>
+		</div>
+	</nav>	
+	
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+	<h1> Scroll Down </h1>
+</body>
+</html>
+
+
+Bootstrap Scrollspy
+====================
+The scrollspy plugin automatically highlights the navigation links based on 
+the scroll position to indicate where the user is currently on the page.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	
+	<!-- add bootstrap plugins -->
+	<meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" ></script>
+
+     <!-- Bootstrap Font Icon CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+	<style>
+		.section1
+		{ 
+			background-color:#fad390; 
+			text-align: center;
+			padding-top:100px;
+			width:100%;
+			height:650px;
+		}
+		.section2
+		{ 
+			background-color:#6a89cc; 
+			text-align: center;
+			padding-top:100px;
+			width:100%;
+			height:650px;
+		}
+		.section3
+		{ 
+			background-color:#78e08f; 
+			text-align: center;
+			padding-top:100px;
+			width:100%;
+			height:650px;
+		}
+		.section4
+		{ 
+			background-color:#34e7e4; 
+			text-align: center;
+			padding-top:100px;
+			width:100%;
+			height:650px;
+		}
+		.section5
+		{ 
+			background-color:#ffdd59; 
+			text-align: center;
+			padding-top:100px;
+			width:100%;
+			height:650px;
+		}
+
+	</style>
+
+</head>
+<body>
+	
+	<nav class="navbar navbar-expand-lg  navbar-dark bg-dark fixed-top" >
+		<div class="container">
+			<!-- navbar brand -->
+			<a href="" class="navbar-brand"> IHUBTALENT </a>
+
+			<!-- navbar button -->
+			<button type="button" data-bs-toggle="collapse" 
+				class="navbar-toggler" data-bs-target="#navbarId">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+
+		<div class="container"
+		<!-- navbar list -->
+			<div class=" collapse navbar-collapse" id="navbarId">
+				<ul class="navbar-nav text-center">
+					<li class="nav-item">
+						<a href="#homeId" class="nav-link active">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="#aboutId" class="nav-link">About</a>
+					</li>
+					<li class="nav-item ">
+						<a href="#serviceId" class="nav-link">Service</a>
+					</li>
+					<li class="nav-item ">
+						<a href="#portfolioId" class="nav-link">Portfolio</a>
+					</li>
+					<li class="nav-item">
+						<a href="#contactId" class="nav-link">Contact</a>
+					</li>
+				</ul>	
+			</div>
+		</div>
+	</nav>	
+	
+	<div class="section1" id="homeId">
+		<h1>Home Section</h1>
+	</div>
+
+	<div class="section2" id="aboutId">
+		<h1>About Section</h1>
+	</div>
+
+	<div class="section3" id="serviceId">
+		<h1>Service Section</h1>
+	</div>
+
+	<div class="section4" id="portfolioId">
+		<h1>portfolio Section</h1>
+	</div>
+
+	<div class="section5" id="contactId">
+		<h1>Contact Section</h1>
+	</div>
+	
+</body>
+</html>
+
+
+Media Query
+============
+Media query is used to create a responsive design.
+
+Media queries can be used to check many things, such as:
+
+1) width and height of the viewport
+2) orientation of the viewport (landscape or portrait)
+3) resolution
+
+Using media queries are a popular technique for delivering a tailored style sheet to desktops, laptops, tablets, and mobile phones (such as iPhone and Android phones).
+
+ex:
+
+@media(min-width:992px)
+{
+
+}
+@media(min-width:768px) and (max-width:991px)
+{
+
+}
+@media(min-width:575px) and (max-midth:767px)
+{
+
+}
+@media(min-width: 480px) and (max-width: 574px)
+{
+	.headerset h2
+	{
+		font-size:22px;
+	}
+	.headerset h1
+	{
+		font-size:42px;
+	}
+	.ourservices
+	{
+		height: 1400px;
+	}
+	.portfolio
+	{
+		height: 3200px;
+	}
+	.ourteam
+	{
+		height:1600px;
+	}
+}
+@media(max-width:479px)
+{
+        
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

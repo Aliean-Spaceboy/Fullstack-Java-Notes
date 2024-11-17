@@ -1,0 +1,384 @@
+Web Server
+============
+Web server is a piece of software which is used to automate whole process of web application and web resource program execution.
+
+ex:
+	Tomcat, Resin and etc.
+
+
+Responsibilities of a web server
+---------------------------------
+1) It takes continues request from client.
+
+2) It traps the request and passes that request to appropriate web resource program.
+
+3) It provides environment to deploy undeploy the web application.
+
+4) It will add middleware services only to deployed web applications.
+
+5) It provides environment to execute client side web resource programs at browser window.
+
+6) It will automate whole process of web application and web resource program execution.
+
+7) It takes the result from web resource program and send to browser window as dynamic response.
+
+
+To execute java program we required JRE/JVM.
+
+To execute servlet program we required servlet container.
+
+To execute jsp program we required jsp container.
+
+
+Web Container
+==============
+It is a software application or a program which is used to manage whole life cycle of web resource program i.e from birth to death.
+
+Servlet container manage whole life cycle of servlet program.
+
+JSP container manage whole life cycle of jsp program.
+
+Some part of industry consider servlet container and jsp container are web containers.
+
+Every server is designed to support servlet container and jsp container.So we don't need to arrange 
+it seperately.
+
+
+Tomcat 
+=======
+Type			: Web Server 
+
+Version			: 9.x
+
+Creator			: James Duncan Davidson
+
+Vendor			: Apache Software Foundation
+
+Website			: www.tomcat.apache.org		
+
+Port No			: 8080
+
+Servlet container	: Catalina 
+
+Jsp container		: Jasper 
+
+Download link		:
+
+https://drive.google.com/file/d/1u547booDvVY630rN4drEQ8c8lU0In7T6/view?usp=sharing
+
+
+Tomcat installation will ask following things.
+
+1) HTTP Connector port  :  8080
+
+2) Adminstrator username : admin 
+	        password : admin 
+3) JDK location 
+
+4) Tomcat installation directory.
+
+
+Tomcat installation 
+====================
+double click to Tomcat software --> yes --> Next --> I Agree --> select Full --> Next --> 
+
+Http connector port : 8080
+adminstrator login username : admin
+		   password : admin  --> Next --> Install --> Unchecked the boxes --> Finish.
+
+
+Set the Tomcat server to manual mode
+====================================
+
+goto services --> Apache Tomcat9 ---> click to stop (left side) --> double click to Apache Tomcat9
+--> startup type : manual --> apply --> ok.
+
+Q) What is Servlet ?
+
+It is a dynamic web resource program which enhanced the functionality of web server , proxy server or IDE's server.
+
+or
+
+It is a java based dynamic web resource program which is used to generate dynamic web pages.
+
+or 
+
+It is a single instance multithread java based web resource program which is used to develop 
+web applications.
+
+Diagram: servlet2.1
+
+
+Servlet API 
+============
+API is a collection of packages.
+
+ex:
+	javax.servlet.*
+	javax.servlet.http.*
+
+
+Important terminology
+=====================
+javax.servlet.Servlet(I)
+	|
+	|
+javax.servlet.GenericServlet(AC)
+	|
+	|
+javax.servlet.http.HttpServlet(C)
+
+First web application development having servlet program as web resource program
+================================================================================
+Diagram: servlet2.2
+
+Deployment Directory structure
+-----------------------------
+DateApp
+|
+|---Java Resources
+	|
+	|-----src
+		|
+		|---com.ihub.www
+			|
+			|----DateSrv.java
+|
+|---Web Content
+	|
+	|-----WEB-INF
+		|
+		|---web.xml
+
+Note:
+----
+In above application we need to add "servlet-api.jar" file in project build path. 
+
+
+step1:
+-----
+	Launch eclipse IDE by choosing workspace location.
+
+step2:
+------
+	Add Tomcat9 server to eclipse IDE.
+	ex:
+		window --> preferences --> server --> Runtime environment --> click to add button 
+		---> Select Apache Tomcat 9 --> Next --> select Tomcat installation directory -->
+		Finish --> Apply and close.
+
+step3:
+-----
+	Create dynamic web project i.e DateApp.	
+	ex:
+		File --> new --> dynamic web project --> Name : DateApp --> Next --> Next --> 
+		Generate web.xml file (click) --> Finish.
+
+
+step4:
+-----
+	Add "servlet-api.jar" file in project build path.
+	ex:
+		right click to DateApp project --> build path --> Configure build path -->
+		libraries --> click to classpath --> Add external jars --> select servlet-api.jar
+		file --> open --> apply and close.
+
+step5:
+-----
+	Create a "com.ihub.www" package inside "src" folder.
+
+step6:
+------
+	Create a DateSrv.java file inside "com.ihub.www" package.
+
+DateSrv.java
+------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+public class DateSrv extends GenericServlet 
+{
+	public void service(ServletRequest req,ServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		Date d=new Date();
+		pw.println("<center><h1>Current Date and Time : <br>"+d+"</h1></center>");
+		
+		pw.close();
+	}
+}
+
+step7:
+-----
+	Configure each servlet program in web.xml file.
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  	<servlet>
+  		<servlet-name>DateSrv</servlet-name>
+  		<servlet-class>com.ihub.www.DateSrv</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>DateSrv</servlet-name>
+  		<url-pattern>/test</url-pattern>
+  	</servlet-mapping>
+  	
+</web-app>
+
+step8:
+------	
+	Run dynamic web project.
+	ex:
+		right click to DAteApp --> run as --> Run on server --> select Apache Tomcat 9
+		--> Next --> Finish.
+
+step9:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:2525/DateApp/test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

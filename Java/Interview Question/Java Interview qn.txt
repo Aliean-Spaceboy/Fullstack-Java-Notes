@@ -1,0 +1,784 @@
+Control Statement
+Note:
+=====
+If number of iterations are known by the user then we need to use for loop.
+
+If number of iterations are not known by the user then we need to use while loop.
+
+If number of iterations are not known byt the user but code must execute atleast for one time then we need to use do while loop.
+
+Double Dimensional Array
+========================
+Double dimensional array is a combination of rows and columns.
+
+Double dimensional array is implemented based on array or arrays approach but not matrix form.
+
+Double dimensional array is used to develop business oriented application, gaming applicaitons, matrix type of applications and etc.
+
+The main objective of double dimensional array is memory utilization.
+
+
+Q) What is Anonymous array?
+
+Sometimes we will declare an array without name such type of nameless array is called anonymous array.
+
+The main objective of anonymous array is just for instance use.
+
+
+OPPS
+=====
+
+
+
+Q) What is the difference between  default and public class?
+
+default class					public class
+--------------					-------------
+To declare default class we should not specify	To declare public class we should specify 
+any modifier.					public modifier.
+ex:						ex:
+	class A 					public class A
+	{						{
+				
+	}						}
+
+If we declare any class as default then we can	If we declare any class as public then we can 
+access that class within the package.		access that class within the package and outside
+						the package.
+
+
+
+Q) What is the difference between final class and abstract class?
+
+final class					abstract class
+---------------					----------------
+To declare final class we should use final 	To declare abstract class we should use abstract
+modifier.					modifier.
+
+ex:						ex:
+	final class A 					abstract class A 
+	{						{
+	
+	}						}
+
+Child creation is not possible.			Child creation is possible.
+
+Object creation is possible.			Object creation is not possible.
+
+Q) What is the difference between class and object.
+
+class					object
+----------				----------
+To declare a class we will use class	To declare an object we will use new keyword.
+keyword.
+
+It is a blueprint or template of a 	It is a instance of a class.	
+an object.
+
+It is a logical entity.			It is a physical entity.
+
+It can't be modified.			It can be modified.
+
+It is declared once.			It is declared many times.
+
+
+Q) What is tightly encapsulated class?
+
+A class is said to be tightly encapsulated class if all the variables of that class must be private. Here we don't need to check , these variables contain setter and getter methods or not.
+
+
+Q) What is the difference between  Abstraction and Encapsulation ?
+
+Abstraction					Encapsulation 
+-------------					--------------
+Hiding internal implementation and highlighting	The process of encapsulating or grouping 
+the set of services is called abstraction.	variables and it's associate methods in a single 
+						entity is called encapsulation.
+
+It is used to hide the data.			It is used to protect the data.
+
+It is a process of gaining the information.	It is a process of containing the information.
+
+It solves the problems at design level.		It solves the problems at implementation level.
+
+Q) What is the difference between POJO and Java Bean class?
+
+POJO						Java Bean 
+-------------					-------------
+It can't be serialized.				It can be serialized.
+
+Fields can have any visibility.			Fields can have only private visibility.
+
+It may or may not have 0-arg constructor.	It must have 0-arg constructor.
+
+It does not extend any other class.		It can extends.
+
+It does not implement any other interface.	It can implements
+
+It does not use any outside annotations.	It uses outside annotations.
+
+
+Q) What is the difference between Method overloading and Method Overriding ?
+
+Method overloading				Method overriding 
+-------------------				------------------
+Having same method name with different 		Having same method name with same parameters or
+parametes or signatures in a single class 	signatures in two different classes is called
+is called method overloading.			method overriding.
+
+It is compile time polymorphism.		It is runtime polymorphism.
+
+Method resolution will taken care by a		Method resolution will taken care by JVM  
+compiler based on reference type.		based on runtime object.
+
+final and private methods can be overloaded.	final and private methods can't be overridden.
+
+
+Q) What is the difference between Method overloading and Method Overriding ?
+
+Method overloading				Method overriding 
+-------------------				------------------
+Having same method name with different 		Having same method name with same parameters or
+parametes or signatures in a single class 	signatures in two different classes is called
+is called method overloading.			method overriding.
+
+It is compile time polymorphism.		It is runtime polymorphism.
+
+Method resolution will taken care by a		Method resolution will taken care by JVM  
+compiler based on reference type.		based on runtime object.
+
+final and private methods can be overloaded.	final and private methods can't be overridden.
+
+
+
+EXCEPTION HENDLING
+==================
+
+
+Exception
+--------
+Exception is a problem for which we can provide solution programmatically.
+
+Error
+-----
+Error is a problem for which we can't provide solution programmatically.
+
+
+As a part of java application development it is a responsibility of a programmer to provide smooth termination for every java program.
+
+We have two types of terminations.
+
+1) Smooth termination  / Graceful termination 
+
+2) Abnormal termination 
+
+1) Smooth termination 
+----------------------
+During the program execution suppose if we are not getting any interruption in the middle of the program such type of termination is called smooth termination.
+
+2) Abnormal termination
+------------------------
+During the program execution suppose if we will getting some interruption in the middle of the program such type of termination is called abnormal termination.
+
+If any exception raised in our program we must and should handle that exception otherwise our program will terminates abnormally.
+
+Exception will display name of the exception, description of the exception and line number of the exception
+
+Exception
+=========
+It is a unwanted , unexpected event which disturbs normal flow of our program.
+
+Exceptions always raised at runtime so they are also known as runtime events.
+
+The main objective of exception handling is to provide graceful termination.
+
+In java, exceptions are divided into two types.
+
+1) Predefined exceptions 
+
+2) Userdefined exceptions 
+
+
+1) Predefined exceptions 
+-------------------------
+Built-In exceptions are called predefined exceptions.
+
+It is categories into two types.
+
+i) Checked exceptions 
+-------------------
+Exceptions which are checked by the compiler at the time of compilation are called checked exceptions.
+
+If any checked exception raised in our program we must and should handle that exception 
+by using try and catch block
+
+ii) Unchecked exceptions 
+---------------------
+Exceptions which are checked by the JVM at the time of runtime are called unchecked exceptions.
+
+
+try block
+=========
+It is a block which contains Risky Code.
+
+It is associate with catch block.
+
+If any exception raise in try block then try block won't be executed.
+
+It is used to throw the exception to catch block.
+
+catch block
+===========
+It is a block which contains Error Handling Code.
+
+It is associate with try block.
+
+It is used to catch the exception which is thrown by try block.
+
+If there is no exception in try block then catch block won't be executed.
+
+A try block with multiple catch blocks
+----------------------------------
+A try block can have multiple catch blocks.
+
+If a try block contains multiple catch blocks then order of catch block is very important . It should be from child to parent but not from parent to child.
+
+Various methods to display exception details
+============================================
+Throwable class defines following three methods to display exception details.
+
+1) printStackTrace()
+-----------------
+It will display name of the exception, description of the exception and line number of the exception.
+
+2) toString()
+------------
+It will display name of the exception and description of the exception.
+
+
+3) getMessage() 
+---------------
+It will display description of the exception.
+
+finally block
+=============
+It is never recommanded to maintain cleanup code in try block because if there is any exception raise in try block then try won't be executed.
+
+It is never recommanded to maintain cleanup code in catch block because if there is no exception in try block then catch block won't be executed. 
+
+But we need a place where we can maintain cleanup code and it should execute irrespective of exception raised or not. Such block is called finally block.
+
+Q) What is the difference between final, finally and finalize method ?
+
+final
+-----
+It is a modifier which is applicable for variables, methods and clsses.
+If we declare any variable as final then reassignment of that variable is not possible.
+If we declare any method as final then overriding of that method is not possible.
+If we declare any class as final then creating child class is not possible.
+
+finally
+-------
+It is a block which contains cleanup code and it should execute irrespective of exception raised or not.
+
+finalize method
+--------------
+It is a method called by garbage collector just before destroying an object for cleanup activity.
+
+throw stmt
+==========
+Sometimes we will create exception object explicitly and handover to JVM manually by using throw statement.
+
+throws Statement
+=================
+If any checked exception raised in our program we must and should handle that exception by using try and catch block or by using throws statement.
+
+
+
+Collection
+==========
+
+Q) What is the difference between Arrays and Collections?
+
+
+Arrays						Collections
+-------------					-----------
+It is a collection of homogeneous data 		It is a collection of homogeneous and 
+elements.					hetrogeneous data elements.
+
+Arrays are fixed in size.			Collections are growable in nature.
+
+Performance point of view arrays are		Memory point of view Collections are 
+recommanded to use.				recommanded to use.
+
+It holds primitive types and object types.	It holds only object types.
+
+Arrays not implemented based on data structure	Collections are implemented based on data structure
+concept.So we can't expect ready made methods.	concept.So we can expect ready made methods.
+
+Collection
+==========
+Collection is an interface which is present in java.util package.
+
+It is a root interface for entire Collection Framework.
+
+If we want to represent group of individual objects in a single entity then we need to use Collection interface.
+
+ArrayList
+---------
+The underlying data structure is resizable array or growable array.
+
+Duplicate objects are allowed.
+
+Insertion order is preserved.
+
+Hetrogeneous objects are allowed.
+
+Null insertion is possible.
+
+It implements Serializable, Cloneable and RandomAccess interface.
+
+If our frequent operation is a retrieval operation then ArrayList is a best choice.
+
+
+LinkedList
+-----------
+The underlying data structure is Doubly LinkedList.
+
+Duplicate objects are allowed.
+
+Insertion order is preserved.
+
+Hetrogeneous objects are allowed.
+
+Null insertion is possible.
+
+It implements Serializable, Cloneable and Deque interface.
+
+If our frequent operation is adding and removing in the middle then LinkList is a best choice.
+
+
+Q) What is the difference between ArrayList and LinkedList?
+
+ArrayList					LinkedList
+--------------					----------------
+The underlying data structure is resizable 	The underlying data structure is doubly linked
+array or growable array.			list.
+						
+
+ArrayList is better for storing and accessing 	LinkedList is better for manipulating data.
+data.						
+
+The memory location for the elements of an 	The location for the elements of a linked list
+ArrayList is contiguous.			is not contagious. 
+						
+
+When an ArrayList is initialized, a default 	There is no case of default capacity in a
+capacity of 10 is assigned to the ArrayList.	LinkedList.
+
+Vector
+======
+The underlying data structure is resizable array or growable array.
+
+Duplicate objects are allowed.
+
+Insertion order is preserved.
+
+Hetrogeneous objects are allowed.
+
+Null insertion is possible.
+
+All methods present in Vector are synchronized.Hence we can achieve thread safety.
+
+
+
+
+Q) What is the difference between ArrayList and Vector?
+
+ArrayList					Vector
+-------------					-----------
+No method is synchronized.			Every method is synchronized.
+
+At a time multiple Threads are allow to operate At a time only one Thread is allow to operate 
+on ArrayList object and hence ArrayList object  on Vector object and hence Vector object is
+is not Thread safe.  				Thread safe.
+						
+
+Relatively performance is high because Threads  Relatively performance is low because Threads 
+are not required to wait.			are required to wait.
+						
+
+It is non legacy and introduced in 1.2v.	It is legacy and introduced in 1.0v.
+
+Set
+====
+It is a child interface of Collection interface.
+
+If we want to represent group of individual objects in a single entity where duplicate objects are not allowed and order is not preserved then we need to use Set interface.
+
+
+HashSet
+---------
+The underlying datastructure is Hashtable.
+
+Duplicate objects are not allowed.
+
+Insertion order is not preserved because it will take hash code of an object.
+
+Hetrogeneous objects are allowed.
+
+Null insertion is possible.
+
+
+
+
+HashSet						LinkedHashSet
+---------------					---------------
+The underlying data structure is Hashtable.	The underlying data structure is Hashtable and 
+						LinkedList.
+
+Insertion order is not preserved.		Insertion order is preserved.
+
+Introduced in 1.2v.				Introduced in 1.4v.
+
+TreeSet
+=========
+The underlying data structure is Balanced Tree.
+
+Duplicate objects are not allowed.
+
+Insertion order is not preserved because it will take sorting order of an object.
+
+Hetrogeneous objects are not allowed.
+
+Null insertion is not possible.
+
+Map
+=====
+It is not a child interface of Collection interface.
+
+If we want to represent group of individual objects in key and value pair then we need to use Map interface.
+
+key and value both must be objects.
+
+key can't be duplicate but value can be duplicate.
+
+Each key and value pair is called one entry.
+
+Diagram: class46.1
+
+
+HashMap
+========
+The underlying data structure is Hashtable.
+
+Key can't be duplicate but value can be duplicate.
+
+Insertion order is not preserved because it will take hash code of a key.
+
+Hetrogeneous objects are allowed for both key and value.
+
+Null insertion is possible for key and value.
+
+LinkedHashMap
+==============
+It is a child class of HashMap class.
+
+LinkedHashMap is exactly same as HashMap class with following differences.
+
+HashMap						LinkedHashMap
+----------					---------------
+The underlying data structure is Hashtable.	The underlying data structure is Hashtable and 
+						LinkedList.
+
+Insertion order is not preserved.		Insertion order is preserved.
+
+Introduced in 1.2v.				Introduced in 1.4v.
+
+TreeMap
+========
+The underlying data structure is RED BLACK TREE.
+
+Key can't be duplicate but value can be duplicate.
+
+Insertion order is not preserved because it will take sorting order of key.
+
+If we depends upon default natural sorting order then key can be homogeneous and Non-comparable.
+
+If we depends upon customized sorting order then key can be hetrogeneous and Comparable.
+
+Key can't be null but value can be null.
+
+Hashtable
+========
+The underlying data structure is Hashtable.
+
+Key can't be duplicate but value can be duplicate.
+
+Insertion order is not preserved because it will take descending order of key.
+
+key and value both can be hetrogeneous.
+
+Key and value both can't be null.
+
+
+Types of cursors 
+================
+Cursor is used to read objects one by one from Collections.
+
+We have three types of cursors.
+
+1) Enumeration 
+
+2) Iterator 
+
+3) ListIterator 
+
+1) Enumeration
+---------------
+It is used to read objects one by one from legacy Collection objects.
+
+We can create Enumeration object by using elements() method.
+
+Limitations with Enumeration
+---------------------------
+Using Enumeration we can read objects only from Legacy Collection objects.Hence it is not a universal cursor.
+
+Using Enumeration interface we can perform read operation but not remove operation.
+
+To overcome this limitation Sun MicroSystem introduced Iterator.
+
+2) Iterator
+-----------
+It is used to read objects one by one from any Collection object.Hence it is a universal cursor.
+
+Using Iterator interface we can perform read and remove operation.
+
+Limitations with Iterator 
+-------------------------
+Using Iterator and Enumeration we can read objects only in forward direction but not in backward direction.Hence they are not bi-directional cursors.
+
+Using Iterator interface we can perform read and remove operation but not adding and replacement of new objects.
+
+To overcome this limitation Sun Micro System introduced ListIterator.
+
+
+3) ListIterator 
+---------------
+It is used to read objects one by one from List Collections object.
+
+Using ListIterator interface we can perform read,remove, adding and replacement of new objects.
+
+
+Multithreading
+===============
+
+Q) What is the difference between Thread and Process?
+
+Thread
+-------
+	A thread is a leight weight sub process.
+
+	We can run multiple threads concurently.
+
+	One thread can communicate with another thread.
+
+Process
+-------
+	A process is a collection of threads.
+
+	We can run multiple process concurently.
+
+	One process can't communicate with another process.
+
+
+Q) What is multitasking?
+
+Executing several task simultenously such concept is called multitasking.
+
+We have two types of multitasking.
+
+1) Thread based multitasking 
+
+2) Process based multitasking 
+
+
+1) Thread based multitasking
+----------------------------
+Executing several task simultenously where each task is a same part of a program is called thread based multitasking.
+
+It is best suitable for programmatic level.
+
+
+2) Process based multitasking 
+--------------------------------
+Executing several task simultenously where each task is a independent process is called process based multitasking.
+
+It is best suitable for OS level.
+
+
+What is Multithreading?
+
+Executing several threads simultenously such concept is called multithreading.
+
+In multithreading only 10% of work should be done by a programmer and 90% of work will be done by a JAVA API.
+
+Ways to create a thread in java
+===============================
+There are two ways to create a thread in java.
+
+1) By extending a Thread class
+
+2) By implementing a Runnable interface
+
+Thread Schedular
+------------------------
+If multiple threads are waiting for execution which thread will be executed will decided by thread schedular. 
+
+What algorithm, behaviour or mechanism used by thread schedular is depends upon JVM vendor.
+
+Hence we can't expect any execution order or exact output in multithreading.
+
+If we won't override run() method
+---------------------------------------------
+If we won't override run() method then t.start() method executes Thread class run() method automatically.
+
+Thread class run() method is a empty implementation. Hence we won't get any output from child thread.
+
+If we overload run() method
+----------------------------------
+If we overload run() method then Thread class start() method always execute run() method with zero parameter only.
+
+
+Life cycle of a thread
+-----------------------------
+
+Once if we create a thread object then our thread will be in new or born state.
+
+Once if we call t.start() method our thread goes to ready or runnable state.
+
+If thread schedular allocates to CPU then our thread enters to running state.
+
+Once run() method execution is completed then our thread goes to dead state.
+
+Setting and Getting name of a thread
+====================================
+In java, every thread has a name explicitly provided by the programmer or automatically generated by JVM.
+
+Thread priority
+================
+In java, every thread has a priority explicitly provided by the programmer or automatically generated by JVM.
+
+The valid range of thread priority is 1 to 10. Where 1 is a least priority and 10 is a highest priority. 
+
+If we take more then 10 priority then we will get IllegaArgumentException.
+
+We have don't have such constant like LOW_PRIORITY and HIGH_PRIORITY.
+
+A thread which is having highest priority will be executed first.
+
+If multiple threads having same priority then we can't expect any execution order.
+
+Thread schedular uses thread priority while allocating to CPU.
+
+
+
+Various ways to prevent a thread from execution
+==============================================
+There are three ways to prevent a thread from execution.
+
+1) yield() 
+
+2) join() 
+
+3) sleep() 
+
+1) yield()
+----------
+It pause the current execution thread and gives the change to other threads having same priority.
+
+If there is no waiting threads or low priority threads then same thread will continue is execution.
+
+If multiple waiting threads having same priority then we can't expect any execution order or exact output in multithreading.
+
+2) join() 
+-----------
+If a thread wants to wait until the completion of some other thread then we need to use join().
+
+A join() method throws one checked exception called InterruptedException so we must and should handle that exception by using try and catch block or by using throws statement.
+
+3) sleep() 
+------------
+If a thread don't want to perform any operation on perticular amount of time then we need to use sleep() method.
+
+A sleep() method will throw one exception we must and should handle that exception by using try and catch block or by using throws statement.
+
+
+
+-----------------------------------------------------------------------------------------x---------------------------------------------------------------------------------
+
+
+
+diff string/stringbuffer/builder
+
+what sencronize and desencronize
+
+method overloading/overriding
+
+finaly/final/finalize
+
+what is polymorphism
+
+file input/file output
+
+at override annotation
+
+runtime/compile time exception
+
+try/catch block
+
+collection framework
+
+diff thread/process
+
+23.9
+-----
+diff runtime / compiletime
+diff for/foreach
+how foreach loop increment
+why java doesn't support mul inheretence
+about interface
+what is date type and types of and size of them
+diff wraperclass/premative
+how to convert integer to string
+how to convert String to integer
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

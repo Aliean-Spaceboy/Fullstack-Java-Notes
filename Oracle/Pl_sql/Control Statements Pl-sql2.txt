@@ -1,0 +1,450 @@
+To see the output in PL/SQL we need to use execute below command.
+ex:
+	SQL> set   serveroutput  on 
+
+
+In PL/SQL we can perform DML operations also.
+
+
+Write a PL/SQL program to insert a record into student table?
+
+ex:
+	DECLARE 
+	L_sno 	number(3);
+	L_sname varchar2(10);
+	L_sadd  varchar2(12);
+	BEGIN
+	L_sno:=&sno;
+	L_sname:='&sname';
+	L_sadd:='&sadd';
+	insert into student values(L_sno,L_sname,L_sadd);
+	DBMS_OUTPUT.PUT_LINE('Record Inserted');
+	END;
+	/
+
+
+Write a PL/SQL program to update student name based on student number?
+
+ex:
+	DECLARE 
+	L_sno number(3);
+	BEGIN
+	L_sno:=&sno;
+	update student set sname='rani' where sno=L_sno;
+	DBMS_OUTPUT.PUT_LINE('Record Updated');
+	END;
+	/
+
+Q) Write a PL/SQL program to delete student record based on student number?
+
+ex:
+	DECLARE 
+	L_sno number(3);
+	BEGIN
+	L_sno:=&sno;
+	delete from student where sno=L_sno;
+	DBMS_OUTPUT.PUT_LINE('Record Deleted');
+	END;
+	/
+
+
+In P/SQL we can perform DRL operations also.
+
+To execute select statement in PL/SQL we need to use "into" clause.
+
+
+Q) Write a Pl/SQL program to display employee name whose employee id is 201?
+
+ex:
+	DECLARE 
+	L_empName  varchar2(10);
+	BEGIN
+	select ename into L_empName from emp where eid=201;
+	DBMS_OUTPUT.PUT_LINE(L_empName);
+	END;
+	/
+
+
+Q) Write a Pl/SQL program to display employee name and employee salary whose employee id is 205?
+
+ex:
+
+	DECLARE 
+	L_empName varchar2(10);
+	L_empSal  number(10,2);
+	BEGIN
+	select ename,esal into L_empName,L_empSal from emp where eid=205;
+	DBMS_OUTPUT.PUT_LINE(L_empName||' '||L_empSal);
+	END;
+	/
+
+
+Q) Write a PL/SQL program to display employee name, employee salary based on employee id ?
+
+ex:
+	DECLARE 
+	L_empName varchar2(10);
+	L_empSal  number(10,2);
+	L_empId   number(3);
+	BEGIN
+	L_empId:=&eid;
+	select ename,esal into L_empName,L_empSal from emp where eid=L_empId;
+	DBMS_OUTPUT.PUT_LINE(L_empName||' '||L_empSal);
+	END;
+	/
+
+
+Percentage(%) TYPE attribute 
+==============================
+It is used to declare a local variable with respect to a column type.
+
+syntax:
+-------
+	variable_name   table_name.col_name%TYPE;
+ex:
+	A    emp.eid%TYPE;
+
+
+
+Q) Write a PL/SQL program to display employee name, employee salary based on employee id ?
+
+ex:
+	DECLARE 
+	L_empName  emp.ename%TYPE;
+	L_empSal   emp.esal%TYPE;
+	L_empId    emp.eid%TYPE;
+	BEGIN
+	L_empId:=&eid;
+	select ename,esal into L_empName,L_empSal from emp where eid=L_empId;
+	DBMS_OUTPUT.PUT_LINE(L_empName||' '||L_empSal);
+	END;
+	/
+
+Percentage(%) ROWTYPE attribute
+=============================
+It is used to declare a local variable which holds complete row of a table.
+
+syntax:
+-------
+	variable_name   table_name%ROWTYPE;
+
+ROWTYPE attribute we can't print directly. We need to use table_name.column_name.
+
+
+ex:
+
+
+
+Q) Write a PL/SQL program to display employee information whose employee id is 206?
+
+ex:
+	DECLARE
+
+	A emp%ROWTYPE;
+
+	BEGIN
+
+	select * into A from emp where eid=206;
+	
+DBMS_OUTPUT.PUT_LINE(A.eid||' '||A.ename||' '||A.esal||' '||A.deptno||' '||A.job||' '||A.comm); 
+
+	END;
+	/
+
+
+Control Statements
+===================
+We have three control statements.
+
+1) IF THEN 
+
+2) IF THEN ELSE 
+
+3) IF THEN ELSIF THEN ELSE 
+
+1) IF THEN 
+-----------
+It will evaluate the source code only if our condition is true.
+
+ex:
+	DECLARE 
+	A  number:=5000;
+	BEGIN
+	
+	IF A>2000 THEN 
+	DBMS_OUTPUT.PUT_LINE('It is greatest');
+	END IF;
+
+	END;
+	/
+
+ex:
+	DECLARE 
+	A  number:=1000;
+	BEGIN
+	
+	IF A>2000 THEN 
+	DBMS_OUTPUT.PUT_LINE('It is greatest');
+	END IF;
+
+	END;
+	/
+
+
+2) IF THEN ELSE 
+-----------------
+It will evaluate the code either our condition is true or false.
+
+ex:
+---
+	DECLARE 
+	A number:=5000;
+	BEGIN
+	
+	IF A>2000 THEN 
+	DBMS_OUTPUT.PUT_LINE('It is too high');
+	ELSE
+	DBMS_OUTPUT.PUT_LINE('It is too low');
+	END IF;
+
+	END;
+	/
+
+
+
+ex:
+---
+	DECLARE 
+	A number:=1000;
+	BEGIN
+	
+	IF A>2000 THEN 
+	DBMS_OUTPUT.PUT_LINE('It is too high');
+	ELSE
+	DBMS_OUTPUT.PUT_LINE('It is too low');
+	END IF;
+
+	END;
+	/
+
+
+
+3) IF THEN ELSIF THEN ELSE 
+-------------------
+It will evaluate the code based on multiple conditions.
+
+ex:
+
+	DECLARE 
+	A number:=103;
+	BEGIN
+	
+	IF A=100 THEN
+	DBMS_OUTPUT.PUT_LINE('It is police number');
+	ELSIF A=103 THEN 
+	DBMS_OUTPUT.PUT_LINE('It is enquiry number');
+	ELSIF A=108 THEN
+	DBMS_OUTPUT.PUT_LINE('It is emergency numer');
+	ELSE
+	DBMS_OUTPUT.PUT_LINE('Invalid option');
+	END IF;
+
+	END;
+	/
+
+
+LOOPS
+=====
+We have three types of loops in PL/SQL.
+
+1) Simple loop 
+
+2) while loop 
+
+3) for loop 
+
+
+1) Simple loop 
+----------------
+It will evaluate the code how long our condition is true.
+
+ex:
+	DECLARE 
+	A number:=1;
+	BEGIN
+
+	DBMS_OUTPUT.PUT_LINE('Welcome');
+
+	LOOP
+	DBMS_OUTPUT.PUT_LINE('Hello');
+	EXIT WHEN A=4;
+	A:=A+1;
+	END LOOP;
+
+	DBMS_OUTPUT.PUT_LINE('Thankyou');
+	END;
+	/
+
+2) while loop 
+-------------
+It will evaluate the code how long our condition is true.
+
+ex:
+	DECLARE 
+	A number:=1;
+	BEGIN
+
+	DBMS_OUTPUT.PUT_LINE('Welcome');
+
+	WHILE A<=4 LOOP
+	DBMS_OUTPUT.PUT_LINE('Hello');
+	A:=A+1;
+	END LOOP;
+
+	DBMS_OUTPUT.PUT_LINE('Thankyou');
+	END;
+	/
+
+
+3) for loop 
+-------------
+It will evaluate the code how long our condition is true.
+
+ex
+	DECLARE 
+	A number;
+	BEGIN
+	DBMS_OUTPUT.PUT_LINE('welcome');
+
+	FOR A IN 1 .. 4 LOOP
+	DBMS_OUTPUT.PUT_LINE('Hello');
+	END LOOP;
+
+	DBMS_OUTPUT.PUT_LINE('thankyou');
+	END;
+	/
+
+
+Interview Skills
+=================
+
+Q) Write a program to display 10 natural numbers?
+
+java
+----
+class Test
+{
+	public static void main(String[] args)
+	{
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(i);
+		}
+	}
+}	
+
+PL/SQL
+------
+	DECLARE 
+	A number;
+	BEGIN
+	FOR A IN 1 .. 10 LOOP
+	DBMS_OUTPUT.PUT_LINE(A);
+	END LOOP;
+	END;
+	/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,473 @@
+Transaction Management
+=======================
+Transaction means it is a single unit of work.
+
+If transaction done successfully we need to commit.
+
+If transaction is failed we need to rollback.
+
+Diagram: jdbc7.1
+
+
+sbi table
+==========
+drop table sbi;
+create table sbi(accno number(6), accholder varchar2(10), accbal number(10));
+insert into sbi values(111111,'srinivas',5000);
+insert into sbi values(222222,'satish',4000);
+commit;
+
+kotak table
+===========
+drop table kotak;
+create table kotak(accno number(6), accholder varchar2(10),accbal number(10));
+insert into kotak values(100001,'ajay',90000);
+insert into kotak values(200002,'santosh',80000);
+commit;
+
+
+ex:
+---
+package com.ihub.www;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class TXNManagementApp 
+{
+	public static void main(String[] args)throws Exception  
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the source account no :");
+		int sno=sc.nextInt();
+		
+		System.out.println("Enter the destination account no :");
+		int dno=sc.nextInt();
+		
+		System.out.println("Enter the amount to transfer :");
+		int amt=sc.nextInt();
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		
+		//set auto complete off
+		con.setAutoCommit(false);
+		
+		Statement st=con.createStatement();
+		
+		//create queries 
+		String qry1="update kotak set accbal=accbal-"+amt+" where accno="+sno;
+		String qry2="update sbi set accbal=accbal+"+amt+" where accno="+dno;
+		
+		//add each query to batch
+		st.addBatch(qry1);
+		st.addBatch(qry2);
+		
+		//execute the batch
+		int[] result=st.executeBatch();
+		
+		boolean flag=true;
+		for(int i:result)
+		{
+			if(i==0)
+			{
+				flag=false;
+				break;
+			}
+		}
+		if(flag==true)
+		{
+			con.commit();
+			System.out.println("Transaction Done successfully");
+		}
+		else
+		{
+			con.rollback();
+			System.out.println("Transaction failed");
+		}
+		
+		st.close();
+		con.close();
+	}
+}
+
+Types of ResultSet object
+=========================
+We have two types of ResultSet object.
+
+1) Non-Scrollable ResultSet object 
+
+2) Scrollable ResultSet object 
+
+Diagram: jdbc7.2
+
+1) Non-Scrollable ResultSet object 
+------------------------------------
+By default every ResultSet object is a non-scrollable  ResultSet object.
+
+If a ResultSet object allows us to read the records sequentially, uni-directionally 
+is called Scrollable ResultSet object.
+
+If a JDBC Statement object is created without type,mode value then that ResultSet object is called 
+non-scrollable ResultSet object.
+ex:
+	Statement st=con.createStatement();
+	ResultSet rs=st.executeQuery("select * from student");
+
+2) Scrollable ResultSet object 
+------------------------------
+If a ResultSet object allows us to read the records non-sequentially, bi-directionally, randomly 
+is called scrollable ResultSet object.
+
+If a JDBC Statement object is created with type,mode value then that ResultSet object is called
+Scrollable ResultSet object.
+ex:
+	Statement st=con.createStatement(type,mode);
+	ResultSet rs=st.executeQuery("select * from student");
+
+
+We have two types of TYPE values.
+ex:
+	ResultSet.TYPE_SCROLL_SENSITIVE
+	ResultSet.TYPE_SCROLL_INSENSITIVE
+
+We have two types of MODE values.
+ex:
+	ResultSet.CONCUR_UPDATABLE
+	ResultSet.CONCUR_READ_ONLY
+
+
+Methods present in Scrollable ResultSet object
+----------------------------------------------
+
+next()
+-------
+	It will move record pointer to next position.
+
+getRow()
+------
+	It will return position of record pointer.
+
+getXxx()
+---------
+	It will return values of record ResultSet.
+
+close()
+--------
+	It is used to close ResultSet object.
+
+previous()
+---------
+	It moves the record pointer to previous position.
+
+first()
+------
+	It will set record pointer to first record.
+
+
+isFirst()
+---------
+	It will check record pointer is in first position or not.
+
+last()
+-------
+	It will set the record pointer to last record.
+
+isLast()
+------
+	It will check record pointer is in last position or not.
+
+
+beforeFirst()
+-----------
+	It will set record pointer to BFR position.
+
+afterLast()
+-----------
+	It will set record pointer to ALR position
+
+relative(+/-)
+-------------
+	It will move record pointer based on current position.
+
+absolute(+/-)
+-----------
+	it will move record pointer based on BFR and ALR position.
+
+ex:
+---
+package com.ihub.www;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class ScrollableRSApp 
+{
+	public static void main(String[] args)throws Exception  
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		
+		Statement st=con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);
+		
+		String qry="select * from student";
+		
+		ResultSet rs=st.executeQuery(qry);
+		
+		//top to bottom
+		while(rs.next())
+		{
+			System.out.println(rs.getRow()+" "+rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+		}
+		
+		//bottom to top 
+		rs.afterLast();
+		while(rs.previous())
+		{
+			System.out.println(rs.getRow()+" "+rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+		}
+		
+		rs.first();
+		System.out.println(rs.isFirst());//true 
+		System.out.println(rs.getRow()+" "+rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+		
+		rs.last();
+		System.out.println(rs.isLast());//true
+		System.out.println(rs.getRow()+" "+rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+		
+		//rs.relative(-2);
+		//System.out.println(rs.getRow()+" "+rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+		
+		rs.absolute(-2);
+		System.out.println(rs.getRow()+" "+rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+		
+		rs.close();
+		st.close();
+		con.close();
+		
+		
+	}
+}
+
+
+JDBC Application to interact with MySQL Database
+=================================================
+
+step1:
+------
+	Download and Installed MySQL database software.
+	ex:
+		https://dev.mysql.com/downloads/installer/
+
+step2:
+--------
+	Connect with mysql by using password.
+	ex:
+	username : root( default)
+	password: root
+
+step3:
+-------
+	create a SCHEMA in MYSQL.
+	ex:
+		create schema IH_JAVA_036
+
+step4:
+-------
+	To check list of databases /schemas present in mysql db.
+	ex:
+		show databases;
+
+step5:
+-------
+	Use IH_JAVA_014 scheme/database.	
+	ex:
+		use   IH_JAVA_036;
+
+step6:
+---------
+	create a student table and insert the records.
+	ex:
+	create table student(sno int(3),sname varchar(10),sadd varchar(10));
+	insert into student values(101,'raja','hyd');
+	insert into student values(102,'raju','delhi');
+	insert into student values(103,'ravi','pune');
+	commit;
+step7:
+---------
+	create a JDBC Application to select student records.
+
+MySQLApp.java
+------------------------
+package com.ge.www;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class MySQLApp {
+
+	public static void main(String[] args) {
+		
+		final String DRIVER="com.mysql.jdbc.Driver";
+		final String URL="jdbc:mysql://localhost:3306/IH_JAVA_036";
+		final String USERNAME="root";
+		final String PASSWORD="root";
+		final String QUERY="select * from student";
+		
+		
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs=null;
+		try
+		{
+			Class.forName(DRIVER);
+			con=DriverManager.getConnection(URL,USERNAME,PASSWORD);
+			st=con.createStatement();
+			rs=st.executeQuery(QUERY);
+			while(rs.next())
+			{
+				System.out.println(rs.getRow()+" "+rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+			}
+			
+			rs.close();
+			st.close();
+			con.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		
+		
+
+	}
+
+}
+
+
+
+	
+step8:
+--------
+	Add "mysql-connector.jar" file in project build path for mysql database.
+
+	right click to project --> built path --> configuration build path --> libraries
+	--> add external jars --> select mysql-connector.jar file --> open.
+
+
+	jar file download : 		
+	http://www.java2s.com/Code/Jar/m/Downloadmysqlconnectorjar.htm
+
+	Note:
+	ojdbc14.jar  - - for oracle 	
+	mysql-connector.jar -->  for mysql 
+
+step9:
+--------
+	Run the jdbc application.
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

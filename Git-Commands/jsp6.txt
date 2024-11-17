@@ -1,0 +1,320 @@
+Q) What is the difference between GIT and GITHUB ?
+
+
+GIT						GITHUB 
+---------					--------
+It is a distributed version control which is	It is a hosting server for GIT.
+used track the changes in a file of a project.
+
+It is a software. 				It is a service.
+
+It is locally installed in a computer.		It is hosted on web.
+
+It is command line.				It provides GUI (Graphical User Interface).
+
+It contains local repository.			It contains remote repository.
+
+
+
+GIT stages
+===========
+We have three GIT stages.
+
+1) Working Directory 
+
+2) Staging Area
+
+3) Repository 
+
+Diagram: jsp6.1
+
+
+Steps to push the code in GITHUB
+=================================
+step1:
+-----
+	Create a account in GITHUB.
+
+step2:
+-----
+	Login to GITHUB account.
+	ex:
+		Username or email : NiyazulHasan
+		Password : ******
+
+step3:
+-----
+	Create a remote repository in GITHUB.
+	ex:
+		https://github.com/NiyazulHasan/IH-JAVA-035
+
+step4:
+------
+	Download and Install GIT in a computer.
+	ex:
+		https://git-scm.com/downloads
+
+step5:
+------
+	Create a "JavaNotes" folder on Desktop.
+	
+step6:
+------
+	Open the GIT Bash from JavaNotes folder.
+
+	
+step7:
+------
+	Initialized the git empty repository.
+	ex
+		git init 
+
+
+step8:
+-----
+	Change the branch from master to main.
+	ex:
+		git branch -m master main 
+
+
+step9:
+-----
+	Create the Files to working directory.
+
+step10:
+-----
+	Check the git status.
+	ex:
+		git status 
+
+step11:
+------
+	Add the data from working directory to staging area.
+	ex:
+		git add . 
+
+
+step12:
+------
+	Check the git status.
+	ex:
+		git status 
+
+step13:
+------
+	Now commit the changes.
+	ex:
+		git commit -m "my pdfs"
+
+
+	Note:	Somtimes it will ask
+
+	Please tell me who you are.
+
+	git config --global user.email "ulhasan7867@gmail.com"
+	git config --global user.name "NiyazulHasan"
+
+step14:
+------
+	Now add remote origin.
+	ex:
+		git remote add origin https://github.com/NiyazulHasan/IH-JAVA-035	
+
+step15:
+-----
+	Check the remote origin.
+	ex:
+		 git remote -v
+
+step16:
+-------
+	Push the code from local repository to remote repository.
+	ex:
+		git push -f origin main 
+
+step17:
+------
+	Refresh the remote repository.
+	ex:
+		https://github.com/NiyazulHasan/IH-JAVA-035
+
+
+
+How to clone the project from GIHUB
+=========================================
+
+step1:
+-------
+	Keep remote repository along with data.
+	ex:
+		https://github.com/NiyazulHasan/IH-JAVA-035
+
+
+step2:
+-----
+	Now create a "dilip" folder on desktop.
+
+
+step3:
+------
+	Open the gitbash from dilip folder.
+
+
+step4:
+-----
+	Now clone the code from GITHUB.
+	ex:
+		git clone https://github.com/NiyazulHasan/IH-JAVA-035
+
+
+
+How to pull the project from GIHUB
+=========================================
+
+step1:
+-------
+	Keep remote repository along with data.
+	ex:
+		https://github.com/NiyazulHasan/IH-JAVA-035
+
+
+step2:
+-----
+	Now create a "ramesh" folder on desktop.
+
+
+step3:
+------
+	Open the gitbash from dilip folder.
+
+
+step4:
+-----
+	Initialized git empty repository.
+	ex:
+		git init
+
+step5:
+------
+	Now pull the code from GITHUB.
+	ex:
+		git pull https://github.com/NiyazulHasan/IH-JAVA-035
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

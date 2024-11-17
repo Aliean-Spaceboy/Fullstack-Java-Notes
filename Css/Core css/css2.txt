@@ -1,0 +1,883 @@
+CSS background property
+========================
+CSS background property is used to set the background in a web page.
+
+If we set a background in body then it will reflect to entire web page.
+
+If we want we can set the background to an elements.
+ex:
+	<h1>, <p>, <div> and etc.
+
+We have following list of CSS background properties.
+
+1) background-color 
+------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:yellow;
+			}
+			h1
+			{
+				background-color:blue;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+
+2) background-image 
+---------------------
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				background-image: url("images/bg.jpg");
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFFFFF;
+				background-image: url("images/bg.jpg");
+			}
+		</style>
+	</head>
+	<body>
+			
+	</body>
+</html>
+
+
+3) background-repeat
+---------------------
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFFFFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:repeat;
+			}
+		</style>
+	</head>
+	<body>
+			
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFFFFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+			
+	</body>
+</html>
+
+
+
+
+4) background-size 
+-------------------
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFFFFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:900px;
+			}
+		</style>
+	</head>
+	<body>
+			
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFFFFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:1500px  1000px;
+			}
+		</style>
+	</head>
+	<body>
+			
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFFFFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:cover;
+			}
+		</style>
+	</head>
+	<body>
+			
+	</body>
+</html>
+
+
+
+5) background-position
+-----------------------
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFFFFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:500px;
+				background-position:center 100px;
+			}
+		</style>
+	</head>
+	<body>
+			
+	</body>
+</html>
+ 
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFFFFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:500px;
+				background-position:right 0px;
+			}
+		</style>
+	</head>
+	<body>
+			
+	</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFFFFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:500px;
+				background-position:left 0px;
+			}
+		</style>
+	</head>
+	<body>
+			
+	</body>
+</html>
+
+
+6) background-attachment
+-------------------------
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFFFFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:500px;
+				background-position:left 0px;
+				background-attachment:scroll;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFFFFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:500px;
+				background-position:left 0px;
+				background-attachment:fixed;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+	</body>
+</html>
+
+
+7) background shorthand 
+-----------------------
+background-color:#FFFFFF;
+background-image: url("images/bg.jpg");
+background-repeat:no-repeat;
+background-position:left 0px;
+background-attachment:fixed;
+
+or
+
+background : #FFF url("images/bg.jpg") no-repeat center 0px fixed; 
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background : #FFF url("images/bg.jpg") no-repeat center 0px fixed; 
+				background-size: 500px;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+			<h1>This is heading tag 1 </h1>
+	</body>
+</html>
+
+
+8) background-blend-mode 
+-------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF, #FFF;
+				background-image: url("images/bg.jpg"), url("images/micky.png");
+				background-repeat:no-repeat , no-repeat;
+				background-size:cover , 400px;
+				background-position:left 0px, center 100px;
+				background-attachment:fixed, fixed;
+				background-blend-mode:lighten;
+			}
+		</style>
+	</head>
+	<body>
+			
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF, #FFF;
+				background-image: url("images/bg.jpg"), url("images/micky.png");
+				background-repeat:no-repeat , no-repeat;
+				background-size:cover , 400px;
+				background-position:left 0px, center 100px;
+				background-attachment:fixed, fixed;
+				background-blend-mode:darken;
+			}
+		</style>
+	</head>
+	<body>
+			
+	</body>
+</html>
+
+CSS border property
+==================
+CSS border property is used to set the style, color and width of a element border.
+
+We have following list of CSS border properties.
+
+1) border-style 
+
+2) border-width 
+
+3) border-color 
+
+4) border shorthand 
+
+1) border-style 
+----------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			p
+			{
+				border-style:none;
+			}
+			h1
+			{
+				border-style:solid;
+			}
+			h2
+			{
+				border-style:dotted;
+			}
+			h3
+			{
+				border-style:dashed;
+			}
+			h4
+			{
+				border-style:double;
+			}
+			h5
+			{
+				border-style:inset;
+			}
+			h6
+			{
+				border-style:outset;
+			}
+		</style>
+	</head>
+	<body>
+		<p> This is paragraph tag </p>
+		<h1> This is Heading1 Tag </h1>	
+		<h2> This is Heading2 Tag </h2>
+		<h3> This is Heading3 Tag </h3>
+		<h4> This is Heading4 Tag </h4>
+		<h5> This is Heading5 Tag </h5>
+		<h6> This is Heading6 Tag </h6>
+	</body>
+</html>
+
+2) border-width 
+----------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			p
+			{
+				border-style:none;
+			}
+			h1
+			{
+				border-style:solid;
+				border-width:3px;
+			}
+			h2
+			{
+				border-style:dotted;
+				border-width:4px;
+			}
+			h3
+			{
+				border-style:dashed;
+				border-width:5px;
+			}
+			h4
+			{
+				border-style:double;
+				border-width:6px;
+			}
+			h5
+			{
+				border-style:inset;
+				border-width:7px;
+			}
+			h6
+			{
+				border-style:outset;
+				border-width:8px;
+			}
+		</style>
+	</head>
+	<body>
+		<p> This is paragraph tag </p>
+		<h1> This is Heading1 Tag </h1>	
+		<h2> This is Heading2 Tag </h2>
+		<h3> This is Heading3 Tag </h3>
+		<h4> This is Heading4 Tag </h4>
+		<h5> This is Heading5 Tag </h5>
+		<h6> This is Heading6 Tag </h6>
+	</body>
+</html>
+
+3) border-color 
+----------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			p
+			{
+				border-style:none;
+			}
+			h1
+			{
+				border-style:solid;
+				border-width:3px;
+				border-color:#ff0000;
+			}
+			h2
+			{
+				border-style:dotted;
+				border-width:4px;
+				border-color:rgb(255, 0, 102);
+			}
+			h3
+			{
+				border-style:dashed;
+				border-width:5px;
+				border-color:hsl(12, 100%, 50%);
+			}
+			h4
+			{
+				border-style:double;
+				border-width:6px;
+				border-color:cyan;
+			}
+			h5
+			{
+				border-style:inset;
+				border-width:7px;
+				border-color:yellow;
+			}
+			h6
+			{
+				border-style:outset;
+				border-width:8px;
+				border-color:pink;
+			}
+		</style>
+	</head>
+	<body>
+		<p> This is paragraph tag </p>
+		<h1> This is Heading1 Tag </h1>	
+		<h2> This is Heading2 Tag </h2>
+		<h3> This is Heading3 Tag </h3>
+		<h4> This is Heading4 Tag </h4>
+		<h5> This is Heading5 Tag </h5>
+		<h6> This is Heading6 Tag </h6>
+	</body>
+</html>
+
+
+4) border shorthand 
+--------------------
+border-width: 5px;
+border-style: solid;
+border-color: #000;
+
+or
+
+border: 5px solid #000;
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			p
+			{
+				border: 5px solid #000;
+			}
+			h1
+			{
+				border: 3px solid #FF0000;
+			}
+			h2
+			{
+				border: 4px dotted rgb(255,0,102);
+
+			}
+			h3
+			{
+				border: 5px dashed hsl(12,100%,50%);
+			}
+			h4
+			{
+				border: 6px double cyan;
+			}
+			h5
+			{
+				border: 7px inset yellow;
+			}
+			h6
+			{
+				border: 8px outset pink;
+			}
+		</style>
+	</head>
+	<body>
+		<p> This is paragraph tag </p>
+		<h1> This is Heading1 Tag </h1>	
+		<h2> This is Heading2 Tag </h2>
+		<h3> This is Heading3 Tag </h3>
+		<h4> This is Heading4 Tag </h4>
+		<h5> This is Heading5 Tag </h5>
+		<h6> This is Heading6 Tag </h6>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			
+			h1
+			{
+				border: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<h1> This is Heading1 Tag </h1>	
+	</body>
+</html>
+
+
+CSS border radius property
+==========================
+The border-radius property defines the radius of the element's corners.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				border: 2px solid black;
+				border-radius: 10px;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+			<center>
+			<img src="images/micky.png" width="200px" height="200px"/>
+			</center>
+				
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				border: 2px solid black;
+				border-radius: 5px 10px 15px 20px; 
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+			<center>
+			<img src="images/micky.png" width="200px" height="200px"/>
+			</center>
+				
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				border: 2px solid black;
+				border-radius: 5px  20px; 
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+			<center>
+			<img src="images/micky.png" width="200px" height="200px"/>
+			</center>
+				
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				border: 2px solid black;
+				border-radius: 2px 10px 20px; 
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+			<center>
+			<img src="images/micky.png" width="200px" height="200px"/>
+			</center>
+				
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

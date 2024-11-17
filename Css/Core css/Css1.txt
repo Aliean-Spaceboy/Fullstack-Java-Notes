@@ -1,0 +1,323 @@
+Q) What is the difference between div and span tag?
+
+div						span
+---------					---------
+It is a block element.				It is a inline element.
+
+It is used to wrap the sections.		It is used to wrap small portion of a text.
+
+It is used to create CSS based layouts.		It is used to stylize the text.
+
+
+
+Q)  List out some tags removed from HTML5?
+
+    <center>, <u>, <font>, <frameset> , <frame> , <s>, <strike> and etc.
+
+
+
+Q) List out some tags introduced in HTML5?
+
+    <canvas>, <header>, <footer>, <article>, <nav> , <section>, <video> , <audio> and etc.
+
+How HTML document executed in a browser window
+===============================================
+Diagram: frontend8.1
+
+First, HTML parser parsed the data from HTML document and later it will handover to DOM.
+
+DOM stands for Document Object Model.
+
+DOM represent our parse data into tree node structure.
+
+Finally that tree node structure executes in a browser window.
+
+
+
+CSS3
+====
+CSS stands for Cascading Styles Sheet.
+
+It is widely used language on web like HTML.
+
+The main objective of CSS is to apply the styles on elements.
+
+The latest version of CSS3 was introduced in 2001.
+
+The main advantages of CSS are 
+
+1) To set the positioning of an elements.
+
+2) To apply styles on elements to describe how an elements should look like.
+
+3) To perform some sort of animations.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			-
+			-
+			-
+		</style>
+	</head>
+	<body>
+
+	</body>
+</html>
+	
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style type="text/css">
+			h1
+			{
+				color:blue;
+				background-color:cyan;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> Heading Tag </h1>
+	</body>
+</html>
+
+Note:
+----
+	Here styles are cascade from head to body.
+
+CSS syntax
+-----------
+	selector
+	|
+	h1 { color:blue;background-color:cyan; }
+	   |-----------------------------------|
+			Declaration block 
+		
+Here h1 is a selector that indicates to which element we need to apply the styles.
+
+Declaration block contains multiple CSS properties seperated with semicolon.
+
+Each CSS property contains property name and property value seperated with colon.
+
+
+Advantages of CSS
+==================
+1) It is easy to learn and easy to use.
+
+2) It saves lot of development time.
+
+3) It supported by all major browsers.
+
+4) It supports global change.
+
+5) Performance is faster.
+
+6) Flexibility. 
+
+
+Types of CSS 
+============
+We have three types of CSS.
+
+1) Inline CSS 
+
+2) Internal CSS 
+
+3) External CSS 
+
+
+1) Inline CSS 
+--------------
+It is used to apply unique styles on single element.
+
+Using style attribute we can achieve inline CSS.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<h1 style="color:blue;background-color:cyan;"> 
+				This is Heading Tag 
+			</h1>
+	</body>
+</html>	
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<h1 style="color:blue;background-color:cyan;"> 
+				This is Heading Tag  1
+			</h1>
+			
+			<h1> This is Heading Tag 2 </h1>
+	</body>
+</html>
+
+
+2) Internal CSS 
+-------------------------------
+It is used to apply unique styles on a single web page.
+
+Using <style> tag we can achieve internal CSS.
+
+A <style> tag must declare inside <head> tag.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style type="text/css">
+			h1
+			{
+				color:blue;
+				text-align:center;
+				background-color:cyan;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag 1 </h1>
+			
+			<h1> This is Heading Tag 2 </h1>
+	</body>
+</html>
+
+
+3) External CSS  
+----------------
+In external CSS , we need to create two files i.e .html file and .css file.
+
+A .html file contains html code and .css file contains .css code.
+
+ex:
+---
+
+index.html
+----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add external CSS -->
+		<link rel="stylesheet" href="mystyles.css">
+		
+	</head>
+	<body>
+			<h1> Heading Tag </h1>
+			
+			<p> Paragraph Tag </p>
+	</body>
+</html>
+
+
+mystyles.css
+------------
+body
+{
+	background-color:cyan;
+}
+h1
+{
+	color:blue;
+}
+p
+{
+	text-align:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

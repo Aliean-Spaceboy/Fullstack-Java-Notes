@@ -1,0 +1,345 @@
+Steps to develop first JDBC Application to select the record from student table using eclipse IDE
+=================================================================================================
+step1:
+------
+	Launch eclipse IDE by choosing workspace location.
+
+step2:
+------
+	Create a student table inside oracle database.
+	ex:
+		drop table student;
+		create table student(sno number(3),sname varchar2(10),sadd varchar2(12));
+		insert into student values(101,'raja','hyd');			
+		insert into student values(102,'ravi','delhi');
+		insert into student values(103,'ramana','vizag');
+		commit;
+
+step3:
+-----
+	Create a java project i.e IH-JAVA-036 inside eclipse ide.
+	ex:
+		File --> new --> Project ---> Java project --> Next --> 
+		Name : IH-JAVA-036  --> Next --> Next --> Finish.
+
+step4:
+------
+	Add "ojdbc14.jar" or "ojdbc11.jar" in project build path.
+	ex:
+		right click to IH-JAV-036 project --> build path --> configure build path 
+		---> libraries --> select classpath --> add external jars --> select ojdbc14.jar
+		---> open -->Apply and close. 
+
+step5:
+------
+	Create a "com.ihub.www" package inside "src" folder.
+	ex:
+		right click to src --> new -> package --> 
+		Name : com.ihub.www --> Finish. 
+
+
+step6:
+------
+	Create SelectApp.java file inside "com.ihub.www" package.
+	
+	ex:
+		right click to com.ihub.www pkg --> new --> class -->
+		Name :  SelectApp  --> Finish.
+
+SelectApp.java
+---------------
+package com.ihub.www;
+
+//import --> ctrl + shift + o 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class SelectApp 
+{
+	public static void main(String[] args)throws Exception 
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+	
+		Statement st=con.createStatement();
+		
+		ResultSet rs=st.executeQuery("select * from student");
+		
+		while(rs.next())
+		{
+			System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+		}
+		
+		rs.close();
+		st.close();
+		con.close();
+	}
+}
+
+step7:
+------
+	Run jdbc application.
+	ex:
+		Right click to SelectApp.java file --> run as --> Java application.
+
+
+
+
+Q) Write a jbdc application to 
+
+package com.ihub.www;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class SelectApp2 
+{
+	public static void main(String[] args)throws Exception  
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the student no :");
+		int no=sc.nextInt();
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		Statement st=con.createStatement();
+		String qry="select * from student where sno="+no;
+		ResultSet rs=st.executeQuery(qry);
+		
+		int cnt=0;
+		while(rs.next())
+		{
+			System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+			cnt=1;
+		}
+		
+		if(cnt==0)
+			System.out.println("No Rows Selected");
+		
+		rs.close();
+		st.close();
+		con.close();
+	}
+}
+
+Non-Select Queries
+====================
+
+Q) Write a jdbc application to insert a record into student table?
+
+package com.ihub.www;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class InsertApp 
+{
+	public static void main(String[] args)throws Exception  
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the student no :");
+		int no=sc.nextInt();
+		
+		System.out.println("Enter the student name :");
+		String name=sc.next();
+		
+		System.out.println("Enter the student Address :");
+		String add=sc.next();
+		
+		//convert string inputs according to SQL Query.
+		name="'"+name+"'";
+		add="'"+add+"'";
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		Statement st=con.createStatement();
+		
+		String qry="insert into student values("+no+","+name+","+add+")";
+		
+		int result=st.executeUpdate(qry);
+		
+		if(result==0)
+			System.out.println("No Record Inserted");
+		else
+			System.out.println("Record Inserted");
+		
+		st.close();
+		con.close();
+	}
+}
+
+Q) Write a jdbc application to update student record based on student number?
+
+package com.ihub.www;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class UpdateApp 
+{
+	public static void main(String[] args)throws Exception  
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the student no:");
+		int no=sc.nextInt();
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		Statement st=con.createStatement();
+		
+		String qry="update student set sname='rani' where sno="+no;
+		
+		int result=st.executeUpdate(qry);
+		
+		if(result==0)
+			System.out.println("No Record Updated");
+		else
+			System.out.println(result+" Record Updated");
+		
+		st.close();
+		con.close();
+	}
+}
+
+Q) Write a jdbc application to delete student record based on student number?
+
+package com.ihub.www;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class DeleteApp 
+{
+	public static void main(String[] args)throws Exception  
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the student no :");
+		int no=sc.nextInt();
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		Statement st=con.createStatement();
+		
+		String qry="delete from student where sno="+no;
+		
+		int result=st.executeUpdate(qry);
+		if(result==0)
+			System.out.println("No Record Deleted");
+		else
+			System.out.println(result+" Record Deleted ");
+		
+		st.close();
+		con.close();
+	}
+}
+
+
+
+
+Type1 JDBC Driver Architecture / JDBC-ODBC Bridge Drive (Partly Java Driver)
+============================================================================
+Type1 JDBC Driver is not designed to interact with database software directly.
+
+It is designed to take the support of ODBC Driver and Vendor DB library to locate and interact with database software.
+
+Diagram: jdbc3.1
+
+Advantages:
+
+> We can use Type1 JDBC driver to interact with any database software.
+
+> It is a built-in driver of JDK.
+
+Disadvantages:
+
+> This driver performance is low.It is not suitable for medium or large scale projects.Hence it is 
+  not a industry standard driver.
+
+> Since ODBC driver and Vendor DB libraries are present at client side so it is not suitable to 
+  perform untrusted applets to database communication.
+
+> To work with Type1 JDBC driver we need to arrange ODBC Driver and Vendor DB library.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

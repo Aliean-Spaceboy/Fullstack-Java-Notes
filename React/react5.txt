@@ -1,0 +1,437 @@
+1) Function component
+======================
+Function component is also known as stateless component.
+
+Function component is a javascript function which takes props as an argument along with data and returns react element.
+
+In react, Function component we can create in three ways.
+
+1) Named Function
+-----------------
+function App()
+{
+	return (
+		-
+		-
+	)
+}
+
+2) Anonymous Function
+---------------------
+const App=function()
+{
+	return (
+		-
+		-
+	)
+}
+
+3) Arrow Function
+-----------------
+const App=()=>
+{
+	return (
+		-
+		-
+	)
+}
+
+Project structure
+-----------------
+myapp3
+|
+|---node_modules
+|
+|---public
+	|
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+	
+|-----src
+	|
+	|---index.js
+	|---App.js
+|
+|---package.json 
+|---README.md
+
+
+step1:
+-----
+	Open the VSC editor.
+	ex:
+		Reactprojects> code  . 
+
+step2:
+------
+	Create a react project in VSC terminal.
+	ex:
+		npx create-react-app myapp3
+		
+step3:
+-----
+	Switch to the project.
+	ex:
+		cd  myapp3
+
+step4:
+------
+	Run the react project.
+	ex:
+		npm start 
+
+step5:
+-----
+	Goto App.js file and perform following changes.
+
+App.js
+--------
+const App=()=>
+{
+  return (
+  <h1> Arrow Function component </h1>
+  )
+}
+export default App;
+
+step6:
+-----
+	Test the application.
+	ex:
+		http://localhost:3000/
+
+
+Function component with props
+==============================
+
+index.js
+--------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App rollno="101" name="Alan"/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+App.js
+--------
+const App=(props)=>
+{
+  return (
+      <>
+          <h1>RollNo : {props.rollno} </h1>
+          <h1>Name   : {props.name} </h1>
+      </>
+  )
+}
+export default App;
+
+
+
+
+
+2) Class component
+===================
+Class component is also known as statefull component.
+
+To create a class component we must and should extends with react Component class.
+
+A class component must implements render() method and that method returns react elements.
+
+ex:
+----
+class App extends Component
+{
+	render()
+	{
+		return(
+			-
+			-
+		)
+	}
+}
+
+
+Project structure
+-----------------
+myapp4
+|
+|---node_modules
+|
+|---public
+	|
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+	
+|-----src
+	|
+	|---index.js
+	|---App.js
+|
+|---package.json 
+|---README.md
+
+
+step1:
+-----
+	Open the VSC editor.
+	ex:
+		Reactprojects> code  . 
+
+step2:
+------
+	Create a react project in VSC terminal.
+	ex:
+		npx create-react-app myapp4
+		
+step3:
+-----
+	Switch to the project.
+	ex:
+		cd  myapp4
+
+step4:
+------
+	Run the react project.
+	ex:
+		npm start 
+
+step5:
+-----
+	Goto App.js file and perform following changes.
+
+App.js
+--------
+import {Component} from 'react';
+
+class App extends Component
+{
+  render()
+  {
+      return (
+          <h1> Class Component </h1>
+      )
+  }
+}
+export default App;
+
+
+step6:
+-----
+	Test the application.
+	ex:
+		http://localhost:3000/
+
+
+class component with props
+===========================
+In class component we can display props value by using this.props.
+
+index.js
+---------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App  rollno="201" name="Jessica"/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+App.js
+-----
+import {Component} from 'react';
+
+class App extends Component
+{
+  render()
+  {
+      return (
+          <>
+              <h1>RollNo: {this.props.rollno}</h1>
+              <h1>Name: {this.props.name} </h1>
+          </>
+      )
+  }
+}
+export default App;
+
+
+
+Composing Component
+===================
+If a component refers to another component such concept is called composing component.
+
+
+Project structure
+-----------------
+myapp5
+|
+|---node_modules
+|
+|---public
+	|
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+	
+|-----src
+	|
+	|---index.js
+	|---App.js     (parent component)
+	|---Student.js (child component)
+|
+|---package.json 
+|---README.md
+
+
+
+step1:
+-----
+	Open the VSC editor.
+	ex:
+		Reactprojects> code  . 
+
+step2:
+------
+	Create a react project in VSC terminal.
+	ex:
+		npx create-react-app myapp4
+		
+step3:
+-----
+	Switch to the project.
+	ex:
+		cd  myapp4
+
+step4:
+------
+	Run the react project.
+	ex:
+		npm start 
+
+step5:
+-----
+	Add the props to index.js file.
+
+index.js
+--------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App rollno="101" name="Kelvin"/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+	
+
+step6:
+------
+	Goto App.js file and perform following changes.
+
+App.js
+-------
+import Student from "./Student";
+
+function App(props)
+{
+    return (
+
+        <Student no={props.rollno} name={props.name}/>
+
+    )
+}
+export default App;
+
+
+step7:
+-----
+	Create Student.js file inside "src" folder.
+
+
+Student.js
+---------
+function Student(props)
+{
+    return(
+        <>
+            <h1> Roll No: {props.no}</h1>
+            <h1> Name : {props.name}</h1>
+        </>
+    )
+}
+export default Student;
+
+
+step8:
+----
+
+	Test the application.
+	ex:
+		http://localhost:3000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

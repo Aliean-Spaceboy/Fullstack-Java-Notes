@@ -1,0 +1,700 @@
+Implicit objects in JSP
+=======================
+Object which can be used directly without any configuration is called implicit object.
+
+Implicit objects created by web container which are avaiable for every JSP page.
+
+There are 9 implicit objects present in JSP as given below.
+
+ex:
+	Object				Type
+	---------			--------
+	out				JspWriter 
+	request				HttpServletRequest 
+	response			HttpServletResponse 
+	config				ServletConfig
+	application			ServletContext
+	session				HttpSession
+	pageContext 			pageContext
+	page				Object 
+	exception 			Throwable 
+
+response object
+===============
+In JSP, response is a implicit object of type JspWriter.
+
+It is used to send the request to other resources or error response.
+
+
+Deployment Directory Structure
+----------------------------
+JspApp11
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|---index.html
+	|---process.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+	
+index.html
+----------
+
+<center>
+	<h1>
+		<a href="process.jsp" style="text-docoration:none"> Facebook </a>
+	</h1>
+</center>
+
+process.jsp
+------------
+<%
+	response.sendRedirect("https://www.facebook.com/login");
+%>
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+ 
+ 	<welcome-file-list>
+ 		<welcome-file>index.html</welcome-file>
+ 	</welcome-file-list>
+ 
+</web-app>
+
+Request url
+----------
+	http://localhost:2525/JspApp11/
+
+
+config	object
+==============
+In JSP, config is a implicit object of type ServletConfig.
+
+It is used to read initialized parameters of JSP.
+
+In short, it is used to read configuration information from web.xml file.
+
+
+Deployment Directory Structure
+----------------------------
+JspApp12
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|---index.html 
+	|---process.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+index.html
+----------
+<center>
+	<h1>
+		<a href="test"> click Here </a>
+	</h1>
+</center>
+
+process.jsp
+------------
+
+<center>
+<h1>
+<%
+
+	String value = config.getInitParameter("driver");
+	
+	out.println(value);
+%>
+</h1>
+</center>
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <servlet>
+  	<servlet-name>ABC</servlet-name>
+  	<jsp-file>/process.jsp</jsp-file>
+  	<init-param>
+  		<param-name>driver</param-name>
+  		<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ABC</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
+
+Request url
+-------
+	http://localhost:2525/JspApp12/
+
+
+
+application object
+====================
+In JSP , application is a implicit object of type of ServletContext.
+
+It is used to read configuration information from web.xml file which is global.
+
+
+Deployment Directory Structure
+----------------------------
+JspApp13
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|---index.html 
+	|---process.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+index.html
+----------
+<center>
+	<h1>
+		<a href="test"> click Here </a>
+	</h1>
+</center>
+
+process.jsp
+------------
+
+<center>
+<h1>
+<%
+
+	String value = application.getInitParameter("driver");
+	
+	out.println(value);
+%>
+</h1>
+</center>
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <servlet>
+  	<servlet-name>ABC</servlet-name>
+  	<jsp-file>/process.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ABC</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  <context-param>
+  		<param-name>driver</param-name>
+  		<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  </context-param>
+  
+</web-app>
+
+
+Request url
+-------
+	http://localhost:2525/JspApp13/
+	
+
+session object
+==============
+In JSP , session is a implicit object of type HttpSession.
+
+Using session object, we can add, remove and set attributes and get session information.
+
+
+Deployment Directory Structure
+----------------------------
+JspApp14
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|---form.html
+	|---first.jsp
+	|---second.jsp 
+	|
+	|---WEB-INF
+		|
+		|---web.xml
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+form.html
+----------
+
+<form action="first.jsp">
+	
+	Name: <input type="text" name="t1"/> <br>
+	
+	<input type="submit" value="submit"/>
+	
+</form>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+first.jsp
+---------
+
+<%
+	String name=request.getParameter("t1");
+
+	session.setAttribute("pname",name);
+	
+	out.println("Welcome :"+name);
+%>
+<br>
+<a href="second.jsp"> click for second.jsp </a>
+
+second.jsp
+------------
+
+<%
+	String value=(String)session.getAttribute("pname");
+	out.println("Hello :"+value);
+%>
+
+Request url
+---------
+	http://localhost:2525/JspApp14/
+
+
+
+pageContext object
+====================
+A pageContext is a implicit object of type pageContext.
+
+The pageContext object can be used to set,get or remove attribute from one of the following scopes.
+ex:
+
+	page
+	request
+	session
+	application
+
+
+Deployment Directory Structure
+----------------------------
+JspApp15
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|---form.html
+	|---first.jsp
+	|---second.jsp 
+	|
+	|---WEB-INF
+		|
+		|---web.xml
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+form.html
+----------
+
+<form action="first.jsp">
+	
+	Name: <input type="text" name="t1"/> <br>
+	
+	<input type="submit" value="submit"/>
+	
+</form>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+first.jsp
+---------
+<%
+	String name=request.getParameter("t1");
+
+	pageContext.setAttribute("pname",name,pageContext.SESSION_SCOPE);
+	
+	out.println("Welcome Bro :"+name);
+%>
+<br>
+<a href="second.jsp"> click for second.jsp </a>
+
+second.jsp
+------------
+
+<%
+	String value=(String)pageContext.getAttribute("pname",pageContext.SESSION_SCOPE);
+
+	out.println("Hello Bro :"+value);
+%>
+
+Request url
+---------
+	http://localhost:2525/JspApp15/
+
+
+
+Junit 
+=====
+Junit is a unit testing framework.
+
+It is very important for TDD (Test Driven Development).
+
+Unit testing means checking a piece of code working as per our requirement or not.
+
+It is a developers duty to perform unit testing.
+
+To perform unit testing we need to create test cases or test suit.
+
+Steps to perform Junit Test cases
+-----------------------------------
+
+step1:
+	create a project.
+	ex:
+	file --> project --> java project --> next -->
+	project Name : JunitProject -->next --> finish
+
+step2:
+	create "com.ihub.www" package inside the project.
+	ex:
+		right click to src folder--> new ---> package
+		--> name : com.ihub.www---> finish.
+
+step3:
+	create a DemoApp program with two methods.
+	ex:
+		right click to com.ihub.www-> class -->
+		Name : DemoApp --> finish.
+
+DemoApp.java
+-------------
+package com.ihub.www;
+
+public class DemoApp {
+	
+	public String concatinate(String s1,String s2)
+	{
+		return s1+s2;
+	}
+
+	public int sum(int a,int b)
+	{
+		return a+b;
+	}
+}
+
+
+step4:
+-----
+	Create Junit test cases on methods.
+	ex:
+	right click to DemoApp.java program --> new -->
+	others --> Junit --> Junit testcases -->next -->
+	next--> select on concatination and sum method -->finish-->ok.
+
+
+step5:
+	Write the logics for Test cases.
+	ex:
+DemoAppTest.java
+------------------
+package com.ihub.www;
+
+import junit.framework.TestCase;
+
+public class DemoAppTest extends TestCase {
+
+	public void testConcatinate() {
+		DemoApp da=new DemoApp();
+		String result=da.concatinate("ihub","talent");
+		assertEquals("ihubtalent", result);
+	}
+
+	public void testSum() {
+		DemoApp da=new DemoApp();
+		int result=da.sum(10, 20);
+		assertEquals(30,result);
+	}
+
+}
+	
+step6:
+------
+	Run the test cases.
+	ex:
+	rightclick to DemoAppTest.java --> debug as --> Junit test case
+	
+Note:
+	Green color indicates testcases done successfully.
+	brown color indicates test cases are unsuccessfull.
+
+
+
+Maven Project
+============
+Maven is a project building management tool.
+
+Maven contains pom.xml file.
+
+POM stands for Project Object Model.
+
+A pom.xml file contains dependencies , goals, plugins and etc.
+
+
+Steps to develop Maven Project
+-------------------------------
+step1:
+	Open eclipse IDE by choosing workspace location.
+
+step2:
+	create a Maven Project i.e MavenProj.
+	ex:
+	
+	File-->new --> Maven project --> Next --> 
+	filter : 
+		 Group id : org.apache.maven.archetype 
+		 Artifact id : maven-archetype-webapp --> Next 
+		
+	group id : com.ihub.www
+	artifact id : MavenProj --> Finish.
+		
+
+step3:
+-----
+	add "servlet-api" maven dependency in pom.xml file
+	ex:
+	pom.xml
+	-------
+	--
+	--
+	<dependencies>
+  		<dependency>
+    			<groupId>javax.servlet</groupId>
+    			<artifactId>servlet-api</artifactId>
+    			<version>2.5</version>
+    			<scope>provided</scope>
+		</dependency>
+  	</dependencies>
+  
+  	
+	-
+	-
+	-
+
+
+step4:
+-----
+	Create a java folder inside "src/main" folder.
+	ex:
+		src/main right click --> new --> folder --> java.  
+
+
+
+step5:
+------
+	Add the code in index.jsp file inside "src/main/webapp" folder.
+
+index.jsp
+---------
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <servlet>
+  	<servlet-name>TestSrv</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestSrv</servlet-name>
+  	<url-pattern>/test</url-pattern> 
+  </servlet-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
+
+
+step6:
+------
+	Create TestSrv.java file inside "src/main/java" folder inside "Java Resources" folder.
+	ex:
+		right click to src/main/java --> new --> class --->
+		package : com.ihub.www
+		Name : TestSrv --> Finish.
+
+TestSrv.java
+-----------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestSrv extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		pw.print("<center> This is servlet </center>");
+		
+		pw.close();
+	}
+}
+
+
+
+step7:
+------
+	Configure servlet program  and add "index.jsp" file as welcome file inside 
+	"src/main/webapp/WEB-INF/web.xml" file.
+	ex:
+
+web.xml
+-------
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <servlet>
+  	<servlet-name>TestSrv</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestSrv</servlet-name>
+  	<url-pattern>/test</url-pattern> 
+  </servlet-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
+
+
+
+step 8:
+-------
+	Run the Maven project.
+	ex:
+	Right click to project -->run as --> run on server -->
+	Select Tomcat7.0 --> next -->  finish.
+
+
+step8:
+------
+	Test the project by using below request url.
+	ex:
+		http://localhost:2525/MavenProject
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

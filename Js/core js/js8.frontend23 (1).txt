@@ -1,0 +1,560 @@
+> document.getElementsByName()
+==============================
+It is used to read the element by using specified name.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		Name: <input type="text" id="t1" name="t1"/>
+
+		<button onclick="f1()"> click Here </button>
+
+		<br>
+
+		<div id="result"></div>
+
+		<script>
+			
+			function f1()
+			{
+				var val=document.getElementsByName('t1')[0].tagName;
+				document.getElementById('result').innerHTML=val;
+			}
+
+		</script>
+
+
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		Name: <input type="text" id="t1" name="t1"/>
+
+		<button onclick="f1()"> click Here </button>
+
+		<br>
+
+		<div id="result"></div>
+
+		<script>
+			
+			function f1()
+			{
+				var val=document.getElementsByName('t1').length;
+				document.getElementById('result').innerHTML=val;
+			}
+
+		</script>
+
+
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		Name: <input type="text" id="t1" name="t1"/>
+
+		<button onclick="f1()"> click Here </button>
+
+		<br>
+
+		<div id="result"></div>
+
+		<script>
+			
+			function f1()
+			{
+				var val=document.getElementsByName('t1')[0].value;
+				document.getElementById('result').innerHTML=val;
+			}
+
+		</script>
+
+
+</body>
+</html>
+
+JavaScript code to select multiple checkboxes
+=============================================
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		ul
+		{
+			list-style-type: none;
+		}
+	</style>
+</head>
+<body>
+		<h3>Course Completed?</h3>
+		<ul>
+			<li><button onclick="f1()"> Select All </button></li>
+			<li><input type="checkbox" name="crs" value="html"/> HTML</li>
+			<li><input type="checkbox" name="crs" value="css"/>CSS</li>
+			<li><input type="checkbox" name="crs" value="js"/>JAVASCRIPT</li>
+			<li><input type="checkbox" name="crs" value="boot"/>BOOTSTRAP</li>
+		</ul>
+
+		<script>
+			function f1()
+			{
+				var x=document.getElementsByName('crs');
+
+				for(var i=0;i<x.length;i++)
+				{
+					if(x[i].type="checkbox")
+					{
+						x[i].checked=true;
+					}
+				}
+			}
+		</script>	
+</body>
+</html>
+
+
+> document.getElementsByTagName()
+===================================
+It is used to read the elements by using specified tag name.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<div> This is division 1 </div>
+		<div> This is division 2 </div>
+		<div> This is division 3 </div>
+
+		<button onclick="f1()"> swap </button>
+
+		<script>
+			function f1()
+			{
+				var x=document.getElementsByTagName('div')[0].tagName;
+				document.writeln(x);
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<div> This is division 1 </div>
+		<div> This is division 2 </div>
+		<div> This is division 3 </div>
+
+		<button onclick="f1()"> swap </button>
+
+		<script>
+			function f1()
+			{
+				var x=document.getElementsByTagName('div').length;
+				document.writeln(x);
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<div> This is division 1 </div>
+		<div> This is division 2 </div>
+		<div> This is division 3 </div>
+
+		<button onclick="f1()"> swap </button>
+
+		<script>
+			function f1()
+			{
+				var x=document.getElementsByTagName('div');
+				x[0].innerHTML="This is First Change";
+				x[1].innerHTML="This is Second Change";
+				x[2].innerHTML="This is Third Change";
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<div> This is division 1 </div>
+		<div> This is division 2 </div>
+		<div> This is division 3 </div>
+
+		<button onclick="f1()"> swap </button>
+
+		<script>
+			function f1()
+			{
+				var x=document.getElementsByTagName('div');
+				x[0].innerHTML="This is First Change";
+				x[1].innerHTML="This is Second Change";
+				x[2].innerHTML="This is Third Change";
+
+				x[0].style.color="blue";
+				x[1].style.backgroundColor="cyan";
+				x[2].style.textAlign="center";
+			}
+		</script>
+</body>
+</html>
+
+> document.getElementsByClassName()
+===================================
+It is used to read the elements by using specified class name.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.myClass
+		{
+			width:200px;
+			height:200px;
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+		<div class="myClass">
+			
+		</div>
+
+		<script>
+			
+				var x=document.getElementsByClassName('myClass')[0].tagName;
+				document.writeln(x);
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.myClass
+		{
+			width:200px;
+			height:200px;
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+		<div class="myClass">
+			
+		</div>
+
+		<script>
+			
+				var x=document.getElementsByClassName('myClass').length;
+				document.writeln(x);
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.myClass
+		{
+			width:200px;
+			height:200px;
+			background-color:yellow;
+		}
+	</style>
+</head>
+<body>
+		<div class="myClass">
+			
+		</div>
+
+		<script>
+			
+				var x=document.getElementsByClassName('myClass');
+				x[0].style.border="5px solid black";
+
+		</script>
+</body>
+</html>
+
+
+
+
+addEventListener()
+===================
+It is used to add handler to the element.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<h1> Please Click Here <h1>
+
+		<script type="text/javascript">
+			addEventListener("click",function(){
+				alert("You have clicked");
+			})
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<h1 id="hover"> Mouse Over Here <h1>
+
+		<div id="result"></div>		
+
+		<script type="text/javascript">
+
+				var y=document.getElementById('hover');
+				y.addEventListener('mouseover',function(){
+					document.getElementById('result').innerHTML+="<p>Mouse over!</p>";
+				});
+		</script>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<h1 id="hover"> Mouse Out Here <h1>
+
+		<div id="result"></div>		
+
+		<script type="text/javascript">
+
+				var y=document.getElementById('hover');
+				y.addEventListener('mouseout',function(){
+					document.getElementById('result').innerHTML+="<p>Mouse Out!</p>";
+				});
+		</script>
+</body>
+</html>
+
+Javscript Code to convert Feet to Inches
+========================================
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<table align="center">
+			<tr>
+				<td>Feet</td>
+				<td>&nbsp;</td>
+				<td>Inches</td>
+			</tr>
+			<tr>
+				<td><input type="text" id="feet"/></td>
+				<td><big>=</big></td>
+				<td><input type="text" id="inches"/></td>
+			</tr>
+		</table>
+
+		<script>
+			var feet=document.getElementById('feet');
+			var inches=document.getElementById('inches');
+
+			feet.addEventListener('input',function(){
+				var f=this.value;
+				var i=f*12;
+				inches.value=i;
+			})
+
+			inches.addEventListener('input',function(){
+				var i=this.value;
+				var f=i/12;
+				if(!Number.isInteger(f))
+				{
+					f = f.toFixed("2");
+				}
+				feet.value=f;
+			})
+
+		</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	> document.getElementsByTagName()
+	> document.getElementsByClassName() 
+	> addEventListener
+	> removeEventListener 

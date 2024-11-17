@@ -1,0 +1,335 @@
+Types of Data
+==============
+We have two types of data.
+
+1) Unstructured Data 
+
+2) Structured Data 
+
+1) Unstructured Data 
+---------------------
+A data which is not in readable format such type of data is called unstructured.
+
+In general, meaningless data is called unstructured data.
+
+ex:
+	201	Lakemba		SYD		NSW		AUS
+
+
+2) Structured Data 
+------------------
+A data which is in readable format such type of data is called structured data.
+
+In general, meaning full data is called structured data.
+
+ex:
+	unitno	locality	city		state		country
+	------	--------	----		-----		--------
+	201	Lakemba		SYD		NSW		AUS
+	
+
+Oracle 
+========
+Oracle is one of the database which is used to store structured data.
+
+Oracle is a product of Oracle Corporation.
+
+Oracle is classified into two types.
+
+					Oracle
+					|
+		|-------------------------------------------------|
+		SQL						PL/SQL
+(Structured Query Language)				(Procedural / Structured Query Language)
+
+
+Client/Server Architecture
+==========================
+Diagram: oracle1.1
+
+In Client-Server architecture we need to see , how our data will store from frontend to backend.
+
+Frontend
+--------
+The one which is visible to the enduser to perform some operations is called frontend.
+ex:
+	Java, .Net, Python, Perl and etc.
+
+Communication Channel
+----------------------
+Communication channel acts like a bridge between frontend and backend.
+ex:
+	JDBC - Java Database Connectivity
+	PDBC - Python Database Connectivity
+	ODBC - Open Database Connectivity 
+
+BackEnd
+-------
+The one which is not visible to the enduser but it performs operations based on the instructions given by frontend is called backend.
+ex:
+	Oracle, MySQL, SQL Server , MongoDB, DB2 , Sybase, Teradata, NoSQL and etc.
+
+
+Management System
+=================
+It is a software which is used to manage the database.
+
+Using management system we can perform following acitivities very easily.
+
+1) Adding the new data 
+
+2) Modifying the existing data 
+
+3) Deleting the unnecessary data 
+
+4) Selecting the required data.
+
+
+DBMS
+=====
+A database along with software which is used to manage the database is called database management system.
+
+RDBMS
+=====
+If database is created based on relational theories is called relational database management system.
+ex:
+	Oracle 
+	MySQL
+	SQL Server 
+	PostgreSQL
+	Teradata 
+	Sybase 
+	and etc.
+
+Q)What is the difference between DBMS and RDBMS database?
+
+DBMS 						RDBMS
+-------						-------
+DBMS stands Database Management			RDBMS stands for Relational Database
+System						Management System.
+					
+It stores the data in the form of files.	It stores the data in the form of tables.
+
+It is designed to handle small amount of data.	It is designed to handle large amount of data.
+
+It provides support for a single user 		It provides support for multiple users at a time.
+at a time.			
+
+Normalization is not possible for DBMS.		Normalization is possible for RDBMS.
+
+No security of data. 				High security of data.
+
+
+
+SQL
+=====
+SQL stands for Structured Query Language which is pronounce as SEQUEL.
+
+This language is used to interact with oracle database.
+
+It is a case insensitive language.
+
+It is a command based language.
+
+Every command must starts with verbs.
+ex:
+	select, update, delete, merge and etc.
+
+Every command must ends with semicolon.
+
+It is developed by Mr.Codd in 1972 (By IBM).
+
+
+Sub languages of SQL
+====================
+We have five types of sub languages of SQL.
+
+1) DDL (Data Definition Language)
+
+2) DML (Data Manipulation Language)
+
+3) DRL/DQL (Data Retrive/Query Language)
+
+4) DCL (Data Control Language)
+
+5) TCL (Transaction Control Language)
+
+
+1) DDL (Data Definition Language)
+---------------------------------
+It is used to maintain the objects in database.
+
+It is a collection of five commands.
+
+ex:
+	create, alter, drop , truncate and rename 
+
+
+2) DML (Data Manipulation Language)
+------------------------------------
+It is used to mainpulate the data present in database.
+
+It is a collection of four commands.
+
+ex:
+	insert, update, delete and merge 
+
+
+3) DRL/DQL (Data Retrive/Query Language)
+---------------------------------
+It is used to retrieve the data present in database.
+
+It is a collection of one command.
+
+ex:
+	select 
+
+4) DCL (Data Control Language)
+-----------------------------
+This language which is used to control the access of data.
+
+It is a collection of two commands.
+
+ex:
+	grant and revoke 
+
+
+
+5) TCL (Transaction Control Language)
+---------------------------------
+This language is used to maintain the transaction of database.
+
+It is a collection of three commands.
+
+ex:
+	commit, rollback and savepoint 
+
+Table
+=====
+A table is an object that is used to represent the data.
+
+A table is used to store the data inthe form of rows and columns.
+
+A data which is stored inside the table is a case sensitive.
+
+ex:
+	No		Name		Add
+	----------------------------------------
+	101	|	Alan	|	Florida
+	----------------------------------------
+	102	|	Jose	|	Texas
+	----------------------------------------
+	103	|	Ana	|	Vegas
+	----------------------------------------
+
+Oracle 
+========
+Version		:	21c
+
+Vendor		:	Oracle Corporation 
+
+Software	:	Express Edition 
+
+Website		:	www.oracle.com/in/oracle 
+
+Port No		:	1521 
+
+username	:	system (default)
+
+password	:	admin 
+
+Download link	:	
+https://drive.google.com/file/d/1tBx4vH14_cF9XClgnOF6L_1kdODbHSM5/view?usp=drive_link
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

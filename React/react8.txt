@@ -1,0 +1,312 @@
+React useReducer Hook
+========================
+The useReducer() Hook is similar to the useState() Hook.
+
+It allows for custom state logic.
+
+The useReducer Hook accepts two arguments.
+ex:
+
+	useReducer(<reducer>, <initialState>)
+
+The useReducer Hook returns the current state and a dispatch method.
+ex:
+	const [state,dispatch]= userReducer(reducer,initialState);
+
+
+App.js
+----------
+import {useReducer} from 'react';
+
+const initialState=0;
+const reducer=(state,action)=>
+{
+    switch(action)
+    {
+        case 'increment': return state+1;
+        case 'decrement': return state-1;
+        case 'reset': return initialState;
+        default: return state;
+    }
+}
+function App()
+{
+ const [count,dispatch]=useReducer(reducer,initialState);
+    
+    return (
+        <div>
+            <h1>Count : {count}</h1>
+            <button onClick={()=>dispatch('increment')}>Increment</button>
+            <button onClick={()=>dispatch('decrement')}>Decrement</button>
+            <button onClick={()=>dispatch('reset')}>Reset</button>
+           
+        </div>
+    )
+}
+export default App;
+
+
+index.js
+-----------
+
+import Student from './Student';
+import ReactDOM from 'react-dom/client';
+import React from 'react';
+import App from './App';
+
+const root=ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+      <React.StrictMode>
+             <App />
+      </React.StrictMode>
+)
+
+
+
+Custom Hooks
+==============
+Hooks which are created by the user based on the application requirement are called custom hooks.
+ex:
+	myCustomHook()
+	customHook()
+	ihubHook()
+	myCustomCounter()
+
+Project Structure
+-------------------
+myapp14
+|
+|----node_modules
+|
+|----public
+|	|
+	|----favicon.ico
+	|----index.html
+	|----manifest.json
+|
+|-----src
+|	|
+	|----index.js
+	|----App.js
+	|----CustomHook.js
+|
+|-----package.json 
+|-----README.md
+
+
+ex:1
+----------
+
+CustomHook.js
+---------------
+import React from 'react'
+import {useState} from 'react'
+
+
+function CustomHook() 
+{
+  
+  const [count,setCount]=useState(0);
+
+  const handleClick=()=>
+  {
+    setCount(count+1);
+  }
+  
+    return(
+        {
+        count,
+        handleClick
+        })
+}
+
+export default CustomHook
+
+
+App.js
+--------
+import React from 'react'
+import customHook from './CustomHook';
+
+function App() {
+
+  const data=customHook();
+
+  return (
+    <div>
+      <h1>Count : {data.count}</h1>
+      <button onClick={data.handleClick}>Increment</button>
+    </div>
+  )
+}
+
+export default App
+
+
+index.js
+-----------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+Assets/Images in ReactJS
+========================
+We can declare react assets/images in two places.
+
+1) Inside public folder
+
+2) Inside src folder 
+
+
+2) Inside src folder 
+--------------------
+
+myapp12
+|
+|----node_modules
+|
+|----public
+|	|
+	|---favicon.ico
+	|---manifest.json
+	|---index.html
+
+|-----src
+	|
+	|---index.js
+	|---App.js 
+	|	
+	|---images
+		|
+		|---thumbnail1.jpg
+		|---thumbnail2.jpg
+		|---thumbnail3.jpg
+|
+|-----package.json
+|-----README.md
+
+step1:
+-----
+	Create a react project i.e myapp12.
+	ex:
+		reactprojects>  npx  create-react-app  myapp12
+
+step2:
+------
+	Create a image folder inside "src".
+
+step3:
+-----	
+	Add the images inside "src/images" folder.
+
+step4:
+------
+	Goto App.js and remove the code.
+
+step5:
+------
+	Add the below code in App.js file.
+
+App.js
+------
+import pic1 from './images/thumbnail1.jpg';
+import pic2 from './images/thumbnail2.jpg';
+import pic3 from './images/thumbnail3.jpg';
+function App()
+{
+  const imgStyle={
+    width:"300px",
+    height:"300px"
+  }
+
+  return (
+
+      <>
+        <img src={pic1}  style={imgStyle}/>
+        <img src={pic2}  style={imgStyle}/>
+        <img src={pic3}  style={imgStyle}/>
+      </>
+  )
+}
+export default App;
+
+step6:
+-----
+	Switch to react project.
+	ex:
+		reactprojects> cd   myapp12
+
+step7:
+-----
+	Run the react project.
+	ex:
+		reactprojects/myapp12>  npm start 
+
+
+step8:
+------
+	Test the react application by using below request url.
+	ex:
+		http://localhost:3000/
+
+
+
+
+
+Q) Difference between function component vs class component?
+
+function component			class component
+------------------			----------------
+It is also known as stateless 		It is a statefull component.
+component.
+
+In a function component we will use	In a class component we will use 
+return keyword.				render() method.
+
+It supports hooks.			It does not support hooks.
+
+Constructor is not used.		Constructor is used.
+
+ex:					ex:
+						import {Component} from 'react';
+	function App				export default class App extends Component
+	{					{
+		return (				render()
+		<h1> Hello </h1>			{
+		)						return (
+	}								<h1>Hello</h1>
+	export default App;						)	
+							}
+						}
+
+
+Q)Difference between real dom vs virtual dom ?
+
+Real dom 				virtual dom 
+-----------				--------------
+It updates slow.			It updates faster.
+
+Can directly updates HTML.		Can't directly updates HTML.
+
+Creates a new dom if element updates.	Update the jsx if element updates.
+
+DOM manipulation is very expensive.	DOM manipulation is very easy.
+
+Too much of memory wastage.		No memory wastage.
+

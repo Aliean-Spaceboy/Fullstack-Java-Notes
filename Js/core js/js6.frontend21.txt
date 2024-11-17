@@ -1,0 +1,571 @@
+BOM (Browser Object Model)
+===========================
+The Browser Object Model is used to interact with browser.
+
+The default object for a browser is window object.
+
+It means we can call all the functions by using window or directly.
+
+ex:
+	window.alert("Welcome to JavaScript");
+
+	or
+
+	alert("Welcome to JavaScript");
+
+
+window object
+====================
+It is used to create a window on a browser.
+
+A window object is created automically by the browser.
+
+A "window" is a object of browser but not javascript.
+
+Javascript objects are String,Array,Date and etc.
+
+A "window" object is used to write programming related to browser.
+
+With the help of window object we can perform following activities very easily.
+
+1)It display dialog boxes and pop boxes.
+
+2)We can find width and height of a browser.
+
+3)We can move or resize the browser.
+
+4)Scroll to the browser.
+
+5)Get URL,hostname,protocol and etc of a browser.
+
+6)We can get javascript history.
+
+1)alert()
+==============
+It will display alert dialog box.It has message with ok button.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				function f1()
+				{
+					alert("Welcome to JavaScript");
+				}
+
+			</script>
+
+			<button onclick="f1()">click</button>
+	</body>
+</html>
+
+
+ex:2
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+
+	<button onclick="alert('This is IHUB Talent')">click</button>
+	</body>
+</html>
+
+
+2)confirm()
+----------------
+It will dispaly confirm dialog box.It has message with ok button and cancel button.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				function f1()
+				{
+					var v=confirm("Do you wants to delete ?");
+					if(v==true)
+					{
+						alert("ok");
+					}
+					else
+					{
+						alert("cancel");
+					}
+				}	
+			</script>
+
+			<button onclick="f1()">delete</button>
+	</body>
+</html>
+
+
+3)prompt()
+---------------
+It will display prompt dialog box.It contains message with textfield.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				function f1()
+				{
+					var v=prompt("Who are you?");
+					alert("Welcome :"+v);	
+				}	
+			</script>
+
+			<button onclick="f1()">click</button>
+	</body>
+</html>
+
+innerWidth and innerHeight
+============================
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				var w=window.innerWidth;
+				var h=window.innerHeight;
+				document.writeln("Width :"+w+"<br>");
+				document.writeln("Height :"+h+"<br>");
+			</script>
+
+			
+	</body>
+</html>
+
+Note:
+----
+	Press "CTRL + +" for zoomin.
+	Press "CTRL + -" for zoomout.
+
+window.open()
+--------------
+
+ex:1
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				function openWindow()
+				{
+					window.open("http://www.google.com");	
+				}
+			</script>
+
+			<button onclick="openWindow()">open a new window</button>
+	</body>
+</html>
+
+
+ex:2
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				function openWindow()
+				{
+					window.open("http://www.google.com","_blank");	
+				}
+			</script>
+
+			<button onclick="openWindow()">open a new window</button>
+	</body>
+</html>
+
+ex:3
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				function openWindow()
+				{
+					window.open("http://www.google.com","_parent");	
+				}
+			</script>
+
+			<button onclick="openWindow()">open a new window</button>
+	</body>
+</html>
+
+ex:4
+-------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				function openWindow()
+				{
+					window.open("http://www.google.com","_blank","width=200px,height=200px");	
+				}
+			</script>
+
+			<button onclick="openWindow()">open a new window</button>
+	</body>
+</html>
+
+
+close()
+-------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				var myWindow;
+				function openWindow()
+				{
+					 myWindow=window.open("http://www.google.com","","width=300px,height=300px");	
+				}
+				function closeWindow()
+				{
+					myWindow.close();
+				}
+			</script>
+
+			<button onclick="openWindow()">open a new window</button>
+			<button onclick="closeWindow()">close a window</button>
+	</body>
+</html>
+
+
+close()
+-------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				var myWindow;
+				function openWindow()
+				{
+					 myWindow=window.open("http://www.google.com","","width=300px,height=300px");	
+				}
+				function closeWindow()
+				{
+					myWindow.close();
+				}
+			</script>
+
+			<button onclick="openWindow()">open a new window</button>
+			<button onclick="closeWindow()">close a window</button>
+	</body>
+</html>
+
+Whenever we open a new window , it takes left top alignment.
+
+In order to move the window we need to use moveTo() or moveBy() function.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				var myWindow;
+				function openWindow()
+				{
+					 myWindow=window.open("http://www.google.com","","width=300px,height=300px");	
+				}
+				function moveWindow()
+				{
+					myWindow.moveTo(100,100);
+				}
+				
+			</script>
+
+			<button onclick="openWindow()">open a new window</button>
+			<button onclick="moveWindow()">move window</button>
+	</body>
+</html>
+
+Note: Here we can't move window because in browser console we will get one 
+error.
+
+To over come this limitation we need to use custom window.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				var myWindow;
+				function openWindow()
+				{
+					 myWindow=window.open("","_blank","width=300px,height=300px");
+
+					
+				}
+				function moveWindow()
+				{
+					myWindow.moveTo(100,100);
+				}
+				
+			</script>
+
+			<button onclick="openWindow()">open a new window</button>
+			<button onclick="moveWindow()">move window</button>
+	</body>
+</html>
+
+Note:
+-----
+MoveTo() function will move from absolute position.
+MoveBy() function will move from relative position.
+
+
+setTimeout()
+-----------------
+The setTimeout() is executed only once.
+
+If you need repeated executions, use setInterval() instead.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				function setTimeOut()
+				{
+					setTimeout(function f1()
+								{
+								alert("Hello World")
+								},4000);
+				}
+			</script>
+
+			<button onclick="setTimeOut()">click</button>
+			
+	</body>
+</html>
+
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				function setTimeOut()
+				{
+					setTimeout(Anim,4000);
+				}
+				function Anim()
+				{
+					alert("Yahoo! this is javascript");
+				}
+			</script>
+
+			<button onclick="setTimeOut()">click</button>
+			
+	</body>
+</html>
+
+
+clearTimeout()
+-------------------
+The clearTimeout() method clears a timer set with the setTimeout() method.
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				var myId;
+				function setTimeOut()
+				{
+					myId=setTimeout(Anim,4000);
+				}
+				function Anim()
+				{
+					alert("Yahoo! this is javascript");
+				}
+				function removeTimeOut()
+				{
+					clearTimeout(myId);	
+				}
+			</script>
+
+			<button onclick="setTimeOut()">set time</button>
+			<button onclick="removeTimeOut()">remove time</button>
+			
+	</body>
+</html>
+
+
+
+
+setInterval()
+==================
+A setInterval() method calls a function to evaluate the expression at specified interval(milliseconds).
+
+A setInterval() method calls continously function untill we call clearInterval() method or window is closed.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+		<style>
+			div
+			{
+				width:150px;
+				height: 150px;
+				background-color: #FF0000;
+			}	
+		</style>
+	</head>
+	<body>
+			<script type="text/javascript">
+					var a=0;
+					setInterval(Anim,1000);
+
+					function Anim()
+					{
+						a = a + 10;
+			var target=document.getElementById("myId");
+						target.style.marginLeft= a + 'px';
+					}
+
+			</script>
+
+			<div id="myId"></div>
+	</body>
+</html>
+
+clearInterval()
+===================
+A clearInterval() function is used to clear the timer set on setInterval() function.
+
+An id which is return from setInterval() function will use as parameter to clearInterval().
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+		<style>
+			div
+			{
+				width:150px;
+				height: 150px;
+				background-color: #FF0000;
+			}	
+		</style>
+	</head>
+	<body>
+			<script type="text/javascript">
+					var a=0;
+					var id=setInterval(Anim,1000);
+
+					function Anim()
+					{
+						a = a + 10;
+						if(a==100)
+						{
+							clearInterval(id);
+						}
+
+						var target=document.getElementById("myId");
+						target.style.marginLeft= a + 'px';
+					}
+
+			</script>
+
+			<div id="myId"></div>
+	</body>
+</html>
+
+
+window history
+=================
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB Talent</title>
+		<style>
+			a
+			{
+				text-decoration: none;
+				color:blue;
+			}
+		</style>
+	</head>
+	<body>
+			
+			<a href="javascript:history.back()">
+					&laquo; previous
+			</a>
+			&nbsp; &nbsp;
+			<a href="javascript:history.forward()">
+					next &raquo; 
+			</a>
+			
+	</body>
+</html>
+
+Note:
+-------
+www.ihubtalent.com
+
+file:///D:/IHUB-TRAINING-BATCHES/ReactAngularBatch/practicals/index.html
+
+www.qualitythought.in
+
+

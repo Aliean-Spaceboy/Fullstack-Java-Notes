@@ -1,0 +1,255 @@
+First Spring Boot Application Development
+=========================================
+FirstSB
+|
+|----src/main/java
+	|
+	|---com.ihub.www (base pkg)
+		|
+		|----FirstSBApplication.java
+|
+|----src/main/resources
+	|
+	|---application.properties 
+|
+|----src/test/java 
+|
+|
+|----pom.xml 
+
+step1:
+------
+	Launch STS IDE by choosing workspace location.
+
+step2:
+------
+	Create a spring starter project i.e FirstSB.
+	ex:
+		File --> new --> Spring Starter project --> 
+
+		Name : FirstSB
+
+		Type : Maven		packaging : jar 
+
+		Java Version : 17 	Language : Java 
+
+		Group :  com.ihub.www
+	
+		Artifact : FirstSB
+
+		Description  : First Spring Boot project 
+		
+		package : com.ihub.www  ---> Next ---> Next --> Finish.
+
+step3:
+-------
+	Add custom message inside "FirstSBApplication.java" file.
+
+FirstSBApplication.java
+-----------------------
+package com.ihub.www;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FirstSBApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(FirstSbApplication.class, args);
+		
+		System.out.println("I love Spring Boot");
+	}
+
+}
+
+step4:
+-----
+	Run spring boot starter project.
+	ex:
+		right click to FirstSB project --> run as --> Spring Boot application.
+
+
+
+
+Q) Explain @SpringBootApplication annotation?
+
+@SpringBootApplication annotation is a combination of three annotations.
+
+1) @AutoConfiguration 
+----------------------
+	This annotation is used to enable auto configuration mechanism.
+
+2) @ComponentScan
+-----------------
+	This annotation is used to scan on package in which our project is located.
+
+3) @Configuration 
+----------------
+	This annotation is used add extra beans to context.
+
+
+Spring Boot starters
+=====================
+Spring boot supports number of starters to add jar files in CLASSPATH.
+
+Spring Boot contains built-in starts to develop the applications rapidly and easily.
+
+Spring Boot starts are also known as dependency descriptors.
+
+Spring Boot built-in starts following below naming pattern.
+
+syntax:
+	spring-boot-starter-* 
+
+	Here '*' means name of the application
+
+ex:
+	spring-boot-starter-web
+	spring-boot-starter-test
+	spring-boot-starter-data-jpa
+	spring-boot-starter-security
+	and etc.	
+
+
+Spring web dependency
+======================
+A spring web dependency is used to develop web applications in spring boot.
+
+There are two important features of spring-boot-start-web.
+
+1) It is compatible with web applications.
+
+2) It performs autoConfigurations
+
+Spring web dependency internally uses Spring MVC, REST and  Tomcat Embedded server.
+
+A spring-boot-start-web performs following things as a auto configuration.
+
+1) DispatcherServlet 
+
+2) ErrorPages 
+
+3) Static Dependent Dependencies
+
+4) Servlet Container 
+
+
+Second Spring Boot application Development
+============================================
+SecondSB
+|
+|----src/main/java
+	|
+	|---com.ihub.www (base pkg)
+		|
+		|----SecondSBApplication.java
+	|
+	|---com.ihub.www.controller
+		|
+		|----HomeController.java
+		
+|
+|----src/main/resources
+	|
+	|---application.properties 
+|
+|----src/test/java 
+|
+|
+|----pom.xml 
+
+
+step1:
+-----
+	Create a spring boot starter project i.e SecondSB.
+	ex:
+		starter :   Spring Web 
+
+
+step2:
+-----
+	Create "com.ihub.www.controller" package inside "src/main/java" folder.
+
+step3:
+-----
+	Create HomeController.java file inside "com.ihub.www.controller" package.
+
+
+HomeController.java
+------------------
+package com.ihub.www.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class HomeController 
+{
+	
+	//Handler method 
+	@RequestMapping("/msg")
+	@ResponseBody
+	public String message()
+	{
+		return "I Love Spring Boot Too Much";
+	}
+}
+
+step4:
+-----
+	Configure tomcat server port number in application.properties file.
+
+application.properties
+-----------------------
+server.port= 9090
+
+step5:
+-----
+	Run the spring boot application.
+	
+
+step6:
+----
+	Test the spring application application.
+	ex:
+		http://localhost:9090/msg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

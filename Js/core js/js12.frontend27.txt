@@ -1,0 +1,496 @@
+JavaScript Set 
+==============
+A javascript set is a collection of unique elements.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+				
+				var s=new Set();
+				s.add(10);
+				s.add(20);
+				s.add(30);
+
+				s.forEach(function(element){
+					document.writeln(element);
+				})
+			
+		</script>
+
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+				
+				var s=new Set([10,20,30,40]);
+	
+				s.forEach(function(element){
+					document.writeln(element);
+				})
+			
+		</script>
+
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+				
+				var s=new Set([10,20,30,10,20,30]);
+	
+				s.forEach(function(element){
+					document.writeln(element); //10  20  30 
+				})
+			
+		</script>
+
+</body>
+</html>
+
+
+Map
+====
+A Map holds key-value pairs where the keys can be any datatype. 
+
+A Map remembers the original insertion order of the keys.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+				
+				var m=new Map([
+								["one",1],
+								["two",2],
+								["three",3]
+							])
+	
+				m.forEach(function(key,value){
+					document.writeln(key+"  = "+value+"<br>");
+				})
+			
+		</script>
+
+</body>
+</html>
+
+JavaScript OOPS
+================
+A language is said to be object oriented if it supports following features.
+
+ex:
+	class
+	object
+	abstraction
+	encapsulation 
+	inheritance 
+	polymorphism 
+
+JavaScript is not a object oriented programming language. It is a object based programming language.
+
+
+class
+=====
+A class is a template of an object.
+
+A class is not an object of javascript.
+
+To declare a class we need to use class keyword followed by a perticular name.
+
+As per naming convention of javascript , a class name must starts with uppercase letter.
+
+ex:
+	class Example
+	{
+		
+	}
+
+
+constructor
+===========
+It is a special type of function which is used to initialize an object.
+
+It is called automatically when memory is initialized for an object.
+
+A class can have only one constructor.
+
+To declare a constructor we will use constructor keyword.
+
+ex:
+	class Example
+	{
+		constructor()
+		{
+				
+		}
+	}
+
+object
+=======
+An object is an entity which contains states and behaviours.
+
+To create a instance we need to use new operator.
+
+ex:
+	var  obj=new Example();
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+				class Example
+				{
+						constructor()
+						{
+							document.writeln("constructor");
+						}
+				}
+				var obj=new Example();
+				
+		</script>
+
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+				class Example
+				{
+						constructor()
+						{
+							document.writeln("constructor <br>");
+						}
+				}
+				var obj1=new Example();
+				var obj2=new Example();
+
+		</script>
+
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+				class Example
+				{
+						constructor(id)
+						{
+							document.writeln(id+"<br>");
+						}
+				}
+				var obj1=new Example(101);
+				var obj2=new Example(201);
+
+		</script>
+
+</body>
+</html>
+
+Abstraction
+============
+Hiding internal implementation and highlighting the setup of services is called abstraction.
+
+The best example of abstraction is ATM machine.
+
+The main objective of abstraction is to hide the data.
+
+Encapsulation
+==============
+The process of encapsulating variables and it's functions in a single unit is called encapsulation.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+				class Employee
+				{
+					setEmpId(id)
+					{
+						this.id=id;
+					}	
+					setEmpName(name)
+					{
+						this.name=name
+					}
+					
+					getEmpId()
+					{
+						return this.id;
+					}
+					getEmpName()
+					{
+						return this.name;
+					}
+				}
+				var e=new Employee();
+				e.setEmpId(501);
+				e.setEmpName("Alan");
+				document.writeln("Employee id :"+e.getEmpId()+"<br>");
+				document.writeln("Employee Name :"+e.getEmpName()+"<br>");
+		</script>
+
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+				class Employee
+				{
+					constructor(id,name)
+					{
+						this.id=id;
+						this.name=name;
+					}
+
+					getEmpId()
+					{
+						return this.id;
+					}
+					getEmpName()
+					{
+						return this.name;
+					}
+				}
+				var e=new Employee(601,"Jessica");
+	
+				document.writeln("Employee id :"+e.getEmpId()+"<br>");
+				document.writeln("Employee Name :"+e.getEmpName()+"<br>");
+		</script>
+
+</body>
+</html>
+
+
+Inheritance
+===========
+Inheritance is a mechanism where we will declare a class in the presence of existing class.
+
+The main objective of inheritance is to achieve reusability.
+
+In inheritance a child class can reuse the functions of parent class.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+				class A 
+				{
+					f1()
+					{
+						document.writeln("F1-Function <br>");
+					}
+				}
+				class B extends A 
+				{
+					f2()
+					{
+						document.writeln("F2-Function <br>");
+					}
+				}
+				var a=new A();
+				a.f1();
+
+				var b=new B();
+				b.f1();
+				b.f2();
+
+		</script>
+
+</body>
+</html>
+
+
+Polymorphism
+=============
+Poly means many and morphism means forms.
+
+The ability to represent in different forms is called polymorphism.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+				class A 
+				{
+					f1()
+					{
+						document.writeln("F1-Function <br>");
+					}
+				}
+				class B extends A 
+				{
+					f1()
+					{
+						document.writeln("F2-Function <br>");
+					}
+				}
+				var a=new A();
+				a.f1();
+
+				var b=new B();
+				b.f1();
+
+		</script>
+
+</body>
+</html>
+
+Interview Questions
+===================
+Q) Write a javascript program to display distinct elements from given array?
+
+input:
+	1 2 2 3 3 3 4 4 4 4
+
+output:
+	1 2 3 4 
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<script>
+				var arr=[1,2,2,3,3,3,4,4,4,4];
+
+				var set=new Set();
+
+				for(var i in arr)
+				{
+					set.add(arr[i]);
+				}
+
+				set.forEach(function(element){
+					document.writeln(element);
+				})
+
+		</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

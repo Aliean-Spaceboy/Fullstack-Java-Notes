@@ -1,0 +1,970 @@
+Q) What is the difference between == and === equals?
+
+== 
+----
+It is used to check values are same or not.
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			 document.writeln((10 == 10)+"<br>"); //true 
+
+			document.writeln((1  == true)+"<br>"); //true 
+
+			document.writeln((1 == "1")+"<br>"); //true
+
+			document.writeln((0 == false)+"<br>"); //true
+
+			document.writeln((0 == "0")+"<br>"); // true  
+
+		</script>
+</body>
+</html>
+
+===
+----
+It is used to check datatypes and values are same or not.
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			 document.writeln((10 === 10)+"<br>"); //true 
+
+			document.writeln((1  === true)+"<br>"); //false
+
+			document.writeln((1 === "1")+"<br>"); //false
+
+			document.writeln((0 === false)+"<br>"); //false
+
+			document.writeln((0 === "0")+"<br>"); // false 
+
+		</script>
+</body>
+</html>
+
+
+3) Bitwise operators 
+=====================
+We have following list of bitwise operators.
+
+ex:
+	operator		description
+	-----------		--------
+	&			Bitwise AND
+	|			Bitwise OR
+	^			Bitwise XOR
+	~			Bitwise NOT 
+	>>			Right shift 
+	<<			left shift 
+
+Bitwise AND (&)
+----------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			 var a = 10 , b = 15;
+
+			 var c = a & b;
+
+			 document.writeln(c);
+
+			 /*
+				10 - 1010
+				15 - 1111
+				----------
+				&  - 1010  <---
+
+				0*1  +  1*2  +  0*4  +  1*8
+
+				0 + 2 + 0 + 8 = 10
+			 */
+
+		</script>
+</body>
+</html>
+
+
+Bitwise OR (|)
+---------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			 var a = 10 , b = 15;
+
+			 var c = a | b;
+
+			 document.writeln(c);
+
+			 /*
+				10 - 1010
+				15 - 1111
+				----------
+				|  - 1111 <---
+
+				1*1 + 1*2 + 1*4 + 1*8
+				1 + 2 + 4 + 8 = 15
+			 */
+
+		</script>
+</body>
+</html>
+
+
+Bitwise XOR
+------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			 var a = 10 , b = 15;
+
+			 var c = a ^ b;
+
+			 document.writeln(c);
+
+			 /*
+				10 - 1010
+				15 - 1111
+				----------
+                ^  - 0101 <---
+
+                1*1 + 0*2 + 1*4  + 0*8   
+
+                1 + 0 + 4 + 0 = 5
+			 */
+
+		</script>
+</body>
+</html>
+
+Bitwise NOT (~)
+----------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i= ~10;
+
+			document.writeln(i); // -11
+
+		</script>
+</body>
+</html>
+
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i= ~(-21);
+
+			document.writeln(i); // 20
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i= ~0;
+
+			document.writeln(i); // -1
+
+		</script>
+</body>
+</html>
+
+Right shift (>>)
+------------------
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i = 10 >> 2 ;  
+
+			document.writeln(i); // 2
+
+		</script>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i = 20 >> 4;   // 20 / 16
+
+			document.writeln(i); // 2
+
+		</script>
+</body>
+</html>
+
+
+Left Shift (<<) 
+------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i = 10 << 2;   // 10 * 4
+
+			document.writeln(i); // 40
+
+		</script>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i = 100 << 4;   // 100 * 16
+
+			document.writeln(i); // 1600
+
+		</script>
+</body>
+</html>
+
+
+4) Logical Operators
+==================
+We have following list of logical operators.
+
+ex:
+	operator		description
+	----------		------------
+	&&			logical AND
+	||			logical OR 
+	!			logical NOT 
+
+logical AND (&&)
+-----------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			document.writeln(((5>2) && (6<10)) +"<br>"); //true 
+
+			document.writeln(((5>20) && (6<10)) +"<br>"); //false
+
+			document.writeln(((5>20) && (6<1)) +"<br>"); // false
+			
+		</script>
+</body>
+</html>
+
+logical OR (||)
+-----------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			document.writeln(((5>2) || (6<10)) +"<br>"); //true 
+
+			document.writeln(((5>20) || (6<10)) +"<br>"); //true
+
+			document.writeln(((5>20) || (6<1)) +"<br>"); // false
+
+
+
+
+		</script>
+</body>
+</html>
+
+
+logical NOT (!)
+----------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i = !(5>2);
+
+			document.writeln(i); //false
+
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i = !(5>20);
+
+			document.writeln(i); // true
+
+		</script>
+</body>
+</html>
+
+
+5) Assignment operators
+=======================
+We have following list of assignment operators.
+
+ex:
+	operator		description
+	-------			------------
+	=			equals to 
+	+=			addition and equals to 
+	-= 			subtraction and equals to 
+	*=			multiplication and equals to 
+	/=			division and equals to 
+	%=			modules and equals to 
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i = 1,2,3,4,5;
+
+			document.writeln(i); // Error 
+
+		</script>
+</body>
+</html>
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i=10;
+
+			i=20;
+
+			i=30;
+
+			document.writeln(i); //30
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i=10;
+
+			i+=2; // i = i + 2 
+
+			document.writeln(i); //12
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i=10;
+
+			i-=20; // i = i - 20
+
+			document.writeln(i); // -10
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i=10;
+
+			i*=5;
+
+			document.writeln(i); // 50
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i=10;
+
+			i/=3;
+
+			document.writeln(i); // 3.33
+
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i=10;
+
+			i/=20;
+
+			document.writeln(i); // 0.5
+
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i=10;
+
+			i%=20;
+
+			document.writeln(i); // 10
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i=10;
+
+			i%=2;
+
+			document.writeln(i); // 0
+
+		</script>
+</body>
+</html>
+
+6) Special operators 
+====================
+We have following list of special operators.
+
+ex:
+	operator	description
+	----------	------------
+	?:		conditional 
+	new		It is to create an instance.
+	typeof		It is used check type of an object.
+	
+
+
+conditional (?:)
+-----------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			(10 > 5)?document.writeln("TRUE"):document.writeln("FALSE");
+
+		</script>
+</body>
+</html>
+
+
+ex:
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			(10 > 50)?document.writeln("TRUE"):document.writeln("FALSE");
+
+		</script>
+</body>
+</html>
+
+
+
+Q) Write a javascript program to check given age is eligible to vote or not?
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var val=prompt("Enter the Age :");
+
+			var age=parseInt(val);
+
+	(age>=18)?document.writeln("U r eligible to vote"):document.writeln("u r not eligible vote");
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var i=10;
+			document.writeln(typeof(i)+"<br>"); // number
+
+			var j="hi";
+			document.writeln(typeof(j)+"<br>"); // string
+
+			var k=true;
+			document.writeln(typeof(k)+"<br>"); // boolean
+
+			var l=null;
+			document.writeln(typeof(l)+"<br>"); // object
+
+			var m;
+			document.writeln(typeof(m)+"<br>"); // undefined
+		</script>
+</body>
+</html>
+
+Assignment
+===========
+Q) Write a program to find out greatest of two numbers?
+
+
+	java logic : 
+
+			int max = (a>b)?a:b;
+			System.out.println(max);
+
+	javascript logic:
+			(a>b)?document.writeln(a+" is greatest"):document.writeln(b+" is greatest");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

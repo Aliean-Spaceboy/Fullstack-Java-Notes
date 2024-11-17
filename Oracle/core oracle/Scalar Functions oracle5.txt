@@ -1,0 +1,365 @@
+userlist table
+==============
+drop table userlist;
+
+create table userlist(uname varchar2(10), pwd varchar2(10));
+
+insert into userlist values('raja','rani');
+
+insert into userlist values('king','kingdom');
+
+commit;
+
+
+Q) Write a query to check username and password is valid or not?
+
+	select count(*) from userlist where uname='raja' AND pwd='rani';//1 
+
+	select count(*) from userlist where uname='raja' AND pwd='rani2';//0
+
+
+2) Scalar Functions / Single Row Functions
+==========================================
+
+We have following list of scalar functions.
+
+i) Character functions 
+
+ii) Number functions 
+
+iii) Date functions 
+
+iv) Conversion functions 
+
+
+i) Character functions 
+------------------------
+We have following list of character functions.
+
+upper()
+-------
+	It is used to convert lowercase to uppercase.
+	ex:
+		select upper('oracle training') from dual;
+
+lower()
+---------
+	It is used to convert uppercase to lowercase.
+	ex:
+		select lower('ORACLE TRAINING') from dual;
+
+
+initcap()
+---------
+	It is used to display the text with initial letter capital.
+	ex:
+		select initcap('oracle training') from dual;'
+
+lpad()
+-------
+	It is used to pad the characters left side.
+	ex:
+		select lpad('oracle',10,'z') from dual;	//zzzzoracle
+
+rpad()
+------
+	It is used to pad the characters right side.
+	ex:
+		select rpad('oracle',10,'z') from dual;	//oraclezzzz
+
+ltrim()
+--------
+	It is used trim the characters from left side.
+	ex:
+		select ltrim('zzoraclezz','z') from dual;//oraclezz
+
+rtrim()
+-------
+	It is used trim the characters from right side.
+	ex:
+		select rtrim('zzoraclezz','z') from dual;//zzoracle
+
+trim()
+-------
+	It is used to trim the characters from both the sides.
+	ex:
+		select trim('z' from 'zzoraclezz') from dual;
+
+concat() 
+--------
+	It is used to concatinate two strings.
+	ex:
+		select concat('mega','star') from dual;
+		select concat(concat('mega','star'),'chiru') from dual;
+
+
+ii) Number functions 
+---------------------
+We have following list of number functions.
+
+abs()
+-----	
+	It always return absoluate value.
+	ex:
+		select abs(-10.89) from dual; // 10.89
+		select abs(-7) from dual; // 7
+
+
+sqrt()
+------
+	It will return exact square root.
+	ex:
+		select sqrt(25) from dual; //5
+		select sqrt(36) from dual; //6
+		select sqrt(37) from dual; //6.08 
+  
+power(A,B)
+----------
+	It will return power value.
+	ex:
+		select power(5,3) from dual; //125
+
+ceil()
+------
+	It will return ceil value.
+	ex:
+		select ceil(10.2) from dual; // 11 
+		select ceil(11.7) from dual; // 12
+
+floor()
+--------
+	It will return floor value.
+	ex:
+		select floor(10.9) from dual; //10
+		select floor(11.2) from dual; //11 
+
+round()
+--------
+	It will return nearest value.
+	ex:
+		select round(10.7) from dual; // 11 
+		select round(10.5) from dual; // 11
+		select round(10.4) from dual; // 10 
+
+trunc()
+-------
+	It will remove the decimals.
+	ex:
+		select trunc(10.56) from dual; //10
+		select trunc(67.45) from dual; // 67
+
+greatest()
+----------
+	It will return greatest value.
+	ex:
+		select greatest(101,102,103) from dual;
+
+least()
+--------
+	
+	It will return least value.
+	ex:
+		select least(101,102,103) from dual;
+
+
+Working with Date values
+=========================
+Every database supports to insert date values.
+
+Each database having different date patterns.
+
+ex:
+	oracle	-->	dd-MMM-yy
+	Mysql	-->	yyyy-MM-dd
+
+ex:
+---
+drop table emp1;
+
+create table emp1(eid number(3),ename varchar2(10),edoj date);
+
+insert into emp1 values(201,'Alan','01-JAN-24');
+
+insert into emp1 values(202,'Jack',sysdate);
+
+insert into emp1 values(203,'Brook',current_date);
+
+commit;
+
+
+
+
+iii) Date functions 
+--------------------
+We have following list of date functions.
+
+ADD_MONTHS()
+-------------
+	It is used to add the months in a given date.
+	ex:
+		select ADD_MONTHS('01-JAN-24',9) from dual;
+
+		select ADD_MONTHS(sysdate,3) from dual;
+
+
+MONTHS_BETWEEN()
+------------
+	It will return number of months between two dates.
+	ex:
+		select MONTHS_BETWEEN('01-JAN-24','01-JUL-24') from dual;
+
+		select ABS(MONTHS_BETWEEN('01-JAN-24','01-JUL-24')) from dual;
+
+		select ABS(MONTHS_BETWEEN('01-JAN-24','15-JUL-24')) from dual;
+
+NEXT_DAY()
+--------
+	It will return next date of a given day in a week.
+	ex:
+		select NEXT_DAY(sysdate,'SUNDAY') from dual;
+
+		select NEXT_DAY('26-JUL-24','FRIDAY') from dual;
+
+LAST_DAY()
+---------
+	It will return last date of a month.
+	ex:
+		select LAST_DAY('23-FEB-24') from dual;
+
+		select LAST_DAY(sysdate) from dual;
+
+
+
+
+
+
+
+iv) Conversion functions
+----------------------
+A process of converting from one type to another type is called conversion function.
+ex:
+	TO_CHAR() 
+
+We have two pseudos for TO_CHAR() function.
+
+1) Number TO_CHAR() 
+--------------------
+	It supports '9' in digits , dollar and euros symbol.
+	ex:
+		select eid,ename,esal from emp;
+		select eid,ename,TO_CHAR(esal,'9,999') from emp;
+		select eid,ename,TO_CHAR(esal,'99,999') from emp;
+		select eid,ename,TO_CHAR(esal,'$99,999') from emp;
+
+2) Date TO_CHAR() 
+-----------------
+	select  sysdate from dual;
+	select TO_CHAR(sysdate,'dd-MM-yyyy') from dual;
+	select TO_CHAR(sysdate,'yyyy-MM-dd') from dual;
+	select TO_CHAR(sysdate,'year') from dual;
+	select TO_CHAR(sysdate,'MONTH') from dual;	
+	select TO_CHAR(sysdate,'DAY') from dual;	
+	select TO_CHAR(sysdate,'yyyy') from dual;
+	select TO_CHAR(sysdate,'MON') from dual;
+	select TO_CHAR(sysdate,'dd') from dual;
+	select TO_CHAR(sysdate,'HH:MI:SS') from dual;
+	select TO_CHAR(sysdate,'dd-MM-yyyy HH:MI:SS') from dual;
+	
+	
+
+
+
+
+
+
+
+Group by clause
+================
+It is used to divide the rows into groups so that we can apply group functions.
+
+A column which we used in select clause then same column name we should use in group by clause.
+
+ex:
+
+Q) Write a query to display sum of salary of each department?
+
+	select sum(esal),deptno  from emp group by deptno;
+
+
+Q) Write a query to display average of each job?
+
+	select avg(esal),job from emp group by job;
+
+
+
+Q) Write a query to display employee maximum salary of each department?
+
+	select max(esal),deptno from emp group by deptno;
+
+Q) Write a query to display minimum salary of each job?
+
+	select min(esal),job from emp group by job;
+
+
+Q) Write a query to display number of employees working in each department?
+
+	select count(*),deptno from emp group by deptno;
+
+
+Having clause
+==============
+It is used to filter the rows from group by clause.
+
+Having clause must placed after group by clause.
+
+ex:
+
+Q) Write a query to display sum of salary of each department whose sum of salary is 
+	greater then 30000?
+
+	select sum(esal),deptno from emp group by deptno having sum(esal)>30000;
+
+
+
+Q) Write a query to display maximum salary of each job whose maximum salary is 
+	greater then 20000?
+
+
+	select max(esal),job from emp group by job having max(esal)>20000;
+
+
+Order by clause
+================
+It is used to arrange the rows in a table.
+
+By default it will arrange in ascending order.
+
+ex:
+	select * from emp order by eid;
+	select * from emp order by ename;
+	select * from emp order by eid desc;
+	select * from emp order by ename desc;s
+
+Note:
+-----
+	 where clause, group by clause, having clause and order by clause.
+
+select sum(esal),deptno from emp where deptno<>10
+				    group by deptno 
+				      having ssum(esal)>50000 
+				         order by deptno;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

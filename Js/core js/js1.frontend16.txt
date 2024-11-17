@@ -1,0 +1,486 @@
+JavaScript
+===========
+
+Q) What is the difference between Java and JavaScript?
+
+Java						JavaScript
+----------					-------------
+It is a non-scripting language.			It is a scripting language.
+
+We can run individually.			We can't run invidually.
+
+It does not required browser window for 	It requires browser window for execution.
+execution.
+
+It is a object oriented programming language.	It is a object based programming language.
+
+It is a complex language.			It is easy language when compare to java.
+
+It is a strongly typed checking language.	It is a loosely typed checking language.
+
+
+JavaScript
+=============
+The original name of JavaScript is LiveScript.
+
+LiveScript was developed by Netscape Corporation in late 1990's.
+
+In the year of 1995, Brenden Eich the popular scientist of Netscape Corporation renamed LiveScript to JavaScript.
+
+JavaScript is a loosely typed checking language.
+
+The official name of JavaScript is ECMA script.
+
+ECMA stands for Eureopeon Computer Manufacturer Association.
+
+
+Advantages of JavaScript
+========================
+> It is used to develop interactive web pages.
+
+> It is used to perform client side form validation. 
+
+> It is used to add dynamic content to a web page.
+
+> It is used to create responsive(dynamic) design.
+
+> It supports pop-up boxes and dialong boxes.
+
+> It supports objects like Date,Arrays,Strings,RegEx and etc.
+
+> It supports drop-down menu.
+
+> It supports cookies 
+
+and etc.
+
+syntax
+-------
+	<script type="text/javascript" language="javascript">
+		-
+		- //set of statements 
+		-
+	</script>  
+
+	Here "type" and "language" attribute is optional.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script type="text/javascript" language="javascript">
+
+			document.write("Welcome to JavaScript");
+		
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+
+			document.write("Welcome to JavaScript class");
+		
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+
+			document.write("Welcome to JavaScript class");
+			document.write("This is Ihub Talent Management");
+		
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+
+			document.writeln("Welcome to JavaScript class");
+			document.writeln("This is Ihub Talent Management");
+		
+		</script>
+</body>
+</html>
+
+We can declare markup language inside scripting language.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+
+			document.writeln("Welcome to JavaScript class");
+			document.writeln("<br>");
+			document.writeln("This is Ihub Talent Management");
+		
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+
+		document.writeln("<h1 style='color:red'>Welcome to JavaScript class</h1>");
+		document.writeln("<br>");
+		document.writeln("<h1 style='color:blue'>This is IhubTalent Management</h1>");
+		
+		</script>
+</body>
+</html>
+
+If a document contains HTML, CSS and JavaScript then it is called DHTML (Dynamic Hypertext Markup Language). 
+
+Types of JavaScript
+====================
+We have two types of javascript.
+
+1) Internal javascript / Embedded javascript  
+
+2) External javascript / Seperate javascript
+
+
+1) Internal javascript
+-----------------------
+In internal javascript we will declare HTML code and JavaScript code in .html file.
+
+Advantages:
+
+> There is no confusion of multiple files.
+
+> We can maintain HTML code and java code seperately.
+
+Disadvantages:
+
+> If code is increases then it will increase the complexity.
+
+index.html
+----------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+
+		document.writeln("Internal javascript");
+		
+		</script>
+</body>
+</html>
+
+
+2) External javascript
+----------------------
+In external javascript we will maintain HTML code in .html file and javascript code in .js file.
+
+A .js file must and should include in .html file by using <script> tag.
+
+Advantages:
+
+> We can maintain HTML code and JavaScript code seperately.
+
+> If code is increases then it will not increase the confusion.
+
+Disadvantages:
+
+> There is a confusion of multiple files.
+
+
+JavaScript Engine 
+=================
+JavaScript engine allows to execute javascript code on  browser window.
+
+JavaScript engine converts user understandable scripting language to machine understandable scripting language.
+
+By default every browser contains javascript engine.
+
+We have following list of javascript engines.
+
+ex:
+	Browser 		Javascript engine 
+	---------		----------------
+	Chrome			V8 engine 
+	Mozilla			Spider Monkey
+	Safari			JavaScript core
+	Edge			Chakra
+	and etc.
+
+
+Output Statements in javascript
+================================
+We have two types of output statements in javascript.
+
+1) document.writeln()
+
+2) console.log()
+
+1) document.writeln()
+------------------
+It is used to display the output on browser window.
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln("JavaScript Demo");
+		</script>
+</body>
+</html>
+
+2) console.log()
+------------------
+It is used to display the output on browser console.
+
+To see the browser console we need to press F12 function key.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+
+				console.log("JavaScript Latest Demo");
+		
+		</script>
+</body>
+</html>
+
+Comments in JavaScript
+======================
+Comments are created for documentation purpose.
+
+Comments are used to improve readability of our code.
+
+Comments will not display in output.
+
+We have two types of comments.
+
+1) Single line comment 
+---------------------
+	It is used to comment a single line.
+	ex:
+		// comment here 
+
+2) Multiple line comment 
+------------------------
+	It is more convenient when compare to single line comment because we can comment a single line 
+	as well as multiple lines.
+	ex:
+		/*
+			-
+			- comment here 
+			-
+		*/	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

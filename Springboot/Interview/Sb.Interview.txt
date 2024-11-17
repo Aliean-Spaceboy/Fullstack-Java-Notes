@@ -1,0 +1,214 @@
+++++++++++++++++++++++++++++++++
+
+---
+
+### 1. What is Spring Boot?
+- Java-based application framework developed by Pivotal Team.
+- Provides RAD (Rapid Application Development) features.
+- Standalone, production-ready Spring-based applications with minimal configurations.
+- Combination of Spring Framework + Embedded Server + Embedded Database.
+- Uses annotations instead of XML configurations.
+
+### 2. Types of Spring Components:
+- **AutoConfiguration**
+- **Starter**
+- **CLI**
+- **Actuators**
+
+### 3. @SpringBootApplication Annotation:
+   - Combination of three annotations:
+  1. **@AutoConfiguration**: Enables auto-configuration.
+  2. **@ComponentScan**: Scans the project package.
+  3. **@Configuration**: Adds extra beans to the context.
+
+### 4. What is a Starter in Spring Boot?
+- Spring Boot supports starters to add jar files to the classpath.
+- Built-in starters follow the naming pattern: `spring-boot-starter-*`.
+- Examples: `spring-boot-starter-web`, `spring-boot-starter-test`.
+
+### 5. What is Spring Boot CLI?
+- Command Line Interface to create Spring applications quickly using Groovy scripts.
+- Reduces the need for boilerplate code.
+
+### 6. What is Actuator?
+- Provides production-ready features like monitoring and management.
+- Exposes endpoints like `/health`, `/metrics`, `/info`.
+
+### 7. Embedded Databases Supported by Spring Boot:
+- **H2**
+- **HSQLDB**
+- **Derby**
+
+### 8. Embedded Servers in Spring Boot:
+- **Tomcat** (default)
+- **Jetty**
+- **Undertow**
+
+### 9. Configuration in Spring Boot:
+- Done in `application.properties` or `application.yml` files.
+
+### 10. application.properties vs application.yml:
+| application.properties                         | application.yml                              |
+|------------------------------------------------|----------------------------------------------|
+| Non-hierarchical structure.                    | Hierarchical structure.                      |
+| Configures one Spring profile.                 | Configures multiple Spring profiles.         |
+| Primarily used in Java.                        | Used in many languages (Java, Python, Ruby). |
+| Supports key/value.                            | Supports key/value, map, list, scalar types. |
+
+### 11. @Controller vs @RestController:
+| @Controller                                    | @RestController                              |
+|------------------------------------------------|----------------------------------------------|
+| Develops Spring MVC applications.              | Develops RESTful web services.               |
+| Specialized version of @Component.             | Specialized version of @Controller.          |
+| Requires `@ResponseBody` for handler methods.  | Combines `@Controller` and   `@ResponseBody`.|
+| Returns views in Spring MVC.                   | Does not return views.                       |
+
+### 12. How to Change Default Port in Spring Boot:
+- Change the default port (8080) by setting `server.port` in `application.properties` or `application.yml`.
+
+### 13. Spring Boot Flow Architecture:
+1. **SpringApplication** class bootstraps the application.
+2. Initializes the context using `@SpringBootApplication`.
+3. Scans components.
+4. Configures beans and services using `@EnableAutoConfiguration`.
+5. Starts the embedded server.
+
+### 14. How to Create a Web Application in Spring Boot:
+1. Add `spring-boot-starter-web` dependency.
+2. Create a class with `@SpringBootApplication`.
+3. Define controllers with `@RestController`.
+4. Start the embedded server.
+
+### 15. Communicating with Database in Spring Boot:
+1. Add `spring-boot-starter-data-jpa` and relevant database driver.
+2. Configure database in `application.properties`.
+3. Create an entity and repository.
+4. Interact with the database via repository methods.
+
+### 16. Stereotype Annotations:
+- **@Component**: Declares a bean.
+- **@Service**: Used for service layer.
+- **@Repository**: Interacts with the database.
+- **@Controller**: MVC controller.
+
+### 17. REST Annotations:
+- **@GetMapping**: Maps HTTP GET requests.
+- **@PostMapping**: Maps HTTP POST requests.
+- **@PutMapping**: Maps HTTP PUT requests.
+- **@DeleteMapping**: Maps HTTP DELETE requests.
+- **@RequestBody**: Binds HTTP request body to a method parameter.
+- **@ResponseBody**: Binds return value to the response body.
+
+### 18. Exception Handling in Spring Boot:
+- **@ExceptionHandler**: Handles specific exceptions.
+- **@ControllerAdvice**: Global exception handler.
+- **@ResponseStatus**: Marks methods or exceptions with HTTP status codes.
+
+### 19. Monolithic vs Microservice Architecture:
+#### Monolithic:
+- Develops services into a single package (e.g., WAR file).
+- **Advantages**: Simple development, deployment, testing, scaling.
+- **Disadvantages**: Complex, slow development, inflexible, unreliable.
+
+#### Microservices:
+- Divides the application into loosely coupled services.
+- **Advantages**: Independent development/deployment, fault tolerance, mixed technology stack, granular scaling.
+
+### 20. What is a Microservice?
+- Self-contained services that implement specific business capabilities.
+
+### 21. Eureka Server/Service Registry:
+- Holds information about client applications.
+- Also known as the discovery server.
+
+### 22. API Gateway:
+- Routes to APIs and handles cross-cutting concerns like security and authentication.
+
+### 23. What is Fault Tolerance?
+- Ability of the system to continue functioning during partial failure.
+- **Circuit Breaker**, **Fallback**, **Retry** mechanisms help in fault tolerance.
+
+### 24. What is RestTemplate?
+- Class for making HTTP requests to RESTful services.
+
+### 25. Types of APIs:
+- **Public API**: Open to external developers.
+- **Private API**: Internal, within the enterprise.
+- **Partner API**: Available to authorized external developers.
+- **Composite API**: Combines multiple APIs.
+
+---
+
+
+
+
+diff  Requestbody/Responcebody annotation
+
+This annotation indicates that Spring 
+should deserialize HttpRequest body(JSON) 
+into Java object.
+This annotation indicates that Spring should 
+serialize java object into JSON or XML or 
+simple text.
+It is used with POST, PUT & PATCH 
+methods.
+It is used with GET method.
+Application for incoming request data. Application for outgoing response data.
+
+diff  getmapping/Requestmapping
+
+@GetMapping: A shortcut for @RequestMapping for HTTP GET requests.
+@RequestMapping: More general-purpose and can be used for various HTTP methods (GET, POST, PUT, DELETE).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

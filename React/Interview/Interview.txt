@@ -1,0 +1,446 @@
+IMP
+----
+
+---
+
+### 1) What is React/ReactJS?
+- ReactJS is a declarative, efficient, and flexible JavaScript frontend library responsible for building user interfaces (UI).
+- It is component-based and handles only the view layer of an application.
+- Developed by Jordan Walke, a software engineer at Facebook.
+  
+---
+
+### 2) Advantages of React/ReactJS:
+1. Easy to learn and use.
+2. Supports one-way data binding.
+3. Uses Virtual DOM.
+4. Compatible with all major browsers.
+5. Allows the creation of reusable components.
+6. Offers good documentation and community support.
+
+---
+
+### 3) What is JSX?
+- JSX stands for JavaScript XML.
+- It allows writing HTML within React.
+- JSX has tags with a tag name, attributes, and children.
+- It is necessary to write React applications and makes code simpler.
+- Compile to pure JavaScript for browsers.
+
+---
+
+### 4) What is React Fragment?
+- React Fragment groups a list of children without adding extra nodes to the DOM.
+- It allows returning multiple elements without additional wrappers.
+  
+```jsx
+<>
+  <Element1 />
+  <Element2 />
+</>
+```
+
+---
+
+### 5) What is a React Component?
+- Components are the building blocks of any React app.
+- They allow UI splitting into independent, reusable pieces.
+- Components accept inputs called "props" and return a React element describing what should appear on the screen.
+
+---
+
+### 6) Difference between Function and Class Components:
+
+| Function Component               | Class Component                    |
+|----------------------------------|------------------------------------|
+| Also known as stateless component| Known as stateful component        |
+| Uses `return` statement          | Uses `render()` method             |
+| Supports hooks                   | Does not support hooks             |
+| No constructor needed            | Constructor is used                |
+
+#### Example:
+
+```jsx
+// Function Component
+function App() {
+  return (
+    <h1>Function Component</h1>
+  );
+}
+export default App;
+```
+
+```jsx
+// Class Component
+import {Component} from 'react';
+export default class App extends Component {
+  render() {
+    return (
+      <h1>Class Component</h1>
+    );
+  }
+}
+```
+
+---
+
+### 7) Difference between Real DOM and Virtual DOM:
+
+| Real DOM                         | Virtual DOM                       |
+|----------------------------------|-----------------------------------|
+| Updates slowly                   | Updates faster                    |
+| Directly updates HTML            | Cannot directly update HTML       |
+| Creates a new DOM if updated     | Updates JSX if an element changes |
+| DOM manipulation is expensive    | DOM manipulation is easier        |
+| High memory usage                | No memory wastage                 |
+
+---
+
+### 8) Event Handling in React:
+- Actions that trigger a response in JavaScript are called events (e.g., button click).
+  
+Example:
+
+```jsx
+// JavaScript
+<button onclick="f1()">clickMe</button>
+
+// React (Function Component)
+<button onClick={handleClick}>clickMe</button>
+
+// React (Class Component)
+<button onClick={this.handleClick}>clickMe</button>
+```
+
+---
+
+### 9) Difference between Props and State:
+
+| Props                                  | State                                |
+|----------------------------------------|--------------------------------------|
+| Read-only                              | Updatable                            |
+| Immutable                              | Mutable                              |
+| Allows data passing between components | Holds component-specific information |
+| Stateless components use props         | Stateful components use state        |
+
+---
+
+### 10) Phases of ReactJS Component:
+1. **Mounting**: Creating and inserting an element in the DOM.
+2. **Updating**: Changing state or props and updating existing nodes.
+3. **Error Handling**: Handling errors during rendering or lifecycle methods.
+4. **Unmounting**: Removing components from the DOM and clearing memory.
+
+---
+
+### 11) Lifecycle Methods of Mounting:
+1. `constructor()`
+2. `getDerivedStateFromProps()`
+3. `render()`
+4. `componentDidMount()`
+
+---
+
+### 12) Lifecycle Method of Unmounting:
+- `componentWillUnmount()`
+
+---
+
+### 13) Lifecycle Methods of Updating:
+1. `getDerivedStateFromProps()`
+2. `shouldComponentUpdate()`
+3. `render()`
+4. `getSnapshotBeforeUpdate()`
+5. `componentDidUpdate()`
+
+---
+
+### 14) Hooks:
+- Hooks allow function components to use state, lifecycle methods, and other React features.
+- Example hooks: `useState`, `useEffect`.
+
+---
+
+15) What is React Router?
+
+React Router is a standard library system built on top of React and used to 
+create routing in React applications using the React Router package.
+
+ReactJS Router is mainly used for developing Single Page Web Applications (SPAs).
+---
+
+### 16) What is SPA (Single Page Application)?
+- A single web page or application that loads a single document without reloading pages.
+
+---
+
+### 17) Reconciliation:
+- The process React uses to efficiently update the UI when state changes, uses the virtual DOM.
+
+---
+
+### 18) Redux:
+- A pattern and library for managing and updating application state using events (actions).
+- Centralized state management across the app.
+- Components: Store, Action, Reducer.
+
+---
+
+### 19) React Form:
+- React offers a stateful, reactive approach to building forms.
+- Two types of form input: controlled and uncontrolled components.
+
+---
+
+### 20) DOM Manipulation:
+- Interacting with the DOM API to modify elements displayed in a browser.
+
+---
+
+### 21) Combining Two Arrays using Spread Operator:
+
+```javascript
+const arr1 = [1, 2, 3, 4, 5];
+const arr2 = [6, 7, 8, 9, 10];
+const result = [...arr1, ...arr2];
+console.log(result);
+```
+
+---
+
+### 22) JavaScript Program to Display Prime Numbers from 1 to 100:
+
+```javascript
+let count = 0;
+let i, j;
+
+for (j = 2; j <= 100; j++) {
+  for (i = 1; i <= j; i++) {
+    if (j % i == 0) count++;
+  }
+  if (count == 2) {
+    console.log(j);
+  }
+  count = 0;
+}
+```
+
+---
+
+### 23) Fibonacci Series in JavaScript:
+
+```javascript
+var n = 5;
+var a = 0, b = 1, c;
+console.log(a + " " + b + " ");
+for (var i = 2; i <= n; i++) {
+  c = a + b;
+  console.log(c + " ");
+  a = b;
+  b = c;
+}
+```
+
+---
+
+### 24) Reverse a Given String in JavaScript:
+
+```javascript
+var str = "hello";
+var reversedStr = str.split('').reverse().join("");
+console.log(reversedStr);
+```
+
+---
+
+### 25) Declaring State in React:
+
+1. **Inside the Class:**
+
+```javascript
+import {Component} from "react";
+export default class App extends Component {
+  state = {
+    name: "Alan"
+  };
+  render() {
+    return <h1>My Name: {this.state.name}</h1>;
+  }
+}
+```
+
+2. **Inside the Constructor:**
+
+```javascript
+import {Component} from "react";
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "Alan"
+    };
+  }
+  render() {
+    return <h1>My Name: {this.state.name}</h1>;
+  }
+}
+```
+
+---
+
+### 26) Declaring Props in React:
+
+**index.js**
+
+```jsx
+<App name="Alan"/>
+```
+
+**App.js**
+
+```jsx
+function App(props) {
+  return <h1>My Name: {props.name}</h1>;
+}
+export default App;
+```
+
+---
+
+Q) What is the difference between Angular and React?
+
+Angular					            React
+--------------				        ------------
+It is a product of Google.			    It is a product of Facebook.
+
+It was developed in October, 2010.	    It was developed in May, 2013.
+
+It is a JavaScript framework used to	    It is a JavaScript frontend library responsible 
+develop web and mobile development.	    only for the view layer of the application.
+
+It supports real DOM.				    It supports virtual DOM.
+
+If we want to develop rich featured	    It is used to develop single-page web applications.
+applications, then we use Angular.
+
+TypeScript language is used.			    JSX language is used.
+
+Jasmine and Karma are used as		        Jest and Enzyme are used as testing frameworks.
+testing frameworks.
+
+It uses port number 4200.			    It uses port number 3000.
+
+It supports two-way data binding.		    It supports one-way data binding.
+
+Angular is used by Google,			    React is used by Netflix, WhatsApp, Airbnb, etc.
+McDonald's, PayPal, Gmail, etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Angular						React
+--------------					------------
+It is a product of Google.			It is a product of Facebook.
+
+It was developed in the month of October, 2010. It was developed in the month of May,2013.
+
+It is a javascript framework used to develop 	It is a javscript frontend library responsible only
+web and mobile development.			for view layer of the application.
+
+It supports real DOM.				It supports virtual DOM.
+
+If we want to develop rich featured 		It is used to develop single page web application.
+applications then we need use angular.
+
+Typescript language is used.			JSX language is used.
+
+Jasmine and Karma is used as a testing 		Jest and Enzyme is used as a testing frameworks.
+frameworks.
+
+It uses 4200 port number.			It uses 3000 port number.
+
+It supports two way data binding.		It supports one data binding.
+
+Angular used by Google, Mc'Donalds,		React used by  Netflix, whatsapp, airbnb and etc.
+Paypal, Gmail and etc.
+
+
+Pre-Requisition
+================
+> Basics of HTML,CSS, JavaScript and Bootstrap.
+
+> Knowledge on JSX.
+
+> Hands on npm commands.
+
+> Basic idea of ES6 standards.
+
+
+How ReactJS Works Internally
+============================
+Diagram: react2.1
+
+React uses a virtual DOM that is basically a DOM tree representation in JavaScript. 
+
+So when it needs to read or write to the DOM, it will use the virtual representation of it.Then the virtual DOM will try to find the most efficient way to update the browser's DOM.
+
+Assume we have created multiple components and consistently we are performing some changes in our application.Now we need to see ,how virtual DOM react on each change.
+
+
+NPM
+=====
+NPM stands for Node Package Manager.
+
+It is a integrated tool for nodejs.
+
+It is used to download node depedencies or packages.
+
+
+

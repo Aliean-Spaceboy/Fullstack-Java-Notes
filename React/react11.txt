@@ -1,0 +1,228 @@
+React Redux
+============
+Redux is an open-source JavaScript library for managing and centralizing application state.
+
+IT can be used with any frontend frameworks like ReactJS, AngularJS, VueJs and etc.
+
+components of react redux
+-------------------------
+We have mainly three components for react redux.
+
+1) Store  : 
+-----------
+Redux store is used to store entire state of our application.
+
+2) Action :
+-----------
+It is only the way our application interact with redux store.
+It carry some information from our application to redux store.
+
+3) Reducer : 
+----------
+Reducer read the payloads from the actions and then updates the store. 
+It is a pure function to return a new state from the initial state.
+
+
+
+react-redux
+|
+|---node_modules
+|
+|---public
+|	|
+	|---favicon.ico
+	|---index.html
+	|---manifest.json
+
+|-----src
+|	|
+	|---index.js
+	|---App.js
+	|
+	|---components
+		|
+		|---Counter.js
+	|
+	|---redux
+		|
+		|---CounterAction.js 
+		|---CounterReducer.js
+
+
+|-----package.json
+|-----README.md
+
+
+Diagram: 
+
+
+step1:
+------
+	Create a react application or project.
+	ex:
+		npx create-react-app my-redux-app
+
+step2:
+------
+	Switch to the project.
+	ex:
+		cd  my-redux-app
+
+step3:
+-----
+	Install bootstrap , react, react-redux and redux library.
+	ex:
+		npm install bootstrap
+		npm install react react-dom react-redux redux
+		npm install @reduxjs/toolkit
+
+	Note:
+	----
+		import bootstrap inside index.js file.
+  
+
+step4:
+-----
+	Run the react application.
+	ex:
+		npm start 
+
+step5:
+------
+	Create Counter.js inside "components" folder.
+
+Counter.js
+-----------
+import React from 'react'
+
+export default function Couter() {
+  return (
+    <div className='container mt-5'>
+           <h2> Counter Application </h2>
+           <div class="container">
+                <button className='btn btn-primary'>Increment</button> 
+        <b style={{fontSize:"30px"}} className="mx-3">{0}</b>
+                <button className='btn btn-warning'>Decrement</button>
+            </div> 
+    </div>
+  )
+}
+
+step6:
+-------
+	Create a CounterAction.js file inside "redux" folder.
+
+CouterAction.js
+---------------
+export function Increment()
+{
+    return{
+        type: "INCREMENT"
+    }
+}
+
+export function Decrement()
+{
+    return {
+        type: "DECREMENT"
+    }
+}
+
+step7:
+------
+	Create CounterReducer.js file inside "redux" folder.
+
+CounterReducer.js
+------------------
+export function CounterReducer(state=0,action)
+{
+    switch(action.type)
+    {
+        case "INCREMENT":
+            return state+1;
+        case "DECREMENT":
+            return state-1;
+        default:
+            return state;   
+    }
+}
+
+step8:
+------
+	Import useDispatch hook inside "Counter.js" to call actions.
+
+Counter.js
+---------
+import React from 'react'
+import {useDispatch} from 'react-redux'
+import { Increment, Decrement } from '../redux/CouterAction'
+
+export default function Couter() {
+
+    const dispatch=useDispatch();
+
+  return (
+    <div className='container mt-5'>
+           <h2> Counter Application </h2>
+           <div class="container">
+                <button className='btn btn-primary' onClick={()=>dispatch(Increment())}>Increment</button> 
+        <b style={{fontSize:"30px"}} className="mx-3">{0}</b>
+                <button className='btn btn-warning' onClick={()=>dispatch(Decrement())}>Decrement</button>
+            </div> 
+    </div>
+  )
+}
+
+step9:
+------
+	Now to retrieve the data we need to declare the store in App.js file.
+
+App.js
+-------
+import React from 'react'
+import Couter from './components/Couter'
+import { Provider } from 'react-redux'
+import { configureStore} from '@reduxjs/toolkit'
+import { CounterReducer } from './redux/CounterReducer'
+
+const store= configureStore({
+  reducer:{
+    counter: CounterReducer
+  }
+})
+
+export default function App() {
+  return (
+    <Provider store={store}>
+      <Couter/>
+    </Provider>
+  )
+}
+
+step10:
+------
+	To display the data we need to write below code in Counter.js file.
+
+Counter.js
+-----------
+import React from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import { Increment, Decrement } from '../redux/CouterAction'
+
+export default function Couter() {
+
+    const dispatch=useDispatch();
+
+    const counter=useSelector(state=> state.counter)
+
+  return (
+    <div className='container mt-5'>
+           <h2> Counter Application </h2>
+           <div class="container">
+                <button className='btn btn-primary' onClick={()=>dispatch(Increment())}>Increment</button> 
+        <b style={{fontSize:"30px"}} className="mx-3">{counter}</b>
+                <button className='btn btn-warning' onClick={()=>dispatch(Decrement())}>Decrement</button>
+            </div> 
+    </div>
+  )
+}

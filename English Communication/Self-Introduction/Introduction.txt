@@ -1,0 +1,35 @@
+self-introduction ! 
+
+---
+
+Your self-introduction is a strong foundation but can be refined to better align with your resume and highlight your experience more effectively. Here's a revised version based on your resume:
+
+---
+
+Hello! My name is **Samarjit Jena**, and I’m from **Berhampur, Odisha**.
+
+I recently completed my **Bachelor of Computer Applications (BCA)** from **Berhampur University** and am currently pursuing my **Master's in Computer Applications (MCA)** at **Biju Patnaik University**. I have hands-on experience as a **Java Developer Intern** at **Accrosian Soft Solution**, where I worked on developing full-stack web applications using **Java**, **Spring Boot**, and **ReactJS**.
+
+My technical expertise includes **Java, Spring Boot, ReactJS, MySQL**, and various other technologies. I’ve developed and implemented key projects, including a **Banking Management System** and an **Employee Management System**, applying skills such as **RESTful API development**, **Spring Security**, and **database integration**.
+
+I am proficient in **programming languages** like **Java and JavaScript**, and have worked with **tools like Maven, Postman**, and **Git**, along with cloud platforms like **AWS**. My goal is to secure a challenging role in software development where I can continue to grow as a developer and contribute to innovative projects.
+
+In my free time, I enjoy working on personal tech projects and keeping up with the latest developments in the tech world.
+
+Thank you for the opportunity to introduce myself!
+
+---
+
+### Key Improvements:
+- Aligned with your **internship experience** and **projects** mentioned in your resume.
+- Focused more on **Java development** and **web technologies** to reflect your core skills.
+- Removed "IT infrastructure" and "system administration" to emphasize software development, as that seems to be your primary focus.
+- Tailored the introduction to your goal of securing a **software development position**.
+
+This version should better reflect your resume and what you’re looking for in your career.
+
+Leadership
+Communication
+Skills management
+Problem solving
+Optimistic

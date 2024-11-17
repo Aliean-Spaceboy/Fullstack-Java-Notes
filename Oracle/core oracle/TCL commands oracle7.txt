@@ -1,0 +1,299 @@
+TCL commands
+=============
+We have three TCL commands.
+
+1) commit 
+
+2) rollback 
+
+3) savepoint 
+
+1) commit 
+----------
+It is used to make the changes permanent to database.
+
+syntax:
+------
+	commit;
+
+ex:
+	drop table student;
+
+	create table student(sno number(3),sname varchar2(10),sadd varchar2(12));
+
+	insert into student values(101,'raja','hyd');
+
+	insert into student values(102,'ravi','delhi');
+
+	select * from student;// 2 records display 
+
+	commit; 
+
+
+2) rollback 
+-----------
+It is used to undo the changes which are not permanent.
+
+syntax:
+------
+	rollback; 
+
+ex:
+---
+	drop table student;
+
+	create table student(sno number(3),sname varchar2(10),sadd varchar2(12));
+
+	insert into student values(101,'raja','hyd');
+
+	insert into student values(102,'ravi','delhi');
+
+	commit;
+
+	insert into student values(103,'Alan','Florida');
+
+	insert into student values(104,'Jose','Texas');
+
+	select * from student; // 4 records 
+
+	rollback;
+
+	select * from student; // 2 records 
+
+3) savepoint 
+-----------
+It is used mark logical transaction in a database.
+
+Instead of complete rollback we can rollback upto savepoint.
+
+syntax:
+	savepoint  <save_pointe_name>;
+
+ex:
+
+	drop table student;
+
+	create table student(sno number(3),sname varchar2(10),sadd varchar2(12));
+
+	insert into student values(101,'raja','hyd');
+
+	insert into student values(102,'ravi','delhi');
+
+	savepoint sp1;
+
+	insert into student values(103,'Alan','Florida');
+
+	insert into student values(104,'Jose','Texas');
+
+	savepoint sp2;
+
+	insert into student values(105,'Jacky','China');
+
+	insert into student values(106,'John','Japan');
+
+	select * from student; // 6 records 
+
+	rollback to sp2;
+	
+	select * from student; // 4 records 
+
+PSEUDO columns
+===============
+PSEUDO means a column which is not real.
+
+We have two pseudo columns.
+
+1) ROWNUM 
+
+2) ROWID 
+
+1) ROWNUM
+--------
+ROWNUM always start with 1 and increment by 1.
+
+ROWNUM values are temperory.
+
+Once the query is executed we will loss the rownum values.
+
+ex:
+	select eid,ename,esal from emp;
+
+	select rownum,eid,ename,esal from emp;
+
+	select rownum,sno,sname,sadd from student;
+
+2) ROWID 
+---------
+ROWID is a hexadecimal number.
+
+ROWID is permanent.
+
+ROWID is a memory location where our records will store in a table.
+
+ex:
+	select rowid,eid,ename,esal from emp;
+	select rowid,rownum,eid,ename,esal from emp;
+
+
+Interview Queries
+----------------------
+
+Q) Write a query to display first four records from emp table?
+
+	select * from emp where rownum<=4;
+	or
+	select * from emp where rownum<=4 order by rownum;
+
+	select * from emp where rownum<=4 order by rownum desc;
+
+
+
+Q) Write a query to display fourth record from emp table?
+
+	select * from emp where rownum<=4
+	minus
+	select * from emp where rownum<=3;
+
+DCL commands
+============
+We have two DCL commands.
+
+1) grant 
+
+2) revoke 
+
+
+Schema : 
+-------
+	Schema is a memory location which is used to run SQL commands.
+
+Privileges
+---------
+	Permission given to a user is called privileges.
+
+	Rights given to a user is called privileges.
+
+	We have two types of privileges.
+
+	1) System privilege
+	-------------------
+		Permission given by DBA to user.
+ 
+	2) Object privilege 
+	------------------
+		Permission given by one user to user.
+
+
+
+grant 
+------
+Grant command is used to grant the permissions.
+
+syntax:
+	grant <privilege1>,<privilege2> to <user_name>;
+
+revoke
+-------
+Revoke command is used to revoke the permissions.
+
+syntax:
+	revoke <privilge1>,<privilege2> from <user_name>; 
+
+
+DBA>  alter session set "_ORACLE_SCRIPT"=true;  
+
+DBA> create user hemanth identified by hemanth;
+
+DBA> create user tejaswini identified by tejaswini;
+
+DBA>  grant all privileges to hemanth,tejaswini;
+
+
+Hemanth> conn  hemanth/hemanth  --logon denied
+
+Tejaswini> conn tejaswini/tejaswini  --logon denied 
+
+
+DBA> grant connect,resource to hemanth,tejaswini;
+
+
+Hemanth> conn  hemanth/hemanth   -- connected
+
+Tejaswini> conn tejaswini/tejaswini  -- connected
+
+
+Hemanth> 
+
+
+
+create table employee(eid number(3),ename varchar2(10),esal number(10));
+
+ALTER USER hemanth quota unlimited on employee;
+
+insert into employee values(201,'Alan',10000);
+insert into employee values(202,'Jose',20000);
+insert into employee values(203,'Kelvin',30000);
+commit;
+select * from employee;
+
+
+Tejaswini> select * from employee; // table or view does not exist
+
+
+Hemanth> grant select on employee to tejaswini;
+
+Tejaswini> select * from  hemanth.employee;
+
+Tejaswini> delete from hemanth.employee;
+
+Tejaswini> commit;
+
+Hemanth > select * from employee ; // no rows selected
+
+Hemanth > revoke select on employee from tejaswini;
+
+Hemanth> disc 
+
+Tejaswini> disc 
+
+DBA> revoke connect,resource from hemanth,tejaswini;
+DBA> revoke all privileges from hemanth,tejaswini;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,666 @@
+CSS FontAwesome Icons 
+========================
+Font Awesome gives you scalable vector icons that can instantly be customized.
+
+To use fontawesome icons we need to add below <link> inside <head> tag.
+ex:
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- add fontawesome cdn link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+		<i class="fa fa-heart"></i>
+		<i class="fa fa-home"></i>
+		<i class="fa fa-phone"></i>
+</body>
+</html>
+
+ex:2
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- add fontawesome cdn link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+		<i class="fa fa-heart" style="color:red;font-size:40px;"></i>
+
+		<i class="fa fa-home" style="color:blue;font-size:40px;"></i>
+		
+		<i class="fa fa-phone" style="color:green;font-size:40px;"></i>
+</body>
+</html>
+
+
+ex:3
+--------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- add fontawesome cdn link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+		<i class="fa fa-facebook" style="color:blue;"></i>
+
+		<i class="fa fa-instagram" style="color:pink"></i>
+		
+		<i class="fa fa-whatsapp" style="color:green"></i>
+
+		<i class="fa fa-twitter" style="color:skyblue;"></i>
+
+		<i class="fa fa-youtube" style="color:red;"></i>
+</body>
+</html>
+
+
+
+
+CSS cursor property
+====================
+The cursor property specifies the mouse cursor to be displayed when pointing over an element.
+
+
+ex:1
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		h1
+		{
+			text-align: center;
+		}
+		h1:hover
+		{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+		<h1>This is heading tag</h1>
+</body>
+</html>
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		h1
+		{
+			text-align: center;
+		}
+		h1:hover
+		{
+			cursor: copy;
+		}
+	</style>
+</head>
+<body>
+		<h1>This is heading tag</h1>
+</body>
+</html>
+
+ex:3
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		h1
+		{
+			text-align: center;
+		}
+		h1:hover
+		{
+			cursor:not-allowed;
+		}
+	</style>
+</head>
+<body>
+		<h1>This is heading tag</h1>
+</body>
+</html>
+
+ex:4
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		h1
+		{
+			text-align: center;
+		}
+		h1:hover
+		{
+			cursor:zoom-in;
+		}
+	</style>
+</head>
+<body>
+		<h1>This is heading tag</h1>
+</body>
+</html>
+
+ex:5
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		h1
+		{
+			text-align: center;
+		}
+		h1:hover
+		{
+			cursor:zoom-out;
+		}
+	</style>
+</head>
+<body>
+		<h1>This is heading tag</h1>
+</body>
+</html>
+
+
+
+CSS Grid layout
+===============
+The CSS grid layout module offers a grid-based layout system with rows and columns.
+
+Grid layout makes easier to design web pages without having a use of floats and positioning tag.
+
+A grid layout consists of a parent element , with one or more child elements.
+
+
+
+ex:1
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.container
+		{
+			width: 90%;
+			height: 500px;
+			border:2px solid black;
+		}
+		.box1{background-color: red}
+		.box2{background-color: blue}
+		.box3{background-color: green}
+		.box4{background-color: yellow}
+		.box5{background-color: orange}
+		.box6{background-color: cyan}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box1">box1</div>
+		<div class="box2">box2</div>
+		<div class="box3">box3</div>
+		<div class="box4">box4</div>
+		<div class="box5">box5</div>
+		<div class="box6">box6</div>
+	</div>
+</body>
+</html>
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.container
+		{
+			width: 90%;
+			height: 500px;
+			border:2px solid black;
+			display: grid;
+		}
+		.box1{background-color: red}
+		.box2{background-color: blue}
+		.box3{background-color: green}
+		.box4{background-color: yellow}
+		.box5{background-color: orange}
+		.box6{background-color: cyan}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box1">box1</div>
+		<div class="box2">box2</div>
+		<div class="box3">box3</div>
+		<div class="box4">box4</div>
+		<div class="box5">box5</div>
+		<div class="box6">box6</div>
+	</div>
+</body>
+</html>
+
+ex:3
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.container
+		{
+			width: 90%;
+			height: 500px;
+			border:2px solid black;
+			display: grid;
+			grid-template-rows: 150px 150px;
+			grid-template-columns: 150px 150px 150px;
+		}
+		.box1{background-color: red}
+		.box2{background-color: blue}
+		.box3{background-color: green}
+		.box4{background-color: yellow}
+		.box5{background-color: orange}
+		.box6{background-color: cyan}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box1">box1</div>
+		<div class="box2">box2</div>
+		<div class="box3">box3</div>
+		<div class="box4">box4</div>
+		<div class="box5">box5</div>
+		<div class="box6">box6</div>
+	</div>
+</body>
+</html>
+
+ex:4
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.container
+		{
+			width: 90%;
+			height: 500px;
+			border:2px solid black;
+			display: grid;
+			grid-template-rows: 150px 150px;
+			grid-template-columns: 150px 150px 1fr;
+		}
+		.box1{background-color: red}
+		.box2{background-color: blue}
+		.box3{background-color: green}
+		.box4{background-color: yellow}
+		.box5{background-color: orange}
+		.box6{background-color: cyan}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box1">box1</div>
+		<div class="box2">box2</div>
+		<div class="box3">box3</div>
+		<div class="box4">box4</div>
+		<div class="box5">box5</div>
+		<div class="box6">box6</div>
+	</div>
+</body>
+</html>
+
+ex:5
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.container
+		{
+			width: 90%;
+			height: 500px;
+			border:2px solid black;
+			display: grid;
+			grid-template-rows: 150px 150px;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		.box1{background-color: red}
+		.box2{background-color: blue}
+		.box3{background-color: green}
+		.box4{background-color: yellow}
+		.box5{background-color: orange}
+		.box6{background-color: cyan}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box1">box1</div>
+		<div class="box2">box2</div>
+		<div class="box3">box3</div>
+		<div class="box4">box4</div>
+		<div class="box5">box5</div>
+		<div class="box6">box6</div>
+	</div>
+</body>
+</html>
+
+ex:6
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.container
+		{
+			width: 90%;
+			height: 500px;
+			border:2px solid black;
+			display: grid;
+			grid-template-rows: repeat(2,150px);
+			grid-template-columns: repeat(3,1fr);
+		}
+		.box1{background-color: red}
+		.box2{background-color: blue}
+		.box3{background-color: green}
+		.box4{background-color: yellow}
+		.box5{background-color: orange}
+		.box6{background-color: cyan}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box1">box1</div>
+		<div class="box2">box2</div>
+		<div class="box3">box3</div>
+		<div class="box4">box4</div>
+		<div class="box5">box5</div>
+		<div class="box6">box6</div>
+	</div>
+</body>
+</html>
+
+ex:7
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.container
+		{
+			width: 90%;
+			height: 500px;
+			border:2px solid black;
+			display: grid;
+			grid-template-rows: repeat(2,150px);
+			grid-template-columns: repeat(3,1fr);
+			grid-row-gap: 10px;
+			grid-column-gap: 10px;
+		}
+		.box1{background-color: red}
+		.box2{background-color: blue}
+		.box3{background-color: green}
+		.box4{background-color: yellow}
+		.box5{background-color: orange}
+		.box6{background-color: cyan}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box1">box1</div>
+		<div class="box2">box2</div>
+		<div class="box3">box3</div>
+		<div class="box4">box4</div>
+		<div class="box5">box5</div>
+		<div class="box6">box6</div>
+	</div>
+</body>
+</html>
+
+ex:8
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style type="text/css">
+		.container
+		{
+			width: 90%;
+			height: 500px;
+			border:2px solid black;
+			display: grid;
+			grid-template-rows: repeat(2,150px);
+			grid-template-columns: repeat(3,1fr);
+			grid-gap: 20px;
+		}
+		.box1{background-color: red}
+		.box2{background-color: blue}
+		.box3{background-color: green}
+		.box4{background-color: yellow}
+		.box5{background-color: orange}
+		.box6{background-color: cyan}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box1">box1</div>
+		<div class="box2">box2</div>
+		<div class="box3">box3</div>
+		<div class="box4">box4</div>
+		<div class="box5">box5</div>
+		<div class="box6">box6</div>
+	</div>
+</body>
+</html>
+
+
+
+
+CSS forms 
+=========
+Form is used to accept the data from the enduser and it will forward the data to server or database for processing.
+
+CSSDesign
+|
+|-----images
+|	|
+	|---micky.png
+|
+|-----css
+	|
+	|---mystyles.css
+|
+|-----index.html 
+
+
+index.html
+-----------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- add external CSS -->
+	<link rel="stylesheet" type="text/css" href="css/mystyles.css">
+
+</head>
+<body>
+		<div class="container">
+			
+			<div class="box1">
+				
+				<img src="images/resume.jfif"/>
+
+				<h3>Login Here </h3>
+
+				<form>
+					
+					<input type="text" name="t1" placeholder="username" autocomplete="off"  required />  <br>
+
+					<input type="password" name="t2" placeholder="password" autocomplete="off" required />  <br>
+
+					<input type="submit" value="Login"/> 
+
+				</form>
+
+			</div>
+
+			<div class="box2">
+				<img src="images/micky.png"/>
+			</div>
+
+		</div>
+</body>
+</html>
+
+mystyles.css
+------------
+*
+{
+	padding:0;
+	margin: 0;
+}
+body
+{
+	height:100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container
+{
+	width:800px;
+	height:400px;
+	background-color: yellow;
+	box-sizing: border-box;
+
+}
+.box1
+{
+	width:400px;
+	height:400px;
+	box-sizing: border-box;
+	background-color:#f7f1e3;
+	float:left;
+}
+.container .box1 img
+{
+	width:100px;
+	height: 100px;
+	border-radius: 50%;
+	display:block;
+	margin: 10px auto;
+	border:1px solid black;
+}
+.container .box1 h3
+{
+	text-align: center;
+	font-family: cursive;
+	padding:10px;
+}
+.container .box1  input[type="text"],input[type="password"]
+{
+	display: block;
+	width: 300px;
+	height:32px;
+	margin: 10px auto;	
+	border-radius: 10px;
+	border:none;
+}
+.container .box1 input[placeholder]
+{
+	text-align: center;
+	font-size:25px;
+}
+.container .box1 input[type="submit"]
+{
+	width:100px;
+	padding:10px;
+	display: block;
+	margin:0 auto;
+	transition: 1s all linear;
+}
+.container .box1 input[type="submit"]:hover
+{
+	width:300px;
+	border-radius: 5px;
+}
+
+
+.box2
+{
+	width: 400px;
+	height: 400px;
+	box-sizing: border-box;
+	background-color: #18dcff; 
+	float:right;
+}
+
+.container .box2 img
+{
+	width:90%;
+	height:90%;
+	padding:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
